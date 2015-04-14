@@ -1,9 +1,12 @@
+/* global Bloq, utils, connectionThreshold, getRandomColor */
 //----------------------------------------------------------------//
 // This file is part of the bloqs Project                         //
 //                                                                //
-// Date: April 2015                                               //
+// Date: March 2015                                               //
 // Author: Irene Sanz Nieto  <irene.sanz@bq.com>                  //
 //----------------------------------------------------------------//
+'use strict';
+
 function StatementInputBloq(bloqData, position, data, draggable) {
     Bloq.call(this, bloqData, position, data);
     if (draggable) {
@@ -59,7 +62,7 @@ StatementInputBloq.prototype.resizeStatementsInput = function(delta) {
     // this.moveChildren(delta);
 };
 StatementInputBloq.prototype.moveConnector = function(connection, delta) {
-    //Move connector 
+    //Move connector
     connection = this.updateConnector(connection, delta);
     //If there is a bloq connected, move the bloq also
     if (connection.bloq !== undefined) {
@@ -100,7 +103,7 @@ StatementInputBloq.prototype.addDownConnector = function(posx, posy) {
 };
 StatementInputBloq.prototype.setChildren = function(childrenId, location, inputID) {
     for (var bloqIndex in this.relations.children) {
-        if (childrenId == this.relations.children[bloqIndex]) {
+        if (childrenId === this.relations.children[bloqIndex]) {
             // it exists, do nothing
             return false;
         }
@@ -112,7 +115,7 @@ StatementInputBloq.prototype.setChildren = function(childrenId, location, inputI
         inputID: inputID
     };
     for (bloqIndex in this.relations.codeChildren) {
-        if (childrenId == this.relations.codeChildren[bloqIndex]) {
+        if (childrenId === this.relations.codeChildren[bloqIndex]) {
             // it exists, do nothing
             return false;
         }
@@ -137,11 +140,35 @@ StatementInputBloq.prototype.setChildren = function(childrenId, location, inputI
     }
     return true;
 };
-StatementInputBloq.prototype.isNotEmpty = function(object) {
-    for (var i in object) {
+StatementInputBloq.prototype.isNotEmpty = function(obj) {
+    return !StatementInputBloq.prototype.isEmpty(obj);
+};
+StatementInputBloq.prototype.isEmpty = function(obj) {
+
+    // null and undefined are "empty"
+    if (obj === null) {
         return true;
     }
-    return false;
+
+    // Assume if it has a length property with a non-zero value
+    // that that property is correct.
+    if (obj.length > 0) {
+        return false;
+    }
+    if (obj.length === 0) {
+        return true;
+    }
+
+    // Otherwise, does it have any properties of its own?
+    // Note that this doesn't handle
+    // toString and valueOf enumeration bugs in IE < 9
+    for (var key in obj) {
+        if (hasOwnProperty.call(obj, key)) {
+            return false;
+        }
+    }
+    return true;
+
 };
 StatementInputBloq.prototype.deleteChild = function(child) {
     var i = 0;
@@ -154,7 +181,7 @@ StatementInputBloq.prototype.deleteChild = function(child) {
             }
         }
     }
-    //remove bloq from children 
+    //remove bloq from children
     delete this.relations.children[child.id];
     for (i in this.relations.codeChildren) {
         if (this.relations.codeChildren[i] === child.id) {
@@ -220,8 +247,8 @@ StatementInputBloq.prototype.resize = function(delta) {
     this.size.height += delta.y;
     this.childrenHeight += delta.y;
     if (this.bloqBody.children !== undefined) {
-        this.bloqBody.children()[0].size(this.body.width()+delta.x, this.body.height()+delta.y);
+        this.bloqBody.children()[0].size(this.body.width() + delta.x, this.body.height() + delta.y);
     } else {
-        this.bloqBody.size(this.body.width()+delta.x, this.body.height()+delta.y);
+        this.bloqBody.size(this.body.width() + delta.x, this.body.height() + delta.y);
     }
 };

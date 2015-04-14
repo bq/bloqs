@@ -6,8 +6,7 @@
         "**/.*",
         "node_modules",
         "bower_components",
-        "test",
-        "tests"
+        "test"
     ],
     "dependencies": {
         "jquery": ">= 1.9.0",
@@ -15,7 +14,8 @@
         "svg.draggable": "master",
         "svg.import.js": "1.0.0",
         "svg.parser.js": "master",
-        "svg.foreignobject": "git://github.com/memloom-development/svg.foreignobject.js#master"
+        "svg.foreignobject": "git://github.com/memloom-development/svg.foreignobject.js#master",
+        "normalize.css": "~3.0.3"
     },
     "homepage": "https://github.com/bq/bloqs",
     "repository": {
@@ -24,7 +24,10 @@
     },
     "authors": [
         "Irene Sanz <irene.sanz@bq.com>",
-        "Tomás Calvo <tomas.calvo@bq.com>",
+        "Laura del Río <laura.delrio@bq.com>",
+        "Diego Segura <diego.segura@bq.com>",
+        "Tom Calvo <tomas.calvo@bq.com>",
+        "Sergio Morcuende <sergio.morcuende@bq.com>",
         "Jesús Flores <jesus.flores@bq.com>"
     ],
     "description": "Library to create bloqs in bitbloq",

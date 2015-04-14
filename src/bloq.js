@@ -1,14 +1,17 @@
+/* global utils, connectionThreshold, getRandomColor, document, Option */
 //----------------------------------------------------------------//
 // This file is part of the bloqs Project                         //
 //                                                                //
 // Date: March 2015                                               //
 // Author: Irene Sanz Nieto  <irene.sanz@bq.com>                  //
 //----------------------------------------------------------------//
+'use strict';
+
 function Bloq(bloqData, position, data) {
     this.canvas = data.canvas;
     this.bloqBody = this.canvas.group().move(position[0], position[1]);
     this.bloqData = bloqData;
-    this.bloqName  = this.bloqData.label;
+    this.bloqName = this.bloqData.label;
     this.data = data;
     this.size = {
         width: 100,
@@ -181,7 +184,7 @@ Bloq.prototype.deleteChild = function(child) {
             }
         }
     }
-    //remove bloq from children 
+    //remove bloq from children
     delete this.relations.children[child.id];
     for (i in this.relations.codeChildren) {
         if (this.relations.codeChildren[i] === child.id) {
@@ -195,7 +198,7 @@ Bloq.prototype.deleteChild = function(child) {
 };
 Bloq.prototype.setChildren = function(childrenId, location, inputID, connectionType) {
     for (var bloqIndex in this.relations.children) {
-        if (childrenId == this.relations.children[bloqIndex]) {
+        if (childrenId === this.relations.children[bloqIndex]) {
             // it exists, do nothing
             return false;
         }
@@ -207,7 +210,7 @@ Bloq.prototype.setChildren = function(childrenId, location, inputID, connectionT
         inputID: inputID
     };
     for (bloqIndex in this.relations.codeChildren) {
-        if (childrenId == this.relations.codeChildren[bloqIndex]) {
+        if (childrenId === this.relations.codeChildren[bloqIndex]) {
             // it exists, do nothing
             return false;
         }
@@ -254,9 +257,9 @@ Bloq.prototype.getCode = function(_function) {
     var code = this.code[_function].slice();
     var search = '';
     var replacement = '';
-    var id;
+    var id, i;
     for (var k in code) {
-        for (var i in this.relations.inputChildren) {
+        for (i in this.relations.inputChildren) {
             id = this.relations.inputChildren[i].id;
             id = id.substr(id.indexOf('_') + 1, id.length);
             search = '{[' + id + ']}';
@@ -272,7 +275,7 @@ Bloq.prototype.getCode = function(_function) {
             code[k] = code[k].replace(new RegExp(search, 'g'), ' ');
         }
         //Connection type replace with correct type:
-        for (var i in this.relations.inputChildren) {
+        for (i in this.relations.inputChildren) {
             if (typeof(this.relations.inputChildren[i].bloq) === typeof({})) {
                 search = '{connectionType}';
                 replacement = utils.getVariableType[this.relations.inputChildren[i].type];
@@ -374,7 +377,7 @@ Bloq.prototype.updateConnectors = function(delta) {
     }
 };
 Bloq.prototype.moveConnector = function(connection, delta) {
-    //Move connector 
+    //Move connector
     connection = this.updateConnector(connection, delta);
     //If there is a bloq connected, move the bloq also
     if (connection.bloq !== undefined) {
@@ -612,7 +615,7 @@ Bloq.prototype.appendUserInput = function(inputText, type, posx, posy, id) {
         id: 'fobj',
         color: '#FFCC33'
     });
-    text.appendChild("input", {
+    text.appendChild('input', {
         id: id,
         value: inputText,
         color: '#FFCC33',
@@ -635,19 +638,19 @@ Bloq.prototype.appendUserInput = function(inputText, type, posx, posy, id) {
     this.addInput(undefined, undefined, type);
     //Add new variable with the value of the input
     this.addVariable(id, document.getElementById(id).value);
-    document.getElementById(id).addEventListener("mousedown", function(e) {
+    document.getElementById(id).addEventListener('mousedown', function(e) {
         e.stopPropagation();
     }, false);
     var that = this;
     //Check that the input of the user is the one spected
-    document.getElementById(id).addEventListener("change", function() {
+    document.getElementById(id).addEventListener('change', function() {
         //Add new variable with the value of the input
         that.addVariable(id, document.getElementById(id).value);
         if (type === 'text') {
             that.relations.inputChildren[id].code = '"' + document.getElementById(id).value + '"';
         } else if (type === 'number') {
             if (isNaN(parseFloat(document.getElementById(id).value))) {
-                //If type is number and input is not a number, remove user input. 
+                //If type is number and input is not a number, remove user input.
                 //ToDo : UX warning!
                 document.getElementById(id).value = '';
             } else {
@@ -658,8 +661,8 @@ Bloq.prototype.appendUserInput = function(inputText, type, posx, posy, id) {
         }
     }, false);
 };
-Bloq.prototype.setUserInput = function (ID, text){
-    document.getElementById(this.id + '_' + ID).value=text;
+Bloq.prototype.setUserInput = function(ID, text) {
+    document.getElementById(this.id + '_' + ID).value = text;
 };
 Bloq.prototype.appendDropdownInput = function(dropdownText, type, posx, posy, id) {
     var dropdown = this.bloqBody.foreignObject(100, 100).attr({
@@ -684,12 +687,12 @@ Bloq.prototype.appendDropdownInput = function(dropdownText, type, posx, posy, id
     newList.onchange = function() {
         that.relations.inputChildren[id].code = newList.value;
     };
-    document.getElementById(id).addEventListener("mousedown", function(e) {
+    document.getElementById(id).addEventListener('mousedown', function(e) {
         e.stopPropagation();
     }, false);
 };
 Bloq.prototype.populateDropDownList = function(dropdownText) {
-    var newList = document.createElement("select");
+    var newList = document.createElement('select');
     for (var i in dropdownText) {
         var newListData = new Option(dropdownText[i].label, dropdownText[i].value);
         //Here we append that text node to our drop down list.
