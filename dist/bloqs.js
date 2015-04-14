@@ -1,14 +1,7 @@
-/*global $:false */
-/*global document:false */
-/*global SVG:false */
-/*global Option:false */
-//----------------------------------------------------------------//
-// This file is part of the bloqs Project                         //
-//                                                                //
-// Date: March 2015                                               //
-// Author: Irene Sanz Nieto  <irene.sanz@bq.com>                  //
-//----------------------------------------------------------------//
 "use strict";
+// Source: src/utils.js
+/* global $, getRandomColor */
+/*jshint unused:false*/
 //----------------------------------------------------------------//
 // This file is part of the bloqs Project                         //
 //                                                                //
@@ -18,7 +11,7 @@
 var utils = utils || {};
 //ToDo : change this
 utils.triggerGlobalOnChange = function() {
-    $("field1").trigger("change");
+    $('field1').trigger('change');
 };
 var connectionThreshold = 10; // px
 function getRandomColor() {
@@ -36,9 +29,9 @@ utils.oppositeConnection = {
     down: 'up'
 };
 utils.getVariableType = {
-    text : 'String',
-    number : 'int'
-}
+    text: 'String',
+    number: 'int'
+};
 utils.manageConnections = function(type, bloq1Connection, bloq2Connection, bloq1, bloq2, inputID) {
     if (bloq2Connection !== undefined && bloq1Connection !== undefined) {
         if (utils.itsOver(bloq1Connection.connectorArea, bloq2Connection.connectorArea)) {
@@ -52,7 +45,7 @@ utils.manageConnections = function(type, bloq1Connection, bloq2Connection, bloq1
                     if (bloq1Connection.type === 'all') {
                         bloq1.setConnectionType(bloq1Connection, bloq2Connection);
                     }
-                    //put child bloq on top if it is not already: 
+                    //put child bloq on top if it is not already:
                     utils.bloqOnTop(bloq2);
                 } else { //parent is bloq2
                     //move bloq
@@ -62,7 +55,7 @@ utils.manageConnections = function(type, bloq1Connection, bloq2Connection, bloq1
                     if (bloq2Connection.type === 'all') {
                         bloq2.setConnectionType(bloq2Connection, bloq1Connection);
                     }
-                    //put child bloq on top if it is not already: 
+                    //put child bloq on top if it is not already:
                     utils.bloqOnTop(bloq1);
                 }
                 bloq1.resetLastDelta();
@@ -114,8 +107,8 @@ utils.getOutputBloq = function(bloq, posx, width, height) {
     return group;
 };
 // utils.getBloqPath = function(bloq, bloqData) {
-//     
-//     var path = "m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 217.11582946777344 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 60 v 25 H 30 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z";
+//
+//     var path = 'm 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 217.11582946777344 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 60 v 25 H 30 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z';
 //     if (bloqData.down) {
 //         // if it has a down connection, it has to have an up one
 //         // lets see if it has inputs
@@ -147,12 +140,15 @@ utils.getOutputBloq = function(bloq, posx, width, height) {
 utils.getBloqById = function(nodeId, data) {
     for (var bloqIndex in data.bloqs) {
         var bloq = data.bloqs[bloqIndex];
-        if (bloq.id == nodeId) {
+        if (bloq.id === nodeId) {
             return bloq;
         }
     }
     return null;
 };
+
+// Source: src/bloq.js
+/* global utils, connectionThreshold, getRandomColor, document, Option */
 //----------------------------------------------------------------//
 // This file is part of the bloqs Project                         //
 //                                                                //
@@ -163,7 +159,7 @@ function Bloq(bloqData, position, data) {
     this.canvas = data.canvas;
     this.bloqBody = this.canvas.group().move(position[0], position[1]);
     this.bloqData = bloqData;
-    this.bloqName  = this.bloqData.label;
+    this.bloqName = this.bloqData.label;
     this.data = data;
     this.size = {
         width: 100,
@@ -336,7 +332,7 @@ Bloq.prototype.deleteChild = function(child) {
             }
         }
     }
-    //remove bloq from children 
+    //remove bloq from children
     delete this.relations.children[child.id];
     for (i in this.relations.codeChildren) {
         if (this.relations.codeChildren[i] === child.id) {
@@ -350,7 +346,7 @@ Bloq.prototype.deleteChild = function(child) {
 };
 Bloq.prototype.setChildren = function(childrenId, location, inputID, connectionType) {
     for (var bloqIndex in this.relations.children) {
-        if (childrenId == this.relations.children[bloqIndex]) {
+        if (childrenId === this.relations.children[bloqIndex]) {
             // it exists, do nothing
             return false;
         }
@@ -362,7 +358,7 @@ Bloq.prototype.setChildren = function(childrenId, location, inputID, connectionT
         inputID: inputID
     };
     for (bloqIndex in this.relations.codeChildren) {
-        if (childrenId == this.relations.codeChildren[bloqIndex]) {
+        if (childrenId === this.relations.codeChildren[bloqIndex]) {
             // it exists, do nothing
             return false;
         }
@@ -409,9 +405,9 @@ Bloq.prototype.getCode = function(_function) {
     var code = this.code[_function].slice();
     var search = '';
     var replacement = '';
-    var id;
+    var id, i;
     for (var k in code) {
-        for (var i in this.relations.inputChildren) {
+        for (i in this.relations.inputChildren) {
             id = this.relations.inputChildren[i].id;
             id = id.substr(id.indexOf('_') + 1, id.length);
             search = '{[' + id + ']}';
@@ -427,7 +423,7 @@ Bloq.prototype.getCode = function(_function) {
             code[k] = code[k].replace(new RegExp(search, 'g'), ' ');
         }
         //Connection type replace with correct type:
-        for (var i in this.relations.inputChildren) {
+        for (i in this.relations.inputChildren) {
             if (typeof(this.relations.inputChildren[i].bloq) === typeof({})) {
                 search = '{connectionType}';
                 replacement = utils.getVariableType[this.relations.inputChildren[i].type];
@@ -529,7 +525,7 @@ Bloq.prototype.updateConnectors = function(delta) {
     }
 };
 Bloq.prototype.moveConnector = function(connection, delta) {
-    //Move connector 
+    //Move connector
     connection = this.updateConnector(connection, delta);
     //If there is a bloq connected, move the bloq also
     if (connection.bloq !== undefined) {
@@ -767,7 +763,7 @@ Bloq.prototype.appendUserInput = function(inputText, type, posx, posy, id) {
         id: 'fobj',
         color: '#FFCC33'
     });
-    text.appendChild("input", {
+    text.appendChild('input', {
         id: id,
         value: inputText,
         color: '#FFCC33',
@@ -790,19 +786,19 @@ Bloq.prototype.appendUserInput = function(inputText, type, posx, posy, id) {
     this.addInput(undefined, undefined, type);
     //Add new variable with the value of the input
     this.addVariable(id, document.getElementById(id).value);
-    document.getElementById(id).addEventListener("mousedown", function(e) {
+    document.getElementById(id).addEventListener('mousedown', function(e) {
         e.stopPropagation();
     }, false);
     var that = this;
     //Check that the input of the user is the one spected
-    document.getElementById(id).addEventListener("change", function() {
+    document.getElementById(id).addEventListener('change', function() {
         //Add new variable with the value of the input
         that.addVariable(id, document.getElementById(id).value);
         if (type === 'text') {
             that.relations.inputChildren[id].code = '"' + document.getElementById(id).value + '"';
         } else if (type === 'number') {
             if (isNaN(parseFloat(document.getElementById(id).value))) {
-                //If type is number and input is not a number, remove user input. 
+                //If type is number and input is not a number, remove user input.
                 //ToDo : UX warning!
                 document.getElementById(id).value = '';
             } else {
@@ -813,8 +809,8 @@ Bloq.prototype.appendUserInput = function(inputText, type, posx, posy, id) {
         }
     }, false);
 };
-Bloq.prototype.setUserInput = function (ID, text){
-    document.getElementById(this.id + '_' + ID).value=text;
+Bloq.prototype.setUserInput = function(ID, text) {
+    document.getElementById(this.id + '_' + ID).value = text;
 };
 Bloq.prototype.appendDropdownInput = function(dropdownText, type, posx, posy, id) {
     var dropdown = this.bloqBody.foreignObject(100, 100).attr({
@@ -839,12 +835,12 @@ Bloq.prototype.appendDropdownInput = function(dropdownText, type, posx, posy, id
     newList.onchange = function() {
         that.relations.inputChildren[id].code = newList.value;
     };
-    document.getElementById(id).addEventListener("mousedown", function(e) {
+    document.getElementById(id).addEventListener('mousedown', function(e) {
         e.stopPropagation();
     }, false);
 };
 Bloq.prototype.populateDropDownList = function(dropdownText) {
-    var newList = document.createElement("select");
+    var newList = document.createElement('select');
     for (var i in dropdownText) {
         var newListData = new Option(dropdownText[i].label, dropdownText[i].value);
         //Here we append that text node to our drop down list.
@@ -978,6 +974,9 @@ Bloq.prototype.resetLastDelta = function() {
     this.delta.lastx = 0;
     this.delta.lasty = 0;
 };
+
+// Source: src/outputBloq.js
+/* global Bloq */
 //----------------------------------------------------------------//
 // This file is part of the bloqs Project                         //
 //                                                                //
@@ -997,6 +996,9 @@ function OutputBloq(bloqData, position, data) {
     this.bloqBody.add(this.bloqBody.connector);
 }
 OutputBloq.prototype = Object.create(Bloq.prototype);
+
+// Source: src/statementBloq.js
+/* global Bloq */
 //----------------------------------------------------------------//
 // This file is part of the bloqs Project                         //
 //                                                                //
@@ -1013,10 +1015,12 @@ var StatementBloq = function(bloqData, position, data) {
 };
 StatementBloq.prototype = Object.create(Bloq.prototype);
 
+// Source: src/statementInputBloq.js
+/* global Bloq, utils, connectionThreshold, getRandomColor */
 //----------------------------------------------------------------//
 // This file is part of the bloqs Project                         //
 //                                                                //
-// Date: April 2015                                               //
+// Date: March 2015                                               //
 // Author: Irene Sanz Nieto  <irene.sanz@bq.com>                  //
 //----------------------------------------------------------------//
 function StatementInputBloq(bloqData, position, data, draggable) {
@@ -1074,7 +1078,7 @@ StatementInputBloq.prototype.resizeStatementsInput = function(delta) {
     // this.moveChildren(delta);
 };
 StatementInputBloq.prototype.moveConnector = function(connection, delta) {
-    //Move connector 
+    //Move connector
     connection = this.updateConnector(connection, delta);
     //If there is a bloq connected, move the bloq also
     if (connection.bloq !== undefined) {
@@ -1115,7 +1119,7 @@ StatementInputBloq.prototype.addDownConnector = function(posx, posy) {
 };
 StatementInputBloq.prototype.setChildren = function(childrenId, location, inputID) {
     for (var bloqIndex in this.relations.children) {
-        if (childrenId == this.relations.children[bloqIndex]) {
+        if (childrenId === this.relations.children[bloqIndex]) {
             // it exists, do nothing
             return false;
         }
@@ -1127,7 +1131,7 @@ StatementInputBloq.prototype.setChildren = function(childrenId, location, inputI
         inputID: inputID
     };
     for (bloqIndex in this.relations.codeChildren) {
-        if (childrenId == this.relations.codeChildren[bloqIndex]) {
+        if (childrenId === this.relations.codeChildren[bloqIndex]) {
             // it exists, do nothing
             return false;
         }
@@ -1152,11 +1156,35 @@ StatementInputBloq.prototype.setChildren = function(childrenId, location, inputI
     }
     return true;
 };
-StatementInputBloq.prototype.isNotEmpty = function(object) {
-    for (var i in object) {
+StatementInputBloq.prototype.isNotEmpty = function(obj) {
+    return !StatementInputBloq.prototype.isEmpty(obj);
+};
+StatementInputBloq.prototype.isEmpty = function(obj) {
+
+    // null and undefined are "empty"
+    if (obj === null) {
         return true;
     }
-    return false;
+
+    // Assume if it has a length property with a non-zero value
+    // that that property is correct.
+    if (obj.length > 0) {
+        return false;
+    }
+    if (obj.length === 0) {
+        return true;
+    }
+
+    // Otherwise, does it have any properties of its own?
+    // Note that this doesn't handle
+    // toString and valueOf enumeration bugs in IE < 9
+    for (var key in obj) {
+        if (hasOwnProperty.call(obj, key)) {
+            return false;
+        }
+    }
+    return true;
+
 };
 StatementInputBloq.prototype.deleteChild = function(child) {
     var i = 0;
@@ -1169,7 +1197,7 @@ StatementInputBloq.prototype.deleteChild = function(child) {
             }
         }
     }
-    //remove bloq from children 
+    //remove bloq from children
     delete this.relations.children[child.id];
     for (i in this.relations.codeChildren) {
         if (this.relations.codeChildren[i] === child.id) {
@@ -1235,11 +1263,14 @@ StatementInputBloq.prototype.resize = function(delta) {
     this.size.height += delta.y;
     this.childrenHeight += delta.y;
     if (this.bloqBody.children !== undefined) {
-        this.bloqBody.children()[0].size(this.body.width()+delta.x, this.body.height()+delta.y);
+        this.bloqBody.children()[0].size(this.body.width() + delta.x, this.body.height() + delta.y);
     } else {
-        this.bloqBody.size(this.body.width()+delta.x, this.body.height()+delta.y);
+        this.bloqBody.size(this.body.width() + delta.x, this.body.height() + delta.y);
     }
 };
+
+// Source: src/projectBloq.js
+/* global Bloq */
 //----------------------------------------------------------------//
 // This file is part of the bloqs Project                         //
 //                                                                //
@@ -1256,6 +1287,8 @@ function ProjectBloq(bloqData, position, data) {
 }
 ProjectBloq.prototype = Object.create(Bloq.prototype);
 
+// Source: res/basic_bloqs.js
+/*jshint unused:false*/
 /**
  * Created by jesus on 30/03/15.
  */
@@ -1266,8 +1299,8 @@ var getProjectBloqs = function() {
             down: true,
             color: '#000',
             code: {
-                setup: "",
-                loop: "void setup (){\n"
+                setup: '',
+                loop: 'void setup (){\n'
             }
         },
         loop: {
@@ -1275,8 +1308,8 @@ var getProjectBloqs = function() {
             down: true,
             color: '#000',
             code: {
-                setup: "",
-                loop: "void loop (){\n"
+                setup: '',
+                loop: 'void loop (){\n'
             }
         }
     };
@@ -1292,7 +1325,7 @@ var getBasicBloqs = function(variables) {
             text: [
                 [{
                     input: 'dropdown',
-                    type: "text",
+                    type: 'text',
                     data: [{
                         label: 'Encender',
                         value: 'HIGH'
@@ -1300,9 +1333,9 @@ var getBasicBloqs = function(variables) {
                         label: 'Apagar',
                         value: 'LOW'
                     }]
-                }, "el LED", {
+                }, 'el LED', {
                     input: 'dropdown',
-                    type: "text",
+                    type: 'text',
                     data: [{
                         label: 'LED1',
                         value: 'LED1'
@@ -1313,18 +1346,18 @@ var getBasicBloqs = function(variables) {
                 }]
             ],
             code: {
-                setup: ["digitalWrite({1},{0});\n"],
-                loop: ["digitalWrite({1},{0});\n"]
+                setup: ['digitalWrite({1},{0});\n'],
+                loop: ['digitalWrite({1},{0});\n']
             }
         },
         readSensor: {
-            label:'readSensor',
+            label: 'readSensor',
             output: 'number',
             color: '#e2e2e2',
             text: [
-                ["Leer", {
+                ['Leer', {
                     input: 'dropdown',
-                    type: "text",
+                    type: 'text',
                     data: [{
                         label: 'Sensor1',
                         value: 'Sensor1'
@@ -1335,19 +1368,19 @@ var getBasicBloqs = function(variables) {
                 }]
             ],
             code: {
-                setup: ["digitalRead({0})"],
-                loop: ["digitalRead({0})"]
+                setup: ['digitalRead({0})'],
+                loop: ['digitalRead({0})']
             }
         },
         buzzer: {
-            label:'buzzer',
+            label: 'buzzer',
             up: true,
             down: true,
             color: '#e2e2e2',
             text: [
-                ["Sonar el buzzer", {
+                ['Sonar el buzzer', {
                     input: 'dropdown',
-                    type: "text",
+                    type: 'text',
                     data: [{
                         label: 'Buzzer1',
                         value: 'Buzzer1'
@@ -1355,9 +1388,9 @@ var getBasicBloqs = function(variables) {
                         label: 'Buzzer2',
                         value: 'Buzzer2'
                     }]
-                }, "con la nota", {
+                }, 'con la nota', {
                     input: 'dropdown',
-                    type: "text",
+                    type: 'text',
                     data: [{
                         label: 'Do',
                         value: '200'
@@ -1365,39 +1398,39 @@ var getBasicBloqs = function(variables) {
                         label: 'Re',
                         value: '300'
                     }]
-                }, "durante", {
+                }, 'durante', {
                     input: 'userInput',
-                    type: "number",
-                    label: "0"
-                }, "ms"]
+                    type: 'number',
+                    label: '0'
+                }, 'ms']
             ],
             code: {
-                setup: ["tone({0},{1},{2});", "delay({2});\n"],
-                loop: ["tone({0},{1},{2});", "delay({2});\n"]
+                setup: ['tone({0},{1},{2});', 'delay({2});\n'],
+                loop: ['tone({0},{1},{2});', 'delay({2});\n']
             }
         },
         forLoop: {
-            label:'forLoop',
+            label: 'forLoop',
             up: true,
             down: true,
             statementInput: true,
             color: '#e2e2e2',
             text: [
-                ["Contar con", {
+                ['Contar con', {
                     input: 'bloqInput',
-                    type: "number",
-                    label: "INPUT"
-                }, "desde", {
+                    type: 'number',
+                    label: 'INPUT'
+                }, 'desde', {
                     input: 'bloqInput',
-                    type: "number",
-                    label: "INPUT"
-                }, "hasta", {
+                    type: 'number',
+                    label: 'INPUT'
+                }, 'hasta', {
                     input: 'bloqInput',
-                    type: "number",
-                    label: "INPUT"
+                    type: 'number',
+                    label: 'INPUT'
                 }, {
                     input: 'dropdown',
-                    type: "text",
+                    type: 'text',
                     data: [{
                         label: 'sumando',
                         value: '++'
@@ -1408,85 +1441,111 @@ var getBasicBloqs = function(variables) {
                 }]
             ],
             code: {
-                setup: ["for({0};{1};{2}){\n", "{StatementInput}", "\n"],
-                loop: ["for({0}={1};{0}<{2};{0}{3}){\n", "{StatementInput}", "\n"]
+                setup: ['for({0};{1};{2}){\n', '{StatementInput}', '\n'],
+                loop: ['for({0}={1};{0}<{2};{0}{3}){\n', '{StatementInput}', '\n']
             }
         },
         number: {
-            label:'number',
+            label: 'number',
             output: 'number',
             color: '#e2e2e2',
             text: [
                 [{
                     input: 'userInput',
-                    type: "number",
-                    label: "0"
+                    type: 'number',
+                    label: '0'
                 }]
             ],
             code: {
-                setup: ["{0}"],
-                loop: ["{0}"]
+                setup: ['{0}'],
+                loop: ['{0}']
             }
         },
         text: {
-            label:'text',
+            label: 'text',
             output: 'text',
             color: '#e2e2e2',
             text: [
                 [{
                     input: 'userInput',
-                    type: "text",
-                    label: ""
+                    type: 'text',
+                    label: ''
                 }]
             ],
             code: {
-                setup: ["{0}"],
-                loop: ["{0}"]
+                setup: ['{0}'],
+                loop: ['{0}']
             }
         },
         getVariable: {
-            label:'getVariable',
+            label: 'getVariable',
             output: 'number',
             color: '#e2e2e2',
             text: [
-                ["Var", {
+                ['Var', {
                     input: 'dropdown',
-                    type: "text",
+                    type: 'text',
                     data: variables
                 }]
             ],
             code: {
-                setup: ["{0}"],
-                loop: ["{0}"]
+                setup: ['{0}'],
+                loop: ['{0}']
             },
             getVariable: true
         },
         newGlobalVar: {
-            label:'newGlobalVar',
+            label: 'newGlobalVar',
             up: 'true',
             down: 'true',
             color: '#e2e2e2',
             text: [
                 [{
                     input: 'userInput',
-                    type: "variable",
-                    label: "varName"
-                }, "=", {
+                    type: 'variable',
+                    label: 'varName'
+                }, '=', {
                     input: 'bloqInput',
-                    type: "all",
-                    label: "INPUT"
+                    type: 'all',
+                    label: 'INPUT'
                 }]
             ],
             code: {
-                setup: ["{connectionType} {0} = {1};\n"],
-                loop: ["{connectionType} {0} = {1};\n"]
+                setup: ['{connectionType} {0} = {1};\n'],
+                loop: ['{connectionType} {0} = {1};\n']
             },
             variable: 'global'
         }
     };
     return data;
 };
-(function(root, undefined) {
+
+// Source: src/build/default.js
+/* global define, module, require, window */
+/* global utils, StatementInputBloq, OutputBloq, ProjectBloq, StatementBloq, getBasicBloqs, getProjectBloqs, SVG */
+//----------------------------------------------------------------//
+// This file is part of the bloqs Project                         //
+//                                                                //
+// Date: March 2015                                               //
+// Author: Irene Sanz Nieto  <irene.sanz@bq.com>                  //
+//----------------------------------------------------------------//
+// @include ../utils.js
+// @include ../bloq.js
+// @include ../outputBloq.js
+// @include ../statementBloq.js
+// @include ../statementInputBloq.js
+// @include ../projectBloq.js
+// @include ../../res/basic_bloqs.js
+(function(factory, root) {
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory); // AMD
+    } else if (typeof exports === 'object') {
+        module.exports = factory(require('jquery')); // Node
+    } else {
+        factory(root, root.$); // Browser global
+    }
+})
+(function(root, $) {
     var data = {
         bloqs: [],
         element: '',
@@ -1559,7 +1618,7 @@ var getBasicBloqs = function(variables) {
     };
     data.getBloq = function(bloqName, position) {
         return data.createBloq(getBasicBloqs(data.variables)[bloqName], position);
-    }
+    };
     /**
      * Create a set of bloqs and setup its properties and events.
      *
@@ -1652,8 +1711,8 @@ var getBasicBloqs = function(variables) {
             for (var i in projectBloq.inputs) {
                 if (projectBloq.inputs[i] !== undefined) {
                     if (projectBloq.inputs[i].bloq !== undefined) {
-                        console.log('projectBloq.inputs[i].bloq',projectBloq.inputs[i].bloq);
-                        this.loadChildBloqs( projectBloq.inputs[i] ,this.getBloq(projectBloq.inputs[i].bloq, projectBloq.inputs[i].location));
+                        console.log('projectBloq.inputs[i].bloq', projectBloq.inputs[i].bloq);
+                        this.loadChildBloqs(projectBloq.inputs[i], this.getBloq(projectBloq.inputs[i].bloq, projectBloq.inputs[i].location));
                     }
                     if (projectBloq.inputs[i].userInput !== undefined) {
                         bloq.setUserInput(i, projectBloq.inputs[i].userInput);
@@ -1664,9 +1723,9 @@ var getBasicBloqs = function(variables) {
         }
     };
     // Base function.
-    var bloqs = function() {
+    var Bloqs = function() {
         return data;
     };
     // Export to the root, which is probably `window`.
-    root.bloqs = bloqs;
-}(this));
+    root.Bloqs = Bloqs;
+}, window);

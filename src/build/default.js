@@ -1,7 +1,5 @@
-/*global $:false */
-/*global document:false */
-/*global SVG:false */
-/*global Option:false */
+/* global define, module, require, window */
+/* global utils, StatementInputBloq, OutputBloq, ProjectBloq, StatementBloq, getBasicBloqs, getProjectBloqs, SVG */
 //----------------------------------------------------------------//
 // This file is part of the bloqs Project                         //
 //                                                                //
@@ -15,7 +13,17 @@
 // @include ../statementInputBloq.js
 // @include ../projectBloq.js
 // @include ../../res/basic_bloqs.js
-(function(root, undefined) {
+'use strict';
+(function(factory, root) {
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory); // AMD
+    } else if (typeof exports === 'object') {
+        module.exports = factory(require('jquery')); // Node
+    } else {
+        factory(root, root.$); // Browser global
+    }
+})
+(function(root, $) {
     var data = {
         bloqs: [],
         element: '',
@@ -88,7 +96,7 @@
     };
     data.getBloq = function(bloqName, position) {
         return data.createBloq(getBasicBloqs(data.variables)[bloqName], position);
-    }
+    };
     /**
      * Create a set of bloqs and setup its properties and events.
      *
@@ -181,8 +189,8 @@
             for (var i in projectBloq.inputs) {
                 if (projectBloq.inputs[i] !== undefined) {
                     if (projectBloq.inputs[i].bloq !== undefined) {
-                        console.log('projectBloq.inputs[i].bloq',projectBloq.inputs[i].bloq);
-                        this.loadChildBloqs( projectBloq.inputs[i] ,this.getBloq(projectBloq.inputs[i].bloq, projectBloq.inputs[i].location));
+                        console.log('projectBloq.inputs[i].bloq', projectBloq.inputs[i].bloq);
+                        this.loadChildBloqs(projectBloq.inputs[i], this.getBloq(projectBloq.inputs[i].bloq, projectBloq.inputs[i].location));
                     }
                     if (projectBloq.inputs[i].userInput !== undefined) {
                         bloq.setUserInput(i, projectBloq.inputs[i].userInput);
@@ -193,9 +201,9 @@
         }
     };
     // Base function.
-    var bloqs = function() {
+    var Bloqs = function() {
         return data;
     };
     // Export to the root, which is probably `window`.
-    root.bloqs = bloqs;
-}(this));
+    root.Bloqs = Bloqs;
+}, window);

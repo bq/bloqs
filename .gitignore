@@ -1,16 +1,14 @@
 bower_components/
 node_modules/
-temp/
-tmp/
-logs/
-log/
-results/
+.tmp/
+target/
+
+*~
+nbproject
+target/
+
+# Editor File Ignore
+*.sublime-project
+*.sublime-workspace
 .idea/
 
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
