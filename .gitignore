@@ -14,3 +14,13 @@ results/
 *.out
 *.pid
 *.gz
+
+*~
+nbproject
+target/
+
+# Editor File Ignore
+*.sublime-project
+*.sublime-workspace
+.idea/
+
