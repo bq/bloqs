@@ -21,7 +21,7 @@ Or grab the [source](https://github.com/bq/bloqs/dist/bloqs.js) ([minified](http
 
 Basic usage is as follows:
 
-    bloqs();
+    var mybloqs = new Bloqs();
 
 For advanced usage, see the documentation.
 

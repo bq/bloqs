@@ -1,4 +1,6 @@
-"use strict";
+/* global $, getRandomColor */
+/*jshint unused:false*/
+'use strict';
 //----------------------------------------------------------------//
 // This file is part of the bloqs Project                         //
 //                                                                //
@@ -8,7 +10,7 @@
 var utils = utils || {};
 //ToDo : change this
 utils.triggerGlobalOnChange = function() {
-    $("field1").trigger("change");
+    $('field1').trigger('change');
 };
 var connectionThreshold = 10; // px
 function getRandomColor() {
@@ -26,14 +28,15 @@ utils.oppositeConnection = {
     down: 'up'
 };
 utils.getVariableType = {
-    text : 'String',
-    number : 'int'
-}
+    text: 'String',
+    number: 'int'
+};
 utils.manageConnections = function(type, bloq1Connection, bloq2Connection, bloq1, bloq2, inputID) {
     if (bloq2Connection !== undefined && bloq1Connection !== undefined) {
         if (utils.itsOver(bloq1Connection.connectorArea, bloq2Connection.connectorArea)) {
             if (bloq1Connection.type === bloq2Connection.type || (bloq1Connection.type === 'all' || bloq2Connection.type === 'all')) { // if the type is the same --> connect
                 console.log('CONNECT!', bloq2Connection.type, bloq1Connection.type);
+                console.log('Bloq 1 Connection: ' + bloq1Connection, 'Bloq 1 Connection: ' + bloq2Connection, 'Bloq 1: ' + bloq1, 'Bloq 2 Connection: ' + bloq2, 'InputId: ' + inputID);
                 if (type === 'inputs' || type === 'down') { // parent is bloq1
                     //move bloq
                     bloq1.updateBloqs(bloq1, bloq2, utils.oppositeConnection[type], inputID, bloq2Connection.type);
@@ -42,7 +45,7 @@ utils.manageConnections = function(type, bloq1Connection, bloq2Connection, bloq1
                     if (bloq1Connection.type === 'all') {
                         bloq1.setConnectionType(bloq1Connection, bloq2Connection);
                     }
-                    //put child bloq on top if it is not already: 
+                    //put child bloq on top if it is not already:
                     utils.bloqOnTop(bloq2);
                 } else { //parent is bloq2
                     //move bloq
@@ -52,7 +55,7 @@ utils.manageConnections = function(type, bloq1Connection, bloq2Connection, bloq1
                     if (bloq2Connection.type === 'all') {
                         bloq2.setConnectionType(bloq2Connection, bloq1Connection);
                     }
-                    //put child bloq on top if it is not already: 
+                    //put child bloq on top if it is not already:
                     utils.bloqOnTop(bloq1);
                 }
                 bloq1.resetLastDelta();
@@ -96,16 +99,16 @@ utils.bloqOnTop = function(bloq) {
 utils.getOutputBloq = function(bloq, posx, width, height) {
     var path = 'm 36,32 c -4.418,0 -8,-2.582 -8,-7 0,-4.418 3.582,-7 8,-7 l 0,14 z';
     var group = bloq.group();
-    var connector = bloq.path(path).fill('#cccccc'); //.move(posx, posy);
+    var connector = bloq.path(path).fill('#dadada'); //.move(posx, posy);
     connector.x(posx);
     group.add(connector);
-    var outputBloq = bloq.rect(width, height).fill('#cccccc').radius(4).move(posx + 8, 0);
+    var outputBloq = bloq.rect(width, height).fill('#dadada').radius(4).move(posx + 8, 0);
     group.add(outputBloq);
     return group;
 };
 // utils.getBloqPath = function(bloq, bloqData) {
-//     
-//     var path = "m 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 217.11582946777344 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 60 v 25 H 30 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z";
+//
+//     var path = 'm 0,8 A 8,8 0 0,1 8,0 H 15 l 6,4 3,0 6,-4 H 217.11582946777344 v 5 c 0,10 -8,-8 -8,7.5 s 8,-2.5 8,7.5 v 60 v 25 H 30 l -6,4 -3,0 -6,-4 H 8 a 8,8 0 0,1 -8,-8 z';
 //     if (bloqData.down) {
 //         // if it has a down connection, it has to have an up one
 //         // lets see if it has inputs
@@ -137,7 +140,7 @@ utils.getOutputBloq = function(bloq, posx, width, height) {
 utils.getBloqById = function(nodeId, data) {
     for (var bloqIndex in data.bloqs) {
         var bloq = data.bloqs[bloqIndex];
-        if (bloq.id == nodeId) {
+        if (bloq.id === nodeId) {
             return bloq;
         }
     }

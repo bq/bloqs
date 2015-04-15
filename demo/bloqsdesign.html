@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>bloqs demo</title>
+    <link rel="stylesheet" href="./assets/normalize.css" />
+    <link rel="stylesheet" href="./assets/main.css" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="bloqs--container">
+        <div id="field1" class="bloqs--main"></div>
+    </div>
+    <script src="./../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./../bower_components/svg.js/dist/svg.js"></script>
+    <script src="./../bower_components/svg.foreignobject/svg.foreignobject.js"></script>
+    <script src="./../bower_components/svg.draggable/svg.draggable.js"></script>
+    <script src="./../dist/bloqs.min.js"></script>
+    <script>
+    /* begin demo script */
+    var bloqs = new bloqs(),
+        canvas = bloqs.createCanvas("field1");
+    bloqs.getBloq('newGlobalVar', [100, 10]);
+    bloqs.getBloq('getVariable', [100, 85]);
+    bloqs.getBloq('led', [100, 160]);
+    bloqs.getBloq('number', [100, 235]);
+    bloqs.getBloq('text', [100, 310]);
+    bloqs.getBloq('buzzer', [100, 385]);
+    bloqs.getBloq('readSensor', [100, 460]);
+    bloqs.getBloq('forLoop', [100, 535]);
+    </script>
+</body>
+
+</html>
