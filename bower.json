@@ -16,7 +16,8 @@
     "svg.parser.js": "master",
     "svg.foreignobject": "git://github.com/memloom-development/svg.foreignobject.js#master",
     "normalize.css": "~3.0.3",
-    "interact": "~1.2.4"
+    "interact": "~1.2.4",
+    "requirejs": "~2.1.17"
   },
   "homepage": "https://github.com/bq/bloqs",
   "repository": {

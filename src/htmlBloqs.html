@@ -71,14 +71,14 @@
         <div id="field" class="bloqs--main"></div>
         <button>click</button>
     </div>
-    <script src="./../bower_components/jquery/dist/jquery.min.js"></script>
+    <!--<script src="./../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="./../bower_components/interact/interact.js"></script>
-    <script src="./../dist/bloqs2.js"></script>
-    <!--<script data-main="./../src/start" src="./../bower_components/requirejs/require.js"></script>-->
-    <script type="text/javascript">
+    <script src="./../dist/bloqs2.js"></script>-->
+    <script data-main="./../src/start" src="./../bower_components/requirejs/require.js"></script>
+    <!--<script type="text/javascript">
     /*function createBloq(bloqClass) {
-                        var $bloq = $('
-                        <div>', { class: 'bloq' }); var field = $('#field'); $bloq.addClass(bloqClass); $bloq.click(function() { //console.log(bloqClass); }); interact('.' + bloqClass).draggable({ restrict: { restriction: '#field' }, onmove: dragMoveListener, onstart: function(e) { console.log('dragstart'); if (!$(e.target.parentElement).is(field)) { console.log('mi parent no es field'); var $bloq = $(e.target); var x = $bloq.parent().position().left + $bloq.position().left; var y = $bloq.parent().position().top + $bloq.position().top; field.append(e.target); $bloq.css({ webkitTransform: 'translate(' + x + 'px, ' + y + 'px)', transform: 'translate(' + x + 'px, ' + y + 'px)' }); $bloq.attr('data-x', x); $bloq.attr('data-y', y); } } }); field.append($bloq); switch (bloqClass) { case 'forBloq': interact('.' + bloqClass).dropzone({ ondropactivate: function(event) { // add active dropzone feedback event.target.classList.add('drop-active'); }, ondragenter: function(event) { var draggableElement = event.relatedTarget, dropzoneElement = event.target; // feedback the possibility of a drop dropzoneElement.classList.add('drop-target'); draggableElement.classList.add('can-drop'); draggableElement.textContent = 'Dragged in'; }, ondragleave: function(event) { // remove the drop feedback style event.target.classList.remove('drop-target'); event.relatedTarget.classList.remove('can-drop'); event.relatedTarget.textContent = 'Dragged out'; }, ondrop: function(event) { event.relatedTarget.textContent = 'Dropped'; console.log(event.target); $(event.target).append(event.relatedTarget); event.relatedTarget.style.webkitTransform = event.relatedTarget.style.transform = null; event.relatedTarget.setAttribute('data-x', 0); event.relatedTarget.setAttribute('data-y', 0); }, ondropdeactivate: function(event) { // remove active dropzone feedback event.target.classList.remove('drop-active'); event.target.classList.remove('drop-target'); } }); break; case 'varBloq': break; } } function dragMoveListener(event) { var target = event.target, // keep the dragged position in the data-x/data-y attributes x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx, y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy; // translate the element target.style.webkitTransform = target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'; // update the posiion attributes target.setAttribute('data-x', x); target.setAttribute('data-y', y); } createBloq('forBloq'); createBloq('varBloq'); createBloq('bloq1'); createBloq('bloq');*/
+    var $bloq = $('
+    <div>', { class: 'bloq' }); var field = $('#field'); $bloq.addClass(bloqClass); $bloq.click(function() { //console.log(bloqClass); }); interact('.' + bloqClass).draggable({ restrict: { restriction: '#field' }, onmove: dragMoveListener, onstart: function(e) { console.log('dragstart'); if (!$(e.target.parentElement).is(field)) { console.log('mi parent no es field'); var $bloq = $(e.target); var x = $bloq.parent().position().left + $bloq.position().left; var y = $bloq.parent().position().top + $bloq.position().top; field.append(e.target); $bloq.css({ webkitTransform: 'translate(' + x + 'px, ' + y + 'px)', transform: 'translate(' + x + 'px, ' + y + 'px)' }); $bloq.attr('data-x', x); $bloq.attr('data-y', y); } } }); field.append($bloq); switch (bloqClass) { case 'forBloq': interact('.' + bloqClass).dropzone({ ondropactivate: function(event) { // add active dropzone feedback event.target.classList.add('drop-active'); }, ondragenter: function(event) { var draggableElement = event.relatedTarget, dropzoneElement = event.target; // feedback the possibility of a drop dropzoneElement.classList.add('drop-target'); draggableElement.classList.add('can-drop'); draggableElement.textContent = 'Dragged in'; }, ondragleave: function(event) { // remove the drop feedback style event.target.classList.remove('drop-target'); event.relatedTarget.classList.remove('can-drop'); event.relatedTarget.textContent = 'Dragged out'; }, ondrop: function(event) { event.relatedTarget.textContent = 'Dropped'; console.log(event.target); $(event.target).append(event.relatedTarget); event.relatedTarget.style.webkitTransform = event.relatedTarget.style.transform = null; event.relatedTarget.setAttribute('data-x', 0); event.relatedTarget.setAttribute('data-y', 0); }, ondropdeactivate: function(event) { // remove active dropzone feedback event.target.classList.remove('drop-active'); event.target.classList.remove('drop-target'); } }); break; case 'varBloq': break; } } function dragMoveListener(event) { var target = event.target, // keep the dragged position in the data-x/data-y attributes x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx, y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy; // translate the element target.style.webkitTransform = target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'; // update the posiion attributes target.setAttribute('data-x', x); target.setAttribute('data-y', y); } createBloq('forBloq'); createBloq('varBloq'); createBloq('bloq1'); createBloq('bloq');*/
 
 
     var statement = {
@@ -100,20 +100,6 @@
         connectors: [{
             type: 'connector-output',
             accept: ['connector-input']
-        }]
-    };
-
-    var statementInput = {
-        type: 'statementInput',
-        connectors: [{
-            type: 'connector-top',
-            accept: ['connector-bottom']
-        }, {
-            type: 'connector-bottom',
-            accept: ['connector-top']
-        }, {
-            type: 'connector-bottom',
-            accept: ['connector-top']
         }]
     };
 
@@ -145,10 +131,6 @@
             setup: ['{0}'],
             loop: ['{0}']
         }
-    };
-
-    var led = {
-        type: 'statement'
     };
 
     function Bloq(params) {
@@ -218,7 +200,7 @@
     $field.append(bloq1);
     $field.append(bloq2);
     $field.append(bloq3);
-    </script>
+    </script>-->
 </body>
 
 </html>
