@@ -13,31 +13,25 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('./package.json'),
         // Watches files for changes and runs tasks based on the changed files
         watch: {
-            bower: {
-                files: ['bower.json'],
-                tasks: ['wiredep']
+            dev: {
+                files: ['bower.json', 'Gruntfile.js'],
+                tasks: ['newer:jshint:all']
             },
-            js: {
-                files: ['src/{,*/}*.js'],
-                tasks: ['newer:jshint:all'],
+            app: {
+                files: 'dist/<%= pkg.name %>.js',
                 options: {
-                    livereload: '<%= connect.options.livereload %>'
+                    livereload: true
                 }
             },
-            // styles: {
-            //     files: ['src/styles/{,*/}*.css'],
-            //     tasks: ['newer:copy:styles', 'autoprefixer']
-            // },
-            gruntfile: {
-                files: ['Gruntfile.js']
+            styles: {
+                files: ['src/styles/{,*/}*.css'],
+                tasks: ['newer:sass:dev', 'autoprefixer']
             },
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 },
-                files: [
-                    'index.html'
-                ]
+                files: ['index.html']
             }
         },
         // The actual grunt server settings
@@ -54,11 +48,8 @@ module.exports = function(grunt) {
                     middleware: function(connect) {
                         return [
                             connect.static('.tmp'),
-                            connect.static('.'),
-                            connect().use(
-                                '/bower_components',
-                                connect.static('./bower_components')
-                            )
+                            connect.static('src'),
+                            connect.static('dist')
                         ];
                     }
                 }
@@ -68,7 +59,6 @@ module.exports = function(grunt) {
                     port: 9001,
                     middleware: function(connect) {
                         return [
-                            connect.static('.tmp'),
                             connect.static('test'),
                             connect.static('src'),
                             connect().use(
@@ -78,18 +68,18 @@ module.exports = function(grunt) {
                         ];
                     }
                 }
-            },
-            dist: {
-                options: {
-                    open: true,
-                    middleware: function(connect) {
-                        return [
-                            connect.static('dist'),
-                            connect.static('demo')
-                        ];
-                    }
-                }
             }
+            // dist: {
+            //     options: {
+            //         open: true,
+            //         middleware: function(connect) {
+            //             return [
+            //                 connect.static('dist'),
+            //                 connect.static('demo')
+            //             ];
+            //         }
+            //     }
+            // }
         },
         // Make sure code styles are up to par and there are no obvious mistakes
         jshint: {
@@ -108,12 +98,25 @@ module.exports = function(grunt) {
             }
         },
 
-        // Automatically inject Bower components into the app
-        wiredep: {
-            app: {
-                src: ['index.html'],
-                ignorePath: /\.\.\//
+        sass: {
+            dev: {
+                files: {
+                    '.tmp/styles/main.css': 'src/styles/main.scss'
+                }
+            },
+            dist: {
+                files: {
+                    'dist/styles/main.css': 'src/styles/main.scss'
+                }
             }
+        },
+
+        watchify: {
+            compile: {
+                src: './src/**/*.js',
+                dest: 'dist/<%= pkg.name %>.js'
+            }
+
         },
 
         // Reads HTML for usemin blocks to enable smart builds that automatically
@@ -165,54 +168,22 @@ module.exports = function(grunt) {
 
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+                banner: '/* <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n /* Version:<%= pkg.version %> */\n'
             },
             dist: {
                 files: {
                     'dist/<%= pkg.name %>.min.js': ['dist/<%= pkg.name %>.js']
                 }
             }
-        },
-
-        concat: {
-            dist: {
-                options: {
-                    // Replace all 'use strict' statements in the code with a single one at the top
-                    stripBanners: true,
-                    banner: '"use strict";\n',
-                    process: function(src, filepath) {
-                        return '// Source: ' + filepath + '\n' +
-                            src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
-                    },
-                },
-                files: {
-                    'dist/bloqs.js': ['src/utils.js', 'src/bloq.js', 'src/outputBloq.js', 'src/statementBloq.js', 'src/statementInputBloq.js', 'src/projectBloq.js', 'res/basic_bloqs.js', 'src/build/default.js'],
-                },
-            },
-        }
-    });
-
-    grunt.registerTask('prepareServer', 'Prepare dev web server', [
-        // 'clean:server',
-        'jshint:all',
-        'wiredep'
-    ]);
-
-    grunt.registerTask('serve', 'Compile then start a connect web server', function(target) {
-
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
         }
 
-        grunt.task.run([
-            'prepareServer',
-            'connect:livereload',
-            'watch'
-        ]);
     });
 
-    grunt.registerTask('dist', ['jshint:all', 'concat', 'uglify']);
-    grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('compile', ['jshint:all', 'watchify']);
+    grunt.registerTask('server', ['compile', 'connect:livereload', 'watch', 'uglify']);
+
+    grunt.registerTask('dist', ['compile', 'uglify', 'sass:dist']);
+    // grunt.registerTask('test', ['jshint']);
     grunt.registerTask('default', ['dist']);
 
 };

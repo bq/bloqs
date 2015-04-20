@@ -1,59 +1,60 @@
- html {
-     width: 100%;
-     height: 100%;
- }
- 
- #field,
- .bloqs--container {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
- }
- 
- .bloq {
-     margin: 1px;
-     display: block;
-     position: absolute;
- }
- 
- .statementBloq {
-     width: 100px;
-     height: 100px;
-     background-color: #0FF;
- }
- 
- .bloq2 {
-     width: 100px;
-     height: 100px;
-     background-color: #000;
- }
- 
- .forBloq {
-     width: 100px;
-     min-height: 100px;
-     overflow: hidden;
-     border-top: 5px solid #000;
-     border-left: 5px solid #000;
-     border-bottom: 5px solid #000;
- }
- 
- .varBloq {
-     width: 100px;
-     height: 50px;
-     background-color: #FF0;
- }
- 
- .drop-active {
-     background-color: #005;
- }
- 
- .can-drop {
-     background-color: #555;
- }
- 
- .forBloq .bloq {
-     position: static;
-     float: left;
- }
+@import 'variables';
+html {
+    width: 100%;
+    height: 100%;
+}
+
+#field,
+.bloqs--container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bloq {
+    margin: 1px;
+    display: block;
+    position: absolute;
+}
+
+.statementBloq {
+    width: 100px;
+    height: 100px;
+    background-color: #0FF;
+}
+
+.bloq2 {
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+}
+
+.forBloq {
+    width: 100px;
+    min-height: 100px;
+    overflow: hidden;
+    border-top: 5px solid #000;
+    border-left: 5px solid #000;
+    border-bottom: 5px solid #000;
+}
+
+.varBloq {
+    width: 100px;
+    height: 50px;
+    background-color: #FF0;
+}
+
+.drop-active {
+    background-color: #005;
+}
+
+.can-drop {
+    background-color: #555;
+}
+
+.forBloq .bloq {
+    position: static;
+    float: left;
+}

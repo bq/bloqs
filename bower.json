@@ -1,38 +1,41 @@
 {
-  "name": "bloqs",
-  "version": "0.0.1",
-  "main": "dist/bloqs.min.js",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test"
-  ],
-  "dependencies": {
-    "jquery": ">= 1.9.0",
-    "interact": "~1.2.4",
-    "requirejs": "~2.1.17",
-    "lodash": "~3.7.0"
-  },
-  "homepage": "https://github.com/bq/bloqs",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/bq/bloqs.git"
-  },
-  "authors": [
-    "Irene Sanz <irene.sanz@bq.com>",
-    "Laura del Río <laura.delrio@bq.com>",
-    "Diego Segura <diego.segura@bq.com>",
-    "Tom Calvo <tomas.calvo@bq.com>",
-    "Sergio Morcuende <sergio.morcuende@bq.com>",
-    "Jesús Flores <jesus.flores@bq.com>"
-  ],
-  "description": "Library to create bloqs in bitbloq",
-  "moduleType": [
-    "amd"
-  ],
-  "keywords": [
-    "bloqs"
-  ],
-  "license": "MIT"
+    "name": "bloqs",
+    "description": "Library to create bloqs in bitbloq",
+    "version": "0.0.1",
+    "main": "dist/bloqs.min.js",
+    "homepage": "https://github.com/bq/bloqs",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/bq/bloqs.git"
+    },
+    "keywords": [
+        "bq",
+        "bitbloq",
+        "robotics",
+        "arduino",
+        "electronics"
+    ],
+    "license": "MIT",
+    "authors": [
+        "Irene Sanz <irene.sanz@bq.com>",
+        "Laura del Río <laura.delrio@bq.com>",
+        "Diego Segura <diego.segura@bq.com>",
+        "Tom Calvo <tomas.calvo@bq.com>",
+        "Sergio Morcuende <sergio.morcuende@bq.com>",
+        "Jesús Flores <jesus.flores@bq.com>"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test"
+    ],
+    "dependencies": {
+        "jquery": ">= 2.1.0",
+        "interact": "~1.2.4",
+        "lodash": "~3.7.0"
+    },
+    "moduleType": [
+        "amd"
+    ]
 }

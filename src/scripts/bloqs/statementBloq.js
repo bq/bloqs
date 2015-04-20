@@ -1,7 +1,7 @@
-/*global define */
 'use strict';
 
-define(function() {
+module.exports = function() {
+
     return {
         type: 'statement',
         connectors: [{
@@ -14,4 +14,5 @@ define(function() {
 
         }]
     };
-});
+
+};

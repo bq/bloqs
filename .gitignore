@@ -2,7 +2,7 @@ bower_components/
 node_modules/
 .tmp/
 target/
-
+.sass-cache/
 *~
 nbproject
 target/
