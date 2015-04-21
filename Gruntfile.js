@@ -24,8 +24,11 @@ module.exports = function(grunt) {
                 }
             },
             styles: {
-                files: ['src/styles/{,*/}*.css'],
-                tasks: ['newer:sass:dev', 'autoprefixer']
+                files: ['src/styles/{,*/}*.scss'],
+                tasks: ['sass:dev'],
+                options: {
+                    livereload: true
+                }
             },
             livereload: {
                 options: {
@@ -180,7 +183,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('compile', ['jshint:all', 'watchify']);
-    grunt.registerTask('server', ['compile', 'connect:livereload', 'watch', 'uglify']);
+    grunt.registerTask('server', ['compile', 'connect:livereload', 'sass:dev', 'watch']);
 
     grunt.registerTask('dist', ['compile', 'uglify', 'sass:dist']);
     // grunt.registerTask('test', ['jshint']);

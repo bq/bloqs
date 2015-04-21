@@ -1,0 +1,281 @@
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin rigth-corners {
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+@mixin left-corners {
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+input,
+select {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+    box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+    height: 25px;
+    float: left
+}
+
+input {
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: .4em;
+    @include vertical-align;
+    &[type=text] {
+        width: 100px;
+    }
+    &[type=number] {
+        width: 60px;
+    }
+}
+
+span {
+    float: left;
+    margin-left: 1em;
+    margin-right: 1em;
+    @include vertical-align;
+}
+
+select {
+    -webkit-appearance: button;
+    border-radius: .4em;
+    background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Caret_down_font_awesome.svg/120px-Caret_down_font_awesome.svg.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: right 7px bottom 40%;
+    background-size: .8em;
+    overflow: hidden;
+    padding-right: 25px;
+    padding-left: 10px;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    @include vertical-align;
+}
+
+// REMOVE LATER
+.bloq1 {
+    top: 0
+}
+
+.bloq2 {
+    top: 50px;
+}
+
+.bloq3 {
+    top: 100px;
+}
+
+.bloq4 {
+    top: 150px;
+}
+
+.bloq5 {
+    top: 260px;
+}
+
+.bloq6 {
+    top: 150px;
+    left: 460px;
+}
+
+.bloq7 {
+    top: 200px;
+    left: 460px;
+}
+
+.bloq8 {
+    top: 250px;
+    left: 460px;
+}
+
+.bloq9 {
+    top: 300px;
+    left: 460px;
+}
+
+.container {
+    padding: 2em;
+}
+
+.nested--bloq {
+    position: relative!important;
+    z-index: 1;
+}
+
+// Last element of a bloq
+.bloq__inner--last {
+    margin-right: 20px;
+}
+
+// Last input of a bloq
+.bloq__inner--last--input {
+    margin-right: 10px;
+}
+
+// First element of a bloq
+.bloq__inner--first {
+    margin-left: 20px;
+}
+
+// Horizontal separator
+.separator-10 {
+    width: 7px;
+    height: 10px;
+    margin: 0;
+}
+
+// Main bloq
+.bloq {
+    position: absolute;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: .4em;
+    color: gray;
+    background-color: #ebebeb;
+    margin: 2px;
+    &:focus::before {
+        box-shadow: 0 0 2px #f1cb33;
+        outline: 0;
+    }
+    &:focus {
+        box-shadow: 0 0 2px #f1cb33;
+        outline: 0;
+    }
+}
+
+// Bloq statement
+.bloq--statement {
+    height: 40px;
+}
+
+// Bloq Output
+.bloq--output {
+    height: 40px;
+    &:before {
+        content: "";
+        width: 20px;
+        height: 15px;
+        position: absolute;
+        left: -10px;
+        background-color: #ebebeb;
+        border-radius: 100%;
+        top: 12px;
+    }
+    &:after {
+        content: "";
+        width: 14px;
+        height: 19px;
+        position: absolute;
+        left: 1px;
+        background-color: #ebebeb;
+        top: 12px;
+    }
+    .nested--bloq {
+        margin: 0;
+        &:before {
+            border: 2px solid lightgrey;
+        }
+        &:after {
+            left: 0;
+        }
+    }
+}
+
+.bloq--statement-input {
+    border-left: 5px solid blue;
+    background-color: transparent;
+}
+
+// Bloq input
+.bloqinput {
+    position: relative;
+    min-width: 50px;
+    background-color: #dadada;
+    height: 40px;
+    float: left;
+    border-radius: .4em;
+    margin-left: 1em;
+    border-left: 2px solid #dadada;
+    border-right: 2px solid #dadada;
+    &:before {
+        content: "";
+        width: 20px;
+        height: 15px;
+        position: absolute;
+        left: -10px;
+        background-color: #dadada;
+        border-radius: 100%;
+        top: 12px;
+        border: 1px solid #dadada;
+    }
+    &:after {
+        content: "";
+        width: 11px;
+        height: 17px;
+        position: absolute;
+        left: 1px;
+        background-color: #dadada;
+        top: 11px;
+    }
+}
+
+.bloq--extension {
+    width: 100%;
+    border-left: 20px solid #ebebeb;
+}
+
+.bloq--extension--end {
+    @include rigth-corners;
+    height: 20px;
+    width: 100%;
+    background-color: #ebebeb;
+}
+
+.bloq--extension__content {
+    @include left-corners;
+    padding-bottom: 40px;
+    background-color: white;
+    &.filled {
+        margin-top: 40px;
+        padding-top: .1px;
+    }
+}
+
+.bloq--container {
+    border-left: 5px solid blue;
+}
+
+.bloq--statement-input__header {
+    @include rigth-corners;
+    background-color: #ebebeb;
+    height: 40px;
+    &.filled {
+        z-index: 1;
+        top: 0;
+        position: absolute;
+    }
+}
