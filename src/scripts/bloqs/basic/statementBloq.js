@@ -1,7 +1,7 @@
 'use strict';
 
-
 var bloq = {
+
     type: 'statement',
     connectors: [{
         type: 'connector-top',
@@ -14,4 +14,4 @@ var bloq = {
     }]
 };
 
-module.exports = bloq
+module.exports = bloq;
