@@ -21378,19 +21378,21 @@ var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? 
 'use strict';
 
 var $ = require('jquery'),
-    utils = require('./utils');
+    utils = require('./utils'),
+    _ = require('lodash');
 
 
 var connectors = {};
 var bloqs = {};
-
+var availableConnectors = [];
+var bloq;
 
 var dragstart = function(event) {
-    console.log('dragstart');
 
-    var bloq = bloqs[$(event.currentTarget).attr('data-bloq-id')];
-    $(event.currentTarget).attr('tabIndex', 0);
-    console.log(bloq);
+    // console.log('dragstart');
+    bloq = bloqs[$(event.currentTarget).attr('data-bloq-id')];
+
+    // console.log(bloq);
 
     //transparent
     event.originalEvent.dataTransfer.setDragImage(document.getElementById('empty'), 0, 0);
@@ -21406,7 +21408,7 @@ var dragstart = function(event) {
         acceptTypes = acceptTypes.concat(connectors[bloq.connectors[i]].data.accept);
     }
 
-
+    //store the avaliable connectors
     var found = false;
     var j = 0;
     for (var connectorUuid in connectors) {
@@ -21417,16 +21419,41 @@ var dragstart = function(event) {
 
                 if (connectors[connectorUuid].data.type === acceptTypes[j]) {
                     found = true;
-
-                    $('[data-connector-id="' + connectorUuid + '"]').addClass('drop-active');
+                    availableConnectors.push(connectorUuid);
                 }
                 j++;
             }
         }
     }
-
-
 };
+
+
+var connectBloq = function(dragConnectors) {
+    var $dragConnector,
+        $dropConnector,
+        i,
+        found;
+    // For each available connector
+    availableConnectors.forEach(function(dropConnectorUuid) {
+        $dropConnector = $('[data-connector-id="' + dropConnectorUuid + '"]');
+        // For each dragConnector
+        i = 0;
+        found = false;
+        while (!found && (i < dragConnectors.length)) {
+            $dragConnector = $('[data-connector-id="' + dragConnectors[i] + '"]');
+            if ((connectors[dragConnectors[i]].data.type === connectors[dropConnectorUuid].data.accept) && utils.itsOver($dragConnector, $dropConnector, 30)) {
+                found = true;
+            }
+            i++;
+        }
+        if (found) {
+            $dropConnector.addClass('avaliable');
+        } else {
+            $dropConnector.removeClass('avaliable');
+        }
+    });
+};
+
 
 var drag = function(event) {
 
@@ -21443,19 +21470,18 @@ var drag = function(event) {
         // update the posiion attributes
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
+
+        connectBloq(bloq.connectors);
     }
+
 };
 
 var dragend = function() {
-    console.log('dragend');
-    $(event.currentTarget).attr('tabIndex', false);
-    $('.connector').removeClass('drop-active');
+
+    $('.connector.avaliable').removeClass('avaliable');
+    availableConnectors = [];
 };
 
-var drop = function(event) {
-    console.log('drop');
-    console.log(event);
-};
 
 
 var Bloq = function Bloq(params) {
@@ -21467,8 +21493,7 @@ var Bloq = function Bloq(params) {
 
     //creation
 
-    this.$bloq = $('<div>');
-    this.$bloq.attr({
+    this.$bloq = $('<div>').attr({
         'data-bloq-id': this.uuid,
         draggable: true,
         tabIndex: 0
@@ -21476,22 +21501,16 @@ var Bloq = function Bloq(params) {
 
     this.$bloq.addClass('bloq bloq--' + this.bloqData.type);
 
-    //this.$bloq.width(60);
-
-    console.log('params.bloqData');
-    console.log(params.bloqData);
 
     //connectors
     var $tempConnector, tempUuid;
     for (var i = 0; i < params.bloqData.connectors.length; i++) {
         tempUuid = utils.generateUUID();
 
-        $tempConnector = $('<div>');
-        $tempConnector.addClass('connector');
-        $tempConnector.addClass(params.bloqData.connectors[i].type);
-        $tempConnector.attr('data-connector-id', tempUuid);
-        $tempConnector.attr('data-connector-type', params.bloqData.connectors[i].type);
-        $tempConnector.bind('drop', drop);
+        $tempConnector = $('<div>').attr({
+            'data-connector-id': tempUuid
+        });
+        $tempConnector.addClass('connector ' + params.bloqData.connectors[i].type);
 
         connectors[tempUuid] = {
             jqueryObject: $tempConnector,
@@ -21522,14 +21541,13 @@ var Bloq = function Bloq(params) {
     this.$bloq.bind('drag', drag);
     this.$bloq.bind('dragend', dragend);
 
-
     bloqs[this.uuid] = this;
 
     return this.$bloq;
 };
 
 module.exports = Bloq;
-},{"./utils":68,"jquery":1}],4:[function(require,module,exports){
+},{"./utils":68,"jquery":1,"lodash":2}],4:[function(require,module,exports){
 /*global require */
 'use strict';
 
@@ -21632,12 +21650,11 @@ var bloq = {
     type: 'output',
     connectors: [{
         type: 'connector-output',
-        accept: ['connector-input']
+        accept: 'connector-input'
     }]
 };
 
 module.exports = bloq;
-
 },{}],8:[function(require,module,exports){
 'use strict';
 
@@ -21645,18 +21662,17 @@ var bloq = {
 
     type: 'statement',
     connectors: [{
-        type: 'connector-top',
-        accept: ['connector-bottom']
+        type: 'connector--top',
+        accept: 'connector--bottom'
 
     }, {
-        type: 'connector-bottom',
-        accept: ['connector-top']
+        type: 'connector--bottom',
+        accept: 'connector--top'
 
     }]
 };
 
 module.exports = bloq;
-
 },{}],9:[function(require,module,exports){
 'use strict';
 
@@ -21665,18 +21681,17 @@ var bloq = {
     type: 'statementInput',
     connectors: [{
         type: 'connector-top',
-        accept: ['connector-bottom']
+        accept: 'connector-bottom'
     }, {
         type: 'connector-bottom',
-        accept: ['connector-top']
+        accept: 'connector-top'
     }, {
         type: 'connector-bottom',
-        accept: ['connector-top']
+        accept: 'connector-top'
     }]
 };
 
 module.exports = bloq;
-
 },{}],10:[function(require,module,exports){
 /*global require */
 'use strict';
@@ -23490,9 +23505,15 @@ var createBloqElement = function(elementSchema) {
 };
 
 
+var itsOver = function(dragConnector, dropConnector, margin) {
+    margin = margin || 0;
+    return dragConnector.offset().left < (dropConnector.offset().left + dropConnector.width() + margin) && (dragConnector.offset().left + dragConnector.width()) > (dropConnector.offset().left - margin) && dragConnector.offset().top < (dropConnector.offset().top + dropConnector.height() + margin) && (dragConnector.offset().top + dragConnector.height()) > (dropConnector.offset().top - margin);
+};
+
 module.exports.generateUUID = generateUUID;
 module.exports.getNumericStyleProperty = getNumericStyleProperty;
 module.exports.getMousePosition = getMousePosition;
 module.exports.createBloqElement = createBloqElement;
-},{"jquery":1}]},{},[3,5,4,7,6,10,8,9,11,12,13,15,14,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,47,46,48,49,50,51,52,53,54,55,56,58,57,59,60,64,61,62,63,65,66,67,68])
+module.exports.itsOver = itsOver;
+},{"jquery":1}]},{},[3,6,7,4,5,8,9,10,11,12,14,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,35,33,34,36,37,38,40,41,39,42,43,44,45,46,47,48,49,50,51,52,53,55,56,54,58,57,59,61,62,60,63,64,65,66,67,68])
 ;

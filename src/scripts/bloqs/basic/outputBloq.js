@@ -5,7 +5,7 @@ var bloq = {
     type: 'output',
     connectors: [{
         type: 'connector-output',
-        accept: ['connector-input']
+        accept: 'connector-input'
     }]
 };
 
