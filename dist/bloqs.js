@@ -21383,14 +21383,15 @@ var $ = require('jquery'),
 
 var connectors = {};
 var bloqs = {};
-
+var availableConnectors = [];
+var bloq;
 
 var dragstart = function(event) {
-    console.log('dragstart');
 
-    var bloq = bloqs[$(event.currentTarget).attr('data-bloq-id')];
-    $(event.currentTarget).attr('tabIndex', 0);
-    console.log(bloq);
+    // console.log('dragstart');
+    bloq = bloqs[$(event.currentTarget).attr('data-bloq-id')];
+
+    // console.log(bloq);
 
     //transparent
     event.originalEvent.dataTransfer.setDragImage(document.getElementById('empty'), 0, 0);
@@ -21419,17 +21420,34 @@ var dragstart = function(event) {
                     found = true;
 
                     $('[data-connector-id="' + connectorUuid + '"]').addClass('drop-active');
+                    availableConnectors.push(connectorUuid);
                 }
                 j++;
             }
         }
     }
+};
 
+var connectBloq = function(dragConnectors) {
+    var $dragConnector,
+        $dropConnector;
 
+    // For each dragConnector
+    dragConnectors.forEach(function(dragConnector) {
+        $dragConnector = $('[data-connector-id="' + dragConnector + '"]');
+        // For each available connector
+        availableConnectors.forEach(function(dropConnector) {
+            $dropConnector = $('[data-connector-id="' + dropConnector + '"]');
+
+            if (utils.itsOver($dragConnector, $dropConnector)) {
+                console.log('its Over!');
+            }
+
+        });
+    });
 };
 
 var drag = function(event) {
-
     if (event.originalEvent.clientX && event.originalEvent.clientY) {
 
         var target = event.target,
@@ -21444,12 +21462,12 @@ var drag = function(event) {
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
     }
+    connectBloq(bloq.connectors);
 };
 
 var dragend = function() {
-    console.log('dragend');
-    $(event.currentTarget).attr('tabIndex', false);
-    $('.connector').removeClass('drop-active');
+    $('.drop-active').removeClass('drop-active');
+    availableConnectors = [];
 };
 
 var drop = function(event) {
@@ -21467,19 +21485,15 @@ var Bloq = function Bloq(params) {
 
     //creation
 
-    this.$bloq = $('<div>');
+    this.$bloq = $('<div tabindex="0">');
+
+    this.$bloq.addClass('bloq bloq--' + this.bloqData.type);
+
     this.$bloq.attr({
         'data-bloq-id': this.uuid,
         draggable: true,
         tabIndex: 0
     });
-
-    this.$bloq.addClass('bloq bloq--' + this.bloqData.type);
-
-    //this.$bloq.width(60);
-
-    console.log('params.bloqData');
-    console.log(params.bloqData);
 
     //connectors
     var $tempConnector, tempUuid;
@@ -21492,7 +21506,6 @@ var Bloq = function Bloq(params) {
         $tempConnector.attr('data-connector-id', tempUuid);
         $tempConnector.attr('data-connector-type', params.bloqData.connectors[i].type);
         $tempConnector.bind('drop', drop);
-
         connectors[tempUuid] = {
             jqueryObject: $tempConnector,
             uuid: tempUuid,
@@ -21518,10 +21531,11 @@ var Bloq = function Bloq(params) {
 
 
     //binds
+    this.$bloq.addClass('bloq');
+    this.$bloq.addClass('bloq--' + this.bloqData.type);
     this.$bloq.bind('dragstart', dragstart);
     this.$bloq.bind('drag', drag);
     this.$bloq.bind('dragend', dragend);
-
 
     bloqs[this.uuid] = this;
 
@@ -21529,23 +21543,21 @@ var Bloq = function Bloq(params) {
 };
 
 module.exports = Bloq;
-},{"./utils":68,"jquery":1}],4:[function(require,module,exports){
+},{"./utils":82,"jquery":1}],4:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var StatementBloq = require('./../statementBloq');
 
-var bloq = _.merge(Object.create(OutputBloq), {
+var bloq = _.merge(Object.create(StatementBloq), {
 
-    name: 'analogicValue',
+    name: 'code',
     content: [
         [{
-            alias: 'text',
-            value: 'el valor analógico'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
+            alias: 'strigInput',
+            value: '',
+            placeholder: 'Escribe tu propio código'
         }]
     ],
     code: {
@@ -21556,12 +21568,1387 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],5:[function(require,module,exports){
+},{"./../statementBloq":70,"lodash":2}],5:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'comment',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Comentario //'
+        }, {
+            alias: 'stringInput',
+            value: ''
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],6:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'bluetoothRecive',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Bluetooth: recibir'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../outputBloq":69,"lodash":2}],7:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'bluetoothSend',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Bluetooth: enviar datos'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],8:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'convert',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Convertir'
+        }, {
+            alias: 'dropdown',
+            options: ['Decimal', 'Hexadecimal', 'Octal', 'Binario']
+        }, {
+            alias: 'text',
+            value: 'en valor'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'number'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../outputBloq":69,"lodash":2}],9:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'print',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Imprimir por puerto serie'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],10:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'println',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Imprimir por puerto serie con salto de línea'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],11:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'readPort',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Leer desde puerto serie'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../outputBloq":69,"lodash":2}],12:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'seriePort',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Puerto serie disponible'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'ejecutar:'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],13:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'seriePortBluetooth',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Bluetooth: puerto serie disponible'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'ejecutar:'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],14:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'buzzerAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Sonar el buzzer'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'con la nota'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'number'
+        }, {
+            alias: 'text',
+            value: 'durante'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'ms'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],15:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'continuousServoStartAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Girar servo'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'en sentido'
+        }, {
+            alias: 'dropdown',
+            options: ['horario', 'antihorario']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],16:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'continuousServoStopAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Parar servo'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],17:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'lcdTurnOnOffAdvanced',
+    content: [
+        [{
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'Encender la luz del LCD'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],18:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'lcdWriteAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Escribir'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'en el LCD'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],19:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'LEDAdvanced',
+    content: [
+        [{
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'el LED'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],20:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'oscillatorAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Oscilar servo'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'alrededor de'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'con amplitud'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'con velocidad'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],21:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'oscillatorStartAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Reproducir oscilador'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],22:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'oscillatorStopAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Parar oscilador'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],23:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'pinReadAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Leer el pin'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../outputBloq":69,"lodash":2}],24:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'pinWriteAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Escribir en el pin'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'el dato'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],25:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'readAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Leer'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../outputBloq":69,"lodash":2}],26:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'servoAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Mover'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'de'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'a'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'grados'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../statementBloq":70,"lodash":2}],27:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'TurnOnOffAdvanced',
+    content: [
+        [{
+            alias: 'dropdown',
+            options: ['Encender', 'Apagar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../outputBloq":69,"lodash":2}],28:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'buzzer',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Sonar el buzzer'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }, {
+            alias: 'text',
+            value: 'con la nota'
+        }, {
+            alias: 'dropdown',
+            options: ['Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Si']
+        }, {
+            alias: 'text',
+            value: 'durante'
+        }, {
+            alias: 'numberInput',
+            value: 0
+        }, {
+            alias: 'text',
+            value: 'ms'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],29:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'continuousServoStart',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Girar servo'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }, {
+            alias: 'text',
+            value: 'en sentido'
+        }, {
+            alias: 'dropdown',
+            options: ['horario', 'antihorario']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],30:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'continuousServoStop',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Parar servo'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],31:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'lcdTurnOnOff',
+    content: [
+        [{
+            alias: 'dropdown',
+            options: ['Encender', 'Apagar']
+        }, {
+            alias: 'text',
+            value: 'Encender la luz del LCD'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],32:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'lcdWrite',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Escribir'
+        }, {
+            alias: 'stringInput',
+            value: ''
+        }, {
+            alias: 'text',
+            value: 'en el LCD'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],33:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'LED',
+    content: [
+        [{
+            alias: 'dropdown',
+            options: ['Encender', 'Apagar']
+        }, {
+            alias: 'text',
+            value: 'el LED'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],34:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'oscillator',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Oscilar servo'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }, {
+            alias: 'text',
+            value: 'alrededor de'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'con amplitud'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'con velocidad'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],35:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'oscillatorStart',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Reproducir oscilador'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],36:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'oscillatorStop',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Parar oscilador'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],37:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'readDropdown',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Leer'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../outputBloq":69,"lodash":2}],38:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'servo',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Mover'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }, {
+            alias: 'text',
+            value: 'de'
+        }, {
+            alias: 'numberInput',
+            value: 0
+        }, {
+            alias: 'text',
+            value: 'a'
+        }, {
+            alias: 'numberInput',
+            value: 0
+        }, {
+            alias: 'text',
+            value: 'grados'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],39:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'break',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Interrumpir el bucle'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],40:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+    name: 'case',
+    content: [
+        [{
+            alias: 'text',
+            value: 'si es igual a'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'ejecutar:'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],41:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'caseDefault',
+    content: [
+        [{
+            alias: 'text',
+            value: 'en otro caso, ejecutar:'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],42:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'continue',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Continuar con la siguiente iteracción del bucle'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],43:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'else',
+    content: [
+        [{
+            alias: 'text',
+            value: 'de lo contrario ejecutar:'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],44:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'elseif',
+    content: [
+        [{
+            alias: 'text',
+            value: 'en cambio, si'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'ejecutar:'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],45:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'for',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Contar con'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'desde'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'hasta'
+        }, {
+            alias: 'dropdown',
+            options: ['sumando', 'restando']
+        }, {
+            alias: 'text',
+            value: 'ejecutar:'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],46:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'if',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Si'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'ejecutar:'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],47:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'switch',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Comprobar si'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }, {
+            alias: 'text',
+            value: 'ejecutar:'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],48:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'comment',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Esperar'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],49:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'while',
+    content: [
+        [{
+            alias: 'dropdown',
+            options: ['mientras', 'hasta']
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'text',
+            value: 'ejecutar:'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],50:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -21569,10 +22956,10 @@ var bloq = _.merge(Object.create(OutputBloq), {
     content: [
         [{
             alias: 'text',
-            value: 'Variable'
+            value: 'variable'
         }, {
             alias: 'dropdown',
-            value: ['int', 'string']
+            options: ['int', 'string', 'boolean']
         }, {
             alias: 'varInput',
             value: 'x'
@@ -21582,12 +22969,338 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],6:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],51:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var StatementBloq = require('./../statementBloq');
+
+var bloq = _.merge(Object.create(StatementBloq), {
+
+    name: 'functionInvoke',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Ejecutar'
+        },{
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementBloq":70,"lodash":2}],52:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'functionReturn',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Declarar función'
+        }, {
+            alias: 'stringInput',
+            value: 'nombreFuncion'
+        }],
+        [{
+            alias: 'text',
+            value: 'devuelve'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],53:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'functionReturnArguments',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Declarar función'
+        }, {
+            alias: 'stringInput',
+            value: 'nombreFuncion'
+        }, {
+            alias: 'text',
+            value: 'contando con'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'var'
+        }],
+        [{
+            alias: 'text',
+            value: 'devuelve'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],54:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'functionReturnInvoke',
+    content: [
+        [{
+            alias: 'text',
+            value: 'ejecutar'
+        },{
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../outputBloq":69,"lodash":2}],55:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'functionVoid',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Declarar función'
+        }, {
+            alias: 'stringInput',
+            value: 'nombreFuncion'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],56:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var StatementInputBloq = require('./../statementInputBloq');
+
+var bloq = _.merge(Object.create(StatementInputBloq), {
+
+    name: 'functionVoidArguments',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Declarar función'
+        }, {
+            alias: 'stringInput',
+            value: 'nombreFuncion'
+        }, {
+            alias: 'text',
+            value: 'contando con'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'var'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../statementInputBloq":71,"lodash":2}],57:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'return',
+    content: [
+        [{
+            alias: 'text',
+            value: 'devuelve'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../outputBloq":69,"lodash":2}],58:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'boolean',
+    content: [
+        [{
+            alias: 'dropdown',
+            options: ['verdadero', 'falso']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../outputBloq":69,"lodash":2}],59:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'equalityOperations',
+    content: [
+        [{
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'dropdown',
+            options: ['=', '≠', '>', '≥', '<', '≤']
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../outputBloq":69,"lodash":2}],60:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'logicOperations',
+    content: [
+        [{
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }, {
+            alias: 'dropdown',
+            options: ['y', 'o']
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../outputBloq":69,"lodash":2}],61:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'not',
+    content: [
+        [{
+            alias: 'text',
+            value: 'no'
+        }, {
+            alias: 'bloqInput',
+            acceptType: 'all'
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../outputBloq":69,"lodash":2}],62:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -21624,65 +23337,12 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],7:[function(require,module,exports){
-'use strict';
-
-var bloq = {
-
-    type: 'output',
-    connectors: [{
-        type: 'connector-output',
-        accept: ['connector-input']
-    }]
-};
-
-module.exports = bloq;
-
-},{}],8:[function(require,module,exports){
-'use strict';
-
-var bloq = {
-
-    type: 'statement',
-    connectors: [{
-        type: 'connector-top',
-        accept: ['connector-bottom']
-
-    }, {
-        type: 'connector-bottom',
-        accept: ['connector-top']
-
-    }]
-};
-
-module.exports = bloq;
-
-},{}],9:[function(require,module,exports){
-'use strict';
-
-var bloq = {
-
-    type: 'statementInput',
-    connectors: [{
-        type: 'connector-top',
-        accept: ['connector-bottom']
-    }, {
-        type: 'connector-bottom',
-        accept: ['connector-top']
-    }, {
-        type: 'connector-bottom',
-        accept: ['connector-top']
-    }]
-};
-
-module.exports = bloq;
-
-},{}],10:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],63:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -21693,7 +23353,7 @@ var bloq = _.merge(Object.create(OutputBloq), {
             acceptType: 'all'
         }, {
             alias: 'dropdown',
-            value: ['+', '-', '×', '÷', '^']
+            options: ['+', '-', '×', '÷', '^']
         }, {
             alias: 'bloqInput',
             acceptType: 'all'
@@ -21707,772 +23367,12 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],11:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],64:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
-
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'bluetoothRecive',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Bluetooth: recibir'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/outputBloq":7,"lodash":2}],12:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'bluetoothSend',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Bluetooth: enviar datos'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],13:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
-
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'boolean',
-    content: [
-        [{
-            alias: 'dropdown',
-            value: ['verdadero', 'falso']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/outputBloq":7,"lodash":2}],14:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'break',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Interrumpir el bucle'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],15:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'buzzer',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Sonar el buzzer'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }, {
-            alias: 'text',
-            value: 'con la nota'
-        }, {
-            alias: 'dropdown',
-            value: ['Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Si']
-        }, {
-            alias: 'text',
-            value: 'durante'
-        }, {
-            alias: 'numberInput',
-            value: 0
-        }, {
-            alias: 'text',
-            value: 'ms'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],16:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-    name: 'case',
-    content: [
-        [{
-            alias: 'text',
-            value: 'si es igual a'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'ejecutar:'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],17:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-
-    name: 'caseDefault',
-    content: [
-        [{
-            alias: 'text',
-            value: 'en otro caso, ejecutar:'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],18:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'code',
-    content: [
-        [{
-            alias: 'strigInput',
-            value: '',
-            placeholder: 'Escribe tu propio código'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],19:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'comment',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Comentario //'
-        }, {
-            alias: 'stringInput',
-            value: ''
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],20:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'continue',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Continuar con la siguiente iteracción del bucle'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],21:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'continuousServoStart',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Girar servo'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }, {
-            alias: 'text',
-            value: 'en sentido'
-        }, {
-            alias: 'dropdown',
-            value: ['horario', 'antihorario']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],22:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'continuousServoStop',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Parar servo'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],23:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
-
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'convert',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Convertir'
-        }, {
-            alias: 'dropdown',
-            value: ['Decimal', 'Hexadecimal', 'Octal', 'Binario']
-        }, {
-            alias: 'text',
-            value: 'en valor'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'number'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/outputBloq":7,"lodash":2}],24:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-
-    name: 'else',
-    content: [
-        [{
-            alias: 'text',
-            value: 'de lo contrario ejecutar:'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],25:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-
-    name: 'elseif',
-    content: [
-        [{
-            alias: 'text',
-            value: 'en cambio, si'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'ejecutar:'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],26:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
-
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'equalityOperations',
-    content: [
-        [{
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'dropdown',
-            value: ['=', '≠', '>', '≥', '<', '≤']
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/outputBloq":7,"lodash":2}],27:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-
-    name: 'for',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Contar con'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'desde'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'hasta'
-        }, {
-            alias: 'dropdown',
-            value: ['sumando', 'restando']
-        }, {
-            alias: 'text',
-            value: 'ejecutar:'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],28:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'functionInvoke',
-    content: [
-        [{
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],29:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-
-    name: 'functionReturn',
-    content: [
-        [{
-            alias: 'stringInput',
-            value: '',
-            placeholder: 'función con retorno'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'ejecutar:'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }],
-        [{
-            alias: 'text',
-            value: 'devuelve'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],30:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-
-    name: 'functionVoid',
-    content: [
-        [{
-            alias: 'stringInput',
-            value: '',
-            placeholder: 'función sin retorno'
-        }, {
-            alias: 'text',
-            value: 'ejecutar:'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],31:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-
-    name: 'if',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Si'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'ejecutar:'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],32:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'lcdTurnOn',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Encender la luz del LCD'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],33:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'lcdWrite',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Escribir'
-        }, {
-            alias: 'stringInput',
-            value: ''
-        }, {
-            alias: 'text',
-            value: 'en el LCD'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],34:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'LED',
-    content: [
-        [{
-            alias: 'dropdown',
-            value: ['Encender', 'Apagar']
-        }, {
-            alias: 'text',
-            value: 'el LED'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],35:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
-
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'length',
-    content: [
-        [{
-            alias: 'text',
-            value: 'longitud'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/outputBloq":7,"lodash":2}],36:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
-
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'logicOperations',
-    content: [
-        [{
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'dropdown',
-            value: ['y', 'o']
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/outputBloq":7,"lodash":2}],37:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -22503,12 +23403,12 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],38:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],65:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -22557,12 +23457,12 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],39:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],66:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -22570,7 +23470,7 @@ var bloq = _.merge(Object.create(OutputBloq), {
     content: [
         [{
             alias: 'dropdown',
-            value: ['Raíz cuadrada', 'Valor absoluto', '-', 'ln', 'log10', 'e^', '10^']
+            options: ['Raíz cuadrada', 'Valor absoluto', '-', 'ln', 'log10', 'e^', '10^']
         }, {
             alias: 'bloqInput',
             acceptType: 'all'
@@ -22584,39 +23484,12 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],40:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],67:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
-
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'not',
-    content: [
-        [{
-            alias: 'text',
-            value: 'no'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/outputBloq":7,"lodash":2}],41:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -22635,228 +23508,12 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],42:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],68:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'oscillator',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Oscilar servo'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }, {
-            alias: 'text',
-            value: 'alrededor de'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'con amplitud'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'con velocidad'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],43:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'oscillatorStart',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Reproducir oscilador'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],44:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'oscillatorStop',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Parar oscilador'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],45:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
-
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'pinRead',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Leer el pin'
-        }, {
-            alias: 'dropdown',
-            value: ['digital', 'analógico']
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/outputBloq":7,"lodash":2}],46:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'pinWrite',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Escribe en el pin digital'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }, {
-            alias: 'text',
-            value: 'estado'
-        }, {
-            alias: 'dropdown',
-            value: ['alto', 'bajo']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],47:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'print',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Imprimir por puerto serie'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],48:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'println',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Imprimir por puerto serie con salto de línea'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],49:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -22884,71 +23541,73 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],50:[function(require,module,exports){
-/*global require */
+},{"./../outputBloq":69,"lodash":2}],69:[function(require,module,exports){
 'use strict';
 
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var bloq = {
 
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'readOutput',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Leer desde puerto serie'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
+    type: 'output',
+    connectors: [{
+        type: 'connector--output',
+        accept: ['connector--input']
+    }]
+};
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],51:[function(require,module,exports){
-/*global require */
+},{}],70:[function(require,module,exports){
 'use strict';
 
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var bloq = {
 
-var bloq = _.merge(Object.create(OutputBloq), {
+    type: 'statement',
+    connectors: [{
+        type: 'connector--top',
+        accept: ['connector--bottom']
 
-    name: 'readDropdown',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Leer'
-        }, {
-            alias: 'dropdown',
-            value: ['Seleccionar']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
+    }, {
+        type: 'connector--bottom',
+        accept: ['connector--top']
+
+    }]
+};
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],52:[function(require,module,exports){
+},{}],71:[function(require,module,exports){
+'use strict';
+
+var bloq = {
+
+    type: 'statementInput',
+    connectors: [{
+        type: 'connector--top',
+        accept: ['connector--bottom']
+    }, {
+        type: 'connector--bottom',
+        accept: ['connector--top']
+    }, {
+        type: 'connector--bottom',
+        accept: ['connector--top']
+    }]
+};
+
+module.exports = bloq;
+
+},{}],72:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
-    name: 'readOut',
+    name: 'length',
     content: [
         [{
             alias: 'text',
-            value: 'Leer'
+            value: 'longitud'
         }, {
             alias: 'bloqInput',
             acceptType: 'all'
@@ -22962,161 +23621,12 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],53:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],73:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
-
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'return',
-    content: [
-        [{
-            alias: 'text',
-            value: 'devuelve'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/outputBloq":7,"lodash":2}],54:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-
-    name: 'seriePort',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Puerto serie disponible'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'ejecutar:'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],55:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-
-    name: 'seriePortBluetooth',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Bluetooth: puerto serie disponible'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'ejecutar:'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],56:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'servo',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Mover mini servo de'
-        }, {
-            alias: 'numberInput',
-            placeholder: '0'
-        }, {
-            alias: 'text',
-            value: 'a'
-        }, {
-            alias: 'numberInput',
-            placeholder: '0'
-        }, {
-            alias: 'text',
-            value: 'grados'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-},{"./basic/statementBloq":8,"lodash":2}],57:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
-
-var bloq = _.merge(Object.create(OutputBloq), {
-
-    name: 'specialCharacters',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Caracteres especiales'
-        }, {
-            alias: 'dropdown',
-            value: ['tabulador', 'Retorno de carro', 'Salto de línea']
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/outputBloq":7,"lodash":2}],58:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -23127,7 +23637,7 @@ var bloq = _.merge(Object.create(OutputBloq), {
             value: '"'
         }, {
             alias: 'stringInput',
-            value: ''
+            value: 'Texto'
         }, {
             alias: 'text',
             value: '"'
@@ -23141,12 +23651,12 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],59:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],74:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
+var StatementBloq = require('./../statementBloq');
 
 var bloq = _.merge(Object.create(StatementBloq), {
 
@@ -23168,26 +23678,23 @@ var bloq = _.merge(Object.create(StatementBloq), {
 
 module.exports = bloq;
 
-},{"./basic/statementBloq":8,"lodash":2}],60:[function(require,module,exports){
+},{"./../statementBloq":70,"lodash":2}],75:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
+var OutputBloq = require('./../../outputBloq');
 
-var bloq = _.merge(Object.create(StatementInputBloq), {
+var bloq = _.merge(Object.create(OutputBloq), {
 
-    name: 'switch',
+    name: 'variableHwAdvanced',
     content: [
         [{
             alias: 'text',
-            value: 'Comprobar si'
+            value: 'Variable (componentes)'
         }, {
             alias: 'dropdown',
-            value: ['Seleccionar']
-        }, {
-            alias: 'text',
-            value: 'ejecutar:'
+            options: ['Seleccionar']
         }]
     ],
     code: {
@@ -23198,12 +23705,39 @@ var bloq = _.merge(Object.create(StatementInputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/statementInputBloq":9,"lodash":2}],61:[function(require,module,exports){
+},{"./../../outputBloq":69,"lodash":2}],76:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var OutputBloq = require('./../../outputBloq');
+
+var bloq = _.merge(Object.create(OutputBloq), {
+
+    name: 'variableSwAdvanced',
+    content: [
+        [{
+            alias: 'text',
+            value: 'Variable (software)'
+        }, {
+            alias: 'dropdown',
+            options: ['Seleccionar']
+        }]
+    ],
+    code: {
+        setup: ['{0}'],
+        loop: ['{0}']
+    }
+});
+
+module.exports = bloq;
+
+},{"./../../outputBloq":69,"lodash":2}],77:[function(require,module,exports){
+/*global require */
+'use strict';
+
+var _ = require('lodash');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -23214,7 +23748,7 @@ var bloq = _.merge(Object.create(OutputBloq), {
             value: 'Variable'
         }, {
             alias: 'dropdown',
-            value: ['Seleccionar']
+            options: ['Seleccionar']
         }, {
             alias: 'text',
             value: '['
@@ -23230,12 +23764,12 @@ var bloq = _.merge(Object.create(OutputBloq), {
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],62:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],78:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
+var StatementBloq = require('./../statementBloq');
 
 var bloq = _.merge(Object.create(StatementBloq), {
 
@@ -23246,8 +23780,7 @@ var bloq = _.merge(Object.create(StatementBloq), {
             value: 'Declarar variable'
         }, {
             alias: 'varInput',
-            value: '',
-            placeholder: 'Nombre'
+            value: 'Nombre'
         }, {
             alias: 'text',
             value: '='
@@ -23261,12 +23794,12 @@ var bloq = _.merge(Object.create(StatementBloq), {
 
 module.exports = bloq;
 
-},{"./basic/statementBloq":8,"lodash":2}],63:[function(require,module,exports){
+},{"./../statementBloq":70,"lodash":2}],79:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var OutputBloq = require('./basic/outputBloq');
+var OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(Object.create(OutputBloq), {
 
@@ -23277,19 +23810,19 @@ var bloq = _.merge(Object.create(OutputBloq), {
             value: 'Variable'
         }, {
             alias: 'dropdown',
-            value: ['Seleccionar']
+            options: ['Seleccionar']
         }]
     ]
 });
 
 module.exports = bloq;
 
-},{"./basic/outputBloq":7,"lodash":2}],64:[function(require,module,exports){
+},{"./../outputBloq":69,"lodash":2}],80:[function(require,module,exports){
 /*global require */
 'use strict';
 
 var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
+var StatementBloq = require('./../statementBloq');
 
 var bloq = _.merge(Object.create(StatementBloq), {
 
@@ -23314,72 +23847,15 @@ var bloq = _.merge(Object.create(StatementBloq), {
 
 module.exports = bloq;
 
-},{"./basic/statementBloq":8,"lodash":2}],65:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementBloq = require('./basic/statementBloq');
-
-var bloq = _.merge(Object.create(StatementBloq), {
-
-    name: 'comment',
-    content: [
-        [{
-            alias: 'text',
-            value: 'Esperar'
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementBloq":8,"lodash":2}],66:[function(require,module,exports){
-/*global require */
-'use strict';
-
-var _ = require('lodash');
-var StatementInputBloq = require('./basic/statementInputBloq');
-
-var bloq = _.merge(Object.create(StatementInputBloq), {
-
-    name: 'while',
-    content: [
-        [{
-            alias: 'dropdown',
-            value: ['mientras', 'hasta']
-        }, {
-            alias: 'bloqInput',
-            acceptType: 'all'
-        }, {
-            alias: 'text',
-            value: 'ejecutar:'
-        }]
-    ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
-});
-
-module.exports = bloq;
-
-},{"./basic/statementInputBloq":9,"lodash":2}],67:[function(require,module,exports){
+},{"./../statementBloq":70,"lodash":2}],81:[function(require,module,exports){
 'use strict';
 
 var $ = require('jquery');
 var Bloq = require('./bloq');
 
-var ledSchema = require('./bloqs/led');
-var servoSchema = require('./bloqs/servo');
-var buzzerSchema = require('./bloqs/buzzer');
+var ledSchema = require('./bloqs/components/led');
+var servoSchema = require('./bloqs/components/servo');
+var buzzerSchema = require('./bloqs/components/buzzer');
 
 var $field = $('#field');
 var bloq1 = new Bloq({
@@ -23407,7 +23883,8 @@ bloq1.css({
     top: '300px',
     left: '300px'
 });
-},{"./bloq":3,"./bloqs/buzzer":15,"./bloqs/led":34,"./bloqs/servo":56,"jquery":1}],68:[function(require,module,exports){
+
+},{"./bloq":3,"./bloqs/components/buzzer":28,"./bloqs/components/led":33,"./bloqs/components/servo":38,"jquery":1}],82:[function(require,module,exports){
 /*jshint bitwise: false*/
 /*global require */
 'use strict';
@@ -23490,9 +23967,14 @@ var createBloqElement = function(elementSchema) {
 };
 
 
+var itsOver = function(dragConnector, dropConnector) {
+    return dragConnector.offset().left < (dropConnector.offset().left + dropConnector.width()) && (dragConnector.offset().left + dragConnector.width()) > dropConnector.offset().left && dragConnector.offset().top < (dropConnector.offset().top + dropConnector.height()) && (dragConnector.offset().top + dragConnector.height()) > dropConnector.offset().top;
+};
+
 module.exports.generateUUID = generateUUID;
 module.exports.getNumericStyleProperty = getNumericStyleProperty;
 module.exports.getMousePosition = getMousePosition;
 module.exports.createBloqElement = createBloqElement;
-},{"jquery":1}]},{},[3,5,4,7,6,10,8,9,11,12,13,15,14,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,47,46,48,49,50,51,52,53,54,55,56,58,57,59,60,64,61,62,63,65,66,67,68])
+module.exports.itsOver = itsOver;
+},{"jquery":1}]},{},[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82])
 ;

@@ -3,9 +3,9 @@
 var $ = require('jquery');
 var Bloq = require('./bloq');
 
-var ledSchema = require('./bloqs/led');
-var servoSchema = require('./bloqs/servo');
-var buzzerSchema = require('./bloqs/buzzer');
+var ledSchema = require('./bloqs/components/led');
+var servoSchema = require('./bloqs/components/servo');
+var buzzerSchema = require('./bloqs/components/buzzer');
 
 var $field = $('#field');
 var bloq1 = new Bloq({
