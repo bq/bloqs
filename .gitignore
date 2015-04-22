@@ -4,10 +4,9 @@ node_modules/
 target/
 .sass-cache/
 *~
-
+.*
 nbproject
 target/
-
 # Editor File Ignore
 *.sublime-project
 *.sublime-workspace

@@ -2,28 +2,28 @@
 'use strict';
 
 var $ = require('jquery'),
-    utils = require('./utils');
+    utils = require('./utils'),
 
+    connectors = {},
+    bloqs = {},
+    availableConnectors = [],
+    dropToCoords = null,
+    bloq;
 
-var connectors = {};
-var bloqs = {};
-var availableConnectors = [];
-var bloq;
-
-var dragstart = function(event) {
-
+var dragstart = function(evt) {
+    $(evt.currentTarget).css('transition', 'none');
     // console.log('dragstart');
-    bloq = bloqs[$(event.currentTarget).attr('data-bloq-id')];
+    bloq = bloqs[$(evt.currentTarget).attr('data-bloq-id')];
 
     // console.log(bloq);
 
     //transparent
-    event.originalEvent.dataTransfer.setDragImage(document.getElementById('empty'), 0, 0);
+    evt.originalEvent.dataTransfer.setDragImage(document.getElementById('empty'), 0, 0);
 
-    var mousePosition = utils.getMousePosition(event.currentTarget);
+    var mousePosition = utils.getMousePosition(evt.currentTarget);
 
-    event.currentTarget.setAttribute('data-drag-mouseX', (event.originalEvent.pageX - mousePosition.x));
-    event.currentTarget.setAttribute('data-drag-mouseY', (event.originalEvent.pageY - mousePosition.y));
+    evt.currentTarget.setAttribute('data-drag-mouseX', (evt.originalEvent.pageX - mousePosition.x));
+    evt.currentTarget.setAttribute('data-drag-mouseY', (evt.originalEvent.pageY - mousePosition.y));
 
     var acceptTypes = [];
 
@@ -31,7 +31,7 @@ var dragstart = function(event) {
         acceptTypes = acceptTypes.concat(connectors[bloq.connectors[i]].data.accept);
     }
 
-
+    //store the avaliable connectors
     var found = false;
     var j = 0;
     for (var connectorUuid in connectors) {
@@ -42,8 +42,6 @@ var dragstart = function(event) {
 
                 if (connectors[connectorUuid].data.type === acceptTypes[j]) {
                     found = true;
-
-                    $('[data-connector-id="' + connectorUuid + '"]').addClass('drop-active');
                     availableConnectors.push(connectorUuid);
                 }
                 j++;
@@ -52,26 +50,48 @@ var dragstart = function(event) {
     }
 };
 
+
 var connectBloq = function(dragConnectors) {
     var $dragConnector,
-        $dropConnector;
+        $dropConnector,
+        i,
+        noMatchCounter = 0,
+        found;
+    // For each available connector
 
-    // For each dragConnector
-    dragConnectors.forEach(function(dragConnector) {
-        $dragConnector = $('[data-connector-id="' + dragConnector + '"]');
-        // For each available connector
-        availableConnectors.forEach(function(dropConnector) {
-            $dropConnector = $('[data-connector-id="' + dropConnector + '"]');
-
-            if (utils.itsOver($dragConnector, $dropConnector)) {
-                console.log('its Over!');
+    availableConnectors.forEach(function(dropConnectorUuid) {
+        $dropConnector = $('[data-connector-id="' + dropConnectorUuid + '"]');
+        i = 0;
+        found = false;
+        while (!found && (i < dragConnectors.length)) {
+            $dragConnector = $('[data-connector-id="' + dragConnectors[i] + '"]');
+            if ((connectors[dragConnectors[i]].data.type === connectors[dropConnectorUuid].data.accept) && utils.itsOver($dragConnector, $dropConnector, 20)) {
+                found = true;
+            } else {}
+            i++;
+        }
+        if (found) {
+            dropToCoords = $dropConnector.parent().offset();
+            $dropConnector.addClass('avaliable');
+            if ($dropConnector.hasClass('connector--top')) {
+                dropToCoords.top -= $dropConnector.parent().height() + 2;
+            } else {
+                dropToCoords.top += $dropConnector.parent().height() + 2;
             }
-
-        });
+        } else {
+            noMatchCounter++;
+            $dropConnector.removeClass('avaliable');
+        }
     });
+
+    if (noMatchCounter === availableConnectors.length) {
+        dropToCoords = null;
+    }
 };
 
+
 var drag = function(event) {
+
     if (event.originalEvent.clientX && event.originalEvent.clientY) {
 
         var target = event.target,
@@ -85,19 +105,21 @@ var drag = function(event) {
         // update the posiion attributes
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
+
+        connectBloq(bloq.connectors);
     }
-    connectBloq(bloq.connectors);
+
 };
 
-var dragend = function() {
-    $('.drop-active').removeClass('drop-active');
+var dragend = function(evt) {
+    if (dropToCoords) {
+        $(evt.currentTarget).css('transition', 'all .1s linear');
+        $(evt.currentTarget).offset(dropToCoords);
+    }
+    $('.connector.avaliable').removeClass('avaliable');
     availableConnectors = [];
 };
 
-var drop = function(event) {
-    console.log('drop');
-    console.log(event);
-};
 
 
 var Bloq = function Bloq(params) {
@@ -109,27 +131,25 @@ var Bloq = function Bloq(params) {
 
     //creation
 
-    this.$bloq = $('<div tabindex="0">');
-
-    this.$bloq.addClass('bloq bloq--' + this.bloqData.type);
-
-    this.$bloq.attr({
+    this.$bloq = $('<div>').attr({
         'data-bloq-id': this.uuid,
         draggable: true,
         tabIndex: 0
     });
+
+    this.$bloq.addClass('bloq bloq--' + this.bloqData.type);
+
 
     //connectors
     var $tempConnector, tempUuid;
     for (var i = 0; i < params.bloqData.connectors.length; i++) {
         tempUuid = utils.generateUUID();
 
-        $tempConnector = $('<div>');
-        $tempConnector.addClass('connector');
-        $tempConnector.addClass(params.bloqData.connectors[i].type);
-        $tempConnector.attr('data-connector-id', tempUuid);
-        $tempConnector.attr('data-connector-type', params.bloqData.connectors[i].type);
-        $tempConnector.bind('drop', drop);
+        $tempConnector = $('<div>').attr({
+            'data-connector-id': tempUuid
+        });
+        $tempConnector.addClass('connector ' + params.bloqData.connectors[i].type);
+
         connectors[tempUuid] = {
             jqueryObject: $tempConnector,
             uuid: tempUuid,
@@ -155,8 +175,6 @@ var Bloq = function Bloq(params) {
 
 
     //binds
-    this.$bloq.addClass('bloq');
-    this.$bloq.addClass('bloq--' + this.bloqData.type);
     this.$bloq.bind('dragstart', dragstart);
     this.$bloq.bind('drag', drag);
     this.$bloq.bind('dragend', dragend);
