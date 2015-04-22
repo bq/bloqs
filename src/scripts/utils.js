@@ -80,8 +80,9 @@ var createBloqElement = function(elementSchema) {
 };
 
 
-var itsOver = function(dragConnector, dropConnector) {
-    return dragConnector.offset().left < (dropConnector.offset().left + dropConnector.width()) && (dragConnector.offset().left + dragConnector.width()) > dropConnector.offset().left && dragConnector.offset().top < (dropConnector.offset().top + dropConnector.height()) && (dragConnector.offset().top + dragConnector.height()) > dropConnector.offset().top;
+var itsOver = function(dragConnector, dropConnector, margin) {
+    margin = margin || 0;
+    return dragConnector.offset().left < (dropConnector.offset().left + dropConnector.width() + margin) && (dragConnector.offset().left + dragConnector.width()) > (dropConnector.offset().left - margin) && dragConnector.offset().top < (dropConnector.offset().top + dropConnector.height() + margin) && (dragConnector.offset().top + dragConnector.height()) > (dropConnector.offset().top - margin);
 };
 
 module.exports.generateUUID = generateUUID;
