@@ -21375,6 +21375,7 @@ var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? 
 
 },{}],3:[function(require,module,exports){
 /*global require */
+/*jshint latedef: false */
 'use strict';
 
 var $ = require('jquery'),
@@ -21384,12 +21385,12 @@ var $ = require('jquery'),
     bloqs = {},
     availableConnectors = [],
     dropToCoords = null,
-    bloq,
-    $targetBloq,
-    $currentBloq;
+    $dropConnector,
+    $dragConnector,
+    bloq;
+
 
 var dragstart = function(evt) {
-    $currentBloq = $(evt.currentTarget);
     $(evt.currentTarget).css('transition', 'none');
     // console.log('dragstart');
     bloq = bloqs[$(evt.currentTarget).attr('data-bloq-id')];
@@ -21429,15 +21430,49 @@ var dragstart = function(evt) {
     }
 };
 
+var drag = function(evt) {
 
-var connectBloq = function(dragConnectors) {
-    var $dragConnector,
-        $dropConnector,
-        i,
+    if (evt.originalEvent.clientX && evt.originalEvent.clientY) {
+
+        var target = evt.target,
+            x = evt.originalEvent.clientX,
+            y = evt.originalEvent.clientY;
+
+
+        target.style.left = (x - target.getAttribute('data-drag-mouseX')) + 'px';
+        target.style.top = (y - target.getAttribute('data-drag-mouseY')) + 'px';
+
+        // update the posiion attributes
+        target.setAttribute('data-x', x);
+        target.setAttribute('data-y', y);
+
+        handleCollisions(bloq.connectors, evt);
+    }
+
+};
+
+var dragend = function(evt) {
+    var $bloq = $(evt.currentTarget);
+    // If trying to connect a bloq
+    if (dropToCoords) {
+        // Set parent
+        setConnections($dragConnector.attr('data-connector-id'), $dropConnector.attr('data-connector-id'));
+        // Move the bloq
+        placeNestedBloq($bloq);
+
+        $('.connector.avaliable').removeClass('avaliable');
+    }
+
+    // Reset available connectors
+    availableConnectors = [];
+};
+
+var handleCollisions = function(dragConnectors, evt) {
+    var i,
         noMatchCounter = 0,
         found;
-    // For each available connector
 
+    // For each available connector
     availableConnectors.forEach(function(dropConnectorUuid) {
         $dropConnector = $('[data-connector-id="' + dropConnectorUuid + '"]');
         i = 0;
@@ -21452,7 +21487,6 @@ var connectBloq = function(dragConnectors) {
         if (found) {
             dropToCoords = $dropConnector.parent().offset();
             $dropConnector.addClass('avaliable');
-            $targetBloq = $dropConnector.parent();
             if ($dropConnector.hasClass('connector--top')) {
                 dropToCoords.top -= $dropConnector.parent().height() + 2;
             } else if ($dropConnector.hasClass('connector--bottom')) {
@@ -21467,64 +21501,35 @@ var connectBloq = function(dragConnectors) {
 
     if (noMatchCounter === availableConnectors.length) {
         dropToCoords = null;
-        if ($currentBloq.children().hasClass('nested--bloq')) {
-            $currentBloq.children().removeClass('nested--bloq');
-            $currentBloq.children().closest('.bloq').appendTo($currentBloq.parent());
+        if ($(evt.currentTarget).hasClass('nested--bloq')) {
+            $(evt.currentTarget).removeClass('nested--bloq');
         }
     }
 };
 
-
-var drag = function(event) {
-
-    if (event.originalEvent.clientX && event.originalEvent.clientY) {
-
-        var target = event.target,
-            x = event.originalEvent.clientX,
-            y = event.originalEvent.clientY;
-
-
-        target.style.left = (x - target.getAttribute('data-drag-mouseX')) + 'px';
-        target.style.top = (y - target.getAttribute('data-drag-mouseY')) + 'px';
-
-        // update the posiion attributes
-        target.setAttribute('data-x', x);
-        target.setAttribute('data-y', y);
-
-        connectBloq(bloq.connectors);
-    }
-
+var setConnections = function(dropConnectorUuid, dragConnectorUUid) {
+    // connectors.dropConnectorUuid.connectedTo = dragConnectorUUid;
 };
 
-var dragend = function(evt) {
-    // If trying to connect a bloq
-    if (dropToCoords) {
-        $currentBloq.css('width', $currentBloq.width());
-        $targetBloq.css('width', $targetBloq.width());
-        // Set transition effect
-        // Check bloq type
-        if ($(evt.currentTarget).hasClass('bloq--statement')) {
-            $currentBloq.addClass('nested--bloq');
-            // $currentBloq.find('.connector').remove();
+var placeNestedBloq = function($bloq) {
+    if ($bloq.hasClass('bloq--statement')) {
 
-            $targetBloq.append($currentBloq);
-        } else if ($(evt.currentTarget).hasClass('bloq--output')) {
+        console.log('bloq statement!');
 
-        } else
-        if ($(evt.currentTarget).hasClass('bloq--statement-input')) {
+    } else if ($bloq.hasClass('bloq--output')) {
 
-        }
+        console.log('bloq output!');
 
-        // Move the bloq
-        // $(evt.currentTarget).css('transition', 'all .1s linear');
-        $(evt.currentTarget).offset(dropToCoords);
+    } else {
+
     }
-    $('.connector.avaliable').removeClass('avaliable');
-    availableConnectors = [];
+
+    // @TODO: handle movement with transform:translate    
+    $bloq.offset(dropToCoords);
 };
 
 
-
+// Block Constructor
 var Bloq = function Bloq(params) {
 
     this.uuid = utils.generateUUID();
