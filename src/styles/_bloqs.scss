@@ -75,6 +75,15 @@ select {
     @include vertical-align;
 }
 
+.bloqs_canvas {
+    margin: 2em;
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 // REMOVE LATER
 .bloq1 {
     top: 0
@@ -114,10 +123,6 @@ select {
 .bloq9 {
     top: 300px;
     left: 460px;
-}
-
-.container {
-    padding: 2em;
 }
 
 .nested--bloq {
@@ -307,4 +312,3 @@ select {
     &.avaliable {
         border-bottom: 3px solid #f1cb33;
     }
-}

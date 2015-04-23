@@ -11,29 +11,23 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         pkg: grunt.file.readJSON('./package.json'),
+
+        clean: ['dist', '.tmp'],
+
         // Watches files for changes and runs tasks based on the changed files
         watch: {
-            dev: {
-                files: ['bower.json', 'Gruntfile.js'],
-                tasks: ['newer:jshint:all']
+            options: {
+                livereload: true
             },
             app: {
-                files: 'dist/<%= pkg.name %>.js',
-                options: {
-                    livereload: true
-                }
+                files: ['Gruntfile.js', 'dist/<%= pkg.name %>.js'],
+                tasks: ['newer:jshint:all']
             },
             styles: {
                 files: ['src/styles/{,*/}*.scss'],
-                tasks: ['sass:dev'],
-                options: {
-                    livereload: true
-                }
+                tasks: ['sass:dev']
             },
             livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
                 files: ['index.html']
             }
         },
@@ -72,17 +66,6 @@ module.exports = function(grunt) {
                     }
                 }
             }
-            // dist: {
-            //     options: {
-            //         open: true,
-            //         middleware: function(connect) {
-            //             return [
-            //                 connect.static('dist'),
-            //                 connect.static('demo')
-            //             ];
-            //         }
-            //     }
-            // }
         },
         // Make sure code styles are up to par and there are no obvious mistakes
         jshint: {
@@ -93,10 +76,13 @@ module.exports = function(grunt) {
             all: {
                 src: [
                     'Gruntfile.js',
-                    'src/{,*/}*.js'
+                    'src/scripts/**/*.js'
                 ]
             },
             test: {
+                options: {
+                    jshintrc: 'test/.jshintrc'
+                },
                 src: ['test/spec/{,*/}*.js']
             }
         },
@@ -116,10 +102,18 @@ module.exports = function(grunt) {
 
         watchify: {
             compile: {
-                src: './src/**/*.js',
+                src: './src/scripts/**/*.js',
                 dest: 'dist/<%= pkg.name %>.js'
             }
 
+        },
+
+        // Test settings
+        karma: {
+            unit: {
+                configFile: 'test/karma.conf.js',
+                singleRun: true
+            }
         },
 
         // Reads HTML for usemin blocks to enable smart builds that automatically
@@ -171,7 +165,7 @@ module.exports = function(grunt) {
 
         uglify: {
             options: {
-                banner: '/* <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n /* Version:<%= pkg.version %> */\n'
+                banner: '/* <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n /* Version: <%= pkg.version %> */\n'
             },
             dist: {
                 files: {
@@ -183,10 +177,16 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('compile', ['jshint:all', 'watchify']);
-    grunt.registerTask('server', ['compile', 'connect:livereload', 'sass:dev', 'watch']);
+    grunt.registerTask('server', ['clean', 'compile', 'sass:dev', 'connect:livereload', 'watch']);
 
-    grunt.registerTask('dist', ['compile', 'uglify', 'sass:dist']);
-    // grunt.registerTask('test', ['jshint']);
+    grunt.registerTask('dist', ['clean', 'compile', 'uglify', 'sass:dist']);
+
+    grunt.registerTask('test', [
+        'clean',
+        'compile',
+        'karma'
+    ]);
+
     grunt.registerTask('default', ['dist']);
 
 };
