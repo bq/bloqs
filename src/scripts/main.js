@@ -5,7 +5,7 @@ var Bloq = require('./bloq');
 
 var ledSchema = require('./bloqs/components/led');
 var servoSchema = require('./bloqs/components/servo');
-// var buzzerSchema = require('./bloqs/components/buzzer');
+var buzzerSchema = require('./bloqs/components/buzzer');
 
 var $field = $('#field');
 var bloq1 = new Bloq({
@@ -15,13 +15,13 @@ var bloq2 = new Bloq({
     bloqData: servoSchema
 });
 
-// var bloq3 = new Bloq({
-//     bloqData: buzzerSchema
-// });
+var bloq3 = new Bloq({
+    bloqData: buzzerSchema
+});
 
 $field.append(bloq1);
 $field.append(bloq2);
-// $field.append(bloq3);
+$field.append(bloq3);
 
 console.log(bloq1);
 bloq1.css({

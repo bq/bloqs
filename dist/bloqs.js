@@ -21375,6 +21375,7 @@ var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? 
 
 },{}],3:[function(require,module,exports){
 /*global require */
+/*jshint latedef: false */
 'use strict';
 
 var $ = require('jquery'),
@@ -21384,13 +21385,13 @@ var $ = require('jquery'),
     bloqs = {},
     availableConnectors = [],
     dropToCoords = null,
-    bloq,
-    $targetBloq,
-    $currentBloq;
+    $dropConnector,
+    $dragConnector,
+    bloq;
+
 
 var dragstart = function(evt) {
-    $currentBloq = $(evt.currentTarget);
-    $(evt.currentTarget).css('transition', 'none');
+    //$(evt.currentTarget).css('transition', 'none');
     // console.log('dragstart');
     bloq = bloqs[$(evt.currentTarget).attr('data-bloq-id')];
 
@@ -21429,15 +21430,89 @@ var dragstart = function(evt) {
     }
 };
 
+var drag = function(evt) {
 
-var connectBloq = function(dragConnectors) {
-    var $dragConnector,
-        $dropConnector,
-        i,
+    if (evt.originalEvent.clientX && evt.originalEvent.clientY) {
+
+        var target = evt.currentTarget,
+            x = evt.originalEvent.clientX,
+            y = evt.originalEvent.clientY;
+
+        var originX = target.style.left,
+            originY = target.style.top;
+
+
+        var destinationX = (x - target.getAttribute('data-drag-mouseX')),
+            destinationY = (y - target.getAttribute('data-drag-mouseY'));
+
+        target.style.left = destinationX + 'px';
+        target.style.top = destinationY + 'px';
+
+
+        var deltaX = destinationX - parseInt(originX, 10),
+            deltaY = destinationY - parseInt(originY, 10);
+        //console.log('deltaX', deltaX, 'deltaY', deltaY);
+
+        console.log('start move conected bloqs');
+        var bloqueConectado;
+        for (var i = 0; i < bloq.connectors.length; i++) {
+            console.log('connector ', bloq.connectors[i]);
+            if (connectors[bloq.connectors[i]].connectedTo) {
+                console.log('connector', bloq.connectors[i], 'conectado a ', connectors[bloq.connectors[i]].connectedTo);
+                bloqueConectado = bloqs[connectors[bloq.connectors[i]].bloqUuid];
+                console.log(bloqueConectado.$bloq.offset().top);
+                console.log(bloqueConectado.$bloq.offset().left);
+            } else {
+                console.log('connector', bloq.connectors[i], 'no conectado');
+            }
+            // console.log(connectors[bloq.connectors[i]].jqueryObject.offset().top);
+            // console.log(connectors[bloq.connectors[i]].jqueryObject.offset().left);
+            // connectors[bloq.connectors[i]].jqueryObject.css({
+            //     top: connectors[bloq.connectors[i]].jqueryObject.offset().top + deltaY,
+            //     left: connectors[bloq.connectors[i]].jqueryObject.offset().left + deltaX
+            // });
+        }
+
+        handleCollisions(bloq.connectors, evt);
+    }
+
+};
+
+var dragend = function(evt) {
+    var $bloq = $(evt.currentTarget);
+    console.log('evt.currentTarget');
+    console.log(evt.currentTarget);
+    console.log($('.connector.avaliable'));
+    var dragBloqUuid = $bloq.attr('data-bloq-id');
+    var dropConnectorUuid = $('.connector.avaliable').attr('data-connector-id');
+    console.log('dragBloqUuid', dragBloqUuid);
+    console.log('dropUuid', dropConnectorUuid);
+    //connectors[dropConnectorUuid].connectedTo =
+    /*
+        availableConnectors.forEach(function(dropConnectorUuid) {
+            $dropConnector = $('[data-connector-id="' + dropConnectorUuid + '"]');
+
+        });
+        // If trying to connect a bloq
+        if (dropToCoords) {
+            // Set parent
+            setConnections($dragConnector.attr('data-connector-id'), $dropConnector.attr('data-connector-id'));
+            // Move the bloq
+            placeNestedBloq($bloq);
+
+            $('.connector.avaliable').removeClass('avaliable');
+        }
+    */
+    // Reset available connectors
+    availableConnectors = [];
+};
+
+var handleCollisions = function(dragConnectors, evt) {
+    var i,
         noMatchCounter = 0,
         found;
-    // For each available connector
 
+    // For each available connector
     availableConnectors.forEach(function(dropConnectorUuid) {
         $dropConnector = $('[data-connector-id="' + dropConnectorUuid + '"]');
         i = 0;
@@ -21450,81 +21525,54 @@ var connectBloq = function(dragConnectors) {
             i++;
         }
         if (found) {
-            dropToCoords = $dropConnector.parent().offset();
+            //dropToCoords = $dropConnector.parent().offset();
             $dropConnector.addClass('avaliable');
-            $targetBloq = $dropConnector.parent();
-            if ($dropConnector.hasClass('connector--top')) {
-                dropToCoords.top -= $dropConnector.parent().height() + 2;
-            } else if ($dropConnector.hasClass('connector--bottom')) {
-                dropToCoords.top += $dropConnector.parent().height() + 2;
-            }
+            $dropConnector.attr('data-canconnectwith', dragConnectors[i]);
+            // if ($dropConnector.hasClass('connector--top')) {
+            //     dropToCoords.top -= $dropConnector.parent().height() + 2;
+            // } else if ($dropConnector.hasClass('connector--bottom')) {
+            //     dropToCoords.top += $dropConnector.parent().height() + 2;
+            // }
 
         } else {
-            noMatchCounter++;
+            //noMatchCounter++;
             $dropConnector.removeClass('avaliable');
         }
     });
 
-    if (noMatchCounter === availableConnectors.length) {
-        dropToCoords = null;
-        if ($currentBloq.children().hasClass('nested--bloq')) {
-            $currentBloq.children().removeClass('nested--bloq');
-            $currentBloq.children().closest('.bloq').appendTo($currentBloq.parent());
-        }
+    // if (noMatchCounter === availableConnectors.length) {
+    //     dropToCoords = null;
+    //     if ($(evt.currentTarget).hasClass('nested--bloq')) {
+    //         $(evt.currentTarget).removeClass('nested--bloq');
+    //     }
+    // }
+};
+
+var setConnections = function(dropConnectorUuid, dragConnectorUUid) {
+    console.log('conectamos', dropConnectorUuid, 'con ', dragConnectorUUid);
+    connectors[dropConnectorUuid].connectedTo = dragConnectorUUid;
+    connectors[dragConnectorUUid].connectedTo = dropConnectorUuid;
+};
+
+var placeNestedBloq = function($bloq) {
+    if ($bloq.hasClass('bloq--statement')) {
+
+        console.log('bloq statement!');
+
+    } else if ($bloq.hasClass('bloq--output')) {
+
+        console.log('bloq output!');
+
+    } else {
+
     }
+
+    // @TODO: handle movement with transform:translate
+    $bloq.offset(dropToCoords);
 };
 
 
-var drag = function(event) {
-
-    if (event.originalEvent.clientX && event.originalEvent.clientY) {
-
-        var target = event.target,
-            x = event.originalEvent.clientX,
-            y = event.originalEvent.clientY;
-
-
-        target.style.left = (x - target.getAttribute('data-drag-mouseX')) + 'px';
-        target.style.top = (y - target.getAttribute('data-drag-mouseY')) + 'px';
-
-        // update the posiion attributes
-        target.setAttribute('data-x', x);
-        target.setAttribute('data-y', y);
-
-        connectBloq(bloq.connectors);
-    }
-
-};
-
-var dragend = function(evt) {
-    // If trying to connect a bloq
-    if (dropToCoords) {
-        $currentBloq.css('width', $currentBloq.width());
-        $targetBloq.css('width', $targetBloq.width());
-        // Set transition effect
-        // Check bloq type
-        if ($(evt.currentTarget).hasClass('bloq--statement')) {
-            $currentBloq.addClass('nested--bloq');
-            // $currentBloq.find('.connector').remove();
-
-            $targetBloq.append($currentBloq);
-        } else if ($(evt.currentTarget).hasClass('bloq--output')) {
-
-        } else
-        if ($(evt.currentTarget).hasClass('bloq--statement-input')) {
-
-        }
-
-        // Move the bloq
-        // $(evt.currentTarget).css('transition', 'all .1s linear');
-        $(evt.currentTarget).offset(dropToCoords);
-    }
-    $('.connector.avaliable').removeClass('avaliable');
-    availableConnectors = [];
-};
-
-
-
+// Block Constructor
 var Bloq = function Bloq(params) {
 
     this.uuid = utils.generateUUID();
@@ -21557,7 +21605,8 @@ var Bloq = function Bloq(params) {
             jqueryObject: $tempConnector,
             uuid: tempUuid,
             data: params.bloqData.connectors[i],
-            bloqUuid: this.uuid
+            bloqUuid: this.uuid,
+            connectedTo: null
         };
 
         this.connectors.push(tempUuid);
@@ -23899,7 +23948,7 @@ var Bloq = require('./bloq');
 
 var ledSchema = require('./bloqs/components/led');
 var servoSchema = require('./bloqs/components/servo');
-// var buzzerSchema = require('./bloqs/components/buzzer');
+var buzzerSchema = require('./bloqs/components/buzzer');
 
 var $field = $('#field');
 var bloq1 = new Bloq({
@@ -23909,13 +23958,13 @@ var bloq2 = new Bloq({
     bloqData: servoSchema
 });
 
-// var bloq3 = new Bloq({
-//     bloqData: buzzerSchema
-// });
+var bloq3 = new Bloq({
+    bloqData: buzzerSchema
+});
 
 $field.append(bloq1);
 $field.append(bloq2);
-// $field.append(bloq3);
+$field.append(bloq3);
 
 console.log(bloq1);
 bloq1.css({
@@ -23927,7 +23976,7 @@ bloq1.css({
     top: '300px',
     left: '300px'
 });
-},{"./bloq":3,"./bloqs/components/led":33,"./bloqs/components/servo":38,"jquery":1}],82:[function(require,module,exports){
+},{"./bloq":3,"./bloqs/components/buzzer":28,"./bloqs/components/led":33,"./bloqs/components/servo":38,"jquery":1}],82:[function(require,module,exports){
 /*jshint bitwise: false*/
 /*global require */
 'use strict';
@@ -24018,5 +24067,5 @@ module.exports.getNumericStyleProperty = getNumericStyleProperty;
 module.exports.getMousePosition = getMousePosition;
 module.exports.createBloqElement = createBloqElement;
 module.exports.itsOver = itsOver;
-},{"jquery":1}]},{},[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82])
+},{"jquery":1}]},{},[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,21,23,24,25,26,28,27,29,30,31,32,34,33,35,36,37,38,39,40,41,42,43,45,44,46,47,49,48,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,79,78,80,81,82])
 ;
