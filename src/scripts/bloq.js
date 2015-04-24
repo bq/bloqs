@@ -15,8 +15,6 @@ var dragstart = function(evt) {
     // console.log('dragstart');
     var bloq = bloqs[$(evt.currentTarget).attr('data-bloq-id')];
 
-
-
     // console.log(bloq);
 
     //transparent
@@ -41,6 +39,8 @@ var dragstart = function(evt) {
         connectors[bloq.connectors[0]].connectedTo = null;
     }
 
+    //console.log('height', getTreeHeight(bloq.uuid));
+
     //store the avaliable connectors
     var notAvailableConnectors = getBranchsConnectors(bloq.uuid);
     var totalConectorsUuids = _.keys(connectors);
@@ -63,7 +63,14 @@ var getLastBottomConnectorUuid = function(bloqUuid) {
     } else {
         return bloqs[bloqUuid].connectors[1];
     }
+};
 
+var getFirstTopConnectorUuid = function(bloqUuid) {
+    if (connectors[bloqs[bloqUuid].connectors[0]].connectedTo) {
+        return getFirstTopConnectorUuid(connectors[connectors[bloqs[bloqUuid].connectors[0]].connectedTo].bloqUuid);
+    } else {
+        return bloqs[bloqUuid].connectors[0];
+    }
 };
 
 var getBranchsConnectors = function(bloqUuid) {
@@ -110,9 +117,9 @@ var drag = function(evt) {
 
 };
 
-var moveTreeNodes = function(topConnectorUuid, deltaX, deltaY, goUp) {
-    if (topConnectorUuid) {
-        var bloq = bloqs[connectors[topConnectorUuid].bloqUuid];
+var moveTreeNodes = function(connectorUuid, deltaX, deltaY, goUp) {
+    if (connectorUuid) {
+        var bloq = bloqs[connectors[connectorUuid].bloqUuid];
         bloq.$bloq.offset({
             top: bloq.$bloq.offset().top + deltaY,
             left: bloq.$bloq.offset().left + deltaX
@@ -133,12 +140,12 @@ var dragend = function() {
     var $dropConnector = $('.connector.avaliable');
     if ($dropConnector[0]) {
         var dropConnectorUuid = $dropConnector.attr('data-connector-id');
-        var dragConnectorUUid = $('[data-connector-id="' + dropConnectorUuid + '"]').attr('data-canconnectwith');
+        var dragConnectorUuid = $('[data-connector-id="' + dropConnectorUuid + '"]').attr('data-canconnectwith');
 
-        //console.log('dragConnectorUUid', dragConnectorUUid);
+        //console.log('dragConnectorUuid', dragConnectorUuid);
         //console.log('dropUuid', dropConnectorUuid);
-        placeNestedBloq(dropConnectorUuid, dragConnectorUUid);
-        setConnections(dragConnectorUUid, dropConnectorUuid);
+        placeNestedBloq(dropConnectorUuid, dragConnectorUuid);
+        setConnections(dropConnectorUuid, dragConnectorUuid);
     }
     $('.connector.avaliable').removeClass('avaliable');
 
@@ -177,11 +184,21 @@ var handleCollisions = function(dragConnectors) {
 };
 
 var setConnections = function(dropConnectorUuid, dragConnectorUUid) {
-    console.log('conectamos', dropConnectorUuid, connectors[dropConnectorUuid].data.type, 'con ', dragConnectorUUid, connectors[dragConnectorUUid].data.type);
-    console.log('conectado con', connectors[dropConnectorUuid].connectedTo, 'y el otro con', connectors[dragConnectorUUid].connectedTo);
-    // if(a.connectedTo){
-
-    // }
+    //console.log('conectamos', dropConnectorUuid, connectors[dropConnectorUuid].data.type, 'con ', dragConnectorUUid, connectors[dragConnectorUUid].data.type);
+    //console.log('conectado con', connectors[dropConnectorUuid].connectedTo, 'y el otro con', connectors[dragConnectorUUid].connectedTo);
+    if (connectors[dropConnectorUuid].connectedTo) {
+        if (connectors[dropConnectorUuid].data.type === 'connector--bottom') {
+            var dropBottomConnectorUuid = connectors[dropConnectorUuid].connectedTo,
+                dragBloqLastBottomConnectorUuid = getLastBottomConnectorUuid(connectors[dragConnectorUUid].bloqUuid);
+            connectors[dragBloqLastBottomConnectorUuid].connectedTo = dropBottomConnectorUuid;
+            connectors[dropBottomConnectorUuid].connectedTo = dragBloqLastBottomConnectorUuid;
+        } else if (connectors[dropConnectorUuid].data.type === 'connector--top') {
+            var dropTopConnectorUuid = connectors[dropConnectorUuid].connectedTo,
+                dragBloqFirstTopConnectorUuid = getFirstTopConnectorUuid(connectors[dragConnectorUUid].bloqUuid);
+            connectors[dropTopConnectorUuid].connectedTo = dragBloqFirstTopConnectorUuid;
+            connectors[dragBloqFirstTopConnectorUuid].connectedTo = dropTopConnectorUuid;
+        }
+    }
     connectors[dropConnectorUuid].connectedTo = dragConnectorUUid;
     connectors[dragConnectorUUid].connectedTo = dropConnectorUuid;
 };
@@ -200,13 +217,19 @@ var placeNestedBloq = function(dropConnectorUuid, dragConnectorUUid) {
                 finalTop,
                 finalLeft = dropBloq.$bloq.offset().left,
                 goUp = false,
+                dropBloqsMoveOrientation = 1,
                 connectorsStart = connectors[dragBloq.connectors[1]].connectedTo;
             if (connectors[dropConnectorUuid].data.type === 'connector--top') {
-                finalTop = dropBloq.$bloq.offset().top - dragBloq.$bloq.height() - 2;
+
+                finalTop = dropBloq.$bloq.offset().top - dragBloq.$bloq.outerHeight(true);
                 connectorsStart = connectors[dragBloq.connectors[0]].connectedTo;
                 goUp = true;
+                dropBloqsMoveOrientation = -1;
             } else {
-                finalTop = dropBloq.$bloq.offset().top + dragBloq.$bloq.height() + 2;
+                finalTop = dropBloq.$bloq.offset().top + dragBloq.$bloq.outerHeight(true);
+            }
+            if (connectors[dropConnectorUuid].connectedTo) {
+                moveTreeNodes(connectors[dropConnectorUuid].connectedTo, 0, getTreeHeight(dragBloq.uuid) * (dropBloqsMoveOrientation), goUp);
             }
             dragBloq.$bloq.offset({
                 top: finalTop,
@@ -221,6 +244,38 @@ var placeNestedBloq = function(dropConnectorUuid, dragConnectorUUid) {
     }
 };
 
+var getTreeHeight = function(bloqUuid) {
+    var bloq = bloqs[bloqUuid];
+    var topConnectorUuid = connectors[bloq.connectors[0]].connectedTo,
+        bottomConnectorUuid = connectors[bloq.connectors[1]].connectedTo;
+
+    var height = bloq.$bloq.outerHeight(true);
+
+    if (topConnectorUuid) {
+        height += getNodesHeight(connectors[topConnectorUuid].bloqUuid, false);
+    }
+
+    if (bottomConnectorUuid) {
+        height += getNodesHeight(connectors[bottomConnectorUuid].bloqUuid, true);
+    }
+    return height;
+};
+
+var getNodesHeight = function(bloqUuid, bloqIsTop) {
+    var bloq = bloqs[bloqUuid];
+    var connectorPosition;
+    if (bloqIsTop) {
+        connectorPosition = 1;
+    } else {
+        connectorPosition = 0;
+    }
+    if (connectors[bloq.connectors[connectorPosition]].connectedTo) {
+        return bloq.$bloq.outerHeight(true) + getNodesHeight(connectors[connectors[bloq.connectors[connectorPosition]].connectedTo].bloqUuid, bloqIsTop);
+    } else {
+        return bloq.$bloq.outerHeight(true);
+    }
+};
+
 var drawTree = function(bloqs, connectors) {
     console.log('drawtree');
     //buscamos los tipo statement q no tienen un top conectado
@@ -229,8 +284,8 @@ var drawTree = function(bloqs, connectors) {
         if (bloqs[uuid].bloqData.type === 'statement') {
             if (!connectors[bloqs[uuid].connectors[0]].connectedTo) {
                 console.log('******* - tree - *********', uuid);
-                console.log('connector--top:', bloqs[uuid].connectors[0]);
-                console.log('connector--bottom:', bloqs[uuid].connectors[1]);
+                console.log('connector--top:', bloqs[uuid].connectors[0], 'connectedTo', connectors[bloqs[uuid].connectors[0]].connectedTo);
+                console.log('connector--bottom:', bloqs[uuid].connectors[1], 'connectedTo', connectors[bloqs[uuid].connectors[1]].connectedTo);
                 if (connectors[bloqs[uuid].connectors[1]].connectedTo) {
                     drawBranch(bloqs, connectors, connectors[bloqs[uuid].connectors[1]].connectedTo);
                 }
@@ -244,8 +299,8 @@ var drawTree = function(bloqs, connectors) {
 var drawBranch = function(bloqs, connectors, topConnectorUuid) {
     var branchUuid = connectors[topConnectorUuid].bloqUuid;
     console.log('          ******* - branch - *********', branchUuid);
-    console.log('          connector--top:', bloqs[branchUuid].connectors[0]);
-    console.log('          connector--bottom:', bloqs[branchUuid].connectors[1]);
+    console.log('          connector--top:', bloqs[branchUuid].connectors[0], 'connectedTo', connectors[bloqs[branchUuid].connectors[0]].connectedTo);
+    console.log('          connector--bottom:', bloqs[branchUuid].connectors[1], 'connectedTo', connectors[bloqs[branchUuid].connectors[1]].connectedTo);
     if (connectors[bloqs[branchUuid].connectors[1]].connectedTo) {
         drawBranch(bloqs, connectors, connectors[bloqs[branchUuid].connectors[1]].connectedTo);
     }

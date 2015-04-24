@@ -70,6 +70,12 @@ var createBloqElement = function(elementSchema) {
                 placeholder: elementSchema.placeholder
             }).html(elementSchema.value);
             break;
+        case 'stringInput':
+            $element = $('<input>').attr({
+                type: 'text',
+                placeholder: elementSchema.placeholder
+            }).val(elementSchema.value);
+            break;
         default:
             throw 'elementSchema not defined: ' + elementSchema.alias;
     }
