@@ -16,7 +16,7 @@ var arrayVariableSchema = require('./bloqs/variables/arrayVariable');
 
 var $field = $('#field');
 
-var bloq1 = new Bloq({
+/*var bloq1 = new Bloq({
     bloqData: ledSchema
 });
 $field.append(bloq1);
@@ -63,7 +63,7 @@ $field.append(bloq5);
 bloq5.css({
     top: '400px',
     left: '200px'
-});
+});*/
 
 var bloq6 = new Bloq({
     bloqData: declareSchema

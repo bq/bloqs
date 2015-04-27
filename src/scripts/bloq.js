@@ -21,6 +21,7 @@ var dragstart = function(evt) {
     console.log('dragstart', bloq.uuid);
     evt.stopPropagation();
 
+
     // console.log(bloq);
 
     //transparent
@@ -42,7 +43,6 @@ var dragstart = function(evt) {
         default:
             throw 'Not defined bloq dragstart!!';
     }
-
 };
 
 var statementDragStart = function(bloq) {
@@ -76,13 +76,29 @@ var statementDragStart = function(bloq) {
 };
 
 var outputDragStart = function(bloq) {
-    // les desconectamos de donde este
     var outputConnector = utils.getOutputConnector(bloq, IOConnectors);
     if (outputConnector.connectedTo) {
         bloq.$bloq.removeClass('nested-bloq');
-        IOConnectors[outputConnector.connectedTo].connectedTo = null;
+
+        var bloqConnector = IOConnectors[outputConnector.connectedTo];
+
+        //remove the logical conexions
+        bloqConnector.connectedTo = null;
         outputConnector.connectedTo = null;
-        $('#field').append(bloq.$bloq);
+
+        //Chrome bug http://stackoverflow.com/questions/14203734/dragend-dragenter-and-dragleave-firing-off-immediately-when-i-drag
+        //Dragend its fired on changing dom of dragable element, timeout fix this
+        setTimeout(function() {
+            console.log('append');
+            $('#field').append(bloq.$bloq);
+
+            bloqConnector.jqueryObject.css('width', '50px');
+            //another bug on chrome, we need to remove and add again the width, to force the browser to redraw
+            setTimeout(function() {
+                bloqConnector.jqueryObject.css('width', 'auto');
+            }, 100);
+        }, 0);
+
     }
     bloq.$bloq.addClass('dragging');
 
@@ -95,9 +111,10 @@ var outputDragStart = function(bloq) {
 
 
 var drag = function(evt) {
-
+    console.log('draging');
     if (evt.originalEvent.clientX && evt.originalEvent.clientY) {
         var bloq = bloqs[$(evt.currentTarget).attr('data-bloq-id')];
+        console.log('moving', bloq.uuid);
         var target = evt.currentTarget,
             x = evt.originalEvent.clientX,
             y = evt.originalEvent.clientY;
@@ -137,7 +154,7 @@ var drag = function(evt) {
 
 
 var dragend = function(evt) {
-
+    console.log('dragend');
     $('.bloq').removeClass('dragging');
     var bloq = bloqs[$(evt.currentTarget).attr('data-bloq-id')];
     switch (bloq.bloqData.type) {
