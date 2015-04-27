@@ -18,15 +18,16 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             value: '='
         }, {
             alias: 'bloqInput',
-            acceptType: 'all'
+            acceptType: 'all',
+            name: 'input'
         }]
     ]
 });
 
 bloq.connectors.push({
     type: 'connector--input',
-    accept: 'connector--output'
-
+    accept: 'connector--output',
+    name: 'input'
 });
 
 module.exports = bloq;

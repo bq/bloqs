@@ -11,6 +11,8 @@ var lcdWriteSchema = require('./bloqs/components/lcdWrite');
 var declareSchema = require('./bloqs/variables/declare');
 var selectSchema = require('./bloqs/variables/select');
 var arrayVariableSchema = require('./bloqs/variables/arrayVariable');
+var basicOperationsSchema = require('./bloqs/mathematics/basicOperations');
+
 
 
 
@@ -90,5 +92,14 @@ var bloq8 = new Bloq({
 $field.append(bloq8);
 bloq8.css({
     top: '550px',
+    left: '200px'
+});
+
+var bloq9 = new Bloq({
+    bloqData: basicOperationsSchema
+});
+$field.append(bloq9);
+bloq9.css({
+    top: '600px',
     left: '200px'
 });

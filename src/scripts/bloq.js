@@ -103,7 +103,7 @@ var outputDragStart = function(bloq) {
     bloq.$bloq.addClass('dragging');
 
     //store the available connectors
-    var notAvailableConnectors = utils.getInputsConnectors(bloqs[bloq.uuid]);
+    var notAvailableConnectors = utils.getInputsConnectors(bloqs[bloq.uuid], IOConnectors);
     var totalConectorsUuids = _.keys(IOConnectors);
     availableIOConnectors = _.difference(totalConectorsUuids, notAvailableConnectors);
 
@@ -111,10 +111,10 @@ var outputDragStart = function(bloq) {
 
 
 var drag = function(evt) {
-    console.log('draging');
+    //console.log('draging');
     if (evt.originalEvent.clientX && evt.originalEvent.clientY) {
         var bloq = bloqs[$(evt.currentTarget).attr('data-bloq-id')];
-        console.log('moving', bloq.uuid);
+        //console.log('moving', bloq.uuid);
         var target = evt.currentTarget,
             x = evt.originalEvent.clientX,
             y = evt.originalEvent.clientY;
@@ -373,7 +373,7 @@ var Bloq = function Bloq(params) {
                 this.connectors.push(tempUuid);
                 break;
             case 'connector--input':
-                $connector = $(this.$bloq.children('.bloqinput')[this.IOConnectors.length]);
+                $connector = $(this.$bloq.children('.bloqinput[data-connector-name="' + params.bloqData.connectors[i].name + '"]'));
 
                 $connector.attr({
                     'data-connector-id': tempUuid

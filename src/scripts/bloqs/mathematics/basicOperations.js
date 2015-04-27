@@ -10,12 +10,14 @@ var bloq = _.merge(_.clone(OutputBloq, true), {
     content: [
         [{
             alias: 'bloqInput',
+            name: 'firstParameter',
             acceptType: 'all'
         }, {
             alias: 'dropdown',
             options: ['+', '-', '×', '÷', '^']
         }, {
             alias: 'bloqInput',
+            name: 'secondParameter',
             acceptType: 'all'
         }]
     ],
@@ -23,6 +25,17 @@ var bloq = _.merge(_.clone(OutputBloq, true), {
         setup: ['{0}'],
         loop: ['{0}']
     }
+});
+
+bloq.connectors.push({
+    type: 'connector--input',
+    accept: 'connector--output',
+    name: 'firstParameter'
+
+}, {
+    type: 'connector--input',
+    accept: 'connector--output',
+    name: 'secondParameter'
 });
 
 module.exports = bloq;
