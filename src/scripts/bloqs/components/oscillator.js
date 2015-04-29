@@ -39,7 +39,7 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             acceptType: 'all'
         }]
     ],
-    code: '{OSCILLATOR}.refresh({PHASE},{AMPLITUDE},{SPEED})'
+    code: 'osc.SetO({PHASE});\nosc.SetA({AMPLITUDE});\nosc.SetT({SPEED});\n{OSCILLATOR}.refresh();'
 });
 
 utils.generateBloqInputConnectors(bloq);

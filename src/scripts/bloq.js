@@ -523,24 +523,28 @@ var Bloq = function Bloq(params) {
         this.$bloq.children().not('.connector.connector--offline').first().addClass('bloq__inner--first');
         this.$bloq.children().not('.connector.connector--offline').last().addClass('bloq__inner--last');
     }
+
+    /**
+     * Get the bloq's code, substituting each input's value
+     * @return {[type]} code            [description]
+     */
     this.getCode = function() {
         var code = this.bloqData.code;
         var elementTags = _.without(_.pluck(this.bloqData.content[0], 'id'), undefined);
         var childrenTags = _.without(_.pluck(this.bloqData.content[0], 'bloqInputId'), undefined);
         console.log('bloq:', this.$bloq[0], 'TAGS:', elementTags);
         var value = '';
-        for (i in elementTags) {
-            // console.log('tags[i]',tags[i]);
-            // console.log('------------------>',$('[data-content-id="'+elementTags[i]+'"]'));
-            value = this.$bloq.find('[data-content-id="' + elementTags[i] + '"]').val() || '';
-            code = code.replace('{' + elementTags[i] + '}', value);
-            // console.log('code',code);
+        for (i in elementTags){
+            value = this.$bloq.find('[data-content-id="'+elementTags[i]+'"]').val() ||'';
+            code = code.replace('{'+elementTags[i]+'}', value);
         }
+        // console.log('aaaa',utils.getInputsConnectorsFromBloq(IOConnectors, bloqs, this));
+        var bloqInputConnectors = utils.getInputsConnectorsFromBloq(IOConnectors, bloqs, this);
         if (childrenTags.length > 0) {
             // search for child bloqs:
-            for (j in this.IOConnectors) {
+            for (j in bloqInputConnectors) {
                 value = '';
-                var a = IOConnectors[this.IOConnectors[j]];
+                var a = IOConnectors[bloqInputConnectors[j]];
                 var childConnectorId = a.connectedTo;
                 if (childConnectorId !== null) {
                     var childBloq = utils.getBloqByConnectorUuid(childConnectorId, bloqs, IOConnectors);
@@ -549,13 +553,6 @@ var Bloq = function Bloq(params) {
                 code = code.replace('{' + childrenTags[j] + '}', value);
             }
         }
-        // for (i in childrenTags){
-        // console.log('value:',$('[data-content-id="'+childrenTags[i]+'"]').val());
-        // var value = $('[data-content-id="'+childrenTags[i]+'"]').val() ||'';// $('[data-content-id="'+tags[i]+'"]').CHILD.getCode() ||
-        // code = code.replace('{'+childrenTags[i]+'}', value);
-        // console.log('code',code);
-        // }
-        // 'data-content-bloq-id'
         return code;
     };
 

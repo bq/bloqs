@@ -12,14 +12,12 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: 'Comentario //'
         }, {
+            id: 'COMMENT',
             alias: 'stringInput',
             value: ''
         }]
     ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
+    code: '/*\n{COMMENT}\n*/'
 });
 
 module.exports = bloq;

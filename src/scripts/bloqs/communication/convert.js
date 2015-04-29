@@ -1,8 +1,9 @@
 /*global require */
 'use strict';
 
-var _ = require('lodash');
-var OutputBloq = require('./../outputBloq');
+var _ = require('lodash'),
+    utils = require('./../../utils'),
+    OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(_.clone(OutputBloq, true), {
 
@@ -12,20 +13,20 @@ var bloq = _.merge(_.clone(OutputBloq, true), {
             alias: 'text',
             value: 'Convertir'
         }, {
-            alias: 'dropdown',
-            options: ['Decimal', 'Hexadecimal', 'Octal', 'Binario']
-        }, {
-            alias: 'text',
-            value: 'en valor'
-        }, {
+            bloqInputId:'NUMBER',
             alias: 'bloqInput',
             acceptType: 'number'
+        }, {
+            alias: 'text',
+            value: 'a'
+        }, {
+            id : 'TYPE',
+            alias: 'dropdown',
+            options: [{label:'Decimal', value:'DEC'}, {label:'Hexadecimal', value:'HEX'}, {label:'Octal', value:'OCT'}, {label:'Binario', value:'BIN'}]
         }]
     ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
+    code: '({NUMBER},{TYPE});'
 });
+utils.generateBloqInputConnectors(bloq);
 
 module.exports = bloq;

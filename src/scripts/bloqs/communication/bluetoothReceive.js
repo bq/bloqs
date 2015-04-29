@@ -3,11 +3,11 @@
 
 var _ = require('lodash'),
     utils = require('./../../utils'),
-    StatementBloq = require('./../statementBloq');
+    OutputBloq = require('./../outputBloq');
 
-var bloq = _.merge(_.clone(StatementBloq, true), {
+var bloq = _.merge(_.clone(OutputBloq, true), {
 
-    name: 'bluetoothSend',
+    name: 'bluetoothReceive',
     content: [
         [{
             id:'BLUETOOTH',
@@ -15,14 +15,10 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             options: [{label: 'BLUETOOTH 1', value: 'bluetooth1'},{label: 'BLUETOOTH 2', value: 'bluetooth2'}]
         }, {
             alias: 'text',
-            value: ': enviar datos'
-        }, {
-            bloqInputId: 'DATA',
-            alias: 'bloqInput',
-            acceptType: 'all'
+            value: 'Bluetooth: recibir'
         }]
     ],
-    code: '{BLUETOOTH}.println({DATA});'
+    code: '{BLUETOOTH}.read()'
 });
 utils.generateBloqInputConnectors(bloq);
 
