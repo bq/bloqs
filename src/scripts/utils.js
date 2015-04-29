@@ -1,11 +1,8 @@
 /*jshint bitwise: false*/
 /*global require */
 'use strict';
-
 var $ = require('jquery'),
     _ = require('lodash');
-
-
 var generateUUID = function() {
     var d = new Date().getTime();
     var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -15,11 +12,9 @@ var generateUUID = function() {
     });
     return uuid;
 };
-
 var getNumericStyleProperty = function(style, prop) {
     return parseInt(style.getPropertyValue(prop), 10);
 };
-
 var getMousePosition = function(element) {
     var x = 0,
         y = 0;
@@ -46,7 +41,6 @@ var getMousePosition = function(element) {
         y: y
     };
 };
-
 var createBloqElement = function(elementSchema) {
     var $element = null;
     switch (elementSchema.alias) {
@@ -55,11 +49,14 @@ var createBloqElement = function(elementSchema) {
             $element = $('<select>');
             $element.attr({
                 name: '',
+                'data-content-id': elementSchema.id
             });
             //content
             var $tempElement = null;
             for (var i = 0; i < elementSchema.options.length; i++) {
-                $tempElement = $('<option>').html(elementSchema.options[i]);
+                $tempElement = $('<option>').attr({
+                    value: elementSchema.options[i].value
+                }).html(elementSchema.options[i].label);
                 $element.append($tempElement);
             }
             break;
@@ -69,36 +66,38 @@ var createBloqElement = function(elementSchema) {
         case 'numberInput':
             $element = $('<input>').attr({
                 type: 'number',
+                'data-content-id': elementSchema.id,
                 placeholder: elementSchema.placeholder
             }).html(elementSchema.value);
             break;
         case 'stringInput':
             $element = $('<input>').attr({
                 type: 'text',
+                'data-content-id': elementSchema.id,
                 placeholder: elementSchema.placeholder
             }).val(elementSchema.value);
             break;
         case 'varInput':
             $element = $('<input>').attr({
                 type: 'text',
+                'data-content-id': elementSchema.id,
                 placeholder: elementSchema.placeholder
             }).html(elementSchema.value);
             $element.addClass('var--input');
             break;
         case 'bloqInput':
             $element = $('<div>').attr({
-                'data-connector-name': elementSchema.name
+                'data-connector-name': elementSchema.name,
+                'data-content-id': elementSchema.id,
             });
             $element.addClass('bloqinput');
             break;
         default:
             throw 'elementSchema not defined: ' + elementSchema.alias;
     }
-
+    // console.log('$element',$element.val());
     return $element;
 };
-
-
 var itsOver = function(dragConnector, dropConnector, margin) {
     margin = margin || 0;
     if (!dropConnector.offset()) {
@@ -106,7 +105,6 @@ var itsOver = function(dragConnector, dropConnector, margin) {
     }
     return dragConnector.offset().left < (dropConnector.offset().left + dropConnector.width() + margin) && (dragConnector.offset().left + dragConnector.width()) > (dropConnector.offset().left - margin) && dragConnector.offset().top < (dropConnector.offset().top + dropConnector.height() + margin) && (dragConnector.offset().top + dragConnector.height()) > (dropConnector.offset().top - margin);
 };
-
 /**
  * Get the extreme of the tree, the root or the leaf
  * @param  bloqUuid
@@ -122,7 +120,6 @@ var getTreeExtreme = function(bloqUuid, bloqs, connectors, connectorPosition) {
         return bloqs[bloqUuid].connectors[connectorPosition];
     }
 };
-
 /**
  * From a bloq, this function get the bottom Connector of the branch.
  * @param  {[type]} bloqUuid   [description]
@@ -133,7 +130,6 @@ var getTreeExtreme = function(bloqUuid, bloqs, connectors, connectorPosition) {
 var getLastBottomConnectorUuid = function(bloqUuid, bloqs, connectors) {
     return getTreeExtreme(bloqUuid, bloqs, connectors, 1);
 };
-
 /**
  * From a bloq, this function get the top Connector of the branch.
  * @param  {[type]} bloqUuid   [description]
@@ -144,7 +140,6 @@ var getLastBottomConnectorUuid = function(bloqUuid, bloqs, connectors) {
 var getFirstTopConnectorUuid = function(bloqUuid, bloqs, connectors) {
     return getTreeExtreme(bloqUuid, bloqs, connectors, 0);
 };
-
 /**
  * Get the output connector from a output bloq
  * @param  bloq
@@ -154,21 +149,18 @@ var getFirstTopConnectorUuid = function(bloqUuid, bloqs, connectors) {
 var getOutputConnector = function(bloq, IOConnectors) {
     var i = 0,
         outputConnector = null;
-
     while (!outputConnector && (i < bloq.IOConnectors.length)) {
         if (IOConnectors[bloq.IOConnectors[i]].data.type === 'connector--output') {
             outputConnector = IOConnectors[bloq.IOConnectors[i]];
         }
         i++;
     }
-
     if (!outputConnector) {
         throw 'outputBloq has no connector-output';
     } else {
         return outputConnector;
     }
 };
-
 /**
  * Receive a bloq, and if is top go to the bottom connector until the end, and gice the size
  * @param  {[type]} bloqUuid   [description]
@@ -191,7 +183,6 @@ var getNodesHeight = function(bloqUuid, bloqIsTop, bloqs, connectors) {
         return bloq.$bloq.outerHeight(true);
     }
 };
-
 /**
  * You can give any node of the tree, and return the size in px
  * @param  {[type]} bloqUuid   [description]
@@ -203,19 +194,15 @@ var getTreeHeight = function(bloqUuid, bloqs, connectors) {
     var bloq = bloqs[bloqUuid];
     var topConnectorUuid = connectors[bloq.connectors[0]].connectedTo,
         bottomConnectorUuid = connectors[bloq.connectors[1]].connectedTo;
-
     var height = bloq.$bloq.outerHeight(true);
-
     if (topConnectorUuid) {
         height += getNodesHeight(connectors[topConnectorUuid].bloqUuid, false, bloqs, connectors);
     }
-
     if (bottomConnectorUuid) {
         height += getNodesHeight(connectors[bottomConnectorUuid].bloqUuid, true, bloqs, connectors);
     }
     return height;
 };
-
 /**
  * draw in console a branch
  * @param  {[type]} bloqs            [description]
@@ -231,7 +218,6 @@ var drawBranch = function(bloqs, connectors, topConnectorUuid) {
     if (bloqs[branchUuid].connectors[2]) {
         console.log('       connector--root:', bloqs[branchUuid].connectors[2], 'connectedTo', connectors[bloqs[branchUuid].connectors[2]].connectedTo);
         console.log('                       ******* -  content **********');
-
         if (connectors[bloqs[branchUuid].connectors[2]].connectedTo) {
             drawBranch(bloqs, connectors, connectors[bloqs[branchUuid].connectors[2]].connectedTo);
         }
@@ -241,7 +227,6 @@ var drawBranch = function(bloqs, connectors, topConnectorUuid) {
         drawBranch(bloqs, connectors, connectors[bloqs[branchUuid].connectors[1]].connectedTo);
     }
 };
-
 /**
  * Draw in console the tree
  * @param  {[type]} bloqs      [description]
@@ -252,34 +237,26 @@ var drawTree = function(bloqs, connectors) {
     console.log('drawtree');
     //buscamos los tipo statement q no tienen un top conectado
     for (var uuid in bloqs) {
-
         if (bloqs[uuid].bloqData.type === 'statement' || bloqs[uuid].bloqData.type === 'statement-input') {
             if (!connectors[bloqs[uuid].connectors[0]].connectedTo) {
                 console.log('******* - tree - *********', uuid);
                 console.log('connector--top:', bloqs[uuid].connectors[0], 'connectedTo', connectors[bloqs[uuid].connectors[0]].connectedTo);
                 console.log('connector--bottom:', bloqs[uuid].connectors[1], 'connectedTo', connectors[bloqs[uuid].connectors[1]].connectedTo);
-
                 if (bloqs[uuid].connectors[2]) {
                     console.log('connector--root:', bloqs[uuid].connectors[2], 'connectedTo', connectors[bloqs[uuid].connectors[2]].connectedTo);
                     console.log('           ccccccc -  content ccccccc');
-
                     if (connectors[bloqs[uuid].connectors[2]].connectedTo) {
                         drawBranch(bloqs, connectors, connectors[bloqs[uuid].connectors[2]].connectedTo);
                     }
                     console.log('           ccccccc - end content ccccccc');
                 }
-
                 if (connectors[bloqs[uuid].connectors[1]].connectedTo) {
                     drawBranch(bloqs, connectors, connectors[bloqs[uuid].connectors[1]].connectedTo);
                 }
-
             }
         }
-
     }
 };
-
-
 var moveTreeNodes = function(connectorUuid, deltaX, deltaY, goUp, connectors, bloqs) {
     if (connectorUuid) {
         var bloq = bloqs[connectors[connectorUuid].bloqUuid];
@@ -294,7 +271,6 @@ var moveTreeNodes = function(connectorUuid, deltaX, deltaY, goUp, connectors, bl
         }
     }
 };
-
 /**
  * get all the connectors of a branch
  * @param  {[type]} bloqUuid   [description]
@@ -312,7 +288,6 @@ var getBranchsConnectors = function(bloqUuid, connectors, bloqs) {
         return _.uniq(bloq.connectors.concat(getBranchsConnectors(bloqBranchUuid, connectors, bloqs)));
     }
 };
-
 var getConnectorsUuidByType = function(IOConnectors, type) {
     var result = [];
     for (var key in IOConnectors) {
@@ -322,7 +297,6 @@ var getConnectorsUuidByType = function(IOConnectors, type) {
     }
     return result;
 };
-
 var getNotConnected = function(IOConnectors, uuids) {
     var result = [];
     for (var i = 0; i < uuids.length; i++) {
@@ -332,10 +306,8 @@ var getNotConnected = function(IOConnectors, uuids) {
     }
     return result;
 };
-
 var getInputsConnectorsFromBloq = function(IOConnectors, bloqs, bloq) {
     var result = [];
-
     var uuid,
         connectedOutput,
         connectedBloq;
@@ -352,7 +324,6 @@ var getInputsConnectorsFromBloq = function(IOConnectors, bloqs, bloq) {
     }
     return result;
 };
-
 var generateBloqInputConnectors = function(bloq) {
     var uuid;
     for (var i = 0; i < bloq.content.length; i++) {
@@ -369,7 +340,6 @@ var generateBloqInputConnectors = function(bloq) {
         }
     }
 };
-
 var getBloqByConnectorUuid = function(connectorUuid, bloqs, connectors) {
     return bloqs[connectors[connectorUuid].bloqUuid];
 };
@@ -394,7 +364,6 @@ var redrawTree = function(bloq, bloqs, connectors) {
 
 };
 
-
 module.exports.generateUUID = generateUUID;
 module.exports.getNumericStyleProperty = getNumericStyleProperty;
 module.exports.getMousePosition = getMousePosition;
@@ -413,4 +382,5 @@ module.exports.getConnectorsUuidByType = getConnectorsUuidByType;
 module.exports.getNotConnected = getNotConnected;
 module.exports.getInputsConnectorsFromBloq = getInputsConnectorsFromBloq;
 module.exports.generateBloqInputConnectors = generateBloqInputConnectors;
+module.exports.getBloqByConnectorUuid = getBloqByConnectorUuid;
 module.exports.redrawTree = redrawTree;

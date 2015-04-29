@@ -1,8 +1,9 @@
 /*global require */
 'use strict';
 
-var _ = require('lodash');
-var StatementBloq = require('./../statementBloq');
+var _ = require('lodash'),
+    utils = require('./../../utils'),
+    StatementBloq = require('./../statementBloq');
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
@@ -12,32 +13,35 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: 'Oscilar servo'
         }, {
+            id:'OSCILLATOR',
             alias: 'dropdown',
-            options: ['Seleccionar']
+            options: [{label: 'OSCILLATOR 1', value: 'osc1'},{label: 'OSCILLATOR 2', value: 'osc2'}]
         }, {
             alias: 'text',
             value: 'alrededor de'
         }, {
+            bloqInputId:'PHASE',
             alias: 'bloqInput',
             acceptType: 'all'
         }, {
             alias: 'text',
             value: 'con amplitud'
         }, {
+            bloqInputId:'AMPLITUDE',
             alias: 'bloqInput',
             acceptType: 'all'
         }, {
             alias: 'text',
             value: 'con velocidad'
         }, {
+            bloqInputId:'SPEED',
             alias: 'bloqInput',
             acceptType: 'all'
         }]
     ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
+    code: '{OSCILLATOR}.refresh({PHASE},{AMPLITUDE},{SPEED})'
 });
+
+utils.generateBloqInputConnectors(bloq);
 
 module.exports = bloq;
