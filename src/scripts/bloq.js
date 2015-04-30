@@ -536,9 +536,15 @@ var Bloq = function Bloq(params) {
         var value = '';
         for (i in elementTags){
             value = this.$bloq.find('[data-content-id="'+elementTags[i]+'"]').val() ||'';
-            code = code.replace('{'+elementTags[i]+'}', value);
+            code = code.replace(new RegExp('{'+elementTags[i]+'}', 'g'), value);
         }
-        // console.log('aaaa',utils.getInputsConnectorsFromBloq(IOConnectors, bloqs, this));
+
+        //search for regular expressions:
+        var reg = new RegExp('(.*)?(.*):(.*)');
+        if (reg.test(code)){
+            code = eval(code);
+        }
+
         var bloqInputConnectors = utils.getInputsConnectorsFromBloq(IOConnectors, bloqs, this);
         if (childrenTags.length > 0) {
             // search for child bloqs:
@@ -550,7 +556,7 @@ var Bloq = function Bloq(params) {
                     var childBloq = utils.getBloqByConnectorUuid(childConnectorId, bloqs, IOConnectors);
                     value = childBloq.getCode();
                 }
-                code = code.replace('{' + childrenTags[j] + '}', value);
+                code = code.replace(new RegExp('{' + childrenTags[j] + '}', 'g'), value);
             }
         }
         return code;

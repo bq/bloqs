@@ -1,8 +1,9 @@
 /*global require */
 'use strict';
 
-var _ = require('lodash');
-var StatementBloq = require('./../statementBloq');
+var _ = require('lodash'),
+    utils = require('./../../utils'),
+    StatementBloq = require('./../statementBloq');
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
@@ -12,20 +13,22 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: 'Escribir'
         }, {
+            id: 'TEXT',
             alias: 'stringInput',
             value: ''
         }, {
             alias: 'text',
             value: 'en el LCD'
         }, {
+            id:'LCD',
             alias: 'dropdown',
-            options: ['Seleccionar']
+            options: 'LCDs'
         }]
     ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
+    code: '{LCD}.write("{TEXT}");'
+
 });
+
+utils.generateBloqInputConnectors(bloq);
 
 module.exports = bloq;

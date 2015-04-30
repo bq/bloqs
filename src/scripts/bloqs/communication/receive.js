@@ -7,18 +7,18 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(OutputBloq, true), {
 
-    name: 'bluetoothReceive',
+    name: 'serialReceive',
     content: [
         [{
-            id:'BLUETOOTH',
+            id:'SERIAL',
             alias: 'dropdown',
-            options: [{label: 'BLUETOOTH 1', value: 'bluetooth1'},{label: 'BLUETOOTH 2', value: 'bluetooth2'}]
+            options: 'serialElements'
         }, {
             alias: 'text',
-            value: 'Bluetooth: recibir'
+            value: 'recibir'
         }]
     ],
-    code: '{BLUETOOTH}.read()'
+    code: '{SERIAL}.read()'
 });
 utils.generateBloqInputConnectors(bloq);
 

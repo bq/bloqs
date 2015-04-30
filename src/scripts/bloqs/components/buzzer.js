@@ -1,8 +1,9 @@
 /*global require */
 'use strict';
 
-var _ = require('lodash');
-var StatementBloq = require('./../statementBloq');
+var _ = require('lodash'),
+    utils = require('./../../utils'),
+    StatementBloq = require('./../statementBloq');
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
@@ -12,18 +13,21 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: 'Sonar el buzzer'
         }, {
+            id: 'BUZZER',
             alias: 'dropdown',
-            options: ['Seleccionar']
+            options: 'buzzers'
         }, {
             alias: 'text',
             value: 'con la nota'
         }, {
+            id: 'NOTE',
             alias: 'dropdown',
-            options: ['Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Si']
+            options: [{label:'Do',value:'261'}, {label:'Re',value:'293'}, {label:'Mi',value:'329'}, {label:'Fa',value:'349'}, {label:'Sol',value:'392'}, {label:'La',value:'440'}, {label:'Si',value:'494'}]
         }, {
             alias: 'text',
             value: 'durante'
         }, {
+            id: 'SECONDS',
             alias: 'numberInput',
             value: 0
         }, {
@@ -31,10 +35,8 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             value: 'ms'
         }]
     ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
+    code: 'tone({BUZZER},{NOTE},{SECONDS});\ndelay({SECONDS});'
 });
+utils.generateBloqInputConnectors(bloq);
 
 module.exports = bloq;

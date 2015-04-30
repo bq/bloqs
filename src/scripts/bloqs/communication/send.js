@@ -7,22 +7,26 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
-    name: 'bluetoothSend',
+    name: 'serialSend',
     content: [
         [{
-            id:'BLUETOOTH',
+            id:'SERIAL',
             alias: 'dropdown',
-            options: [{label: 'BLUETOOTH 1', value: 'bluetooth1'},{label: 'BLUETOOTH 2', value: 'bluetooth2'}]
+            options: 'serialElements'
         }, {
             alias: 'text',
-            value: ': enviar datos'
+            value: 'enviar '
         }, {
             bloqInputId: 'DATA',
             alias: 'bloqInput',
             acceptType: 'all'
+        }, {
+            id:'FUNCTION',
+            alias: 'dropdown',
+            options: [{label: 'sin salto de línea', value: 'print'},{label: 'con salto de línea', value: 'println'}]
         }]
     ],
-    code: '{BLUETOOTH}.println({DATA});'
+    code: '{SERIAL}.{FUNCTION}({DATA});'
 });
 utils.generateBloqInputConnectors(bloq);
 

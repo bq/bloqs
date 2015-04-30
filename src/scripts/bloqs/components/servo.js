@@ -1,8 +1,9 @@
 /*global require */
 'use strict';
 
-var _ = require('lodash');
-var StatementBloq = require('./../statementBloq');
+var _ = require('lodash'),
+    utils = require('./../../utils'),
+    StatementBloq = require('./../statementBloq');
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
@@ -12,18 +13,14 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: 'Mover'
         }, {
+            id: 'SERVO',
             alias: 'dropdown',
-            options: ['Seleccionar']
-        }, {
-            alias: 'text',
-            value: 'de'
-        }, {
-            alias: 'numberInput',
-            value: 0
+            options: 'Servos'
         }, {
             alias: 'text',
             value: 'a'
         }, {
+            id:'POSITION',
             alias: 'numberInput',
             value: 0
         }, {
@@ -31,10 +28,9 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             value: 'grados'
         }]
     ],
-    code: {
-        setup: ['{0}'],
-        loop: ['{0}']
-    }
+    code: '{SERVO}.write({POSITION})'
 });
+
+utils.generateBloqInputConnectors(bloq);
 
 module.exports = bloq;

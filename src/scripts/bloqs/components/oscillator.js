@@ -15,7 +15,7 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
         }, {
             id:'OSCILLATOR',
             alias: 'dropdown',
-            options: [{label: 'OSCILLATOR 1', value: 'osc1'},{label: 'OSCILLATOR 2', value: 'osc2'}]
+            options: 'Oscillators'
         }, {
             alias: 'text',
             value: 'alrededor de'

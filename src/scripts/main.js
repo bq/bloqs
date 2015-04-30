@@ -33,7 +33,7 @@ var createBloq = function(bloqType, posX, posY){
 //Irene's trials with getCode()
 createBloq(require('./bloqs/mathematics/number'), '100px','1000px');
 // createBloq(numberSchema, '200px','1000px');
-var bloq=createBloq(require('./bloqs/communication/convert'), '150px','200px');
+var bloq=createBloq(require('./bloqs/components/servo'), '150px','200px');
 
 $field.on('dragend', function() {
 	console.log('bloq', bloq.getCode());
