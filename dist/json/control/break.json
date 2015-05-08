@@ -1,0 +1,23 @@
+{
+  "type": "statement",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "name": "break",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Interrumpir el bucle"
+      }
+    ]
+  ],
+  "code": "break"
+}

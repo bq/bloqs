@@ -1,0 +1,45 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "9fb155c6-51e2-4c67-9e0d-e9098c05ec02"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "76a3817f-7d39-48b7-9089-fad815921ebb"
+    }
+  ],
+  "name": "random",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Aleatorio entre"
+      },
+      {
+        "bloqInputId": "ARG1",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "9fb155c6-51e2-4c67-9e0d-e9098c05ec02"
+      },
+      {
+        "alias": "text",
+        "value": "y"
+      },
+      {
+        "bloqInputId": "ARG2",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "76a3817f-7d39-48b7-9089-fad815921ebb"
+      }
+    ]
+  ],
+  "code": "random({ARG1},{ARG2})"
+}

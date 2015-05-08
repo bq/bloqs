@@ -1,0 +1,34 @@
+{
+  "type": "statement",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "44e9b773-6e05-4e19-8734-4da0741b0ff7"
+    }
+  ],
+  "name": "comment",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Esperar"
+      },
+      {
+        "bloqInputId": "TIME",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "44e9b773-6e05-4e19-8734-4da0741b0ff7"
+      }
+    ]
+  ],
+  "code": "delay({TIME});"
+}

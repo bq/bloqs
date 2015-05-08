@@ -1,0 +1,21 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "name": "number",
+  "content": [
+    [
+      {
+        "id": "VALUE",
+        "alias": "numberInput",
+        "value": 0
+      }
+    ]
+  ],
+  "code": "{VALUE}",
+  "returnType": "float"
+}

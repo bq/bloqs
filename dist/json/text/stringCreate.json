@@ -1,0 +1,35 @@
+{
+  "type": "statement",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "af0088ff-22bc-4dc1-b274-5dc2d64254bd"
+    }
+  ],
+  "name": "stringCreate",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "crear texto con"
+      },
+      {
+        "bloqInputId": "TEXT",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "af0088ff-22bc-4dc1-b274-5dc2d64254bd"
+      }
+    ]
+  ],
+  "code": "String({TEXT})",
+  "returnType": "String"
+}

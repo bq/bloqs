@@ -1,0 +1,41 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "93607c55-6c5a-49c5-a4fd-b0ab6c7d7578"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "def7b150-9939-4fcb-8e75-217a72b36bb1"
+    }
+  ],
+  "name": "Arguments",
+  "content": [
+    [
+      {
+        "bloqInputId": "ARG1",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "93607c55-6c5a-49c5-a4fd-b0ab6c7d7578"
+      },
+      {
+        "alias": "text",
+        "value": ","
+      },
+      {
+        "bloqInputId": "ARG2",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "def7b150-9939-4fcb-8e75-217a72b36bb1"
+      }
+    ]
+  ],
+  "code": "{ARG1},{ARG2}"
+}

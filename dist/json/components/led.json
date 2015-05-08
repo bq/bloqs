@@ -1,0 +1,42 @@
+{
+  "type": "statement",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "name": "LED",
+  "content": [
+    [
+      {
+        "id": "STATE",
+        "alias": "dropdown",
+        "options": [
+          {
+            "label": "Encender",
+            "value": "HIGH"
+          },
+          {
+            "label": "Apagar",
+            "value": "LOW"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "el LED"
+      },
+      {
+        "id": "LED",
+        "alias": "dropdown",
+        "options": "LEDs"
+      }
+    ]
+  ],
+  "code": "digitalWrite({LED},{STATE});"
+}

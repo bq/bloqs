@@ -1,0 +1,73 @@
+{
+  "type": "statement",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "b23aee52-8702-4e6e-b05f-8e2308d20023"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "91209e1b-ed0c-456b-9df5-5348c31e91d9"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "5cf5c689-1caf-4afb-91dd-4ff54ad31f04"
+    }
+  ],
+  "name": "oscillator",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Oscilar servo"
+      },
+      {
+        "id": "OSCILLATOR",
+        "alias": "dropdown",
+        "options": "Oscillators"
+      },
+      {
+        "alias": "text",
+        "value": "alrededor de"
+      },
+      {
+        "bloqInputId": "PHASE",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "b23aee52-8702-4e6e-b05f-8e2308d20023"
+      },
+      {
+        "alias": "text",
+        "value": "con amplitud"
+      },
+      {
+        "bloqInputId": "AMPLITUDE",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "91209e1b-ed0c-456b-9df5-5348c31e91d9"
+      },
+      {
+        "alias": "text",
+        "value": "con velocidad"
+      },
+      {
+        "bloqInputId": "SPEED",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "5cf5c689-1caf-4afb-91dd-4ff54ad31f04"
+      }
+    ]
+  ],
+  "code": "{OSCILLATOR}.SetO({PHASE});\n{OSCILLATOR}.SetA({AMPLITUDE});\n{OSCILLATOR}.SetT({SPEED});\n{OSCILLATOR}.refresh();"
+}

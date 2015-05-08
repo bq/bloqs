@@ -1,0 +1,28 @@
+{
+  "type": "statement",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "name": "oscillatorStop",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Parar oscilador"
+      },
+      {
+        "id": "OSCILLATOR",
+        "alias": "dropdown",
+        "options": "Oscillators"
+      }
+    ]
+  ],
+  "code": "{OSCILLATOR}.stop()"
+}

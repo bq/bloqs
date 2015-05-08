@@ -1,0 +1,24 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "name": "serialReceive",
+  "content": [
+    [
+      {
+        "id": "SERIAL",
+        "alias": "dropdown",
+        "options": "serialElements"
+      },
+      {
+        "alias": "text",
+        "value": "recibir"
+      }
+    ]
+  ],
+  "code": "{SERIAL}.read()"
+}

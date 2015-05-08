@@ -189,8 +189,11 @@ module.exports = function(grunt) {
             grunt.log.writeln('File "' + destination + '" created.');
         };
 
+        var resume = [];
         this.files.forEach(function(file) {
             if (typeof(file.src) !== 'string') {
+
+                resume.push(file.dest);
                 file.src.forEach(function(source) {
                     generate(source, file.dest);
                 });
@@ -198,6 +201,9 @@ module.exports = function(grunt) {
                 generate(file.src, file.dest);
             }
         });
+        grunt.file.write('dist/resume.json', JSON.stringify(resume));
+        grunt.log.writeln('Bloqs Resume Write in ' + 'dist/resume.json').ok();
+
 
     });
 

@@ -1,0 +1,64 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "143116e5-a9ff-4730-947a-215241ec7dd7"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "304cb17b-e22c-4499-9e18-a062d817c5b1"
+    }
+  ],
+  "name": "basicOperations",
+  "content": [
+    [
+      {
+        "bloqInputId": "ARG1",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "143116e5-a9ff-4730-947a-215241ec7dd7"
+      },
+      {
+        "id": "OPERATOR",
+        "alias": "dropdown",
+        "options": [
+          {
+            "label": "+",
+            "value": "+"
+          },
+          {
+            "label": "-",
+            "value": "-"
+          },
+          {
+            "label": "x",
+            "value": "*"
+          },
+          {
+            "label": "/",
+            "value": "/"
+          },
+          {
+            "label": "^",
+            "value": "^"
+          }
+        ]
+      },
+      {
+        "bloqInputId": "ARG2",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "304cb17b-e22c-4499-9e18-a062d817c5b1"
+      }
+    ]
+  ],
+  "code": "{ARG1} {OPERATOR} {ARG2}",
+  "returnType": "float"
+}

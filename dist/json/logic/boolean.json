@@ -1,0 +1,30 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "name": "boolean",
+  "content": [
+    [
+      {
+        "id": "STATE",
+        "alias": "dropdown",
+        "options": [
+          {
+            "label": "verdadero",
+            "value": "true"
+          },
+          {
+            "label": "falso",
+            "value": "false"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "{STATE}",
+  "returnType": "bool"
+}

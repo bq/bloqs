@@ -1,0 +1,53 @@
+{
+  "type": "statement",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "dc05e297-f43f-4170-929c-5250826fb7b9"
+    }
+  ],
+  "name": "serialSend",
+  "content": [
+    [
+      {
+        "id": "SERIAL",
+        "alias": "dropdown",
+        "options": "serialElements"
+      },
+      {
+        "alias": "text",
+        "value": "enviar "
+      },
+      {
+        "bloqInputId": "DATA",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "dc05e297-f43f-4170-929c-5250826fb7b9"
+      },
+      {
+        "id": "FUNCTION",
+        "alias": "dropdown",
+        "options": [
+          {
+            "label": "sin salto de línea",
+            "value": "print"
+          },
+          {
+            "label": "con salto de línea",
+            "value": "println"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "{SERIAL}.{FUNCTION}({DATA});"
+}

@@ -1,0 +1,28 @@
+{
+  "type": "statement",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "name": "oscillatorStart",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Reproducir oscilador"
+      },
+      {
+        "id": "OSCILLATOR",
+        "alias": "dropdown",
+        "options": "Oscillator"
+      }
+    ]
+  ],
+  "code": "{OSCILLATOR}.start()"
+}

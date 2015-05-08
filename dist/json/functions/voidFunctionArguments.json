@@ -1,0 +1,47 @@
+{
+  "type": "statement-input",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "ad17258d-5422-439c-bba9-da6aa3975bb5"
+    }
+  ],
+  "name": "VoidFunctionWithArguments",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Declarar función"
+      },
+      {
+        "id": "FUNCNAME",
+        "alias": "stringInput",
+        "value": "nombreFuncion"
+      },
+      {
+        "alias": "text",
+        "value": "contando con"
+      },
+      {
+        "bloqInputId": "ARGS",
+        "alias": "bloqInput",
+        "acceptType": "var",
+        "name": "ad17258d-5422-439c-bba9-da6aa3975bb5"
+      }
+    ]
+  ],
+  "code": "void {FUNCNAME} ({ARGS}){{STATEMENTS}}"
+}

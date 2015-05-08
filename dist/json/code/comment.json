@@ -1,0 +1,28 @@
+{
+  "type": "statement",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "name": "comment",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Comentario //"
+      },
+      {
+        "id": "COMMENT",
+        "alias": "stringInput",
+        "value": ""
+      }
+    ]
+  ],
+  "code": "/*\n{COMMENT}\n*/"
+}

@@ -1,0 +1,42 @@
+{
+  "type": "statement-input",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "41259514-7381-4bdc-9997-bda19dcbdc30"
+    }
+  ],
+  "name": "elseif",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "en cambio, si"
+      },
+      {
+        "bloqInputId": "VAR",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "41259514-7381-4bdc-9997-bda19dcbdc30"
+      },
+      {
+        "alias": "text",
+        "value": "ejecutar:"
+      }
+    ]
+  ],
+  "code": "else if ({VAR}){{STATEMENTS}}"
+}

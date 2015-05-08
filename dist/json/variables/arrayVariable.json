@@ -1,0 +1,38 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "name": "ArrayVariable",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Variable"
+      },
+      {
+        "id": "VAR",
+        "alias": "dropdown",
+        "options": "variables"
+      },
+      {
+        "alias": "text",
+        "value": "["
+      },
+      {
+        "id": "POSITION",
+        "alias": "numberInput",
+        "value": 0
+      },
+      {
+        "alias": "text",
+        "value": "]"
+      }
+    ]
+  ],
+  "code": "{VAR}[{POSITION}]",
+  "returnType": "{VAR.connectionType}"
+}

@@ -1,0 +1,42 @@
+{
+  "type": "statement-input",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "037b15f9-0e5f-43c6-873f-10f73cb159d6"
+    }
+  ],
+  "name": "if",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Si"
+      },
+      {
+        "bloqInputId": "CONDITION",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "037b15f9-0e5f-43c6-873f-10f73cb159d6"
+      },
+      {
+        "alias": "text",
+        "value": "ejecutar:"
+      }
+    ]
+  ],
+  "code": "if({CONDITION}){{STATEMENTS}}"
+}

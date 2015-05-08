@@ -1,0 +1,25 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "name": "SelectVariable",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Variable"
+      },
+      {
+        "id": "VAR",
+        "alias": "dropdown",
+        "options": "variables"
+      }
+    ]
+  ],
+  "code": "{VAR}",
+  "returnType": "{VAR.connectionType}"
+}

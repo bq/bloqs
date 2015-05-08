@@ -1,0 +1,68 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "8941285e-a6ce-4f6f-902a-87d5b2865403"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "63c4bc12-3f8a-4c1b-bc78-2921a1f3f227"
+    }
+  ],
+  "name": "equalityOperations",
+  "content": [
+    [
+      {
+        "bloqInputId": "ARG1",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "8941285e-a6ce-4f6f-902a-87d5b2865403"
+      },
+      {
+        "id": "OPERATOR",
+        "alias": "dropdown",
+        "options": [
+          {
+            "label": "=",
+            "value": "="
+          },
+          {
+            "label": "!=",
+            "value": "!="
+          },
+          {
+            "label": ">",
+            "value": ">"
+          },
+          {
+            "label": ">=",
+            "value": ">="
+          },
+          {
+            "label": "<",
+            "value": "<"
+          },
+          {
+            "label": "<=",
+            "value": "<="
+          }
+        ]
+      },
+      {
+        "bloqInputId": "ARG2",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "63c4bc12-3f8a-4c1b-bc78-2921a1f3f227"
+      }
+    ]
+  ],
+  "code": "{ARG1} {OPERATOR} {ARG2}",
+  "returnType": "float"
+}

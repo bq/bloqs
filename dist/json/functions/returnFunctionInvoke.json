@@ -1,0 +1,25 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "name": "InvokeReturnFunction",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "ejecutar"
+      },
+      {
+        "id": "FUNCTION",
+        "alias": "dropdown",
+        "options": "ReturnFunctions"
+      }
+    ]
+  ],
+  "code": "{FUNCTION}({FUNCTION.args});",
+  "returnType": "{FUNCTION.connectionType}"
+}

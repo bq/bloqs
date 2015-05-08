@@ -1,0 +1,30 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "3bf7efe9-e8c8-472d-b346-d0f0fe40ec1e"
+    }
+  ],
+  "name": "not",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "no"
+      },
+      {
+        "bloqInputId": "CONDITION",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "3bf7efe9-e8c8-472d-b346-d0f0fe40ec1e"
+      }
+    ]
+  ],
+  "code": "!{CONDITION}"
+}

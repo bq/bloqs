@@ -1,0 +1,43 @@
+{
+  "type": "statement",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "2c217567-d653-420c-9588-c96f0a717e33"
+    }
+  ],
+  "name": "set",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Variable"
+      },
+      {
+        "id": "NAME",
+        "alias": "dropdown",
+        "options": "variables"
+      },
+      {
+        "alias": "text",
+        "value": "="
+      },
+      {
+        "bloqInputId": "VALUE",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "2c217567-d653-420c-9588-c96f0a717e33"
+      }
+    ]
+  ],
+  "code": "{NAME} = {VALUE};"
+}

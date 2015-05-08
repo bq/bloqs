@@ -1,0 +1,49 @@
+{
+  "type": "output",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "46eb51b7-cabe-4cfa-ae84-cde8294bb4cb"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "name": "0c11db17-1a06-40cd-bafd-f59db1a128bf"
+    }
+  ],
+  "name": "map",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Mapear"
+      },
+      {
+        "bloqInputId": "VAR",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "46eb51b7-cabe-4cfa-ae84-cde8294bb4cb"
+      },
+      {
+        "alias": "text",
+        "value": "valor entre [0-"
+      },
+      {
+        "bloqInputId": "MAXVAL",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "0c11db17-1a06-40cd-bafd-f59db1a128bf"
+      },
+      {
+        "alias": "text",
+        "value": "]"
+      }
+    ]
+  ],
+  "code": "map({VAR},0,1023,0,{MAXVAL});"
+}

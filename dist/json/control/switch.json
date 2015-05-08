@@ -1,0 +1,32 @@
+{
+  "type": "statement-input",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "name": "switch",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "Comprobar cuál es el valor de "
+      },
+      {
+        "id": "VAR",
+        "alias": "dropdown",
+        "options": "Variables"
+      }
+    ]
+  ],
+  "code": "switch ({VAR}):{{STATEMENTS}}"
+}
