@@ -3,6 +3,67 @@
 'use strict';
 var $ = require('jquery'),
     _ = require('lodash');
+
+/**
+ * If the param is not a number, we set it to ''
+ * @param  number
+ */
+var validNumber = function (number){
+    if (isNaN(parseFloat(number))){   //It is not a number
+        number = '';
+    }
+    return number;
+};
+
+/**
+ * If the param has non escaped characters, escape them
+ * @param  value
+ */
+var validString = function (value){
+    return value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|\"\']/g, '\\$&');
+};
+
+/**
+ * Transform a function or variable name to make it "legal" in Arduino coding language
+ * @param  name
+ */
+ var validName =  function(name) {
+    var reservedWords= 'setup,loop,if,else,for,switch,case,while,do,break,continue,return,goto,define,include,HIGH,LOW,INPUT,OUTPUT,INPUT_PULLUP,true,false,interger, constants,floating,point,void,bookean,char,unsigned,byte,int,word,long,float,double,string,String,array,static, volatile,const,sizeof,pinMode,digitalWrite,digitalRead,analogReference,analogRead,analogWrite,tone,noTone,shiftOut,shitIn,pulseIn,millis,micros,delay,delayMicroseconds,min,max,abs,constrain,map,pow,sqrt,sin,cos,tan,randomSeed,random,lowByte,highByte,bitRead,bitWrite,bitSet,bitClear,bit,attachInterrupt,detachInterrupt,interrupts,noInterrupts';
+    reservedWords = reservedWords.split(',');
+    console.log('validName', name);
+    if (name && name.length > 0) {
+        var i = 0;
+        while (i < name.length) {
+            if (!isNaN(parseFloat(name[i]))) {
+                name = name.substring(1, name.length);
+            } else {
+                break;
+            }
+        }
+        //Remove all accents
+        name = name.replace(/([áàâä])/g, 'a').replace(/([éèêë])/g, 'e').replace(/([íìîï])/g, 'i').replace(/([óòôö])/g, 'o').replace(/([úùûü])/g, 'u');
+        //Remove spaces and ñ
+        name = name.replace(/([ ])/g, '_').replace(/([ñ])/g, 'n');
+        //Remove all symbols
+        name = name.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|<>\-\&\Ç\%\=\~\{\}\¿\¡\"\@\:\;\-\"\·\|\º\ª\¨\'\·\̣\─\ç\`\´\¨\^])/g, '');
+        i = 0;
+        while (i < name.length) {
+            if (!isNaN(parseFloat(name[i]))) {
+                name = name.substring(1, name.length);
+            } else {
+                break;
+            }
+        }
+        for (var j in reservedWords) {
+            if (name === reservedWords[j]) {
+                name = '';
+                break;
+            }
+        }
+    }
+    return name;
+};
+
 var generateUUID = function() {
     var d = new Date().getTime();
     var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -69,11 +130,17 @@ var createBloqElement = function(elementSchema) {
                 'data-content-id': elementSchema.id,
                 placeholder: elementSchema.placeholder
             }).html(elementSchema.value);
+            //Check that the characters are numbers
+            $element.bind('input', function() {
+                $(this).val(validNumber($(this).val()));
+            });
+
             break;
         case 'stringInput':
             $element = $('<input>').attr({
                 type: 'text',
                 'data-content-id': elementSchema.id,
+                'data-content-type': 'stringInput',
                 placeholder: elementSchema.placeholder
             }).val(elementSchema.value);
             break;
@@ -84,6 +151,10 @@ var createBloqElement = function(elementSchema) {
                 placeholder: elementSchema.placeholder
             }).html(elementSchema.value);
             $element.addClass('var--input');
+            //Transform the name to create valid function / variables names
+            $element.bind('input', function() {
+                $(this).val(validName($(this).val()));
+            });
             break;
         case 'bloqInput':
             $element = $('<div>').attr({
@@ -416,6 +487,8 @@ var jqueryObjectsArrayToHtmlToInsert = function(arrayToTransform) {
     return rawArray;
 };
 
+
+module.exports.validString = validString;
 module.exports.generateUUID = generateUUID;
 module.exports.getNumericStyleProperty = getNumericStyleProperty;
 module.exports.getMousePosition = getMousePosition;

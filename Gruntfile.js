@@ -28,7 +28,8 @@ module.exports = function(grunt) {
                 tasks: ['sass:dev']
             },
             livereload: {
-                files: ['index.html']
+                files: ['index.html', 'src/scripts/**/*.js'],
+                tasks: ['newer:jshint:all']
             }
         },
         // The actual grunt server settings

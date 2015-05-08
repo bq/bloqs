@@ -533,10 +533,15 @@ var Bloq = function Bloq(params) {
         var childBloq, childConnectorId;
         var elementTags = _.without(_.pluck(this.bloqData.content[0], 'id'), undefined);
         var childrenTags = _.without(_.pluck(this.bloqData.content[0], 'bloqInputId'), undefined);
-        // console.log('bloq:', this.$bloq[0], 'TAGS:', elementTags);
+        console.log('bloqData',this.bloqData);
+        // utils.validString('a');
         var value = '', type='';
         for (i in elementTags){
             value = this.$bloq.find('[data-content-id="'+elementTags[i]+'"]').val() ||'';
+            // console.log('--->',this.$bloq.find('[data-content-type = "stringInput"]'));
+            if (this.$bloq.find('[data-content-type = "stringInput"]')){
+                value = utils.validString(value);
+            }
             code = code.replace(new RegExp('{'+elementTags[i]+'}', 'g'), value);
         }
 
