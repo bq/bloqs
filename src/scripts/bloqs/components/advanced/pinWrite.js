@@ -7,7 +7,7 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
-    name: 'pinWriteAdvanced',
+    name: 'advancedPinWrite',
     content: [
         [{
             alias: 'text',
@@ -25,7 +25,7 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             acceptType: 'all'
         }]
     ],
-    code:'\'{PIN}\'.indexOf(\'A\') === 0 ? \'analogWrite({PIN},{DATA});\' : \'digitalWrite({PIN},{DATA});\''
+    code: '\'{PIN}\'.indexOf(\'A\') === 0 ? \'analogWrite({PIN},{DATA});\' : \'digitalWrite({PIN},{DATA});\''
 
 });
 

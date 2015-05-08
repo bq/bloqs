@@ -7,7 +7,7 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(OutputBloq, true), {
 
-    name: 'readAdvanced',
+    name: 'advancedRead',
     content: [
         [{
             alias: 'text',
@@ -18,7 +18,7 @@ var bloq = _.merge(_.clone(OutputBloq, true), {
             acceptType: 'all'
         }]
     ],
-    code:'\'{PIN}\'.indexOf(\'A\') === 0 ? \'analogRead({PIN})\' : \'digitalRead({PIN})\''
+    code: '\'{PIN}\'.indexOf(\'A\') === 0 ? \'analogRead({PIN})\' : \'digitalRead({PIN})\''
 });
 
 utils.generateBloqInputConnectors(bloq);

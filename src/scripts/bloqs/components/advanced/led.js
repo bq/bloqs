@@ -7,7 +7,7 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
-    name: 'LEDAdvanced',
+    name: 'advancedLed',
     content: [
         [{
             bloqInputId: 'STATE',

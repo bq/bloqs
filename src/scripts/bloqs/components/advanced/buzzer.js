@@ -7,27 +7,27 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
-    name: 'buzzerAdvanced',
+    name: 'advancedBuzzer',
     content: [
         [{
             alias: 'text',
             value: 'Sonar el buzzer'
         }, {
-            bloqInputId:'BUZZER',
+            bloqInputId: 'BUZZER',
             alias: 'bloqInput',
             acceptType: 'all'
         }, {
             alias: 'text',
             value: 'con la nota'
         }, {
-            bloqInputId:'NOTE',
+            bloqInputId: 'NOTE',
             alias: 'bloqInput',
             acceptType: 'all'
         }, {
             alias: 'text',
             value: 'durante'
         }, {
-            bloqInputId:'SECONDS',
+            bloqInputId: 'SECONDS',
             alias: 'bloqInput',
             acceptType: 'all'
         }, {

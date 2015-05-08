@@ -7,7 +7,7 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(StatementInputBloq, true), {
 
-    name: 'voidFunction',
+    name: 'returnFunctionWithArguments',
     content: [
         [{
             alias: 'text',
@@ -16,9 +16,23 @@ var bloq = _.merge(_.clone(StatementInputBloq, true), {
             id: 'FUNCNAME',
             alias: 'stringInput',
             value: 'nombreFuncion'
+        }, {
+            alias: 'text',
+            value: 'contando con'
+        }, {
+            bloqInputId: 'ARGS',
+            alias: 'bloqInput',
+            acceptType: 'var'
+        }, {
+            alias: 'text',
+            value: 'devuelve'
+        }, {
+            bloqInputId: 'RETURN',
+            alias: 'bloqInput',
+            acceptType: 'all'
         }]
     ],
-    code: 'void {FUNCNAME} (){{STATEMENTS}}'
+    code: '{RETURN.connectionType} function {FUNCNAME} ({ARGS}) {{STATEMENTS}return {RETURN};}'
 });
 
 utils.generateBloqInputConnectors(bloq);

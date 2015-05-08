@@ -6,7 +6,7 @@ var _ = require('lodash'),
     StatementBloq = require('./../statementBloq');
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
-    name: 'DeclareVariable',
+    name: 'declareVariable',
     content: [
         [{
             alias: 'text',
@@ -19,12 +19,12 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: '='
         }, {
-            bloqInputId : 'VALUE',
+            bloqInputId: 'VALUE',
             alias: 'bloqInput',
             acceptType: 'all',
         }]
     ],
-    code : '{VALUE.connectionType} {NAME} = {VALUE};'
+    code: '{VALUE.connectionType} {NAME} = {VALUE};'
 });
 
 utils.generateBloqInputConnectors(bloq);

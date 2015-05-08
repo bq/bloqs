@@ -3,22 +3,23 @@
 
 var _ = require('lodash'),
     utils = require('./../../utils'),
-    StatementBloq = require('./../statementBloq');
+    OutputBloq = require('./../outputBloq');
 
-var bloq = _.merge(_.clone(StatementBloq, true), {
+var bloq = _.merge(_.clone(OutputBloq, true), {
 
-    name: 'InvokeFunction',
+    name: 'invokeReturnFunction',
     content: [
         [{
             alias: 'text',
-            value: 'Ejecutar'
+            value: 'ejecutar'
         }, {
             id: 'FUNCTION',
             alias: 'dynamicDropdown',
-            options: 'voidFunctions'
+            options: 'returnFunctions'
         }]
     ],
-    code: '{FUNCTION}({FUNCTION.args});'
+    code: '{FUNCTION}({FUNCTION.args});',
+    returnType: '{FUNCTION.connectionType}'
 });
 
 utils.generateBloqInputConnectors(bloq);

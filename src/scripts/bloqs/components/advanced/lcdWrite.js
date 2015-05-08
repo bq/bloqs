@@ -7,7 +7,7 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
-    name: 'lcdWriteAdvanced',
+    name: 'advancedLcdWrite',
     content: [
         [{
             alias: 'text',
@@ -20,7 +20,7 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: 'en el LCD'
         }, {
-            bloqInputId:'LCD',
+            bloqInputId: 'LCD',
             alias: 'bloqInput',
             acceptType: 'all'
         }]

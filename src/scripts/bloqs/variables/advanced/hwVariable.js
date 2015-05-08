@@ -6,7 +6,7 @@ var OutputBloq = require('./../../outputBloq');
 
 var bloq = _.merge(_.clone(OutputBloq, true), {
 
-    name: 'variablesComponents',
+    name: 'hwVariable',
     content: [
         [{
             alias: 'text',

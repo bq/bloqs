@@ -7,7 +7,7 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(OutputBloq, true), {
 
-    name: 'Argument',
+    name: 'argument',
     content: [
         [{
             alias: 'text',

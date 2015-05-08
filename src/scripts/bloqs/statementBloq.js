@@ -3,6 +3,7 @@
 var bloq = {
 
     type: 'statement',
+    name: 'statement',
     connectors: [{
         type: 'connector--top',
         accept: 'connector--bottom'

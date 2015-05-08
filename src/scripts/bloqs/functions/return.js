@@ -2,12 +2,12 @@
 'use strict';
 
 var _ = require('lodash'),
-utils = require('./../../utils'),
-OutputBloq = require('./../outputBloq');
+    utils = require('./../../utils'),
+    OutputBloq = require('./../outputBloq');
 
 var bloq = _.merge(_.clone(OutputBloq, true), {
 
-    name: 'Return',
+    name: 'return',
     content: [
         [{
             alias: 'text',

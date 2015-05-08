@@ -7,13 +7,13 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
-    name: 'oscillatorStopAdvanced',
+    name: 'advancedOscillatorStop',
     content: [
         [{
             alias: 'text',
             value: 'Parar oscilador'
         }, {
-            bloqInputId:'OSCILLATOR',
+            bloqInputId: 'OSCILLATOR',
             alias: 'bloqInput',
             acceptType: 'all'
         }]

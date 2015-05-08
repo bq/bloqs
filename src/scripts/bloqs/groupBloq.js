@@ -2,6 +2,7 @@
 
 var bloq = {
 
+    name: 'group',
     type: 'group',
     connectors: [{
         type: 'connector--empty'

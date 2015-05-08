@@ -7,13 +7,13 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
-    name: 'comment',
+    name: 'wait',
     content: [
         [{
             alias: 'text',
             value: 'Esperar'
         }, {
-            bloqInputId:'TIME',
+            bloqInputId: 'TIME',
             alias: 'bloqInput',
             acceptType: 'all'
         }]

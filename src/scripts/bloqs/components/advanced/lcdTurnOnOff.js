@@ -7,17 +7,17 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(StatementBloq, true), {
 
-    name: 'lcdTurnOnOffAdvanced',
+    name: 'advancedLcdTurnOnOff',
     content: [
         [{
-            bloqInputId:'STATE',
+            bloqInputId: 'STATE',
             alias: 'bloqInput',
             acceptType: 'all'
         }, {
             alias: 'text',
             value: 'la luz del LCD'
         }, {
-            bloqInputId:'LCD',
+            bloqInputId: 'LCD',
             alias: 'bloqInput',
             acceptType: 'all'
         }]

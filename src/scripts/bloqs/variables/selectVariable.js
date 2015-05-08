@@ -7,19 +7,20 @@ var _ = require('lodash'),
 
 var bloq = _.merge(_.clone(OutputBloq, true), {
 
-    name: 'InvokeReturnFunction',
+    name: 'selectVariable',
     content: [
         [{
             alias: 'text',
-            value: 'ejecutar'
+            value: 'Variable'
         }, {
-            id: 'FUNCTION',
+            id: 'VAR',
             alias: 'dynamicDropdown',
-            options: 'returnFunctions'
+            options: 'variables'
         }]
     ],
-    code: '{FUNCTION}({FUNCTION.args});',
-    returnType: '{FUNCTION.connectionType}'
+    code: '{VAR}',
+    returnType: '{VAR.connectionType}'
+
 });
 
 utils.generateBloqInputConnectors(bloq);
