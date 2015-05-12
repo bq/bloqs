@@ -18,13 +18,13 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "var",
-      "name": "5e618564-f53d-4309-80f8-7ffa32e04ce5"
+      "name": "e1dd6a83-1265-4452-994b-02a57d98907c"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "58be2806-f638-4f88-8c12-d39856a2cd6b"
+      "name": "bc58ab84-4710-4213-aad6-d17410373994"
     }
   ],
   "content": [
@@ -35,7 +35,7 @@
       },
       {
         "id": "FUNCNAME",
-        "alias": "stringInput",
+        "alias": "varInput",
         "value": "nombreFuncion"
       },
       {
@@ -46,7 +46,7 @@
         "bloqInputId": "ARGS",
         "alias": "bloqInput",
         "acceptType": "var",
-        "name": "5e618564-f53d-4309-80f8-7ffa32e04ce5"
+        "name": "e1dd6a83-1265-4452-994b-02a57d98907c"
       },
       {
         "alias": "text",
@@ -56,9 +56,10 @@
         "bloqInputId": "RETURN",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "58be2806-f638-4f88-8c12-d39856a2cd6b"
+        "name": "bc58ab84-4710-4213-aad6-d17410373994"
       }
     ]
   ],
+  "createDynamicContent": "returnFunctions",
   "code": "{RETURN.connectionType} function {FUNCNAME} ({ARGS}) {{STATEMENTS}return {RETURN};}"
 }

@@ -38,5 +38,6 @@
       }
     ]
   ],
+  "createDynamicContent": "softwareVars",
   "code": "{TYPE} {VARNAME}"
 }

@@ -23,10 +23,11 @@
       },
       {
         "id": "FUNCNAME",
-        "alias": "stringInput",
+        "alias": "varInput",
         "value": "nombreFuncion"
       }
     ]
   ],
+  "createDynamicContent": "voidFunction",
   "code": "void {FUNCNAME} (){{STATEMENTS}}"
 }
