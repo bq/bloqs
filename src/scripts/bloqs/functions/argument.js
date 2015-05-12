@@ -31,6 +31,7 @@ var bloq = _.merge(_.clone(OutputBloq, true), {
             value: 'x'
         }]
     ],
+    createDynamicContent: 'softwareVar',
     code: '{TYPE} {VARNAME}'
 });
 

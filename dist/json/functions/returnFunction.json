@@ -18,7 +18,7 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "269e1a76-2fcb-4c64-bdd7-ee0d1b2e773b"
+      "name": "77eec5be-845d-4f06-a785-5ddbed701492"
     }
   ],
   "content": [
@@ -29,7 +29,7 @@
       },
       {
         "id": "FUNCNAME",
-        "alias": "stringInput",
+        "alias": "varInput",
         "value": "nombreFuncion"
       },
       {
@@ -40,9 +40,10 @@
         "bloqInputId": "RETURN",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "269e1a76-2fcb-4c64-bdd7-ee0d1b2e773b"
+        "name": "77eec5be-845d-4f06-a785-5ddbed701492"
       }
     ]
   ],
+  "createDynamicContent": "returnFunction",
   "code": "{RETURN.connectionType} function {FUNCNAME} () {{STATEMENTS}return {RETURN};}"
 }

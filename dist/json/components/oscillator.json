@@ -14,19 +14,19 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "7e4af332-aa09-452c-9518-20e15b6ce56e"
+      "name": "15b135a9-9cfc-413f-b4ae-16382a862c50"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "c425b6d2-7ae4-4c4f-94d8-49ddec60970e"
+      "name": "b00d70db-e670-492f-b4f5-9ea402ce771b"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "b7db219e-5e97-4878-ae47-3311e7449381"
+      "name": "8455f073-3e28-45f0-bddb-a68597a42423"
     }
   ],
   "content": [
@@ -48,7 +48,7 @@
         "bloqInputId": "PHASE",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "7e4af332-aa09-452c-9518-20e15b6ce56e"
+        "name": "15b135a9-9cfc-413f-b4ae-16382a862c50"
       },
       {
         "alias": "text",
@@ -58,7 +58,7 @@
         "bloqInputId": "AMPLITUDE",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "c425b6d2-7ae4-4c4f-94d8-49ddec60970e"
+        "name": "b00d70db-e670-492f-b4f5-9ea402ce771b"
       },
       {
         "alias": "text",
@@ -68,7 +68,7 @@
         "bloqInputId": "SPEED",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "b7db219e-5e97-4878-ae47-3311e7449381"
+        "name": "8455f073-3e28-45f0-bddb-a68597a42423"
       }
     ]
   ],

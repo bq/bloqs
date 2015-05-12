@@ -23455,6 +23455,7 @@ var bloq = _.merge(_.clone(OutputBloq, true), {
             value: 'x'
         }]
     ],
+    createDynamicContent: 'softwareVar',
     code: '{TYPE} {VARNAME}'
 });
 
@@ -23591,7 +23592,7 @@ var bloq = _.merge(_.clone(StatementInputBloq, true), {
             value: 'Declarar función'
         }, {
             id: 'FUNCNAME',
-            alias: 'stringInput',
+            alias: 'varInput',
             value: 'nombreFuncion'
         }, {
             alias: 'text',
@@ -23602,6 +23603,7 @@ var bloq = _.merge(_.clone(StatementInputBloq, true), {
             acceptType: 'all'
         }]
     ],
+    createDynamicContent: 'returnFunction',
     code: '{RETURN.connectionType} function {FUNCNAME} () {{STATEMENTS}return {RETURN};}'
 });
 
@@ -23625,7 +23627,7 @@ var bloq = _.merge(_.clone(StatementInputBloq, true), {
             value: 'Declarar función'
         }, {
             id: 'FUNCNAME',
-            alias: 'stringInput',
+            alias: 'varInput',
             value: 'nombreFuncion'
         }, {
             alias: 'text',
@@ -23643,6 +23645,7 @@ var bloq = _.merge(_.clone(StatementInputBloq, true), {
             acceptType: 'all'
         }]
     ],
+    createDynamicContent: 'returnFunction',
     code: '{RETURN.connectionType} function {FUNCNAME} ({ARGS}) {{STATEMENTS}return {RETURN};}'
 });
 
@@ -23666,10 +23669,11 @@ var bloq = _.merge(_.clone(StatementInputBloq, true), {
             value: 'Declarar función'
         }, {
             id: 'FUNCNAME',
-            alias: 'stringInput',
+            alias: 'varInput',
             value: 'nombreFuncion'
         }]
     ],
+    createDynamicContent: 'voidFunction',
     code: 'void {FUNCNAME} (){{STATEMENTS}}'
 });
 
@@ -23693,7 +23697,7 @@ var bloq = _.merge(_.clone(StatementInputBloq, true), {
             value: 'Declarar función'
         }, {
             id: 'FUNCNAME',
-            alias: 'stringInput',
+            alias: 'varInput',
             value: 'nombreFuncion'
         }, {
             alias: 'text',
@@ -23704,6 +23708,7 @@ var bloq = _.merge(_.clone(StatementInputBloq, true), {
             acceptType: 'var'
         }]
     ],
+    createDynamicContent: 'voidFunction',
     code: 'void {FUNCNAME} ({ARGS}){{STATEMENTS}}'
 });
 
@@ -24447,12 +24452,14 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
             acceptType: 'all',
         }]
     ],
+    createDynamicContent:'softwareVar',
     code: '{VALUE.connectionType} {NAME} = {VALUE};'
 });
 
 utils.generateBloqInputConnectors(bloq);
 
 module.exports = bloq;
+
 },{"./../../utils":81,"./../statementBloq":69,"lodash":2}],78:[function(require,module,exports){
 /*global require */
 'use strict';
@@ -25275,5 +25282,5 @@ module.exports.getBranchsConnectorsNoChildren = getBranchsConnectorsNoChildren;
 
 
 
-},{"jquery":1,"lodash":2}]},{},[3,4,6,5,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81])
+},{"jquery":1,"lodash":2}]},{},[3,4,5,6,7,8,9,10,11,12,13,14,16,15,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,44,43,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,73,72,74,75,76,77,78,79,80,81])
 ;

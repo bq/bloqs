@@ -18,7 +18,7 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "var",
-      "name": "462fcf9d-885a-4d2d-828a-0c896b3b62ec"
+      "name": "35f7509f-c06f-4bd1-83cb-27661f127abd"
     }
   ],
   "content": [
@@ -29,7 +29,7 @@
       },
       {
         "id": "FUNCNAME",
-        "alias": "stringInput",
+        "alias": "varInput",
         "value": "nombreFuncion"
       },
       {
@@ -40,9 +40,10 @@
         "bloqInputId": "ARGS",
         "alias": "bloqInput",
         "acceptType": "var",
-        "name": "462fcf9d-885a-4d2d-828a-0c896b3b62ec"
+        "name": "35f7509f-c06f-4bd1-83cb-27661f127abd"
       }
     ]
   ],
+  "createDynamicContent": "voidFunction",
   "code": "void {FUNCNAME} ({ARGS}){{STATEMENTS}}"
 }

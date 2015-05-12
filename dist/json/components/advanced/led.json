@@ -14,13 +14,13 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "262a9ec5-20d2-4a8c-ae96-1b7adfebe0c2"
+      "name": "3f985634-f0a0-4073-9716-47fad0d68859"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "22bca7a6-4ab8-42b6-b1a0-bb1e913cdc8a"
+      "name": "6a2e5604-7d6e-4522-b484-960901713cc5"
     }
   ],
   "content": [
@@ -29,7 +29,7 @@
         "bloqInputId": "STATE",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "262a9ec5-20d2-4a8c-ae96-1b7adfebe0c2"
+        "name": "3f985634-f0a0-4073-9716-47fad0d68859"
       },
       {
         "alias": "text",
@@ -39,7 +39,7 @@
         "bloqInputId": "LED",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "22bca7a6-4ab8-42b6-b1a0-bb1e913cdc8a"
+        "name": "6a2e5604-7d6e-4522-b484-960901713cc5"
       }
     ]
   ],
