@@ -20,4 +20,4 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
     code: '{CODE}'
 });
 utils.generateBloqInputConnectors(bloq);
-module.exports = bloq;
+module.exports = bloq;;
