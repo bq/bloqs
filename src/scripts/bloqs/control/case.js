@@ -26,4 +26,4 @@ var bloq = _.merge(_.clone(StatementInputBloq, true), {
 
 utils.generateBloqInputConnectors(bloq);
 
-module.exports = bloq;
+module.exports = bloq;;
