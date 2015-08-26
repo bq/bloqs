@@ -24,12 +24,12 @@ var bloq = _.merge(_.clone(StatementBloq, true), {
         }, {
             id: 'FUNCTION',
             alias: 'staticDropdown',
-            options: [{
-                label: 'bloq-serial-send-print',
-                value: 'print'
-            }, {
+            options: [ {
                 label: 'bloq-serial-send-println',
                 value: 'println'
+            }, {
+                label: 'bloq-serial-send-print',
+                value: 'print'
             }]
         }]
     ],
