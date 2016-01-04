@@ -11,7 +11,7 @@ var _ = require('lodash'),
 * Bloq type: statement
 *
 * Description: It makes Evolution execute a specific movement,
-*              selectable from a drop-down,
+*              selectable from a drop-down.
 *
 * Return type: none
 */
