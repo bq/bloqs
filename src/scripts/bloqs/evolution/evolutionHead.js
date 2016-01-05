@@ -39,7 +39,7 @@ var evolutionHead = _.merge(_.clone(OutputBloq, true), {
                 }]
         }]
     ],
-    code: 'evolution.turnHead({SIDE})',
+    code: 'evolution.turnHead({SIDE});',
 });
 utils.generateBloqInputConnectors(evolutionHead);
 
