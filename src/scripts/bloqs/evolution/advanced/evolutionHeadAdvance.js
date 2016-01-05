@@ -30,6 +30,9 @@ var evolutionHeadAdvance = _.merge(_.clone(OutputBloq, true), {
             alias: 'bloqInput',
             acceptType: 'float'
         }, {
+            alias: 'text',
+            value: 'bloq-evolution-head-advance-deg'
+        }, {
             id: 'SIDE',
             alias: 'staticDropdown',
             options: [{
@@ -41,7 +44,7 @@ var evolutionHeadAdvance = _.merge(_.clone(OutputBloq, true), {
                 }]
         }]
     ],
-    code: 'evolution.turnHead({DEGREES});',
+    code: '\'{SIDE}\' === \'HEAD_LEFT\'? \'evolution.turnHead({DEGREES});\' : \'evolution.turnHead(-{DEGREES});\'',
 });
 utils.generateBloqInputConnectors(evolutionHeadAdvance);
 
