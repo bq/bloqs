@@ -10,7 +10,7 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "String",
-      "name": "0d1942c3-ac53-47e2-9b27-c13789297898"
+      "name": "60bc682d-cdf5-490b-be46-7466a52ecbe5"
     }
   ],
   "bloqClass": "bloq-string-to-int",
@@ -24,7 +24,7 @@
         "bloqInputId": "VAR",
         "alias": "bloqInput",
         "acceptType": "String",
-        "name": "0d1942c3-ac53-47e2-9b27-c13789297898"
+        "name": "60bc682d-cdf5-490b-be46-7466a52ecbe5"
       }
     ]
   ],

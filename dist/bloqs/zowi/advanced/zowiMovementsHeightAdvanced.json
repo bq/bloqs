@@ -14,19 +14,19 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "0a7f3f94-df60-4cdd-bfc3-65ef7bd222be"
+      "name": "e26e0ee2-e2b5-473f-9d0b-76d7a675b5c7"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "4991a29e-0b04-4674-bfda-2918b983b60c"
+      "name": "bd154294-f385-42df-b161-103ee5b892ba"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "978f7693-e4b9-45c3-bb49-48c4f65e5d82"
+      "name": "adb67118-921d-4e6c-a3c4-bbb9c6ff0026"
     }
   ],
   "bloqClass": "bloq-zowi-movements-height-advanced",
@@ -80,7 +80,7 @@
         "bloqInputId": "STEPS",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "0a7f3f94-df60-4cdd-bfc3-65ef7bd222be"
+        "name": "e26e0ee2-e2b5-473f-9d0b-76d7a675b5c7"
       },
       {
         "alias": "text",
@@ -90,7 +90,7 @@
         "bloqInputId": "SPEED",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "4991a29e-0b04-4674-bfda-2918b983b60c"
+        "name": "bd154294-f385-42df-b161-103ee5b892ba"
       },
       {
         "alias": "text",
@@ -100,7 +100,7 @@
         "bloqInputId": "HEIGHT",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "978f7693-e4b9-45c3-bb49-48c4f65e5d82"
+        "name": "adb67118-921d-4e6c-a3c4-bbb9c6ff0026"
       }
     ]
   ],

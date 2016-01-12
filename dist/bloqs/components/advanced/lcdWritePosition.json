@@ -14,25 +14,25 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "8ada3d70-75b4-4ebf-9aa0-dd0742ec68ad"
+      "name": "e0cb89c1-2132-405f-b7c0-5ca4154caeef"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "9f4243a6-f26f-4346-abb2-3a3385ed3cac"
+      "name": "c90c5bb1-fb0a-4a6d-a328-3db6ffe2af6f"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "ab8f873c-36a1-4c1a-9f8b-02b39fc0fff1"
+      "name": "9005532b-873e-4b77-8227-a3d317a14330"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "7005afdc-603f-49d9-ae7e-a504534f7327"
+      "name": "96eb3c9f-94a0-4e93-ad78-8db3b5737758"
     }
   ],
   "bloqClass": "bloq-lcd-writte",
@@ -46,7 +46,7 @@
         "bloqInputId": "TEXT",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "8ada3d70-75b4-4ebf-9aa0-dd0742ec68ad"
+        "name": "e0cb89c1-2132-405f-b7c0-5ca4154caeef"
       },
       {
         "alias": "text",
@@ -56,7 +56,7 @@
         "bloqInputId": "LCD",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "9f4243a6-f26f-4346-abb2-3a3385ed3cac"
+        "name": "c90c5bb1-fb0a-4a6d-a328-3db6ffe2af6f"
       },
       {
         "alias": "text",
@@ -66,13 +66,13 @@
         "bloqInputId": "COLUMN",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "ab8f873c-36a1-4c1a-9f8b-02b39fc0fff1"
+        "name": "9005532b-873e-4b77-8227-a3d317a14330"
       },
       {
         "bloqInputId": "ROW",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "7005afdc-603f-49d9-ae7e-a504534f7327"
+        "name": "96eb3c9f-94a0-4e93-ad78-8db3b5737758"
       }
     ]
   ],
