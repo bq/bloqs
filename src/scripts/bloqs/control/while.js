@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementInputBloq = require('./../statementInputBloq');
 
 /**
-* Bloq name: while
-*
-* Bloq type: Statement-Input
-*
-* Description: It repeats the following code until the condition is met.
-*
-* Return type: none
-*/
+ * Bloq name: while
+ *
+ * Bloq type: Statement-Input
+ *
+ * Description: It repeats the following code until the condition is met.
+ *
+ * Return type: none
+ */
 
 var bloqWhile = _.merge(_.clone(StatementInputBloq, true), {
 

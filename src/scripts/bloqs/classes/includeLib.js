@@ -4,19 +4,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: includeLib
-* 
-* Bloq type: Statement
-*
-* Description: It includes a library to use its classes, constants,
-*              variables or functions.
-* 
-* Return type: none
-*/
+ * Bloq name: includeLib
+ *
+ * Bloq type: Statement
+ *
+ * Description: It includes a library to use its classes, constants,
+ *              variables or functions.
+ *
+ * Return type: none
+ */
 
 var includeLib = _.merge(_.clone(StatementBloq, true), {
 

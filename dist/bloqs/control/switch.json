@@ -1,0 +1,33 @@
+{
+  "type": "statement-input",
+  "name": "switch",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-switch",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-switch-check"
+      },
+      {
+        "id": "VAR",
+        "alias": "dynamicDropdown",
+        "options": "softwareVars"
+      }
+    ]
+  ],
+  "code": "switch (int({VAR})) {{STATEMENTS}}"
+}

@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: servoNormal
-* 
-* Bloq type: Statement
-*
-* Description: It sets a specific servo, selectable from a
-*              drop-down, in a given position.
-* 
-* Return type: none
-*/
+ * Bloq name: servoNormal
+ *
+ * Bloq type: Statement
+ *
+ * Description: It sets a specific servo, selectable from a
+ *              drop-down, in a given position.
+ *
+ * Return type: none
+ */
 
 var servoNormal = _.merge(_.clone(StatementBloq, true), {
 

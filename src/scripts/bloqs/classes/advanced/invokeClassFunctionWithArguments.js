@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementBloq = require('./../../statementBloq');
 
 /**
-* Bloq name: invokeClassFunctionWithArguments
-* 
-* Bloq type: Statement
-*
-* Description: It execute a function, selectable from a first drop-down,
-*              which doesn't return any argument, of an specific object,
-*              selectable from a second drop-down, with the given arguments.
-* 
-* Return type: none
-*/
+ * Bloq name: invokeClassFunctionWithArguments
+ * 
+ * Bloq type: Statement
+ *
+ * Description: It execute a function, selectable from a first drop-down,
+ *              which doesn't return any argument, of an specific object,
+ *              selectable from a second drop-down, with the given arguments.
+ * 
+ * Return type: none
+ */
 
 var invokeClassFunctionWithArguments = _.merge(_.clone(StatementBloq, true), {
 
@@ -32,7 +32,7 @@ var invokeClassFunctionWithArguments = _.merge(_.clone(StatementBloq, true), {
         }, {
             alias: 'text',
             value: 'bloq-invoke-class-function-class'
-        },  {
+        }, {
             id: 'CLASS',
             alias: 'dynamicDropdown',
             options: 'objects'
@@ -46,7 +46,7 @@ var invokeClassFunctionWithArguments = _.merge(_.clone(StatementBloq, true), {
         }]
     ],
     code: '{CLASS}.{FUNCTION}({ARGS});',
-    dynamicDropdown : {
+    dynamicDropdown: {
         idDropdown: 'FUNCTION',
         options: 'voidFunctions'
     }
@@ -55,5 +55,3 @@ var invokeClassFunctionWithArguments = _.merge(_.clone(StatementBloq, true), {
 utils.generateBloqInputConnectors(invokeClassFunctionWithArguments);
 
 module.exports = invokeClassFunctionWithArguments;
-
-

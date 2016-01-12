@@ -1,0 +1,15 @@
+#bloqs--field {
+    background-color: #EBEBEB;
+    width: 1500px;
+    height: 650px;
+    &.theme-basic {
+        .bloq {
+            @include createBloqsTheme(true);
+        }
+    }
+    &.theme-colors {
+        .bloq {
+            @include createBloqsTheme(false);
+        }
+    }
+}

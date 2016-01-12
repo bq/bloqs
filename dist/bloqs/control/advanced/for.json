@@ -1,0 +1,95 @@
+{
+  "type": "statement-input",
+  "name": "forAdvanced-v1",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "6933950f-f140-4020-9d36-abc7fc0f569e"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "dce08682-51a6-4be7-b026-ee8ec09dfcad"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "1cc528fd-d60b-4233-a77a-c066ba11a78d"
+    }
+  ],
+  "bloqClass": "bloq-for",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-for-count"
+      },
+      {
+        "bloqInputId": "VAR",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "6933950f-f140-4020-9d36-abc7fc0f569e"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-for-from"
+      },
+      {
+        "bloqInputId": "INIT",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "dce08682-51a6-4be7-b026-ee8ec09dfcad"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-for-to"
+      },
+      {
+        "bloqInputId": "FINAL",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "1cc528fd-d60b-4233-a77a-c066ba11a78d"
+      },
+      {
+        "id": "MODE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-for-add",
+            "value": "+"
+          },
+          {
+            "label": "bloq-for-subtract",
+            "value": "-"
+          }
+        ]
+      },
+      {
+        "id": "ADD",
+        "alias": "numberInput",
+        "value": 1
+      },
+      {
+        "alias": "text",
+        "value": "bloq-for-exec"
+      }
+    ]
+  ],
+  "code": "'for({VAR}={INIT};{VAR}' + ('{MODE}' === '+'?'<=':'>=' ) + '{FINAL};{VAR}{MODE}={ADD}){{STATEMENTS}}'"
+}

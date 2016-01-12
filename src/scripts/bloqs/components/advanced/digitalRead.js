@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: digitalReadAdvanced
-* 
-* Bloq type: Output
-*
-* Description: It returns the read of a digital pin.
-* 
-* Return type: float
-*/
+ * Bloq name: digitalReadAdvanced
+ * 
+ * Bloq type: Output
+ *
+ * Description: It returns the read of a digital pin.
+ * 
+ * Return type: float
+ */
 
 var digitalReadAdvanced = _.merge(_.clone(OutputBloq, true), {
 

@@ -1,0 +1,21 @@
+{
+  "name": "loopBloq",
+  "type": "group",
+  "connectors": [
+    {
+      "type": "connector--empty"
+    },
+    {
+      "type": "connector--empty"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-loop",
+  "headerText": "bloq-loop-header",
+  "descriptionText": "bloq-loop-description",
+  "content": [],
+  "code": "void loop(){{STATEMENTS}}"
+}

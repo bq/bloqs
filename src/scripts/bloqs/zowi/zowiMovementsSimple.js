@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: zowiMovementsSimple
-*
-* Bloq type: statement
-*
-* Description: It makes Zowi execute a specific movement,
-*              selectable from a drop-down, the given number of times.
-*
-* Return type: none
-*/
+ * Bloq name: zowiMovementsSimple
+ *
+ * Bloq type: statement
+ *
+ * Description: It makes Zowi execute a specific movement,
+ *              selectable from a drop-down, the given number of times.
+ *
+ * Return type: none
+ */
 
 var zowiMovementsSimple = _.merge(_.clone(StatementBloq, true), {
 

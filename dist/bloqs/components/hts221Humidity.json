@@ -1,0 +1,29 @@
+{
+  "type": "output",
+  "name": "hts221Humidity",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-hts221-humidity",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-hts221-humidity"
+      },
+      {
+        "id": "SENSOR",
+        "alias": "dynamicDropdown",
+        "options": "hts221"
+      }
+    ]
+  ],
+  "code": "{SENSOR}.getHumidity()",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  }
+}

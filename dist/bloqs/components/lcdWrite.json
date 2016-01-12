@@ -1,0 +1,38 @@
+{
+  "type": "statement",
+  "name": "lcdWrite",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-lcd-writte",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-lcd-writte-write"
+      },
+      {
+        "id": "TEXT",
+        "alias": "stringInput",
+        "placeholder": "bloq-lcd-default"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-lcd-writte-inLCD"
+      },
+      {
+        "id": "LCD",
+        "alias": "dynamicDropdown",
+        "options": "lcds"
+      }
+    ]
+  ],
+  "code": "{LCD}.print({TEXT});"
+}

@@ -1,0 +1,52 @@
+{
+  "type": "output",
+  "name": "random",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "float",
+      "name": "ef71d26a-1b12-40e5-9268-afd1e3776fe2"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "float",
+      "name": "630035a3-3bd5-420f-835a-707130fce5cc"
+    }
+  ],
+  "bloqClass": "bloq-random",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-random-random"
+      },
+      {
+        "bloqInputId": "ARG1",
+        "alias": "bloqInput",
+        "acceptType": "float",
+        "name": "ef71d26a-1b12-40e5-9268-afd1e3776fe2"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-random-and"
+      },
+      {
+        "bloqInputId": "ARG2",
+        "alias": "bloqInput",
+        "acceptType": "float",
+        "name": "630035a3-3bd5-420f-835a-707130fce5cc"
+      }
+    ]
+  ],
+  "code": "random({ARG1},{ARG2}+1)",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  }
+}

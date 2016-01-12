@@ -1,0 +1,29 @@
+{
+  "type": "statement",
+  "name": "oscillatorStart",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-oscillator-start",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-oscillator-start-oscillator"
+      },
+      {
+        "id": "OSCILLATOR",
+        "alias": "dynamicDropdown",
+        "options": "oscillators"
+      }
+    ]
+  ],
+  "code": "{OSCILLATOR}.Play();"
+}

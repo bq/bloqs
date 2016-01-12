@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementBloq = require('./../../statementBloq');
 
 /**
-* Bloq name: lcdWriteAdvanced
-* 
-* Bloq type: Statement
-*
-* Description: It writes the given input on a specific LCD.
-* 
-* Return type: none
-*/
+ * Bloq name: lcdWriteAdvanced
+ * 
+ * Bloq type: Statement
+ *
+ * Description: It writes the given input on a specific LCD.
+ * 
+ * Return type: none
+ */
 
 var lcdWriteAdvanced = _.merge(_.clone(StatementBloq, true), {
 

@@ -1,0 +1,36 @@
+{
+  "type": "statement",
+  "name": "oscillatorStopAdvanced",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "aa9a26dd-adac-46fa-8042-44ed837ab191"
+    }
+  ],
+  "bloqClass": "bloq-oscillator-stop-advanced",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-oscillator-stop-advanced-stop"
+      },
+      {
+        "bloqInputId": "OSCILLATOR",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "aa9a26dd-adac-46fa-8042-44ed837ab191"
+      }
+    ]
+  ],
+  "code": "{OSCILLATOR}.stop()"
+}

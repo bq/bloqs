@@ -1,0 +1,51 @@
+{
+  "type": "output",
+  "name": "arrayVariableAdvanced",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "839b4646-cf6f-42b4-8b39-2721cd9e007d"
+    }
+  ],
+  "bloqClass": "bloq-array-variable",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-array-variable-variable"
+      },
+      {
+        "id": "VAR",
+        "alias": "dynamicDropdown",
+        "options": "softwareVars"
+      },
+      {
+        "alias": "text",
+        "value": "["
+      },
+      {
+        "bloqInputId": "POSITION",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "839b4646-cf6f-42b4-8b39-2721cd9e007d"
+      },
+      {
+        "alias": "text",
+        "value": "]"
+      }
+    ]
+  ],
+  "code": "{VAR}[{POSITION}]",
+  "returnType": {
+    "type": "fromDynamicDropdown",
+    "idDropdown": "VAR",
+    "pointer": "true",
+    "options": "softwareVars"
+  }
+}

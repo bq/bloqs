@@ -1,0 +1,56 @@
+{
+  "type": "statement",
+  "name": "servoNormalAdvanced",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "754d3b4b-4736-4385-acb1-667591e3d5f4"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "d7f5ce7f-fcce-4fb6-82e6-2ec2641853a7"
+    }
+  ],
+  "bloqClass": "bloq-servo-advanced",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-servo-advanced-move"
+      },
+      {
+        "bloqInputId": "SERVO",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "754d3b4b-4736-4385-acb1-667591e3d5f4"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-servo-advanced-to"
+      },
+      {
+        "bloqInputId": "POSITION",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "d7f5ce7f-fcce-4fb6-82e6-2ec2641853a7"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-servo-advanced-degrees"
+      }
+    ]
+  ],
+  "code": "{SERVO}.write({POSITION});"
+}

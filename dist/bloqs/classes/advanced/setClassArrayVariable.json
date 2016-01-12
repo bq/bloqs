@@ -1,0 +1,77 @@
+{
+  "type": "statement",
+  "name": "setClassArrayVariable",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": {
+        "type": "fromDynamicDropdown",
+        "idDropdown": "NAME",
+        "pointer": "true",
+        "options": "softwareVars"
+      },
+      "name": "f27b6ef7-56de-4114-9f8a-1aaa31873aeb"
+    }
+  ],
+  "bloqClass": "bloq-set-class-variableArray",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-set-class-variableArray-variable"
+      },
+      {
+        "id": "NAME",
+        "alias": "dynamicDropdown",
+        "options": "softwareVars"
+      },
+      {
+        "alias": "text",
+        "value": "["
+      },
+      {
+        "id": "ITERATOR",
+        "alias": "numberInput",
+        "value": 0
+      },
+      {
+        "alias": "text",
+        "value": "]"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-invoke-class-function-class"
+      },
+      {
+        "id": "CLASS",
+        "alias": "dynamicDropdown",
+        "options": "objects"
+      },
+      {
+        "alias": "text",
+        "value": "="
+      },
+      {
+        "bloqInputId": "VALUE",
+        "alias": "bloqInput",
+        "acceptType": {
+          "type": "fromDynamicDropdown",
+          "idDropdown": "NAME",
+          "pointer": "true",
+          "options": "softwareVars"
+        },
+        "name": "f27b6ef7-56de-4114-9f8a-1aaa31873aeb"
+      }
+    ]
+  ],
+  "code": "{CLASS}.{NAME}[{ITERATOR}] = {VALUE};"
+}

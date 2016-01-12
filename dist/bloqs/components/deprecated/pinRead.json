@@ -1,0 +1,36 @@
+{
+  "type": "output",
+  "name": "pinReadAdvanced",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "fbbe0079-b499-47ef-b517-b9a00afef856"
+    }
+  ],
+  "bloqClass": "bloq-pin-read-advanced",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-pin-read-advanced-readpin"
+      },
+      {
+        "bloqInputId": "PIN",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "fbbe0079-b499-47ef-b517-b9a00afef856"
+      }
+    ]
+  ],
+  "code": "'{PIN}'.indexOf('A') !== -1 ? 'analogRead({PIN})' : 'digitalRead({PIN})'",
+  "returnType": {
+    "type": "simple",
+    "value": "bool"
+  }
+}

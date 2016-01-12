@@ -1,0 +1,48 @@
+{
+  "type": "output",
+  "name": "stringSum",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "String",
+      "name": "2db46230-1334-40f4-855b-1dc6e7c51d12"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "String",
+      "name": "e327ecbf-a69b-4bca-a9ea-6f1ef0212958"
+    }
+  ],
+  "bloqClass": "bloq-string-sum",
+  "content": [
+    [
+      {
+        "bloqInputId": "ARG1",
+        "alias": "bloqInput",
+        "acceptType": "String",
+        "name": "2db46230-1334-40f4-855b-1dc6e7c51d12"
+      },
+      {
+        "alias": "text",
+        "value": "+"
+      },
+      {
+        "bloqInputId": "ARG2",
+        "alias": "bloqInput",
+        "acceptType": "String",
+        "name": "e327ecbf-a69b-4bca-a9ea-6f1ef0212958"
+      }
+    ]
+  ],
+  "code": "String({ARG1})+String({ARG2})",
+  "returnType": {
+    "type": "simple",
+    "value": "String"
+  }
+}

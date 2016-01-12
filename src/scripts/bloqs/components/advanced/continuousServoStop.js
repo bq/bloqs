@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementBloq = require('./../../statementBloq');
 
 /**
-* Bloq name: continuousServoStopAdvanced
-* 
-* Bloq type: Statement
-*
-* Description: It stops a specific continuous servo.
-* 
-* Return type: none
-*/
+ * Bloq name: continuousServoStopAdvanced
+ * 
+ * Bloq type: Statement
+ *
+ * Description: It stops a specific continuous servo.
+ * 
+ * Return type: none
+ */
 
 var continuousServoStopAdvanced = _.merge(_.clone(StatementBloq, true), {
 

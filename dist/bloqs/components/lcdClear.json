@@ -1,0 +1,29 @@
+{
+  "type": "statement",
+  "name": "lcdClear",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-lcd-clear",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-lcd-clear"
+      },
+      {
+        "id": "LCD",
+        "alias": "dynamicDropdown",
+        "options": "lcds"
+      }
+    ]
+  ],
+  "code": "{LCD}.clear();"
+}

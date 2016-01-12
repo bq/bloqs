@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: arrayClassVariable
-* 
-* Bloq type: Output
-*
-* Description: It returns an specific element of an array-type variable,
-*              selectable from a first drop-down, of an object, selectable
-*              from a second drop-down.
-* 
-* Return type: element's type of the array variable
-*/
+ * Bloq name: arrayClassVariable
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns an specific element of an array-type variable,
+ *              selectable from a first drop-down, of an object, selectable
+ *              from a second drop-down.
+ *
+ * Return type: element's type of the array variable
+ */
 
 var arrayClassVariable = _.merge(_.clone(OutputBloq, true), {
 
@@ -42,7 +42,7 @@ var arrayClassVariable = _.merge(_.clone(OutputBloq, true), {
         }, {
             alias: 'text',
             value: 'bloq-invoke-class-function-class'
-        },  {
+        }, {
             id: 'CLASS',
             alias: 'dynamicDropdown',
             options: 'objects'

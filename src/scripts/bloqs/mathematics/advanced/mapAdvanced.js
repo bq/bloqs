@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: mapAdvanced
-*
-* Bloq type: Output
-*
-* Description: It returns the given value between two determined limits,
-*              mapped between other two different limits.
-*
-* Return type: float
-*/
+ * Bloq name: mapAdvanced
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns the given value between two determined limits,
+ *              mapped between other two different limits.
+ *
+ * Return type: float
+ */
 
 var mapAdvanced = _.merge(_.clone(OutputBloq, true), {
 

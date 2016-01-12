@@ -1,0 +1,28 @@
+{
+  "type": "statement-input",
+  "name": "caseDefault",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-case-default",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-case-default-inOtherCase"
+      }
+    ]
+  ],
+  "code": "default:{{STATEMENTS}break;}"
+}

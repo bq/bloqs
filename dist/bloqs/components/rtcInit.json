@@ -1,0 +1,29 @@
+{
+  "type": "statement",
+  "name": "clockRTCInit",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-rtc-init",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-rtc-init"
+      },
+      {
+        "id": "RTC",
+        "alias": "dynamicDropdown",
+        "options": "clocks"
+      }
+    ]
+  ],
+  "code": "{RTC}.adjust(DateTime(__DATE__, __TIME__));"
+}

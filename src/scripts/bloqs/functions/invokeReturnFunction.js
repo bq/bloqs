@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: invokeReturnFunction
-*
-* Bloq type: Output
-*
-* Description: It executes a function, selectable from a drop-down,
-*              which does return a value.
-*
-* Return type: function's return type
-*/
+ * Bloq name: invokeReturnFunction
+ *
+ * Bloq type: Output
+ *
+ * Description: It executes a function, selectable from a drop-down,
+ *              which does return a value.
+ *
+ * Return type: function's return type
+ */
 
 var invokeReturnFunction = _.merge(_.clone(OutputBloq, true), {
 

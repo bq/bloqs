@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: zowiDistance
-*
-* Bloq type: Output
-*
-* Description: It returns the distance measurement that Zowi sees.
-*
-* Return type: float
-*/
+ * Bloq name: zowiDistance
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns the distance measurement that Zowi sees.
+ *
+ * Return type: float
+ */
 
 var zowiDistance = _.merge(_.clone(OutputBloq, true), {
 

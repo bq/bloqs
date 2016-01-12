@@ -1,0 +1,62 @@
+{
+  "type": "output",
+  "name": "convert",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "number",
+      "name": "a414e283-d1af-42d3-b1f3-0c4fba6129ab"
+    }
+  ],
+  "bloqClass": "bloq-convert",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-convert-convert"
+      },
+      {
+        "bloqInputId": "NUMBER",
+        "alias": "bloqInput",
+        "acceptType": "number",
+        "name": "a414e283-d1af-42d3-b1f3-0c4fba6129ab"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-convert-to"
+      },
+      {
+        "id": "TYPE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-convert-dec",
+            "value": "DEC"
+          },
+          {
+            "label": "bloq-convert-hex",
+            "value": "HEX"
+          },
+          {
+            "label": "bloq-convert-oct",
+            "value": "OCT"
+          },
+          {
+            "label": "bloq-convert-bin",
+            "value": "BIN"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "({NUMBER},{TYPE});",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  }
+}

@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: clockRTCAdvanced
-*
-* Bloq type: Output
-*
-* Description: It returns a determined data of the date or the time,
-*              selectable from a first drop-down, of a specific RTC,
-*              selectable from a second drop-down.
-*
-* Return type: int
-*/
+ * Bloq name: clockRTCAdvanced
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns a determined data of the date or the time,
+ *              selectable from a first drop-down, of a specific RTC,
+ *              selectable from a second drop-down.
+ *
+ * Return type: int
+ */
 
 var clockRTCAdvanced = _.merge(_.clone(OutputBloq, true), {
     name: 'clockRTCAdvanced',
@@ -24,13 +24,13 @@ var clockRTCAdvanced = _.merge(_.clone(OutputBloq, true), {
         [{
             alias: 'text',
             value: 'bloq-rtc-advanced'
-        },{
+        }, {
             id: 'FUNCTION',
             alias: 'staticDropdown',
-             options: [{
+            options: [{
                 label: 'bloq-rtc-hour',
                 value: 'getHour'
-            },{
+            }, {
                 label: 'bloq-rtc-minute',
                 value: 'getMinute'
             }, {

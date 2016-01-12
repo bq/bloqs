@@ -1,0 +1,52 @@
+{
+  "type": "statement",
+  "name": "continuousServoStartAdvanced-v1",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "6afffbda-fb10-4492-99cc-147542aad236"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "b86b8a94-07b6-4896-b9a4-915ef43615b4"
+    }
+  ],
+  "bloqClass": "bloq-continuous-servo-start-advanced",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-continuous-servo-start-advanced-turn"
+      },
+      {
+        "bloqInputId": "SERVO",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "6afffbda-fb10-4492-99cc-147542aad236"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-continuous-servo-start-advanced-direction"
+      },
+      {
+        "bloqInputId": "DIRECTION",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "b86b8a94-07b6-4896-b9a4-915ef43615b4"
+      }
+    ]
+  ],
+  "code": "{SERVO}.write({DIRECTION});"
+}

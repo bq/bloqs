@@ -1,0 +1,40 @@
+{
+  "type": "statement-input",
+  "name": "switchAdvanced",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "c46224b5-cf6a-436f-b9ed-fca0d88e9f94"
+    }
+  ],
+  "bloqClass": "bloq-switch",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-switch-check"
+      },
+      {
+        "bloqInputId": "VAR",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "c46224b5-cf6a-436f-b9ed-fca0d88e9f94"
+      }
+    ]
+  ],
+  "code": "switch (int({VAR})) {{STATEMENTS}}"
+}

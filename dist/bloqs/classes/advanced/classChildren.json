@@ -1,0 +1,71 @@
+{
+  "type": "statement-input",
+  "name": "classChildren",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-class-children",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-class"
+      },
+      {
+        "id": "NAME",
+        "alias": "varInput",
+        "placeholder": "bloq-class-default"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-class-inheritance-type"
+      },
+      {
+        "id": "TYPE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-class-inheritance-public",
+            "value": "public"
+          },
+          {
+            "label": "bloq-class-inheritance-protected",
+            "value": "protected"
+          },
+          {
+            "label": "bloq-class-inheritance-private",
+            "value": "private"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-class-from"
+      },
+      {
+        "id": "PARENT",
+        "alias": "dynamicDropdown",
+        "options": "classes"
+      }
+    ]
+  ],
+  "createDynamicContent": "classes",
+  "code": "class {NAME} : public {PARENT}{{STATEMENTS}};",
+  "hCode": "class {NAME}: public {PARENT}{{STATEMENTS}};",
+  "cppCode": "",
+  "returnType": {
+    "type": "simple",
+    "value": "class"
+  }
+}

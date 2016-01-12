@@ -1,0 +1,56 @@
+{
+  "type": "statement",
+  "name": "rgbLed",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-rgbLed",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-rgbLed"
+      },
+      {
+        "id": "LED",
+        "alias": "dynamicDropdown",
+        "options": "rgbs"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-rgbLed-red"
+      },
+      {
+        "id": "RED",
+        "alias": "numberInput",
+        "value": 0
+      },
+      {
+        "alias": "text",
+        "value": "bloq-rgbLed-green"
+      },
+      {
+        "id": "GREEN",
+        "alias": "numberInput",
+        "value": 0
+      },
+      {
+        "alias": "text",
+        "value": "bloq-rgbLed-blue"
+      },
+      {
+        "id": "BLUE",
+        "alias": "numberInput",
+        "value": 0
+      }
+    ]
+  ],
+  "code": "{LED}.setRGBcolor({RED},{GREEN},{BLUE});"
+}

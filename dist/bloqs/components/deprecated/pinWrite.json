@@ -1,0 +1,52 @@
+{
+  "type": "statement",
+  "name": "pinWriteAdvanced",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "f344d034-b473-4247-b73a-e598aa142b2d"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "26cf285c-0844-45dd-9738-268ad7ce1f89"
+    }
+  ],
+  "bloqClass": "bloq-pin-writte-advanced",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-pin-writte-advanced-writepin"
+      },
+      {
+        "bloqInputId": "PIN",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "f344d034-b473-4247-b73a-e598aa142b2d"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-pin-writte-advanced-data"
+      },
+      {
+        "bloqInputId": "DATA",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "26cf285c-0844-45dd-9738-268ad7ce1f89"
+      }
+    ]
+  ],
+  "code": "'{PIN}'.indexOf('A') === 0 ? 'analogWrite({PIN},{DATA});' : 'digitalWrite({PIN},{DATA});'"
+}

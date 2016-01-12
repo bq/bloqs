@@ -1,0 +1,26 @@
+{
+  "type": "statement",
+  "name": "code",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-code",
+  "content": [
+    [
+      {
+        "id": "CODE",
+        "alias": "multilineCodeInput",
+        "value": "",
+        "placeholder": "bloq-code-writeYourCode"
+      }
+    ]
+  ],
+  "code": "{CODE}\n"
+}

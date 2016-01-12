@@ -2,20 +2,20 @@
  'use strict';
 
  var _ = require('lodash'),
-     utils = require('./../../utils'),
+     utils = require('./../build-utils'),
      GroupBloq = require('./../groupBloq');
 
-/**
-* Bloq name: setupBloq
-*
-* Bloq type: group
-*
-* Description: It is used to storage the bloqs wanted
-*              to be executed only once at the beginning
-*              of the program.
-*
-* Return type: none
-*/
+ /**
+  * Bloq name: setupBloq
+  *
+  * Bloq type: group
+  *
+  * Description: It is used to storage the bloqs wanted
+  *              to be executed only once at the beginning
+  *              of the program.
+  *
+  * Return type: none
+  */
 
  var setupBloq = _.merge(_.clone(GroupBloq, true), {
 

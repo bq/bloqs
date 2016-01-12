@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: setArrayVariable
-*
-* Bloq type: Statement
-*
-* Description: It assigns the given value to the element in the given
-*              position of a specific array variable, selectable from
-*              a drop-down.
-*
-* Return type: none
-*/
+ * Bloq name: setArrayVariable
+ *
+ * Bloq type: Statement
+ *
+ * Description: It assigns the given value to the element in the given
+ *              position of a specific array variable, selectable from
+ *              a drop-down.
+ *
+ * Return type: none
+ */
 
 var setArrayVariable = _.merge(_.clone(StatementBloq, true), {
 

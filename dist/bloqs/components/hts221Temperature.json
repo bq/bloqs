@@ -1,0 +1,29 @@
+{
+  "type": "output",
+  "name": "hts221Temperature",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-hts221-temperature",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-hts221-temperature"
+      },
+      {
+        "id": "SENSOR",
+        "alias": "dynamicDropdown",
+        "options": "hts221"
+      }
+    ]
+  ],
+  "code": "{SENSOR}.getTemperature()",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  }
+}

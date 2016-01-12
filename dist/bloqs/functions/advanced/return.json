@@ -1,0 +1,36 @@
+{
+  "type": "statement",
+  "name": "return",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "768dd587-ed17-4991-a5b1-88a1c6c54ef0"
+    }
+  ],
+  "bloqClass": "bloq-return",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-return-return"
+      },
+      {
+        "bloqInputId": "RETURN",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "768dd587-ed17-4991-a5b1-88a1c6c54ef0"
+      }
+    ]
+  ],
+  "code": "return {RETURN};"
+}

@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementInputBloq = require('./../../statementInputBloq');
 
 /**
-* Bloq name: returnFunctionWithArguments
-*
-* Bloq type: Statement-Input
-*
-* Description: It defines a function with the given arguments that could be later
-*              used and which does return a value.
-*
-* Return type: none
-*/
+ * Bloq name: returnFunctionWithArguments
+ *
+ * Bloq type: Statement-Input
+ *
+ * Description: It defines a function with the given arguments that could be later
+ *              used and which does return a value.
+ *
+ * Return type: none
+ */
 
 var returnFunctionWithArguments = _.merge(_.clone(StatementInputBloq, true), {
 

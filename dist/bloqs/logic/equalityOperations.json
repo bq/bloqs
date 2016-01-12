@@ -1,0 +1,74 @@
+{
+  "type": "output",
+  "name": "equalityOperations",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "e2fc8593-790f-4c57-96cb-133e34c72630"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "25c473e4-0e3a-4407-9c14-c0fcde2eedc0"
+    }
+  ],
+  "bloqClass": "bloq-equality-operations",
+  "content": [
+    [
+      {
+        "bloqInputId": "ARG1",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "e2fc8593-790f-4c57-96cb-133e34c72630"
+      },
+      {
+        "id": "OPERATOR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "=",
+            "value": "=="
+          },
+          {
+            "label": "!=",
+            "value": "!="
+          },
+          {
+            "label": ">",
+            "value": ">"
+          },
+          {
+            "label": ">=",
+            "value": ">="
+          },
+          {
+            "label": "<",
+            "value": "<"
+          },
+          {
+            "label": "<=",
+            "value": "<="
+          }
+        ]
+      },
+      {
+        "bloqInputId": "ARG2",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "25c473e4-0e3a-4407-9c14-c0fcde2eedc0"
+      }
+    ]
+  ],
+  "code": "{ARG1} {OPERATOR} {ARG2}",
+  "returnType": {
+    "type": "simple",
+    "value": "bool"
+  }
+}

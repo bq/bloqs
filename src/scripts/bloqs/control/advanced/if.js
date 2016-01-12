@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementInputBloq = require('./../../statementInputBloq');
 
 /**
-* Bloq name: ifAdvanced
-*
-* Bloq type: Statement-Input
-*
-* Description: It executes the following code only if the condition
-*              is true.
-*
-* Return type: none
-*/
+ * Bloq name: ifAdvanced
+ *
+ * Bloq type: Statement-Input
+ *
+ * Description: It executes the following code only if the condition
+ *              is true.
+ *
+ * Return type: none
+ */
 
 var ifAdvanced = _.merge(_.clone(StatementInputBloq, true), {
 

@@ -1,0 +1,42 @@
+{
+  "type": "statement",
+  "name": "servoNormal",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-servo",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-servo-move"
+      },
+      {
+        "id": "SERVO",
+        "alias": "dynamicDropdown",
+        "options": "servos"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-servo-to"
+      },
+      {
+        "id": "POSITION",
+        "alias": "numberInput",
+        "value": 90
+      },
+      {
+        "alias": "text",
+        "value": "bloq-servo-degrees"
+      }
+    ]
+  ],
+  "code": "{SERVO}.write({POSITION});"
+}

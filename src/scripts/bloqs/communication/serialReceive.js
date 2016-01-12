@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: serialReceive
-* 
-* Bloq type: Output
-*
-* Description: It returns what is received by the serial port.
-* 
-* Return type: String
-*/
+ * Bloq name: serialReceive
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns what is received by the serial port.
+ *
+ * Return type: String
+ */
 
 var serialReceive = _.merge(_.clone(OutputBloq, true), {
 

@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: boolArray
-*
-* Bloq type: Output
-*
-* Description: It returns a boolean pointer to an array of the given size.
-*
-* Return type: bool pointer
-*/
+ * Bloq name: boolArray
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns a boolean pointer to an array of the given size.
+ *
+ * Return type: bool pointer
+ */
 
 var boolArray = _.merge(_.clone(OutputBloq, true), {
 

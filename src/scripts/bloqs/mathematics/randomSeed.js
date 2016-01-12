@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: randomSeed
-*
-* Bloq type: Statement
-*
-* Description: It inizializes the random number generator.
-*
-* Return type: none
-*/
+ * Bloq name: randomSeed
+ *
+ * Bloq type: Statement
+ *
+ * Description: It inizializes the random number generator.
+ *
+ * Return type: none
+ */
 
 var randomSeed = _.merge(_.clone(StatementBloq, true), {
 

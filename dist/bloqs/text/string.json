@@ -1,0 +1,33 @@
+{
+  "type": "output",
+  "name": "string",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-string",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "\""
+      },
+      {
+        "id": "TEXT",
+        "alias": "stringInput",
+        "placeholder": "bloq-string-string"
+      },
+      {
+        "alias": "text",
+        "value": "\""
+      }
+    ]
+  ],
+  "code": "\"{TEXT}\"",
+  "returnType": {
+    "type": "simple",
+    "value": "String"
+  }
+}

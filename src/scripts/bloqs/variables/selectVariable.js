@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: selectVariable
-*
-* Bloq type: Output
-*
-* Description: It returns a specific variable, selectable from a drop-down.
-*
-* Return type: selected variable's type
-*/
+ * Bloq name: selectVariable
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns a specific variable, selectable from a drop-down.
+ *
+ * Return type: selected variable's type
+ */
 
 var selectVariable = _.merge(_.clone(OutputBloq, true), {
 

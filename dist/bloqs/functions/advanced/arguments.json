@@ -1,0 +1,49 @@
+{
+  "type": "output",
+  "name": "arguments",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "ce64e5f9-5d6b-4bd5-9d6a-47a823a31a31"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "be7680ff-503e-4a70-a395-92f565ce48b7"
+    }
+  ],
+  "bloqClass": "bloq-arguments",
+  "content": [
+    [
+      {
+        "bloqInputId": "ARG1",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "ce64e5f9-5d6b-4bd5-9d6a-47a823a31a31"
+      },
+      {
+        "alias": "text",
+        "value": ","
+      },
+      {
+        "bloqInputId": "ARG2",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "be7680ff-503e-4a70-a395-92f565ce48b7"
+      }
+    ]
+  ],
+  "createDynamicContent": "softwareVars",
+  "code": "{ARG1},{ARG2}",
+  "returnType": {
+    "type": "simple",
+    "value": "var"
+  }
+}

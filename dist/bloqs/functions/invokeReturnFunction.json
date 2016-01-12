@@ -1,0 +1,30 @@
+{
+  "type": "output",
+  "name": "invokeReturnFunction",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-invoke-return-function",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-invoke-return-function-exec"
+      },
+      {
+        "id": "FUNCTION",
+        "alias": "dynamicDropdown",
+        "options": "returnFunctions"
+      }
+    ]
+  ],
+  "code": "{FUNCTION}()",
+  "returnType": {
+    "type": "fromDynamicDropdown",
+    "idDropdown": "FUNCTION",
+    "options": "returnFunctions"
+  }
+}

@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementBloq = require('./../../statementBloq');
 
 /**
-* Bloq name: declareVariableAdvanced
-*
-* Bloq type: Statement
-*
-* Description: It declares a new variable called with the given
-*              name with a specific type, selectable from a drop-down,
-*              and initializes it with the given value.
-*
-* Return type: none
-*/
+ * Bloq name: declareVariableAdvanced
+ *
+ * Bloq type: Statement
+ *
+ * Description: It declares a new variable called with the given
+ *              name with a specific type, selectable from a drop-down,
+ *              and initializes it with the given value.
+ *
+ * Return type: none
+ */
 
 var declareVariableAdvanced = _.merge(_.clone(StatementBloq, true), {
     name: 'declareVariableAdvanced',

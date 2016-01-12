@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: hwVariable
-*
-* Bloq type: Output
-*
-* Description: It returns the pin where a specific component,
-*              selectable from a drop down, is connected.
-*
-* Return type: selected component's type
-*/
+ * Bloq name: hwVariable
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns the pin where a specific component,
+ *              selectable from a drop down, is connected.
+ *
+ * Return type: selected component's type
+ */
 
 var hwVariable = _.merge(_.clone(OutputBloq, true), {
 

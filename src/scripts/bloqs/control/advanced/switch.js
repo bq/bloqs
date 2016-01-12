@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementInputBloq = require('./../../statementInputBloq');
 
 /**
-* Bloq name: switchAdvanced
-*
-* Bloq type: Statement-Input
-*
-* Description: It establishes the variable with which compare.
-*
-* Return type: none
-*/
+ * Bloq name: switchAdvanced
+ *
+ * Bloq type: Statement-Input
+ *
+ * Description: It establishes the variable with which compare.
+ *
+ * Return type: none
+ */
 
 var switchAdvanced = _.merge(_.clone(StatementInputBloq, true), {
 

@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: logicOperations
-*
-* Bloq type: Output
-*
-* Description: It returns the result of a logic comparison between two given values.
-*
-* Return type: bool
-*/
+ * Bloq name: logicOperations
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns the result of a logic comparison between two given values.
+ *
+ * Return type: bool
+ */
 
 var logicOperations = _.merge(_.clone(OutputBloq, true), {
 

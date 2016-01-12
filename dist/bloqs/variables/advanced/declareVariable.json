@@ -1,0 +1,80 @@
+{
+  "type": "statement",
+  "name": "declareVariableAdvanced",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "af14afc7-56ea-4a9c-af0f-cab8fd17165c"
+    }
+  ],
+  "bloqClass": "bloq-declare-variable",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-declare-variable-declare"
+      },
+      {
+        "id": "NAME",
+        "alias": "varInput",
+        "value": ""
+      },
+      {
+        "alias": "text",
+        "value": "bloq-declare-variable-declare-type"
+      },
+      {
+        "id": "TYPE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-declare-variable-declare-type-int",
+            "value": "int"
+          },
+          {
+            "label": "bloq-declare-variable-declare-type-float",
+            "value": "float"
+          },
+          {
+            "label": "bloq-declare-variable-declare-type-text",
+            "value": "String"
+          },
+          {
+            "label": "bloq-declare-variable-declare-type-char",
+            "value": "char"
+          },
+          {
+            "label": "bloq-declare-variable-declare-type-bool",
+            "value": "bool"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "="
+      },
+      {
+        "bloqInputId": "VALUE",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "af14afc7-56ea-4a9c-af0f-cab8fd17165c"
+      }
+    ]
+  ],
+  "returnType": {
+    "type": "fromDropdown",
+    "idDropdown": "TYPE"
+  },
+  "createDynamicContent": "softwareVars",
+  "code": "{TYPE} {NAME} = {VALUE};"
+}

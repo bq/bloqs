@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: oscillatorStart
-* 
-* Bloq type: Statement
-*
-* Description: It makes a specific servo, selectable from a 
-*              drop-down, oscillate as it has been set.
-* 
-* Return type: none
-*/
+ * Bloq name: oscillatorStart
+ *
+ * Bloq type: Statement
+ *
+ * Description: It makes a specific servo, selectable from a
+ *              drop-down, oscillate as it has been set.
+ *
+ * Return type: none
+ */
 
 var oscillatorStart = _.merge(_.clone(StatementBloq, true), {
 

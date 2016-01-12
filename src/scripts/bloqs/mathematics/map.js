@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: map
-*
-* Bloq type: Output
-*
-* Description: It returns the given value between 0 and 1023,
-*              mapped between 0 and a given second value.
-*
-* Return type: float
-*/
+ * Bloq name: map
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns the given value between 0 and 1023,
+ *              mapped between 0 and a given second value.
+ *
+ * Return type: float
+ */
 
 var map = _.merge(_.clone(OutputBloq, true), {
 

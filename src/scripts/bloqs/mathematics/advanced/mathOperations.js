@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: mathOperations
-*
-* Bloq type: Output
-*
-* Description: It returns the result of the math operation over a single number.
-*
-* Return type: float
-*/
+ * Bloq name: mathOperations
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns the result of the math operation over a single number.
+ *
+ * Return type: float
+ */
 
 var mathOperations = _.merge(_.clone(OutputBloq, true), {
 

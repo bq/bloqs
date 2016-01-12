@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: stringToInt
-*
-* Bloq type: Output
-*
-* Description: It converts the given string type value to int type.
-*
-* Return type: int
-*/
+ * Bloq name: stringToInt
+ *
+ * Bloq type: Output
+ *
+ * Description: It converts the given string type value to int type.
+ *
+ * Return type: int
+ */
 
 var stringToInt = _.merge(_.clone(OutputBloq, true), {
 

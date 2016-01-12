@@ -1,0 +1,50 @@
+{
+  "type": "statement",
+  "name": "ledAdvanced",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "cdce957b-c4c8-4ae1-a8df-d9b5ad233f93"
+    }
+  ],
+  "bloqClass": "bloq-led-advanced",
+  "content": [
+    [
+      {
+        "id": "STATE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-led-advanced-turnon",
+            "value": "HIGH"
+          },
+          {
+            "label": "bloq-led-advanced-turnoff",
+            "value": "LOW"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-led-advanced-theLED"
+      },
+      {
+        "bloqInputId": "LED",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "cdce957b-c4c8-4ae1-a8df-d9b5ad233f93"
+      }
+    ]
+  ],
+  "code": "digitalWrite({LED},{STATE});"
+}

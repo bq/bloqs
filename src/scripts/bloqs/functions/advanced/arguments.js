@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: arguments
-*
-* Bloq type: Output
-*
-* Description: It allows to declare two arguments instead of one.
-*
-* Return type: var
-*/
+ * Bloq name: arguments
+ *
+ * Bloq type: Output
+ *
+ * Description: It allows to declare two arguments instead of one.
+ *
+ * Return type: var
+ */
 
 var bloqArguments = _.merge(_.clone(OutputBloq, true), {
 

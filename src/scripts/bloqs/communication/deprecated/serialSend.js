@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementBloq = require('./../../statementBloq');
 
 /**
-* Bloq name: serialSend
-* 
-* Bloq type: Statement
-*
-* Description: It sends by the serial port what is input with
-*              or without newline end.
-* 
-* Return type: none
-*/
+ * Bloq name: serialSend
+ * 
+ * Bloq type: Statement
+ *
+ * Description: It sends by the serial port what is input with
+ *              or without newline end.
+ * 
+ * Return type: none
+ */
 
 var serialSend = _.merge(_.clone(StatementBloq, true), {
 

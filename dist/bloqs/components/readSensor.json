@@ -1,0 +1,30 @@
+{
+  "type": "output",
+  "name": "readSensor",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-read-sensor",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-read-read"
+      },
+      {
+        "id": "SENSOR",
+        "alias": "dynamicDropdown",
+        "options": "sensors"
+      }
+    ]
+  ],
+  "code": "{SENSOR.type}",
+  "returnType": {
+    "type": "fromDynamicDropdown",
+    "idDropdown": "SENSOR",
+    "options": "sensors"
+  }
+}

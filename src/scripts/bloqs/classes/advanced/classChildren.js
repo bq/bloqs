@@ -2,21 +2,21 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementInputBloq = require('./../../statementInputBloq');
 
 /**
-* Bloq name: classChildren
-* 
-* Bloq type: Statement-Input
-*
-* Description: It defines a class which inherits, in a public, protected
-*              or private way, selectable from a first drop-down, the
-*              variables and functions from another class, selectable from
-*              a second drop-down.
-* 
-* Return type: none
-*/
+ * Bloq name: classChildren
+ * 
+ * Bloq type: Statement-Input
+ *
+ * Description: It defines a class which inherits, in a public, protected
+ *              or private way, selectable from a first drop-down, the
+ *              variables and functions from another class, selectable from
+ *              a second drop-down.
+ * 
+ * Return type: none
+ */
 
 var classChildren = _.merge(_.clone(StatementInputBloq, true), {
 
@@ -29,7 +29,7 @@ var classChildren = _.merge(_.clone(StatementInputBloq, true), {
         }, {
             id: 'NAME',
             alias: 'varInput',
-            placeholder:'bloq-class-default'
+            placeholder: 'bloq-class-default'
         }, {
             alias: 'text',
             value: 'bloq-class-inheritance-type'
@@ -37,15 +37,15 @@ var classChildren = _.merge(_.clone(StatementInputBloq, true), {
             id: 'TYPE',
             alias: 'staticDropdown',
             options: [{
-                    label: 'bloq-class-inheritance-public',
-                    value: 'public'
-                }, {
-                    label: 'bloq-class-inheritance-protected',
-                    value: 'protected'
-                }, {
-                    label: 'bloq-class-inheritance-private',
-                    value: 'private'
-                }]
+                label: 'bloq-class-inheritance-public',
+                value: 'public'
+            }, {
+                label: 'bloq-class-inheritance-protected',
+                value: 'protected'
+            }, {
+                label: 'bloq-class-inheritance-private',
+                value: 'private'
+            }]
         }, {
             alias: 'text',
             value: 'bloq-class-from'

@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: clockRTCInit
-* 
-* Bloq type: Statement
-*
-* Description: It synchronizes a specific RTC, selectable
-*              from a second drop-down, with the time and date
-*              of the computer.
-* 
-* Return type: none
-*/
+ * Bloq name: clockRTCInit
+ *
+ * Bloq type: Statement
+ *
+ * Description: It synchronizes a specific RTC, selectable
+ *              from a second drop-down, with the time and date
+ *              of the computer.
+ *
+ * Return type: none
+ */
 
 var clockRTCInit = _.merge(_.clone(StatementBloq, true), {
 

@@ -1,0 +1,58 @@
+{
+  "type": "statement",
+  "name": "invokeClassFunctionWithArguments",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "a1a55034-dd95-4ffb-94f4-8c33751782d8"
+    }
+  ],
+  "bloqClass": "bloq-invoke-class-function-args",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-invoke-class-function-exec"
+      },
+      {
+        "id": "FUNCTION",
+        "alias": "dynamicDropdown",
+        "options": "voidFunctions"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-invoke-class-function-class"
+      },
+      {
+        "id": "CLASS",
+        "alias": "dynamicDropdown",
+        "options": "objects"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-invoke-class-function-args"
+      },
+      {
+        "bloqInputId": "ARGS",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "a1a55034-dd95-4ffb-94f4-8c33751782d8"
+      }
+    ]
+  ],
+  "code": "{CLASS}.{FUNCTION}({ARGS});",
+  "dynamicDropdown": {
+    "idDropdown": "FUNCTION",
+    "options": "voidFunctions"
+  }
+}

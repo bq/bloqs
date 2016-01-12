@@ -1,0 +1,47 @@
+{
+  "type": "statement",
+  "name": "continuousServoStart",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-continuous-servo-start",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-continuous-servo-start-turn"
+      },
+      {
+        "id": "SERVO",
+        "alias": "dynamicDropdown",
+        "options": "continuousServos"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-continuous-servo-start-direction"
+      },
+      {
+        "id": "DIRECTION",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-continuous-servo-start-clockwise",
+            "value": "180"
+          },
+          {
+            "label": "bloq-continuous-servo-start-counterclockwise",
+            "value": "0"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "{SERVO}.write({DIRECTION});"
+}

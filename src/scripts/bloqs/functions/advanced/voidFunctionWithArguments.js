@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementInputBloq = require('./../../statementInputBloq');
 
 /**
-* Bloq name: voidFunctionWithArguments
-*
-* Bloq type: Statement-Input
-*
-* Description: It defines a function with the given arguments that could be
-*              later used and which does not return any value.
-*
-* Return type: none
-*/
+ * Bloq name: voidFunctionWithArguments
+ *
+ * Bloq type: Statement-Input
+ *
+ * Description: It defines a function with the given arguments that could be
+ *              later used and which does not return any value.
+ *
+ * Return type: none
+ */
 
 var voidFunctionWithArguments = _.merge(_.clone(StatementInputBloq, true), {
 
@@ -27,7 +27,7 @@ var voidFunctionWithArguments = _.merge(_.clone(StatementInputBloq, true), {
         }, {
             id: 'FUNCNAME',
             alias: 'varInput',
-            placeholder:'bloq-functions-default'
+            placeholder: 'bloq-functions-default'
         }, {
             alias: 'text',
             value: 'bloq-void-function-with-arguments-count'

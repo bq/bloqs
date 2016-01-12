@@ -1,0 +1,55 @@
+{
+  "type": "output",
+  "name": "numberArrayAdvanced",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "822469be-1c48-4c16-81d9-76488b342225"
+    }
+  ],
+  "bloqClass": "bloq-numberArray-advanced",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-numberArray-advanced-arraySize"
+      },
+      {
+        "bloqInputId": "VALUE",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "822469be-1c48-4c16-81d9-76488b342225"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-numberArray-advanced-type"
+      },
+      {
+        "id": "TYPE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-numberArray-advanced-float",
+            "value": "float *"
+          },
+          {
+            "label": "bloq-numberArray-advanced-int",
+            "value": "int *"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "({TYPE})malloc({VALUE}*sizeof({TYPE}.withoutAsterisk))",
+  "returnType": {
+    "type": "fromDropdown",
+    "idDropdown": "TYPE",
+    "options": "softwareVars"
+  }
+}

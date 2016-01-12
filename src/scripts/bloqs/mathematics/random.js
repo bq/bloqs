@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: random
-*
-* Bloq type: Output
-*
-* Description: It returns a random value between two given values.
-*
-* Return type: float
-*/
+ * Bloq name: random
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns a random value between two given values.
+ *
+ * Return type: float
+ */
 
 var random = _.merge(_.clone(OutputBloq, true), {
 

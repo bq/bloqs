@@ -1,0 +1,56 @@
+{
+  "type": "statement",
+  "name": "rgbLedFade",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-rgbLed-fade",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-rgbLed-fade"
+      },
+      {
+        "id": "LED",
+        "alias": "dynamicDropdown",
+        "options": "rgbs"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-rgbLed-fade-red"
+      },
+      {
+        "id": "RED",
+        "alias": "numberInput",
+        "value": 0
+      },
+      {
+        "alias": "text",
+        "value": "bloq-rgbLed-fade-green"
+      },
+      {
+        "id": "GREEN",
+        "alias": "numberInput",
+        "value": 0
+      },
+      {
+        "alias": "text",
+        "value": "bloq-rgbLed-fade-blue"
+      },
+      {
+        "id": "BLUE",
+        "alias": "numberInput",
+        "value": 0
+      }
+    ]
+  ],
+  "code": "{LED}.crossFade({RED},{GREEN},{BLUE});"
+}

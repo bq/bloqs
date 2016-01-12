@@ -1,0 +1,57 @@
+{
+  "type": "output",
+  "name": "argument",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-argument",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-argument-var"
+      },
+      {
+        "id": "TYPE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-argument-int",
+            "value": "int"
+          },
+          {
+            "label": "bloq-argument-float",
+            "value": "float"
+          },
+          {
+            "label": "bloq-argument-string",
+            "value": "String"
+          },
+          {
+            "label": "bloq-argument-char",
+            "value": "char"
+          },
+          {
+            "label": "bloq-argument-bool",
+            "value": "bool"
+          }
+        ]
+      },
+      {
+        "id": "VARNAME",
+        "alias": "varInput",
+        "value": ""
+      }
+    ]
+  ],
+  "createDynamicContent": "softwareVars",
+  "code": "{TYPE} {VARNAME}",
+  "returnType": {
+    "type": "fromDropdown",
+    "idDropdown": "TYPE",
+    "options": "softwareVars"
+  }
+}

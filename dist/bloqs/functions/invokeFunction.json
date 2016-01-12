@@ -1,0 +1,33 @@
+{
+  "type": "statement",
+  "name": "invokeFunction",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-invoke-function",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-invoke-function-exec"
+      },
+      {
+        "id": "FUNCTION",
+        "alias": "dynamicDropdown",
+        "options": "voidFunctions"
+      }
+    ]
+  ],
+  "code": "{FUNCTION}();",
+  "dynamicDropdown": {
+    "idDropdown": "FUNCTION",
+    "options": "voidFunctions"
+  }
+}

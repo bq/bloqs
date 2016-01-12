@@ -1,0 +1,24 @@
+{
+  "type": "output",
+  "name": "millis",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-millis",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-millis"
+      }
+    ]
+  ],
+  "code": "millis()",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  }
+}

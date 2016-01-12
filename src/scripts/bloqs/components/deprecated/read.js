@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: readSensorAdvanced
-* 
-* Bloq type: Output
-*
-* Description: It returns the measurement of a specific sensor.
-* 
-* Return type: sensor's return type
-*/
+ * Bloq name: readSensorAdvanced
+ * 
+ * Bloq type: Output
+ *
+ * Description: It returns the measurement of a specific sensor.
+ * 
+ * Return type: sensor's return type
+ */
 
 var readSensorAdvanced = _.merge(_.clone(OutputBloq, true), {
 

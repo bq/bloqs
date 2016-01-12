@@ -24,22 +24,12 @@
         "Sergio Morcuende <sergio.morcuende@bq.com>",
         "Jesús Flores <jesus.flores@bq.com>"
     ],
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "bower_components"
-    ],
     "dependencies": {
         "jquery": ">= 2.1.0",
-        "lodash": "~3.7.0"
-    },
-    "resolutions": {
-        "lodash": "3.7.0",
-        "jquery": "2.1.0"
+        "lodash": "~3.7.0",
+        "q": "v1.0.1"
     },
     "moduleType": [
-        "node"
+        "amd"
     ]
 }

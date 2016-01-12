@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: numberArrayAdvanced
-*
-* Bloq type: Output
-*
-* Description: It returns a float pointer or an int pointer, selectable
-*              from a dorp-down, to an array of the given size.
-*
-* Return type: selected type pointer
-*/
+ * Bloq name: numberArrayAdvanced
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns a float pointer or an int pointer, selectable
+ *              from a dorp-down, to an array of the given size.
+ *
+ * Return type: selected type pointer
+ */
 
 var numberArrayAdvanced = _.merge(_.clone(OutputBloq, true), {
 

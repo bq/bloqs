@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementInputBloq = require('./../statementInputBloq');
 
 /**
-* Bloq name: for-v1
-*
-* Bloq type: Statement-Input
-*
-* Description: It repeats the following code, iterating a specific variable,
-*              selectable from a drop-down, from and until two given values,
-*              adding or subtracting a determined quantity in each iteration.
-*
-* Return type: none
-*/
+ * Bloq name: for-v1
+ *
+ * Bloq type: Statement-Input
+ *
+ * Description: It repeats the following code, iterating a specific variable,
+ *              selectable from a drop-down, from and until two given values,
+ *              adding or subtracting a determined quantity in each iteration.
+ *
+ * Return type: none
+ */
 
 var forV1 = _.merge(_.clone(StatementInputBloq, true), {
 

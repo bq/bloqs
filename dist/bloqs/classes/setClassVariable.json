@@ -1,0 +1,62 @@
+{
+  "type": "statement",
+  "name": "setClassVariable",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": {
+        "type": "fromDynamicDropdown",
+        "idDropdown": "NAME",
+        "options": "softwareVars"
+      },
+      "name": "e5387319-58f8-474d-b910-4ced74f77502"
+    }
+  ],
+  "bloqClass": "bloq-set-class-variable",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-set-class-variable-variable"
+      },
+      {
+        "id": "NAME",
+        "alias": "dynamicDropdown",
+        "options": "softwareVars"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-invoke-class-function-class"
+      },
+      {
+        "id": "CLASS",
+        "alias": "dynamicDropdown",
+        "options": "objects"
+      },
+      {
+        "alias": "text",
+        "value": "="
+      },
+      {
+        "bloqInputId": "VALUE",
+        "alias": "bloqInput",
+        "acceptType": {
+          "type": "fromDynamicDropdown",
+          "idDropdown": "NAME",
+          "options": "softwareVars"
+        },
+        "name": "e5387319-58f8-474d-b910-4ced74f77502"
+      }
+    ]
+  ],
+  "code": "{CLASS}.{NAME} = {VALUE};"
+}

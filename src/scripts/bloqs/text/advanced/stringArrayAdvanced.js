@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: stringArrayAdvanced
-*
-* Bloq type: Output
-*
-* Description: It returns a string pointer or a char pointer, selectable
-*              from a drop-down, to an array of the given size.
-*
-* Return type: string pointer
-*/
+ * Bloq name: stringArrayAdvanced
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns a string pointer or a char pointer, selectable
+ *              from a drop-down, to an array of the given size.
+ *
+ * Return type: string pointer
+ */
 
 var stringArrayAdvanced = _.merge(_.clone(OutputBloq, true), {
 

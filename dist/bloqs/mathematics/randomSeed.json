@@ -1,0 +1,28 @@
+{
+  "type": "statement",
+  "name": "randomSeed",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-random-seed",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-random-seed"
+      }
+    ]
+  ],
+  "code": "randomSeed(micros());",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  }
+}

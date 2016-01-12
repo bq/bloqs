@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: invokeClass
-* 
-* Bloq type: Statement
-*
-* Description: It instance an object of a specific class, selectable
-*              from a drop-down, with a given name.
-* 
-* Return type: none
-*/
+ * Bloq name: invokeClass
+ *
+ * Bloq type: Statement
+ *
+ * Description: It instance an object of a specific class, selectable
+ *              from a drop-down, with a given name.
+ *
+ * Return type: none
+ */
 
 var invokeClass = _.merge(_.clone(StatementBloq, true), {
 
@@ -38,7 +38,7 @@ var invokeClass = _.merge(_.clone(StatementBloq, true), {
         }, {
             alias: 'text',
             value: 'bloq-invoke-class-function-class'
-        },  {
+        }, {
             id: 'CLASS',
             alias: 'dynamicDropdown',
             options: 'classes'

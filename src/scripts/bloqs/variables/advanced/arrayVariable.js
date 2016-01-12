@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: arrayVariableAdvanced
-*
-* Bloq type: Output
-*
-* Description: It returns the element of a specific array
-*              variable, selectable from a drop-down, of
-*              the given position.
-*
-* Return type: array's element type
-*/
+ * Bloq name: arrayVariableAdvanced
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns the element of a specific array
+ *              variable, selectable from a drop-down, of
+ *              the given position.
+ *
+ * Return type: array's element type
+ */
 
 var arrayVariableAdvanced = _.merge(_.clone(OutputBloq, true), {
 
@@ -35,7 +35,7 @@ var arrayVariableAdvanced = _.merge(_.clone(OutputBloq, true), {
         }, {
             bloqInputId: 'POSITION',
             alias: 'bloqInput',
-            acceptType : 'all'
+            acceptType: 'all'
         }, {
             alias: 'text',
             value: ']'

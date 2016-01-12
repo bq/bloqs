@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: setClassVariable
-* 
-* Bloq type: Statement
-*
-* Description: It sets a variable, selectable from a first drop-down,
-*              of an specific object, selectable from a second drop-down,
-*              with a given input.
-* 
-* Return type: none
-*/
+ * Bloq name: setClassVariable
+ *
+ * Bloq type: Statement
+ *
+ * Description: It sets a variable, selectable from a first drop-down,
+ *              of an specific object, selectable from a second drop-down,
+ *              with a given input.
+ *
+ * Return type: none
+ */
 
 var setClassVariable = _.merge(_.clone(StatementBloq, true), {
 
@@ -32,7 +32,7 @@ var setClassVariable = _.merge(_.clone(StatementBloq, true), {
         }, {
             alias: 'text',
             value: 'bloq-invoke-class-function-class'
-        },  {
+        }, {
             id: 'CLASS',
             alias: 'dynamicDropdown',
             options: 'objects'

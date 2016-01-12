@@ -1,0 +1,36 @@
+{
+  "type": "statement",
+  "name": "continuousServoStopAdvanced",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "12180b53-1b81-4ff6-ad0b-c3ab2202dde1"
+    }
+  ],
+  "bloqClass": "bloq-continuous-servo-stop-advanced",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-continuous-servo-stop-advanced-stop"
+      },
+      {
+        "bloqInputId": "SERVO",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "12180b53-1b81-4ff6-ad0b-c3ab2202dde1"
+      }
+    ]
+  ],
+  "code": "{SERVO}.write(90);"
+}

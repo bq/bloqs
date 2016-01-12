@@ -1,0 +1,96 @@
+{
+  "type": "statement",
+  "name": "zowiMovementsAdvanced",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "1428ba15-f47a-4f80-9763-594320fc4846"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "43c0dcab-bee1-4161-bb29-49fc9d5ed689"
+    }
+  ],
+  "bloqClass": "bloq-zowi-movements-advanced",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zowi-movements-advanced"
+      },
+      {
+        "id": "MOVEMENT",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zowi-movements-advanced-walk",
+            "value": "walk"
+          },
+          {
+            "label": "bloq-zowi-movements-advanced-turn",
+            "value": "turn"
+          },
+          {
+            "label": "bloq-zowi-movements-advanced-shakeLeg",
+            "value": "shakeLeg"
+          },
+          {
+            "label": "bloq-zowi-movements-advanced-bend",
+            "value": "bend"
+          }
+        ]
+      },
+      {
+        "id": "DIR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zowi-movements-advanced-forward",
+            "value": "FORWARD"
+          },
+          {
+            "label": "bloq-zowi-movements-advanced-backward",
+            "value": "BACKWARD"
+          },
+          {
+            "label": "bloq-zowi-movements-advanced-left",
+            "value": "LEFT"
+          },
+          {
+            "label": "bloq-zowi-movements-advanced-right",
+            "value": "RIGHT"
+          }
+        ]
+      },
+      {
+        "bloqInputId": "STEPS",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "1428ba15-f47a-4f80-9763-594320fc4846"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zowi-movements-advanced-speed"
+      },
+      {
+        "bloqInputId": "SPEED",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "43c0dcab-bee1-4161-bb29-49fc9d5ed689"
+      }
+    ]
+  ],
+  "code": "zowi.{MOVEMENT}({STEPS},{SPEED},{DIR});"
+}

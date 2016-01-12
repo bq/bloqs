@@ -1,0 +1,36 @@
+{
+  "type": "output",
+  "name": "int2float-v1",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "int",
+      "name": "f8b0dde1-e95d-4124-9695-48b4f75f7222"
+    }
+  ],
+  "bloqClass": "bloq-int-2-float",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "convertir int a float: "
+      },
+      {
+        "bloqInputId": "NUMBER",
+        "alias": "bloqInput",
+        "acceptType": "int",
+        "name": "f8b0dde1-e95d-4124-9695-48b4f75f7222"
+      }
+    ]
+  ],
+  "code": "(float) {NUMBER}",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  }
+}

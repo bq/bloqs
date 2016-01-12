@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: lcdTurnOnOff
-* 
-* Bloq type: Statement
-*
-* Description: It switches on or off the background light of a
-*              specific LCD, selectable from a drop-down.
-* 
-* Return type: none
-*/
+ * Bloq name: lcdTurnOnOff
+ *
+ * Bloq type: Statement
+ *
+ * Description: It switches on or off the background light of a
+ *              specific LCD, selectable from a drop-down.
+ *
+ * Return type: none
+ */
 
 var lcdTurnOnOff = _.merge(_.clone(StatementBloq, true), {
 

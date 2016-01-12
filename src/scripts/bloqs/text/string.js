@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: string
-*
-* Bloq type: Output
-*
-* Description: It returns the written string.
-*
-* Return type: string
-*/
+ * Bloq name: string
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns the written string.
+ *
+ * Return type: string
+ */
 
 var string = _.merge(_.clone(OutputBloq, true), {
 

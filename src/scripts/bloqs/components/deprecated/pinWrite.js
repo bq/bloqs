@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementBloq = require('./../../statementBloq');
 
 /**
-* Bloq name: pinWriteAdvanced
-* 
-* Bloq type: Statement
-*
-* Description: It writes in a specific pin the given data.
-* 
-* Return type: none
-*/
+ * Bloq name: pinWriteAdvanced
+ * 
+ * Bloq type: Statement
+ *
+ * Description: It writes in a specific pin the given data.
+ * 
+ * Return type: none
+ */
 
 var pinWriteAdvanced = _.merge(_.clone(StatementBloq, true), {
 

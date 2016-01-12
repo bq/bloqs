@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: int2float-v1
-*
-* Bloq type: Output
-*
-* Description: It converts the given int type value to float type.
-*
-* Return type: float
-*/
+ * Bloq name: int2float-v1
+ *
+ * Bloq type: Output
+ *
+ * Description: It converts the given int type value to float type.
+ *
+ * Return type: float
+ */
 
 var int2floatV1 = _.merge(_.clone(OutputBloq, true), {
 

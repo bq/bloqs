@@ -2,23 +2,23 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementBloq = require('./../../statementBloq');
 
 /**
-* Bloq name: zowiMovementsHeight
-*
-* Bloq type: statement
-*
-* Description: It makes Zowi execute a specific movement, selectable
-*              from a first drop-down, in a concrete direction,
-*              selectable from a second drop-down, the given number 
-*              of times at a determined velocity, selectable from a
-*              third drop-down, until a limit height, selectable
-*              from a fourth drop-down.
-*
-* Return type: none
-*/
+ * Bloq name: zowiMovementsHeight
+ *
+ * Bloq type: statement
+ *
+ * Description: It makes Zowi execute a specific movement, selectable
+ *              from a first drop-down, in a concrete direction,
+ *              selectable from a second drop-down, the given number 
+ *              of times at a determined velocity, selectable from a
+ *              third drop-down, until a limit height, selectable
+ *              from a fourth drop-down.
+ *
+ * Return type: none
+ */
 
 var zowiMovementsHeight = _.merge(_.clone(StatementBloq, true), {
 
@@ -83,13 +83,13 @@ var zowiMovementsHeight = _.merge(_.clone(StatementBloq, true), {
         }, {
             id: 'HEIGHT',
             alias: 'staticDropdown',
-            options: [ {
+            options: [{
                 label: 'bloq-zowi-movements-height-small',
                 value: 'SMALL_HEIGHT'
             }, {
                 label: 'bloq-zowi-movements-height-medium',
                 value: 'MEDIUM_HEIGHT'
-            },{
+            }, {
                 label: 'bloq-zowi-movements-height-big',
                 value: 'BIG_HEIGHT'
             }]

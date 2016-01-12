@@ -1,0 +1,33 @@
+{
+  "type": "statement",
+  "name": "wait",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-wait",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-wait-wait"
+      },
+      {
+        "id": "TIME",
+        "alias": "numberInput",
+        "value": 2000
+      },
+      {
+        "alias": "text",
+        "value": "bloq-wait-ms"
+      }
+    ]
+  ],
+  "code": "delay({TIME});"
+}

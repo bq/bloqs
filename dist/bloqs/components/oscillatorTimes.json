@@ -1,0 +1,65 @@
+{
+  "type": "statement",
+  "name": "oscillatorTimes",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-oscillator",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-oscillator-oscillate"
+      },
+      {
+        "id": "OSCILLATOR",
+        "alias": "dynamicDropdown",
+        "options": "oscillators"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-oscillator-around"
+      },
+      {
+        "id": "PHASE",
+        "alias": "numberInput",
+        "value": 90
+      },
+      {
+        "alias": "text",
+        "value": "bloq-oscillator-amplitude"
+      },
+      {
+        "id": "AMPLITUDE",
+        "alias": "numberInput",
+        "value": 90
+      },
+      {
+        "alias": "text",
+        "value": "bloq-oscillator-speed"
+      },
+      {
+        "id": "SPEED",
+        "alias": "numberInput",
+        "value": 2000
+      },
+      {
+        "id": "TIMES",
+        "alias": "numberInput",
+        "value": 2
+      },
+      {
+        "alias": "text",
+        "value": "bloq-oscillator-times"
+      }
+    ]
+  ],
+  "code": "oscillate({OSCILLATOR}, {AMPLITUDE}, {PHASE}, {SPEED}, {TIMES});"
+}

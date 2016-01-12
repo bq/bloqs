@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementInputBloq = require('./../statementInputBloq');
 
 /**
-* Bloq name: caseDefault
-*
-* Bloq type: Statement-Input
-*
-* Description: It executes the following code only if the variable
-*              compared in the switch bloq is not equal to any of
-*              the previous given values.
-*
-* Return type: none
-*/
+ * Bloq name: caseDefault
+ *
+ * Bloq type: Statement-Input
+ *
+ * Description: It executes the following code only if the variable
+ *              compared in the switch bloq is not equal to any of
+ *              the previous given values.
+ *
+ * Return type: none
+ */
 
 var caseDefault = _.merge(_.clone(StatementInputBloq, true), {
 

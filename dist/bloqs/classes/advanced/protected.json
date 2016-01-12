@@ -1,0 +1,30 @@
+{
+  "type": "statement-input",
+  "name": "protected",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-protected",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-protected"
+      }
+    ]
+  ],
+  "code": "protected : {STATEMENTS}",
+  "hCode": "protected : {STATEMENTS}",
+  "cppCode": ""
+}

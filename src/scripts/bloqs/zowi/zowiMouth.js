@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: zowiMouth
-*
-* Bloq type: statement
-*
-* Description: It makes Zowi draw a specific expression,
-*              selectable from a drop-down, on his mouth.
-*
-* Return type: none
-*/
+ * Bloq name: zowiMouth
+ *
+ * Bloq type: statement
+ *
+ * Description: It makes Zowi draw a specific expression,
+ *              selectable from a drop-down, on his mouth.
+ *
+ * Return type: none
+ */
 
 var zowiMouth = _.merge(_.clone(StatementBloq, true), {
 

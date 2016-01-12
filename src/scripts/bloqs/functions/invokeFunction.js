@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: invokeFunction
-*
-* Bloq type: Statement
-*
-* Description: It executes a function, selectable from a drop-down,
-*              which does not return any value.
-*
-* Return type: none
-*/
+ * Bloq name: invokeFunction
+ *
+ * Bloq type: Statement
+ *
+ * Description: It executes a function, selectable from a drop-down,
+ *              which does not return any value.
+ *
+ * Return type: none
+ */
 
 var invokeFunction = _.merge(_.clone(StatementBloq, true), {
 
@@ -31,7 +31,7 @@ var invokeFunction = _.merge(_.clone(StatementBloq, true), {
         }]
     ],
     code: '{FUNCTION}();',
-    dynamicDropdown : {
+    dynamicDropdown: {
         idDropdown: 'FUNCTION',
         options: 'voidFunctions'
     }

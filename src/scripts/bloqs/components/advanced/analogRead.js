@@ -2,18 +2,18 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**
-* Bloq name: analogReadAdvanced
-* 
-* Bloq type: Output
-*
-* Description: It returns the read of an analog pin.
-* 
-* Return type: float
-*/
+ * Bloq name: analogReadAdvanced
+ * 
+ * Bloq type: Output
+ *
+ * Description: It returns the read of an analog pin.
+ * 
+ * Return type: float
+ */
 
 var analogReadAdvanced = _.merge(_.clone(OutputBloq, true), {
 
@@ -29,8 +29,8 @@ var analogReadAdvanced = _.merge(_.clone(OutputBloq, true), {
             acceptType: 'all'
         }]
     ],
-   code: '\'{PIN}\'.indexOf(\'A\') !== -1 ? \'analogRead({PIN})\'.replace(/"/g, \'\') : \'analogRead({PIN})\'',
-       returnType: {
+    code: '\'{PIN}\'.indexOf(\'A\') !== -1 ? \'analogRead({PIN})\'.replace(/"/g, \'\') : \'analogRead({PIN})\'',
+    returnType: {
         type: 'simple',
         value: 'float'
     }

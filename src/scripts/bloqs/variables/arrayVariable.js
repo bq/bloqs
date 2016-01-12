@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: stringArrayAdvanced
-*
-* Bloq type: Output
-*
-* Description: It returns the element of a specific array
-*              variable, selectable from a drop-down, of
-*              the given position.
-*
-* Return type: array's element type
-*/
+ * Bloq name: stringArrayAdvanced
+ *
+ * Bloq type: Output
+ *
+ * Description: It returns the element of a specific array
+ *              variable, selectable from a drop-down, of
+ *              the given position.
+ *
+ * Return type: array's element type
+ */
 
 var bloq = _.merge(_.clone(OutputBloq, true), {
 

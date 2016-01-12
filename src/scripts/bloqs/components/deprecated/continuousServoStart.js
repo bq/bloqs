@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     StatementBloq = require('./../../statementBloq');
 
 /**
-* Bloq name: continuousServoStartAdvanced
-* 
-* Bloq type: Statement
-*
-* Description: It turns on a specific continuous servo in one of the two directions,
-*              selectable from a drop-down.
-* 
-* Return type: none
-*/
+ * Bloq name: continuousServoStartAdvanced
+ * 
+ * Bloq type: Statement
+ *
+ * Description: It turns on a specific continuous servo in one of the two directions,
+ *              selectable from a drop-down.
+ * 
+ * Return type: none
+ */
 
 var continuousServoStartAdvanced = _.merge(_.clone(StatementBloq, true), {
 
@@ -50,6 +50,3 @@ utils.generateBloqInputConnectors(continuousServoStartAdvanced);
 
 
 module.exports = continuousServoStartAdvanced;
-
-
-

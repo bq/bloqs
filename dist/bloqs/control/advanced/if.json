@@ -1,0 +1,44 @@
+{
+  "type": "statement-input",
+  "name": "ifAdvanced",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "d5d134ba-003a-4384-85ba-90da275d1442"
+    }
+  ],
+  "bloqClass": "bloq-if",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-if-if"
+      },
+      {
+        "bloqInputId": "CONDITION",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "d5d134ba-003a-4384-85ba-90da275d1442"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-if-exec"
+      }
+    ]
+  ],
+  "code": "if({CONDITION}){{STATEMENTS}}"
+}

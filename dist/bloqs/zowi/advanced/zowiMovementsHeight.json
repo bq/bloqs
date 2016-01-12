@@ -1,0 +1,113 @@
+{
+  "type": "statement",
+  "name": "zowiMovementsHeight",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zowi-movements-height",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zowi-movements-height"
+      },
+      {
+        "id": "MOVEMENT",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zowi-movements-height-moonwalker",
+            "value": "moonwalker"
+          },
+          {
+            "label": "bloq-zowi-movements-height-crusaito",
+            "value": "crusaito"
+          },
+          {
+            "label": "bloq-zowi-movements-height-flapping",
+            "value": "flapping"
+          }
+        ]
+      },
+      {
+        "id": "DIR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zowi-movements-height-forward",
+            "value": "FORWARD"
+          },
+          {
+            "label": "bloq-zowi-movements-height-backward",
+            "value": "BACKWARD"
+          },
+          {
+            "label": "bloq-zowi-movements-height-left",
+            "value": "LEFT"
+          },
+          {
+            "label": "bloq-zowi-movements-height-right",
+            "value": "RIGHT"
+          }
+        ]
+      },
+      {
+        "id": "STEPS",
+        "alias": "numberInput",
+        "value": 1
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zowi-movements-height-speed"
+      },
+      {
+        "id": "SPEED",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zowi-movements-speed-small",
+            "value": "LOW_SPEED"
+          },
+          {
+            "label": "bloq-zowi-movements-speed-medium",
+            "value": "MEDIUM_SPEED"
+          },
+          {
+            "label": "bloq-zowi-movements-speed-high",
+            "value": "HIGH_SPEED"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zowi-movements-height-height"
+      },
+      {
+        "id": "HEIGHT",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zowi-movements-height-small",
+            "value": "SMALL_HEIGHT"
+          },
+          {
+            "label": "bloq-zowi-movements-height-medium",
+            "value": "MEDIUM_HEIGHT"
+          },
+          {
+            "label": "bloq-zowi-movements-height-big",
+            "value": "BIG_HEIGHT"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "zowi.{MOVEMENT}({STEPS},{SPEED},{HEIGHT},{DIR});"
+}

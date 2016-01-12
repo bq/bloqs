@@ -1,0 +1,43 @@
+{
+  "type": "statement",
+  "name": "led",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-led",
+  "content": [
+    [
+      {
+        "id": "STATE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-led-turnon",
+            "value": "HIGH"
+          },
+          {
+            "label": "bloq-led-turnoff",
+            "value": "LOW"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-led-theLED"
+      },
+      {
+        "id": "LED",
+        "alias": "dynamicDropdown",
+        "options": "leds"
+      }
+    ]
+  ],
+  "code": "digitalWrite({LED},{STATE});"
+}

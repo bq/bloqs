@@ -1,0 +1,40 @@
+{
+  "type": "statement-input",
+  "name": "class",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-class",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-class"
+      },
+      {
+        "id": "NAME",
+        "alias": "varInput",
+        "placeholder": "bloq-class-default"
+      }
+    ]
+  ],
+  "createDynamicContent": "classes",
+  "code": "class {NAME}{{STATEMENTS}};",
+  "hCode": "class {NAME}{{STATEMENTS}};",
+  "cppCode": "",
+  "returnType": {
+    "type": "simple",
+    "value": "class"
+  }
+}

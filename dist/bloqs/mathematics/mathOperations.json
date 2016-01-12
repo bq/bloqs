@@ -1,0 +1,58 @@
+{
+  "type": "output",
+  "name": "mathOperations",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "c79f1dc7-6814-4b9a-a3f7-56116224aeb3"
+    }
+  ],
+  "bloqClass": "bloq-math-operations",
+  "content": [
+    [
+      {
+        "id": "OPERATOR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-math-operations-sqrt",
+            "value": "sqrt"
+          },
+          {
+            "label": "bloq-math-operations-abs",
+            "value": "abs"
+          },
+          {
+            "label": "ln",
+            "value": "log"
+          },
+          {
+            "label": "log10",
+            "value": "log10"
+          },
+          {
+            "label": "e^",
+            "value": "exp"
+          }
+        ]
+      },
+      {
+        "bloqInputId": "ARG",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "c79f1dc7-6814-4b9a-a3f7-56116224aeb3"
+      }
+    ]
+  ],
+  "code": "{OPERATOR}({ARG})",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  }
+}

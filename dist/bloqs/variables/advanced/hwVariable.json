@@ -1,0 +1,30 @@
+{
+  "type": "output",
+  "name": "hwVariable",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-hw-variable-advanced",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-hw-variable-advanced-variable"
+      },
+      {
+        "id": "COMPONENT",
+        "alias": "dynamicDropdown",
+        "options": "varComponents"
+      }
+    ]
+  ],
+  "code": "{COMPONENT}",
+  "returnType": {
+    "type": "fromDynamicDropdown",
+    "idDropdown": "COMPONENT",
+    "options": "varComponents"
+  }
+}

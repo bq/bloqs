@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: rgbLedFade
-* 
-* Bloq type: Statement
-*
-* Description: It fades a specific rgb led, selectable from
-*              a drop-down, from the previous state to a given
-*              combination of each basic colour.
-* 
-* Return type: none
-*/
+ * Bloq name: rgbLedFade
+ *
+ * Bloq type: Statement
+ *
+ * Description: It fades a specific rgb led, selectable from
+ *              a drop-down, from the previous state to a given
+ *              combination of each basic colour.
+ *
+ * Return type: none
+ */
 
 var rgbLedFade = _.merge(_.clone(StatementBloq, true), {
 

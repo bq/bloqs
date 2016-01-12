@@ -4,19 +4,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     OutputBloq = require('./../outputBloq');
 
 /**
-* Bloq name: convert
-* 
-* Bloq type: Output
-*
-* Description: It converts a number in decimal base to
-*              binary, octal or hexadecimal.
-* 
-* Return type: float
-*/
+ * Bloq name: convert
+ *
+ * Bloq type: Output
+ *
+ * Description: It converts a number in decimal base to
+ *              binary, octal or hexadecimal.
+ *
+ * Return type: float
+ */
 
 var convert = _.merge(_.clone(OutputBloq, true), {
 

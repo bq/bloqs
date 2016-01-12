@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementInputBloq = require('./../statementInputBloq');
 
 /**
-* Bloq name: elseif
-*
-* Bloq type: Statement-Input
-*
-* Description: It executes the following code only if the previous conditions
-*              are not met and the new one does.
-*
-* Return type: none
-*/
+ * Bloq name: elseif
+ *
+ * Bloq type: Statement-Input
+ *
+ * Description: It executes the following code only if the previous conditions
+ *              are not met and the new one does.
+ *
+ * Return type: none
+ */
 
 var elseif = _.merge(_.clone(StatementInputBloq, true), {
 

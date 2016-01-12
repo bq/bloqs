@@ -2,21 +2,21 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: oscillatorTimes
-* 
-* Bloq type: Statement
-*
-* Description: It sets a specific servo, selectable from a 
-*              drop-down, to oscillate around a given point
-*              with a certain amplitude and velocity, a defined
-*              number of times.
-* 
-* Return type: none
-*/
+ * Bloq name: oscillatorTimes
+ *
+ * Bloq type: Statement
+ *
+ * Description: It sets a specific servo, selectable from a
+ *              drop-down, to oscillate around a given point
+ *              with a certain amplitude and velocity, a defined
+ *              number of times.
+ *
+ * Return type: none
+ */
 
 var oscillatorTimes = _.merge(_.clone(StatementBloq, true), {
 

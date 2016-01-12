@@ -1,0 +1,29 @@
+{
+  "type": "statement",
+  "name": "comment",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-comment",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-comment-comment"
+      },
+      {
+        "id": "COMMENT",
+        "alias": "multilineCommentInput",
+        "placeholder": "bloq-comment-default"
+      }
+    ]
+  ],
+  "code": "/*\n{COMMENT}\n*/"
+}

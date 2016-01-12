@@ -1,0 +1,42 @@
+{
+  "type": "statement",
+  "name": "invokeClassFunction",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-invoke-class-function",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-invoke-class-function-exec"
+      },
+      {
+        "id": "FUNCTION",
+        "alias": "dynamicDropdown",
+        "options": "voidFunctions"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-invoke-class-function-class"
+      },
+      {
+        "id": "CLASS",
+        "alias": "dynamicDropdown",
+        "options": "objects"
+      }
+    ]
+  ],
+  "code": "{CLASS}.{FUNCTION}();",
+  "dynamicDropdown": {
+    "idDropdown": "FUNCTION",
+    "options": "voidFunctions"
+  }
+}

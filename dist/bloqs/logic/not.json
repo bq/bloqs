@@ -1,0 +1,36 @@
+{
+  "type": "output",
+  "name": "not",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "a4eba3f4-dd21-48cb-acb5-ec1aa030d76f"
+    }
+  ],
+  "bloqClass": "bloq-not",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-not-not"
+      },
+      {
+        "bloqInputId": "CONDITION",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "a4eba3f4-dd21-48cb-acb5-ec1aa030d76f"
+      }
+    ]
+  ],
+  "code": "!{CONDITION}",
+  "returnType": {
+    "type": "simple",
+    "value": "bool"
+  }
+}

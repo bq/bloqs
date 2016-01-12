@@ -1,0 +1,50 @@
+{
+  "type": "statement",
+  "name": "declareVariable",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "all",
+      "name": "d89f2345-9e7d-484e-a96a-1f3c55753d8e"
+    }
+  ],
+  "bloqClass": "bloq-declare-variable",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-declare-variable-declare"
+      },
+      {
+        "id": "NAME",
+        "alias": "varInput",
+        "value": ""
+      },
+      {
+        "alias": "text",
+        "value": "="
+      },
+      {
+        "bloqInputId": "VALUE",
+        "alias": "bloqInput",
+        "acceptType": "all",
+        "name": "d89f2345-9e7d-484e-a96a-1f3c55753d8e"
+      }
+    ]
+  ],
+  "returnType": {
+    "type": "fromInput",
+    "bloqInputId": "VALUE"
+  },
+  "createDynamicContent": "softwareVars",
+  "code": "{VALUE.connectionType} {NAME} = {VALUE};"
+}

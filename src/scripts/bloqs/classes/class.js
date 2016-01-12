@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementInputBloq = require('./../statementInputBloq');
 
 /**
-* Bloq name: class
-* 
-* Bloq type: Statement-Input
-*
-* Description: It defines a class which could be later instanced into
-*              an object to use its public variables or functions.
-* 
-* Return type: none
-*/
+ * Bloq name: class
+ *
+ * Bloq type: Statement-Input
+ *
+ * Description: It defines a class which could be later instanced into
+ *              an object to use its public variables or functions.
+ *
+ * Return type: none
+ */
 
 var bloqClass = _.merge(_.clone(StatementInputBloq, true), {
 
@@ -27,7 +27,7 @@ var bloqClass = _.merge(_.clone(StatementInputBloq, true), {
         }, {
             id: 'NAME',
             alias: 'varInput',
-            placeholder:'bloq-class-default'
+            placeholder: 'bloq-class-default'
         }]
     ],
     createDynamicContent: 'classes',

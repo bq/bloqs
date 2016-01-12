@@ -1,0 +1,30 @@
+{
+  "type": "output",
+  "name": "selectVariable",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-select-variable",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-select-variable-variable"
+      },
+      {
+        "id": "VAR",
+        "alias": "dynamicDropdown",
+        "options": "softwareVars"
+      }
+    ]
+  ],
+  "code": "{VAR}",
+  "returnType": {
+    "type": "fromDynamicDropdown",
+    "idDropdown": "VAR",
+    "options": "softwareVars"
+  }
+}

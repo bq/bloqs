@@ -2,20 +2,20 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
-* Bloq name: invokeClassFunction
-* 
-* Bloq type: Statement
-*
-* Description: It execute a function, selectable from a first drop-down,
-*              which doesn't return any argument, of an specific object,
-*              selectable from a second drop-down.
-* 
-* Return type: none
-*/
+ * Bloq name: invokeClassFunction
+ *
+ * Bloq type: Statement
+ *
+ * Description: It execute a function, selectable from a first drop-down,
+ *              which doesn't return any argument, of an specific object,
+ *              selectable from a second drop-down.
+ *
+ * Return type: none
+ */
 
 var invokeClassFunction = _.merge(_.clone(StatementBloq, true), {
 
@@ -32,14 +32,14 @@ var invokeClassFunction = _.merge(_.clone(StatementBloq, true), {
         }, {
             alias: 'text',
             value: 'bloq-invoke-class-function-class'
-        },  {
+        }, {
             id: 'CLASS',
             alias: 'dynamicDropdown',
             options: 'objects'
         }]
     ],
     code: '{CLASS}.{FUNCTION}();',
-    dynamicDropdown : {
+    dynamicDropdown: {
         idDropdown: 'FUNCTION',
         options: 'voidFunctions'
     }

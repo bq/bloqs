@@ -1,0 +1,33 @@
+{
+  "type": "output",
+  "name": "stringArray",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-stringArray",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-stringArray-arraySize"
+      },
+      {
+        "id": "VALUE",
+        "alias": "numberInput",
+        "value": 3
+      },
+      {
+        "alias": "text",
+        "value": "bloq-stringArray-stringType"
+      }
+    ]
+  ],
+  "code": "(String *)malloc({VALUE}*sizeof(String))",
+  "returnType": {
+    "type": "simple",
+    "value": "String *"
+  }
+}

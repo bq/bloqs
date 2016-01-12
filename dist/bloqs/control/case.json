@@ -1,0 +1,37 @@
+{
+  "type": "statement-input",
+  "name": "case",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-case",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-case-ifSameTo"
+      },
+      {
+        "id": "VAR",
+        "alias": "numberInput",
+        "value": 0
+      },
+      {
+        "alias": "text",
+        "value": "bloq-case-exec"
+      }
+    ]
+  ],
+  "code": "case {VAR}:{{STATEMENTS}break;}"
+}

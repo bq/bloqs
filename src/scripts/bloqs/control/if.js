@@ -2,19 +2,19 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementInputBloq = require('./../statementInputBloq');
 
 /**
-* Bloq name: if
-*
-* Bloq type: Statement-Input
-*
-* Description: It executes the following code only if the condition
-*              is met.
-*
-* Return type: none
-*/
+ * Bloq name: if
+ *
+ * Bloq type: Statement-Input
+ *
+ * Description: It executes the following code only if the condition
+ *              is met.
+ *
+ * Return type: none
+ */
 
 var bloqIf = _.merge(_.clone(StatementInputBloq, true), {
 
@@ -63,7 +63,7 @@ var bloqIf = _.merge(_.clone(StatementInputBloq, true), {
         }, {
             alias: 'text',
             value: 'bloq-if-exec'
-        },]
+        }, ]
     ],
     code: 'if({ARG1} {OPERATOR} {ARG2}){{STATEMENTS}}'
 });

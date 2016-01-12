@@ -1,0 +1,29 @@
+{
+  "type": "statement",
+  "name": "includeLib",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-include-lib",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-include-lib-exec"
+      },
+      {
+        "id": "LIB",
+        "alias": "dynamicDropdown",
+        "options": "libraries"
+      }
+    ]
+  ],
+  "code": "#include \"{LIB}\";"
+}
