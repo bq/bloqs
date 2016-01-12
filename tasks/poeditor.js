@@ -169,11 +169,109 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('i18n', 'get all file of i18n', function() {
-        grunt.task.run([
-            'clean:i18n',
-            'getpoeditorfiles:42730',
-            'poeditor2bloqs'
-        ]);
+    /**
+     * poeditorprojectbackup:42730
+     */
+    grunt.registerTask('poeditorprojectbackup', 'generate a poeditor backup', function(projectId, timestamp) {
+        var date = new Date(),
+            dateFormat = timestamp || date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + '_' + date.getHours() + '-' + date.getMinutes();
+
+        var async = require('async'),
+            gruntTaskDone = this.async(),
+            backupFolder = 'backups_i18n/' + dateFormat + '/' + projectId + '/';
+
+        getPoeditorLanguages(projectId, function(err, languages) {
+            if (err) {
+                console.log('error getting languages');
+                console.log(err);
+            } else {
+                async.parallel([
+                    function(done) {
+                        //store terms
+                        callPoEditorApi({
+                            action: 'view_terms',
+                            id: projectId
+                        }, function(err, terms) {
+                            if (err) {
+                                done(err);
+                            } else {
+                                grunt.file.write(backupFolder + 'terms.json', JSON.stringify(terms));
+                                done();
+                            }
+                        });
+                    },
+                    function(done) {
+                        async.each(languages, function(item, done) {
+                                exportFromPoeditor(projectId, item.code, 'json', '', '', backupFolder, done);
+                            },
+                            done);
+                    }
+                ], function(err) {
+                    if (err) {
+                        console.log('error :S ' + err);
+                    }
+                    gruntTaskDone();
+                });
+            }
+        });
+    });
+
+    /**
+     * grunt poeditorrestore:1446736750041:42730:42730
+     */
+    grunt.registerTask('poeditorrestore', 'restore poeditor project', function(timestamp, originProjectId, destProjectId) {
+        var async = require('async'),
+            gruntTaskDone = this.async(),
+            backupFolder = 'backups_i18n/' + timestamp + '/' + originProjectId + '/';
+        var data = grunt.file.readJSON(backupFolder + 'terms.json');
+        var tempFile, languageFile;
+        //restore terms
+        callPoEditorApi({
+            action: 'sync_terms',
+            id: destProjectId,
+            data: JSON.stringify(data.list)
+        }, function(err, res) {
+            //restore languages
+            async.each(Object.keys(langKeys), function(item, done) {
+                callPoEditorApi({
+                    action: 'add_language',
+                    id: destProjectId,
+                    language: item
+                }, function() {
+                    if (item === 'es') {
+                        console.log(err);
+                        console.log(res);
+                    }
+                    console.log('restoring ' + item);
+                    languageFile = grunt.file.readJSON(backupFolder + item + '.json');
+                    tempFile = [];
+                    for (var i = 0; i < languageFile.length; i++) {
+                        tempFile.push({
+                            term: {
+                                term: languageFile[i].term,
+                                context: languageFile[i].context
+                            },
+                            definition: {
+                                forms: [languageFile[i].definition]
+                            }
+                        });
+                    }
+                    callPoEditorApi({
+                        action: 'update_language',
+                        id: destProjectId,
+                        language: item,
+                        data: JSON.stringify(tempFile)
+                    }, function(err, res) {
+                        console.log('finish restoring ' + item);
+                        done(err, res);
+                    });
+                });
+            }, function(err) {
+                if (err) {
+                    console.log(err);
+                }
+                gruntTaskDone();
+            });
+        });
     });
 };

@@ -74,6 +74,7 @@ $theme-color-conversions-color: #00CC11;
     @include createBloqsCss($reverse, "bloq-void-function", $functions-color, $theme-color-functions-color, true);
     @include createBloqsCss($reverse, "bloq-void-function-with-arguments", $functions-color, $theme-color-functions-color, true);
     @include createBloqsCss($reverse, "bloq-invoke-function-with-arguments", $functions-color, $theme-color-functions-color, true);
+    @include createBloqsCss($reverse, "bloq-invoke-function", $functions-color, $theme-color-functions-color);
     /*---- CONTROL ------*/
     @include createBloqsCss($reverse, "bloq-millis", $control-color, $theme-color-control-color);
     @include createBloqsCss($reverse, "bloq-break", $control-color, $theme-color-control-color);
@@ -153,6 +154,7 @@ $theme-color-conversions-color: #00CC11;
     @include createBloqsCss($reverse, "bloq-sw-variable-advanced", $vars-color, $theme-color-vars-color);
     @include createBloqsCss($reverse, "bloq-set-variableArray", $vars-color, $theme-color-vars-color);
     @include createBloqsCss($reverse, "bloq-set-variable", $vars-color, $theme-color-vars-color);
+    @include createBloqsCss($reverse, "bloq-select-variable", $vars-color, $theme-color-vars-color);
     /*---- OUTPUT BLOQ to avoid that a outputbloq take the extern bloq style------*/
     @include createBloqsCss($reverse, "bloq-number", $maths-color, $theme-color-maths-color);
     @include createBloqsCss($reverse, "bloq-string", $text-color, $theme-color-text-color);
@@ -167,9 +169,7 @@ $theme-color-conversions-color: #00CC11;
     @include createBloqsCss($reverse, "bloq-math-operations", $maths-color, $theme-color-maths-color);
     @include createBloqsCss($reverse, "bloq-random", $maths-color, $theme-color-maths-color);
     @include createBloqsCss($reverse, "bloq-random-seed", $maths-color, $theme-color-maths-color);
-    @include createBloqsCss($reverse, "bloq-select-variable", $vars-color, $theme-color-vars-color);
-    @include createBloqsCss($reverse, "bloq-invoke-function", $functions-color, $theme-color-functions-color);
-    //@include createBloqsCss($reverse, "bloq-math-binary-operations", $functions-color, $theme-color-functions-color);
+    @include createBloqsCss($reverse, "bloq-math-binary-operations", $maths-color, $theme-color-maths-color);
 }
 
 @mixin createBloqsCss($reverse, $className, $classColor, $themeColorClassColor, $statementInput:false) {

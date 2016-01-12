@@ -11,9 +11,9 @@ See the [project homepage](https://github.com/bq/bloqs).
 
 ## Installation
 
-Using Bower:
+Using Bower (dev branch its the completed right now):
 
-    bower install bloqs
+    bower install bloqs#dev
 
 Or grab the [source](https://github.com/bq/bloqs/dist/bloqs.js) ([minified](https://github.com/bq/bloqs/dist/bloqs.min.js)).
 
@@ -21,19 +21,29 @@ Or grab the [source](https://github.com/bq/bloqs/dist/bloqs.js) ([minified](http
 
 Basic usage is as follows:
 
-    var mybloqs = new Bloqs();
+    
+        var bloq1 = new bloqs.Bloq({
+            bloqData: bloqSchemas['if'],
+            componentsArray: componentsArray,
+            $field: $field
+        });
+    
+        $field.append(bloq1.$bloq);
+    
+        bloq1.enable(true);
+    
+        bloq1.doConnectable();
 
-For advanced usage, see the documentation.
+See the examples folder, first the simple web example, next how to load, save or change language.
 
-## Documentation
+## Bloqs Documentation
 
-Start with `docs/MAIN.md`.
+Start with `docs/index.html`.
 
 ## Contributing
 
 We'll check out your contribution if you:
 
-* Provide a comprehensive suite of tests for your fork.
 * Have a clear and documented rationale for your changes.
 * Package these up in a pull request.
 

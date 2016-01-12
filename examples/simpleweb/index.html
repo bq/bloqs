@@ -3,6 +3,7 @@
 
 <head>
     <title>Bloqs Simple Web</title>
+    <!--Add bloqs css-->
     <link rel="stylesheet" href="./../../dist/bloqs.css" />
     <style type="text/css">
     body {
@@ -12,6 +13,13 @@
     #code--field {
         width: 100%;
         height: 500px;
+    }
+    
+    #bloqs--field {
+        overflow-y: auto;
+        background-color: #EBEBEB;
+        width: 1500px;
+        height: 650px;
     }
     </style>
 </head>
@@ -25,12 +33,14 @@
     <!-- end demo markup -->
     <p>See the <a href="http://bq.github.io/bloqs">project homepage</a>.</p>
     <p>Check out the <a href="https://github.com/bq/bloqs">project repo</a>.</p>
-    <p>Copyright 2015 bq</p>
+    <p>BQ 2015</p>
     <script src="http://localhost:9000/livereload.js"></script>
     <!--Load Scripts-->
     <script src="./../../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="./../../bower_components/lodash/lodash.min.js"></script>
+    <!--Add bloqs js compiled-->
     <!--<script src="./../../dist/bloqs.min.js"></script>-->
+    <!--Or add bloqs js without compile-->
     <script src="./../../src/scripts/bloqs-languages.js"></script>
     <script src="./../../src/scripts/bloqs-utils.js"></script>
     <script src="./../../src/scripts/bloqs.js"></script>
@@ -38,6 +48,9 @@
     console.log(window.bloqs);
     console.log(window.bloqsLanguages);
     console.log(window.bloqsUtils);
+    /**
+     * Set options like the offset from the field.
+     */
     window.bloqs.setOptions({
         fieldOffsetLeft: 0,
         //fieldOffsetTopSource: ['header'],
@@ -46,6 +59,42 @@
 
     //load Bloqs
     $.getJSON('./../../dist/bloqsmap.json', function(bloqSchemas) {
+        /**
+         * Listener
+         */
+        window.addEventListener('bloqs:connect', function() {
+            console.log('bloqs:connect');
+        });
+
+        window.addEventListener('bloqs:dragend', function() {
+            console.log('bloqs:dragend');
+        });
+
+        window.addEventListener('bloqs:bloqremoved', function() {
+            console.log('bloqs:bloqremoved');
+        });
+
+        window.addEventListener('bloqs:change', function() {
+            console.log('bloqs:change');
+        });
+
+        /**
+         * Components array its the hardware elements
+         * {
+            leds: [],
+            rgbs: [],
+            sensors: [],
+            buzzers: [],
+            servos: [],
+            continuousServos: [],
+            oscillators: [],
+            lcds: [],
+            serialElements: [],
+            clocks: [],
+            hts221: [],
+            robot: []
+        };
+         */
         var componentsArray = window.bloqsUtils.getEmptyComponentsArray(),
             arduinoMainBloqs = {
                 varsBloq: null,
@@ -54,7 +103,8 @@
             };
 
         var $field = $('#bloqs--field');
-        //firsttime set componentsArray
+        // Create the main arduino bloqs
+        //firsttime set componentsArray and field
         arduinoMainBloqs.varsBloq = new bloqs.Bloq({
             bloqData: bloqSchemas['varsBloq'],
             componentsArray: componentsArray,
@@ -88,14 +138,20 @@
         });
 
         //start build bloqs!
+
+        //Create a if bloq from the bloqsSchemas loaded
         var bloq1 = new bloqs.Bloq({
             bloqData: bloqSchemas['evolutionDistance'],
             componentsArray: componentsArray,
             $field: $field
         });
+        //append it to the field
         $field.append(bloq1.$bloq);
+        //enable if you want
         bloq1.enable(true);
+        //do connectable to allow anothers bloqs to connect to them
         bloq1.doConnectable();
+
 
         var bloq2 = new bloqs.Bloq({
             bloqData: bloqSchemas['evolutionHeadAdvance'],

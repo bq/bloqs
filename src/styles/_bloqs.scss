@@ -26,17 +26,14 @@
             z-index: 0;
         }
         &:after {
-            content: "";
+            content: '';
             background-color: #ebebeb;
             width: .5em;
-            height: 1em;
+            height: 10px;
             position: absolute;
-            left: -4px;
-            top: 13px;
+            left: -2px;
+            top: 16px;
             z-index: 1;
-            border-radius: 90px 0 0 90px;
-            -moz-border-radius: 90px 0 0 90px;
-            -webkit-border-radius: 90px 0 0 90px;
             border: 0 solid #000;
         }
     }
@@ -47,13 +44,16 @@
         &:before {
             border-right: 2px solid #f1cb33 inset;
             z-index: 1;
-            top: 40px;
-            height: calc(100% - 40px);
+            top: 38px;
+            height: calc(100% - 38px);
             border-bottom: 2px solid #f1cb33;
+            border-right: 2px solid #f1cb33;
+            border-left: 2px solid #f1cb33;
+            border-top-left-radius: 0;
         }
         &:after {
             .bloq--statement-input:focus:after {
-                content: "";
+                content: '';
                 height: 100%;
                 display: block;
                 position: absolute;
@@ -68,8 +68,9 @@
         }
         & > .bloq--statement-input__header {
             border-right: 2px solid #f1cb33;
+            border-left: 2px solid #f1cb33;
             &:before {
-                content: "";
+                content: '';
                 width: 100%;
                 height: 2px;
                 top: 0;
@@ -79,40 +80,42 @@
                 left: 0;
             }
             &:after {
-                content: "";
+                content: '';
                 height: 2px;
                 bottom: 0;
                 background-color: #f1cb33;
                 position: absolute;
-                left: 19px;
-                width: calc(100% - 19px);
+                left: 18px;
+                width: calc(100% - 18px);
             }
         }
         & > .bloq--extension > .bloq--extension--end {
             border-right: 2px solid #f1cb33;
             position: relative;
+            border-left: 2px solid #f1cb33;
+            border-radius: 0;
             &:before {
-                content: "";
-                width: calc(100% - 20px);
+                content: '';
+                width: calc(100% - 19px);
                 height: 2px;
-                top: 0;
+                top: -2px;
                 background-color: #f1cb33;
                 position: absolute;
-                left: 20px;
+                left: 19px;
             }
             &:after {
-                content: "";
-                width: calc(100% + 5px);
+                content: '';
+                width: 100%;
                 height: 2px;
                 bottom: 0;
                 background-color: #f1cb33;
                 position: absolute;
-                left: -5px;
+                left: 0;
             }
         }
         & > .bloq--extension > .with-content {
             &:before {
-                content: "";
+                content: '';
                 width: calc(100% - 5px);
                 height: 2px;
                 top: 0;
@@ -229,7 +232,7 @@
     position: relative;
     background-color: transparent;
     &:after {
-        content: "";
+        content: '';
         position: absolute;
         z-index: -1;
         background: #adb2b6;
@@ -270,7 +273,7 @@
     }
     .btn--collapsefield {
         &:before {
-            content: "";
+            content: '';
             background: #adb2b6;
             position: absolute;
             left: 4px;
@@ -331,8 +334,7 @@
 }
 
 .submenu__item--component {
-    margin: 1em;
-    margin-left: 10px;
+    margin: 1em 1em 1em 10px;
     &.indent-1 {
         margin-left: 2.5em;
     }
@@ -381,7 +383,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: .3em;
+    border-radius: 3px;
     margin: 2px;
     white-space: nowrap;
     display: table;
@@ -484,13 +486,14 @@
                 @include disabledBloq;
             }
             &:after {
-                content: "";
+                content: '';
                 width: 14px;
                 height: 19px;
                 position: absolute;
                 left: -2px;
                 top: 10px;
                 @include disabledBloq;
+                background-position-y: 6px
             }
         }
         & > .bloq--fixed,
@@ -499,7 +502,7 @@
         }
         & > .bloq--extension {
             &:after {
-                content: "";
+                content: '';
                 height: 100%;
                 width: 20px;
                 position: absolute;
@@ -510,6 +513,7 @@
             }
             & > .bloq--extension--end {
                 @include disabledBloq;
+                background-position-y: 4px;
                 &:before {
                     left: -17px;
                     width: 50px;
@@ -519,7 +523,7 @@
         }
         & > .bloq--extension__content:before {
             position: absolute;
-            content: "";
+            content: '';
             width: 20px;
             left: -20px;
             height: calc(100% + 25px);
@@ -530,7 +534,7 @@
         .bloq--extension__content {
             margin-bottom: 40px;
             margin-left: 1.4em;
-            border-radius: .3em;
+            border-radius: 3px;
         }
         .bloq--extension--end {
             background-color: #ebebeb;
@@ -550,6 +554,7 @@
             padding-left: 1em;
             display: inline-flex;
             align-items: center;
+            border-left: 0!important;
             span {
                 margin-left: 0;
             }
@@ -568,12 +573,13 @@
         width: calc(100% - 20px);
         &.available {
             &:after {
-                content: "";
+                content: '';
                 width: 100%;
                 border-top: 3px solid #f1cb33;
                 z-index: 1;
                 position: absolute;
                 max-width: 200px;
+                bottom: -2px;
             }
         }
     }
@@ -638,7 +644,7 @@
 }
 
 .bloqinput:before {
-    content: "";
+    content: '';
     background-color: #dadada;
     width: 10px;
     height: 1.1em;
@@ -649,17 +655,33 @@
     -moz-border-radius: 90px 0 0 90px;
     -webkit-border-radius: 90px 0 0 90px;
     border: 0 solid #000;
-    z-index: 1;
+    z-index: 0;
 }
 
 .bloq--statement-input:before {
-    content: "";
+    content: '';
     width: 20px;
     height: 100%;
     display: block;
     position: absolute;
     background-color: #ebebeb;
     z-index: 1;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.disabled.inside-bloq {
+    margin: 4px;
+}
+
+.disabled.bloq--output {
+    &:after {
+        width: 14px;
+        height: 10px;
+        left: -2px;
+        top: 16px;
+        background-position-x: 2px;
+    }
 }
 
 .bloq--statement-input.disabled:before {
@@ -668,18 +690,51 @@
     z-index: 2;
 }
 
+.bloq--statement-input.disabled:focus {
+    &:before {
+        border: 0;
+        border-right: 2px solid #f1cb33!important;
+    }
+    &:after {
+        content: '';
+        border-left: 2px solid #f1cb33;
+        top: 0;
+        left: -7px;
+        position: absolute;
+        border-top: 2px solid #f1cb33;
+        height: 100%;
+    }
+    .bloq--statement-input__header {
+        background-position-y: 4px;
+        &:before {
+            left: -7px;
+            width: calc(100% + 7px);
+        }
+    }
+    .bloq--extension {
+        .bloq--extension--end {
+            border-left: 0;
+            background-position-x: 5px;
+            &:after {
+                left: -5px;
+                width: calc(100% + 5px);
+            }
+        }
+        &:after {
+            background-position-y: 14px;
+        }
+    }
+}
+
 .bloq--output {
     background-color: #ebebeb;
     display: inline-flex;
     position: absolute;
-    margin-top: 0;
-    margin-left: 2px;
-    margin-right: 2px;
-    margin-bottom: 0;
+    margin: 0 2px;
     max-height: 40px;
     align-items: center;
     &:before {
-        content: "";
+        content: '';
         background-color: #ebebeb;
         width: .75em;
         height: 1em;
@@ -708,7 +763,7 @@
 /* CONNECTORS */
 
 .connector--offline {
-    border-radius: .4em;
+    border-radius: 3px;
     width: 100%;
     height: 10%;
     position: absolute;
@@ -722,7 +777,7 @@
     bottom: 0;
     &.available {
         &:after {
-            content: "";
+            content: '';
             width: 100%;
             border-top: 3px solid #f1cb33;
             z-index: 1;
@@ -737,7 +792,7 @@
     top: 0;
     &.available {
         &:after {
-            content: "";
+            content: '';
             width: 100%;
             border-top: 3px solid #f1cb33;
             z-index: 1;
@@ -748,7 +803,7 @@
 }
 
 .connector--input.available:after {
-    content: "";
+    content: '';
     width: 15px;
     height: 15px;
     position: absolute;
@@ -807,6 +862,7 @@ tester + span + .bloqinput {
 }
 
 .bloq-loop {
+    //min-height: 375px;
     .field--content {
         p,
         .bloq--extension--info {
