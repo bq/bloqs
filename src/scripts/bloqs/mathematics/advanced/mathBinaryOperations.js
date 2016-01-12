@@ -4,7 +4,7 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../../utils'),
+    utils = require('./../../build-utils'),
     OutputBloq = require('./../../outputBloq');
 
 /**

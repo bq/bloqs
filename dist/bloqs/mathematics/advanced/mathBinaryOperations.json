@@ -1,0 +1,58 @@
+{
+  "type": "output",
+  "name": "mathBinaryOperations",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "float",
+      "name": "9c35df6f-4d95-4a94-b142-45130794c271"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": "float",
+      "name": "28dbe1e4-3a9b-456f-b922-1052e8e37872"
+    }
+  ],
+  "bloqClass": "bloq-math-binary-operations",
+  "content": [
+    [
+      {
+        "bloqInputId": "ARG1",
+        "alias": "bloqInput",
+        "acceptType": "float",
+        "name": "9c35df6f-4d95-4a94-b142-45130794c271"
+      },
+      {
+        "id": "OPERATOR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "^",
+            "value": "^"
+          },
+          {
+            "label": "%",
+            "value": "%"
+          }
+        ]
+      },
+      {
+        "bloqInputId": "ARG2",
+        "alias": "bloqInput",
+        "acceptType": "float",
+        "name": "28dbe1e4-3a9b-456f-b922-1052e8e37872"
+      }
+    ]
+  ],
+  "code": "'{OPERATOR}' === '^'? 'pow({ARG1},{ARG2})' : '({ARG1} {OPERATOR} {ARG2})'",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  }
+}

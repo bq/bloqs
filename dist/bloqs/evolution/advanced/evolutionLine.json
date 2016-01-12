@@ -1,0 +1,42 @@
+{
+  "type": "output",
+  "name": "evolutionLine",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-evolution-line",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-evolution-line"
+      },
+      {
+        "id": "SIDE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-evolution-line-left",
+            "value": "LEFT"
+          },
+          {
+            "label": "bloq-evolution-line-right",
+            "value": "RIGHT"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-evolution-line-evolution"
+      }
+    ]
+  ],
+  "code": "evolution.getLine({SIDE})",
+  "returnType": {
+    "type": "simple",
+    "value": "int"
+  }
+}

@@ -2,7 +2,7 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
+    utils = require('./../build-utils'),
     StatementBloq = require('./../statementBloq');
 
 /**
@@ -16,7 +16,7 @@ var _ = require('lodash'),
 * Return type: none
 */
 
-var evolutionMovementsSimpleevolutionMovementsSimple = _.merge(_.clone(StatementBloq, true), {
+var evolutionMovementsSimple = _.merge(_.clone(StatementBloq, true), {
 
     name: 'evolutionMovementsSimple',
     bloqClass: 'bloq-evolution-movements-simple',

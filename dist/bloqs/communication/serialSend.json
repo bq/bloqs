@@ -14,7 +14,7 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "b623fc14-7c66-464b-95aa-46c5dae4ed10"
+      "name": "a7fcde10-5181-4ab8-b754-19217b1550ee"
     }
   ],
   "bloqClass": "bloq-serial-send",
@@ -33,7 +33,7 @@
         "bloqInputId": "DATA",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "b623fc14-7c66-464b-95aa-46c5dae4ed10"
+        "name": "a7fcde10-5181-4ab8-b754-19217b1550ee"
       },
       {
         "id": "LN",

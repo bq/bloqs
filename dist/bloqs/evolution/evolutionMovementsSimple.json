@@ -1,0 +1,46 @@
+{
+  "type": "statement",
+  "name": "evolutionMovementsSimple",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-evolution-movements-simple",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-evolution-movements-simple"
+      },
+      {
+        "id": "MOVEMENT",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-evolution-movements-simple-fordward",
+            "value": "fordward"
+          },
+          {
+            "label": "bloq-evolution-movements-simple-backward",
+            "value": "backward"
+          },
+          {
+            "label": "bloq-evolution-movements-simple-right",
+            "value": "right"
+          },
+          {
+            "label": "bloq-evolution-movements-simple-left",
+            "value": "left"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "evolution.{MOVEMENT}();"
+}

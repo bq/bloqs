@@ -14,13 +14,13 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "754d3b4b-4736-4385-acb1-667591e3d5f4"
+      "name": "d5fa1d8d-ee72-4fdd-b3df-54b58dcba515"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "d7f5ce7f-fcce-4fb6-82e6-2ec2641853a7"
+      "name": "9036c2b3-d9f5-4fae-97f5-f916bd4b36d1"
     }
   ],
   "bloqClass": "bloq-servo-advanced",
@@ -34,7 +34,7 @@
         "bloqInputId": "SERVO",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "754d3b4b-4736-4385-acb1-667591e3d5f4"
+        "name": "d5fa1d8d-ee72-4fdd-b3df-54b58dcba515"
       },
       {
         "alias": "text",
@@ -44,7 +44,7 @@
         "bloqInputId": "POSITION",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "d7f5ce7f-fcce-4fb6-82e6-2ec2641853a7"
+        "name": "9036c2b3-d9f5-4fae-97f5-f916bd4b36d1"
       },
       {
         "alias": "text",

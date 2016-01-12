@@ -1,0 +1,42 @@
+{
+  "type": "statement",
+  "name": "evolutionHead",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-evolution-head",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-evolution-head"
+      },
+      {
+        "id": "SIDE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-evolution-head-center",
+            "value": "HEAD_CENTER"
+          },
+          {
+            "label": "bloq-evolution-head-left",
+            "value": "HEAD_LEFT"
+          },
+          {
+            "label": "bloq-evolution-head-right",
+            "value": "HEAD_RIGHT"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "evolution.turnHead({SIDE});"
+}

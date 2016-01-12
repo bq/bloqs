@@ -89,7 +89,7 @@
 
         //start build bloqs!
         var bloq1 = new bloqs.Bloq({
-            bloqData: bloqSchemas['if'],
+            bloqData: bloqSchemas['evolutionDistance'],
             componentsArray: componentsArray,
             $field: $field
         });
@@ -98,7 +98,7 @@
         bloq1.doConnectable();
 
         var bloq2 = new bloqs.Bloq({
-            bloqData: bloqSchemas['for-v1'],
+            bloqData: bloqSchemas['evolutionHeadAdvance'],
             componentsArray: componentsArray,
             $field: $field
         });
@@ -107,13 +107,68 @@
         bloq2.doConnectable();
 
         var bloq3 = new bloqs.Bloq({
-            bloqData: bloqSchemas['number'],
+            bloqData: bloqSchemas['evolutionLight'],
             componentsArray: componentsArray,
             $field: $field
         });
         $field.append(bloq3.$bloq);
         bloq3.enable(true);
         bloq3.doConnectable();
+
+        var bloq4 = new bloqs.Bloq({
+            bloqData: bloqSchemas['evolutionLine'],
+            componentsArray: componentsArray,
+            $field: $field
+        });
+        $field.append(bloq4.$bloq);
+        bloq4.enable(true);
+        bloq4.doConnectable();
+
+        var bloq5 = new bloqs.Bloq({
+            bloqData: bloqSchemas['evolutionBuzzer'],
+            componentsArray: componentsArray,
+            $field: $field
+        });
+        $field.append(bloq5.$bloq);
+        bloq5.enable(true);
+        bloq5.doConnectable();
+
+        var bloq6 = new bloqs.Bloq({
+            bloqData: bloqSchemas['evolutionHead'],
+            componentsArray: componentsArray,
+            $field: $field
+        });
+        $field.append(bloq6.$bloq);
+        bloq6.enable(true);
+        bloq6.doConnectable();
+
+        var bloq7 = new bloqs.Bloq({
+            bloqData: bloqSchemas['evolutionHome'],
+            componentsArray: componentsArray,
+            $field: $field
+        });
+        $field.append(bloq7.$bloq);
+        bloq7.enable(true);
+        bloq7.doConnectable();
+
+        var bloq8 = new bloqs.Bloq({
+            bloqData: bloqSchemas['evolutionIfDistance'],
+            componentsArray: componentsArray,
+            $field: $field
+        });
+        $field.append(bloq8.$bloq);
+        bloq8.enable(true);
+        bloq8.doConnectable();
+
+        var bloq9 = new bloqs.Bloq({
+            bloqData: bloqSchemas['evolutionMovementsSimple'],
+            componentsArray: componentsArray,
+            $field: $field
+        });
+        $field.append(bloq9.$bloq);
+        bloq9.enable(true);
+        bloq9.doConnectable();
+
 
     });
     </script>

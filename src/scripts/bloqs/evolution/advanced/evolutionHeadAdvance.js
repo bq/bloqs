@@ -2,8 +2,8 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../../utils'),
-    StatementBloq = require('./../statementBloq');
+    utils = require('./../../build-utils'),
+    StatementBloq = require('./../../statementBloq');
 
 /**
 * Bloq name: evolutionHeadAdvance
@@ -17,7 +17,7 @@ var _ = require('lodash'),
 * Return type: none
 */
 
-var evolutionHeadAdvance = _.merge(_.clone(OutputBloq, true), {
+var evolutionHeadAdvance = _.merge(_.clone(StatementBloq, true), {
 
     name: 'evolutionHeadAdvance',
     bloqClass: 'bloq-evolution-head',

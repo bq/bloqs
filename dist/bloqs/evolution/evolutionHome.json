@@ -1,0 +1,24 @@
+{
+  "type": "statement",
+  "name": "evolutionHome",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-evolution-rest",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-evolution-rest"
+      }
+    ]
+  ],
+  "code": "evolution.home();"
+}
