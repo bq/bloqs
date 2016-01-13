@@ -14,7 +14,7 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "eacc8d39-ffec-4122-bd32-9c9f316f799b"
+      "name": "08f3047b-2e87-4c83-acff-867ce7ac5e6f"
     }
   ],
   "bloqClass": "bloq-continuous-servo-stop-advanced",
@@ -28,7 +28,7 @@
         "bloqInputId": "SERVO",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "eacc8d39-ffec-4122-bd32-9c9f316f799b"
+        "name": "08f3047b-2e87-4c83-acff-867ce7ac5e6f"
       }
     ]
   ],

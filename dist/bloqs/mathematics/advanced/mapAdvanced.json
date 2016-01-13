@@ -10,31 +10,31 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "float",
-      "name": "02a806b6-74c2-4504-99f2-cb38ae5876e1"
+      "name": "c507960d-ef9f-42e0-817d-3f67fed00938"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "float",
-      "name": "f41d8fc8-8757-4724-8b4b-e3f70821c6db"
+      "name": "097a62fd-76f0-4a77-b697-80c7f04bc04c"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "float",
-      "name": "07a25bf6-7bbf-4030-a92c-b7162d91e6d9"
+      "name": "3fcce127-f2d6-43ef-a696-171847e3b08c"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "float",
-      "name": "e2355d05-4fde-4352-9c12-c0f3a75e03cc"
+      "name": "2c3a3bb8-8185-415b-adf4-10a774ed80d4"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "float",
-      "name": "d768dde9-024f-4518-88e6-88881a88becf"
+      "name": "83b6ec9b-f21a-43c4-956a-ad40c1fd8200"
     }
   ],
   "bloqClass": "bloq-map-advanced",
@@ -48,7 +48,7 @@
         "bloqInputId": "VAR",
         "alias": "bloqInput",
         "acceptType": "float",
-        "name": "02a806b6-74c2-4504-99f2-cb38ae5876e1"
+        "name": "c507960d-ef9f-42e0-817d-3f67fed00938"
       },
       {
         "alias": "text",
@@ -58,7 +58,7 @@
         "bloqInputId": "INITMIN",
         "alias": "bloqInput",
         "acceptType": "float",
-        "name": "f41d8fc8-8757-4724-8b4b-e3f70821c6db"
+        "name": "097a62fd-76f0-4a77-b697-80c7f04bc04c"
       },
       {
         "alias": "text",
@@ -68,7 +68,7 @@
         "bloqInputId": "INITMAX",
         "alias": "bloqInput",
         "acceptType": "float",
-        "name": "07a25bf6-7bbf-4030-a92c-b7162d91e6d9"
+        "name": "3fcce127-f2d6-43ef-a696-171847e3b08c"
       },
       {
         "alias": "text",
@@ -78,7 +78,7 @@
         "bloqInputId": "FINMIN",
         "alias": "bloqInput",
         "acceptType": "float",
-        "name": "e2355d05-4fde-4352-9c12-c0f3a75e03cc"
+        "name": "2c3a3bb8-8185-415b-adf4-10a774ed80d4"
       },
       {
         "alias": "text",
@@ -88,7 +88,7 @@
         "bloqInputId": "FINMAX",
         "alias": "bloqInput",
         "acceptType": "float",
-        "name": "d768dde9-024f-4518-88e6-88881a88becf"
+        "name": "83b6ec9b-f21a-43c4-956a-ad40c1fd8200"
       },
       {
         "alias": "text",

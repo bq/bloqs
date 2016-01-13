@@ -1,0 +1,28 @@
+{
+  "type": "statement-input",
+  "name": "zowiIfSound",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zowi-if-sound",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zowi-if-sound"
+      }
+    ]
+  ],
+  "code": " if(zowi.getNoise() >= 650){{STATEMENTS}}"
+}

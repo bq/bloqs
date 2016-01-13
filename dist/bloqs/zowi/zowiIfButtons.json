@@ -1,0 +1,46 @@
+{
+  "type": "statement-input",
+  "name": "zowiIfButtons",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zowi-if-buttons",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zowi-if-buttons"
+      },
+      {
+        "id": "BUTTON",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zowi-if-buttons-A",
+            "value": "PIN_AButton"
+          },
+          {
+            "label": "bloq-zowi-if-buttons-B",
+            "value": "PIN_BButton"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zowi-if-buttons-then"
+      }
+    ]
+  ],
+  "code": "if(digitalRead({BUTTON}) == 1){{STATEMENTS}}"
+}

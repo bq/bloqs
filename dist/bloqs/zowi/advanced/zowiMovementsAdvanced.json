@@ -14,13 +14,13 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "2faa0643-bc6d-4884-bb75-05d60bc3f0a0"
+      "name": "5d1a73c2-6a2e-4982-8be9-6fd9963cd9ff"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "8433b2d4-eb27-485d-8812-1314ab660679"
+      "name": "f03a2131-7da5-4bc0-b774-effe6cb5dd33"
     }
   ],
   "bloqClass": "bloq-zowi-movements-advanced",
@@ -78,7 +78,7 @@
         "bloqInputId": "STEPS",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "2faa0643-bc6d-4884-bb75-05d60bc3f0a0"
+        "name": "5d1a73c2-6a2e-4982-8be9-6fd9963cd9ff"
       },
       {
         "alias": "text",
@@ -88,7 +88,7 @@
         "bloqInputId": "SPEED",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "8433b2d4-eb27-485d-8812-1314ab660679"
+        "name": "f03a2131-7da5-4bc0-b774-effe6cb5dd33"
       }
     ]
   ],

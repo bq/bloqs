@@ -25,6 +25,9 @@ var equalityOperations = _.merge(_.clone(OutputBloq, true), {
             alias: 'bloqInput',
             acceptType: 'all'
         }, {
+            alias: 'text',
+            value: 'bloq-equality-operations-is'
+        }, {
             id: 'OPERATOR',
             alias: 'staticDropdown',
             options: [{
@@ -46,6 +49,9 @@ var equalityOperations = _.merge(_.clone(OutputBloq, true), {
                     label: '<=',
                     value: '<='
                 }] //'=', '≠', '>', '≥', '<', '≤']
+        }, {
+            alias: 'text',
+            value: 'bloq-equality-operations-than'
         }, {
             bloqInputId: 'ARG2',
             alias: 'bloqInput',

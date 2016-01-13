@@ -141,7 +141,7 @@
 
         //Create a if bloq from the bloqsSchemas loaded
         var bloq1 = new bloqs.Bloq({
-            bloqData: bloqSchemas['if'],
+            bloqData: bloqSchemas['evolutionIfLine'],
             componentsArray: componentsArray,
             $field: $field
         });
@@ -154,7 +154,7 @@
 
 
         var bloq2 = new bloqs.Bloq({
-            bloqData: bloqSchemas['for-v1'],
+            bloqData: bloqSchemas['evolutionIfLight'],
             componentsArray: componentsArray,
             $field: $field
         });
@@ -163,13 +163,15 @@
         bloq2.doConnectable();
 
         var bloq3 = new bloqs.Bloq({
-            bloqData: bloqSchemas['number'],
+            bloqData: bloqSchemas['evolutionIfLightAdvanced'],
             componentsArray: componentsArray,
             $field: $field
         });
         $field.append(bloq3.$bloq);
         bloq3.enable(true);
         bloq3.doConnectable();
+
+
 
     });
     </script>

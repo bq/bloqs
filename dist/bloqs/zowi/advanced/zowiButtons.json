@@ -1,0 +1,42 @@
+{
+  "type": "output",
+  "name": "zowiButtons",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-zowi-buttons",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zowi-buttons"
+      },
+      {
+        "id": "BUTTON",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zowi-buttons-A",
+            "value": "PIN_AButton"
+          },
+          {
+            "label": "bloq-zowi-buttons-B",
+            "value": "PIN_BButton"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zowi-buttons-zowi"
+      }
+    ]
+  ],
+  "code": "digitalRead({BUTTON})",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  }
+}

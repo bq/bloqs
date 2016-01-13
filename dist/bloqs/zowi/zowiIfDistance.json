@@ -1,0 +1,55 @@
+{
+  "type": "statement-input",
+  "name": "zowiIfDistance",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zowi-if-distance",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zowi-if-distance"
+      },
+      {
+        "id": "OPERATOR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zowi-if-distance-less",
+            "value": "<"
+          },
+          {
+            "label": "bloq-zowi-if-distance-more",
+            "value": ">"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zowi-if-distance-than"
+      },
+      {
+        "id": "DISTANCE",
+        "alias": "numberInput",
+        "value": 15
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zowi-if-distance-then"
+      }
+    ]
+  ],
+  "code": "if(zowi.getDistance() {OPERATOR} {DISTANCE}){{STATEMENTS}}"
+}
