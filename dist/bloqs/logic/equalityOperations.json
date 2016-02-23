@@ -10,13 +10,13 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "79ed85c9-973f-4c56-bf21-1373a1517340"
+      "name": "fc881830-45ae-408d-b6d0-badba622730c"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "958de8e2-87a7-4b71-a4aa-9785bef3fe82"
+      "name": "e9ec8ecd-ade1-4bb0-af08-736d7ef2a49b"
     }
   ],
   "bloqClass": "bloq-equality-operations",
@@ -26,7 +26,7 @@
         "bloqInputId": "ARG1",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "79ed85c9-973f-4c56-bf21-1373a1517340"
+        "name": "fc881830-45ae-408d-b6d0-badba622730c"
       },
       {
         "id": "OPERATOR",
@@ -62,7 +62,7 @@
         "bloqInputId": "ARG2",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "958de8e2-87a7-4b71-a4aa-9785bef3fe82"
+        "name": "e9ec8ecd-ade1-4bb0-af08-736d7ef2a49b"
       }
     ]
   ],

@@ -407,6 +407,8 @@
         height: 40px;
         display: inline-flex;
         align-items: center;
+        margin-left: 10px;
+        margin-right: 10px;
         span + input[type=text] + span + .bloqinput {
             margin-left: 1.6em;
         }
@@ -429,11 +431,13 @@
         background-color: white;
         padding-left: 10px;
         padding-right: 10px;
-        margin-right: 10px;
         border-radius: .4em;
     }
     input[type=text] {
         width: 100px;
+        & + select {
+          margin-left: 10px;
+        }
     }
     &.bloq-number,
     &.bloq-numberArray,
@@ -460,7 +464,6 @@
         padding-left: 10px;
         text-indent: .01px;
         text-overflow: ellipsis;
-        margin-right: 10px;
     }
     &.disabled {
         &.bloq--statement {
@@ -606,11 +609,13 @@
         height: 40px;
         align-items: center;
         background-color: #ebebeb;
-        padding-left: 1em;
+        padding-left: 10px;
+        padding-right: 10px;
         border-radius: .3em;
         span {
             z-index: 2;
-            margin-right: 1em;
+            margin-left: 10px;
+            margin-right: 10px;
             & + .bloqinput {
                 margin-left: .5em;
             }
@@ -748,9 +753,6 @@
     }
     & > * {
         margin-right: 10px;
-    }
-    & > span + input[type=text] {
-        margin: 0;
     }
     @include bloqOutputFocus;
 }
@@ -895,8 +897,4 @@ tester + span + .bloqinput {
     textarea {
         margin-bottom: .5em;
     }
-}
-
-.bloqinput > .bloq--output {
-    padding-left: 10px;
 }

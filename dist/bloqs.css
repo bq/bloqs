@@ -6270,7 +6270,9 @@
   .bloq .bloq--fixed {
     height: 40px;
     display: inline-flex;
-    align-items: center; }
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px; }
     .bloq .bloq--fixed span + input[type=text] + span + .bloqinput {
       margin-left: 1.6em; }
     .bloq .bloq--fixed + span + * {
@@ -6289,10 +6291,11 @@
     background-color: white;
     padding-left: 10px;
     padding-right: 10px;
-    margin-right: 10px;
     border-radius: .4em; }
   .bloq input[type=text] {
     width: 100px; }
+    .bloq input[type=text] + select {
+      margin-left: 10px; }
   .bloq.bloq-number input, .bloq.bloq-numberArray input, .bloq.bloq-numberArray-advanced-type input, .bloq.bloq-wait input, .bloq.bloq-boolArray input, .bloq.bloq-case input {
     width: 51px; }
   .bloq select {
@@ -6309,8 +6312,7 @@
     padding-right: 25px;
     padding-left: 10px;
     text-indent: .01px;
-    text-overflow: ellipsis;
-    margin-right: 10px; }
+    text-overflow: ellipsis; }
   .bloq.disabled.bloq--statement {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="40" viewBox="0 0 40 40">  <defs>    <style>      .cls-2 {        fill: #000000;        fill-opacity: 0.2;      }    </style>  </defs>  <path d="M39.414,40.000 C39.414,40.000 36.586,40.000 36.586,40.000 C36.586,40.000 40.000,36.586 40.000,36.586 C40.000,36.586 40.000,39.414 40.000,39.414 C40.000,39.414 39.414,40.000 39.414,40.000 ZM31.414,40.000 C31.414,40.000 28.586,40.000 28.586,40.000 C28.586,40.000 40.000,28.586 40.000,28.586 C40.000,28.586 40.000,31.414 40.000,31.414 C40.000,31.414 31.414,40.000 31.414,40.000 ZM23.414,40.000 C23.414,40.000 20.586,40.000 20.586,40.000 C20.586,40.000 40.000,20.586 40.000,20.586 C40.000,20.586 40.000,23.414 40.000,23.414 C40.000,23.414 23.414,40.000 23.414,40.000 ZM15.414,40.000 C15.414,40.000 12.586,40.000 12.586,40.000 C12.586,40.000 40.000,12.586 40.000,12.586 C40.000,12.586 40.000,15.414 40.000,15.414 C40.000,15.414 15.414,40.000 15.414,40.000 ZM7.414,40.000 C7.414,40.000 4.586,40.000 4.586,40.000 C4.586,40.000 40.000,4.586 40.000,4.586 C40.000,4.586 40.000,7.414 40.000,7.414 C40.000,7.414 7.414,40.000 7.414,40.000 ZM-0.000,39.414 C-0.000,39.414 -0.000,36.586 -0.000,36.586 C-0.000,36.586 36.586,0.000 36.586,0.000 C36.586,0.000 39.414,0.000 39.414,0.000 C39.414,0.000 -0.000,39.414 -0.000,39.414 ZM-0.000,31.414 C-0.000,31.414 -0.000,28.586 -0.000,28.586 C-0.000,28.586 28.563,0.022 28.563,0.022 C28.563,0.022 31.392,0.022 31.392,0.022 C31.392,0.022 -0.000,31.414 -0.000,31.414 ZM-0.000,23.414 C-0.000,23.414 -0.000,20.586 -0.000,20.586 C-0.000,20.586 20.586,0.000 20.586,0.000 C20.586,0.000 23.414,0.000 23.414,0.000 C23.414,0.000 -0.000,23.414 -0.000,23.414 ZM-0.000,15.414 C-0.000,15.414 -0.000,12.586 -0.000,12.586 C-0.000,12.586 12.586,0.000 12.586,0.000 C12.586,0.000 15.414,0.000 15.414,0.000 C15.414,0.000 -0.000,15.414 -0.000,15.414 ZM-0.000,7.414 C-0.000,7.414 -0.000,4.586 -0.000,4.586 C-0.000,4.586 4.586,0.000 4.586,0.000 C4.586,0.000 7.414,0.000 7.414,0.000 C7.414,0.000 -0.000,7.414 -0.000,7.414 Z" id="path-1" class="cls-2" fill-rule="evenodd"/></svg>');
     background-color: white; }
@@ -6457,11 +6459,13 @@
   height: 40px;
   align-items: center;
   background-color: #ebebeb;
-  padding-left: 1em;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: .3em; }
   .bloq--statement-input .bloq--statement-input__header span {
     z-index: 2;
-    margin-right: 1em; }
+    margin-left: 10px;
+    margin-right: 10px; }
     .bloq--statement-input .bloq--statement-input__header span + .bloqinput {
       margin-left: .5em; }
 
@@ -6663,8 +6667,6 @@
     border: 0 solid #000; }
   .bloq--output > * {
     margin-right: 10px; }
-  .bloq--output > span + input[type=text] {
-    margin: 0; }
   .bloq--output:focus {
     box-shadow: 0 0 0 2px #f1cb33 inset;
     outline: 0; }
@@ -6791,6 +6793,3 @@ tester + span + .bloqinput {
   .bloq-comment > .bloq--fixed textarea,
   .bloq-code > .bloq--fixed textarea {
     margin-bottom: .5em; }
-
-.bloqinput > .bloq--output {
-  padding-left: 10px; }

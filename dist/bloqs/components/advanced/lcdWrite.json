@@ -14,13 +14,13 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "a282be92-d861-4a88-91c6-286fe7a5efca"
+      "name": "7d4f8c84-ed06-482a-b4a0-b5fedb358a2c"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "8871fc85-a9f2-4ff6-a514-55043dfe8d10"
+      "name": "58361b59-0742-484b-9327-8f85671000cc"
     }
   ],
   "bloqClass": "bloq-lcd-writte-advanced",
@@ -34,7 +34,7 @@
         "bloqInputId": "TEXT",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "a282be92-d861-4a88-91c6-286fe7a5efca"
+        "name": "7d4f8c84-ed06-482a-b4a0-b5fedb358a2c"
       },
       {
         "alias": "text",
@@ -44,7 +44,7 @@
         "bloqInputId": "LCD",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "8871fc85-a9f2-4ff6-a514-55043dfe8d10"
+        "name": "58361b59-0742-484b-9327-8f85671000cc"
       }
     ]
   ],

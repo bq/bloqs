@@ -14,19 +14,19 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "54c6fb35-76cb-431d-9b1e-66573101feef"
+      "name": "56b3a245-1fd7-4bc0-967a-b24635e72c98"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "9f2b51a6-05e0-4f95-94d8-efb34903fd2c"
+      "name": "acd1686e-0d5f-42da-811d-8880b119f225"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "33a22d33-fe71-4479-919f-83939c9243a1"
+      "name": "64ac7902-8ee7-4797-9a4f-17700ed00413"
     }
   ],
   "bloqClass": "bloq-rgbLed-advanced",
@@ -49,7 +49,7 @@
         "bloqInputId": "RED",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "54c6fb35-76cb-431d-9b1e-66573101feef"
+        "name": "56b3a245-1fd7-4bc0-967a-b24635e72c98"
       },
       {
         "alias": "text",
@@ -59,7 +59,7 @@
         "bloqInputId": "GREEN",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "9f2b51a6-05e0-4f95-94d8-efb34903fd2c"
+        "name": "acd1686e-0d5f-42da-811d-8880b119f225"
       },
       {
         "alias": "text",
@@ -69,7 +69,7 @@
         "bloqInputId": "BLUE",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "33a22d33-fe71-4479-919f-83939c9243a1"
+        "name": "64ac7902-8ee7-4797-9a4f-17700ed00413"
       }
     ]
   ],
