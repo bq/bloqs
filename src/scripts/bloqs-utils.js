@@ -1031,11 +1031,13 @@
         }
     };
 
+    var timers = [];
     var delay = (function() {
-        var timer = 0;
-        return function(callback, ms) {
-            clearTimeout(timer);
-            timer = setTimeout(callback, ms);
+        return function(callback, ms, elementId) {
+            if (timers[elementId]) {
+                clearTimeout(timers[elementId]);
+            }
+            timers[elementId] = setTimeout(callback, ms);
         };
     })();
 
