@@ -918,6 +918,11 @@
                             }
                         });
                         break;
+                    case 'allServos':
+                        arrayOptions = [];
+
+                        arrayOptions = arrayOptions.concat(componentsArray.servos, componentsArray.continuousServos, componentsArray.oscillators);
+                        break;
                     case 'varComponents':
                         arrayOptions = [];
 
