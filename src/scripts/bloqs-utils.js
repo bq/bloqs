@@ -1,5 +1,5 @@
 'use strict';
-(function(bloqsUtils, _) {
+(function(bloqsUtils, _, bloqsLanguages) {
 
 
 
@@ -217,18 +217,23 @@
         return parseInt(style.getPropertyValue(prop), 10);
     };
 
-    var drawDropdownOptions = function($element, arrayOptions) {
+    var drawDropdownOptions = function($element, arrayOptions, lang) {
         var $tempElement, i,
             $items = [];
 
         $element.html('');
-        for (i = 0; i < arrayOptions.length; i++) {
-            $tempElement = $('<option>').attr({
-                'data-var-id': arrayOptions[i].id,
-                value: arrayOptions[i].name,
-                'data-reference': arrayOptions[i].uid
-            }).html(arrayOptions[i].name);
-            $items.push($tempElement);
+        if (arrayOptions.length !== 0) {
+            for (i = 0; i < arrayOptions.length; i++) {
+                $tempElement = $('<option>').attr({
+                    'data-var-id': arrayOptions[i].id,
+                    value: arrayOptions[i].name,
+                    'data-reference': arrayOptions[i].uid
+                }).html(arrayOptions[i].name);
+                $items.push($tempElement);
+            }
+        } else {
+          $tempElement = $('<option>').html(bloqsLanguages.texts[lang]['bloqs-dropdown-undefined'] || bloqsLanguages.texts['en-GB']['bloqs-dropdown-undefined'] || bloqsLanguages.texts['es-ES']['bloqs-dropdown-undefined'] || 'bloqs-dropdown-undefined');
+          $items.push($tempElement);
         }
         appendArrayInOneTime($element, $items);
     };
@@ -1031,11 +1036,13 @@
         }
     };
 
+    var timers = [];
     var delay = (function() {
-        var timer = 0;
-        return function(callback, ms) {
-            clearTimeout(timer);
-            timer = setTimeout(callback, ms);
+        return function(callback, ms, elementId) {
+            if (timers[elementId]) {
+                clearTimeout(timers[elementId]);
+            }
+            timers[elementId] = setTimeout(callback, ms);
         };
     })();
 
@@ -1475,4 +1482,4 @@
 
     return bloqsUtils;
 
-})(window.bloqsUtils = window.bloqsUtils || {}, _, undefined);
+})(window.bloqsUtils = window.bloqsUtils || {}, _, bloqsLanguages, undefined);
