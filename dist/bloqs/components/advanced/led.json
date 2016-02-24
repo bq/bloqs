@@ -14,7 +14,7 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "5d5ecd85-521e-4c0f-a051-00a64df5c22a"
+      "name": "4a5229d1-11fb-4501-94e9-e1be2052d782"
     }
   ],
   "bloqClass": "bloq-led-advanced",
@@ -42,7 +42,7 @@
         "bloqInputId": "LED",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "5d5ecd85-521e-4c0f-a051-00a64df5c22a"
+        "name": "4a5229d1-11fb-4501-94e9-e1be2052d782"
       }
     ]
   ],

@@ -319,7 +319,7 @@
             if (IOConnectors[connectorUuid].data.type === 'connector--input') {
                 if (utils.getBloqByConnectorUuid(connectorUuid, bloqs, IOConnectors).isConnectable()) {
                     if (!IOConnectors[connectorUuid].connectedTo) {
-                        if (utils.sameConnectionType(bloq, utils.getBloqByConnectorUuid(connectorUuid, bloqs, IOConnectors), IOConnectors[connectorUuid].data.acceptType, bloqs, IOConnectors, softwareArrays)) {
+                        if (utils.sameConnectionType(bloq, utils.getBloqByConnectorUuid(connectorUuid, bloqs, IOConnectors), IOConnectors[connectorUuid].data.acceptType, bloqs, IOConnectors, softwareArrays, componentsArray)) {
                             if (!utils.connectorIsInBranch(connectorUuid, bloq.uuid, bloqs, IOConnectors)) {
                                 availableIOConnectors.push(connectorUuid);
                             }
@@ -481,7 +481,7 @@
         var dragConnector = utils.getOutputConnector(bloq, IOConnectors);
         availableIOConnectors.forEach(function(dropConnectorUuid) {
             dropConnector = IOConnectors[dropConnectorUuid];
-            if (utils.itsOver(dragConnector.jqueryObject, dropConnector.jqueryObject, 0) && utils.sameConnectionType(bloqs[dragConnector.bloqUuid], bloqs[dropConnector.bloqUuid], dropConnector.data.acceptType, bloqs, IOConnectors, softwareArrays)) {
+            if (utils.itsOver(dragConnector.jqueryObject, dropConnector.jqueryObject, 0) && utils.sameConnectionType(bloqs[dragConnector.bloqUuid], bloqs[dropConnector.bloqUuid], dropConnector.data.acceptType, bloqs, IOConnectors, softwareArrays, componentsArray)) {
                 dropConnector.jqueryObject.addClass('available');
             } else {
                 dropConnector.jqueryObject.removeClass('available');
@@ -557,7 +557,7 @@
             }
             i++;
         }
-        type = type || utils.getTypeFromBloq(bloq, bloqs, IOConnectors, softwareArrays);
+        type = type || utils.getTypeFromBloq(bloq, bloqs, IOConnectors, softwareArrays, componentsArray);
         //arguments if any:
         if (bloq.bloqData.type === 'statement-input' && bloq.bloqData.arguments) {
             args = args || utils.getArgsFromBloq(bloq, bloqs, IOConnectors);
@@ -627,7 +627,7 @@
         var tempSoftVar;
         for (var i = 0; i < softwareArrays[dynamicContentType].length; i++) {
             tempSoftVar = softwareArrays[dynamicContentType][i];
-            tempSoftVar.type = utils.getTypeFromBloq(bloqs[tempSoftVar.bloqUuid], bloqs, IOConnectors, softwareArrays);
+            tempSoftVar.type = utils.getTypeFromBloq(bloqs[tempSoftVar.bloqUuid], bloqs, IOConnectors, softwareArrays, componentsArray);
         }
         //utils.drawSoftwareArray(softwareArrays);
     };
@@ -917,6 +917,11 @@
                                 }
                             }
                         });
+                        break;
+                    case 'allServos':
+                        arrayOptions = [];
+
+                        arrayOptions = arrayOptions.concat(componentsArray.servos, componentsArray.continuousServos, componentsArray.oscillators);
                         break;
                     case 'varComponents':
                         arrayOptions = [];
@@ -1467,7 +1472,7 @@
                 this.$bloq.children().not('.connector.connector--offline').last().addClass('bloq__inner--last');
                 break;
             case 'group':
-                this.$bloq.append('<div class="field--header"><button class="btn btn--collapsefield"></button><h3 data-i18n="' + this.bloqData.headerText + '">' + translateBloq(lang, this.bloqData.headerText) + '</h3></div><div class="field--content"><p data-i18n="' + this.bloqData.descriptionText + '">' + translateBloq(lang, this.bloqData.descriptionText) + '</p><div class="bloq--extension--info" data-i18n="drag-bloq" > ' + translateBloq(lang, 'drag-bloq') + '</div><div class="bloq--extension__content"></div></div>');
+                this.$bloq.append('<div class="field--header"><button class="btn btn--collapsefield"></button><h3 data-i18n="' + this.bloqData.headerText + '">' + translateBloq(lang, this.bloqData.headerText) + '</h3></div><div class="field--content"><div class="bloq--extension--info"> <div class="bloq__info"><p class="bloq__info--text" data-i18n="' + this.bloqData.descriptionText + '">' + translateBloq(lang, this.bloqData.descriptionText) + '</p><svg class="bloq__svg-icon"><image xlink:href="../../images/info.svg"/></svg></div><p class="bloq--drag-bloq" data-i18n="drag-bloq">' + translateBloq(lang, 'drag-bloq') + '</p></div><div class="bloq--extension__content"></div></div>');
 
                 buildConnectors(params.bloqData.connectors, this);
                 this.$bloq.find('.connector--root').addClass('connector--root--group');
@@ -1542,6 +1547,16 @@
                         code = code.replace(new RegExp('{' + elem + '.pin}', 'g'), componentsArray.servos[j].pin.s);
                     }
                 }
+                for (var j = 0; j < componentsArray.continuousServos.length; j++) {
+                    if (value === componentsArray.continuousServos[j].name) {
+                        code = code.replace(new RegExp('{' + elem + '.pin}', 'g'), componentsArray.continuousServos[j].pin.s);
+                    }
+                }
+                for (var j = 0; j < componentsArray.oscillators.length; j++) {
+                    if (value === componentsArray.oscillators[j].name) {
+                        code = code.replace(new RegExp('{' + elem + '.pin}', 'g'), componentsArray.oscillators[j].pin.s);
+                    }
+                }
                 if (element.attr('data-content-type') === 'stringInput') {
                     value = utils.validString(value);
                 } else if (element.attr('data-content-type') === 'charInput') {
@@ -1573,7 +1588,7 @@
                         if (type.type === 'fromDynamicDropdown') {
                             connectionType = utils.getFromDynamicDropdownType(childBloq || this, type.idDropdown, type.options, softwareArrays, componentsArray);
                         } else if (type.type === 'fromDropdown') {
-                            connectionType = utils.getTypeFromBloq(childBloq || this, bloqs, IOConnectors, softwareArrays);
+                            connectionType = utils.getTypeFromBloq(childBloq || this, bloqs, IOConnectors, softwareArrays, componentsArray);
                         } else {
                             connectionType = type.value;
                             if (connectionType === 'string') {

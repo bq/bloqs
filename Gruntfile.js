@@ -5,12 +5,12 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         concat: {
             options: {
-                separator: '\n\n',
+                separator: '\n\n'
             },
             dist: {
                 src: ['src/scripts/bloqs-languages.js', 'src/scripts/bloqs-utils.js', 'src/scripts/bloqs.js'],
-                dest: 'dist/<%= pkg.name %>.js',
-            },
+                dest: 'dist/<%= pkg.name %>.js'
+            }
         },
         uglify: {
             options: {
@@ -55,9 +55,9 @@ module.exports = function(grunt) {
 
                     livereload: {
                         host: 'localhost',
-                        port: 9000,
+                        port: 9000
                     }
-                },
+                }
             }
         },
         jsdoc: {

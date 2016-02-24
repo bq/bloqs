@@ -62,7 +62,7 @@
                 width: 14px;
                 top: 0;
                 background-color: transparent;
-                background-image: linear-gradient( to right, #ffcb33, #ffcb33 15%, transparent 15%, transparent 85%);
+                background-image: linear-gradient(to right, #ffcb33, #ffcb33 15%, transparent 15%, transparent 85%);
                 border-radius: .3em;
             }
         }
@@ -167,7 +167,6 @@
         }
     }
 }
-
 
 /* group */
 
@@ -356,6 +355,43 @@
     padding-top: .5em;
 }
 
+.bloq__info {
+    .bloq__svg-icon {
+        margin: 14px 10px;
+        margin-left: 0px;
+        width: 20px;
+        height: 20px;
+        image {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .bloq__info--text {
+        position: absolute;
+        top: -5px;
+        height: 4px;
+        padding: 15px;
+        line-height: 4px;
+        background-color: #1E1F21;
+        color: white;
+        display: none;
+        &:after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: #1E1F21;
+            position: absolute;
+            left: 7px;
+            top: 29px;
+            transform: rotate(-45deg);
+        }
+    }
+    &:hover {
+        .bloq__info--text {
+            display: block;
+        }
+    }
+}
 
 /* GENERAL */
 
@@ -369,11 +405,10 @@
     margin: 0;
 }
 
-
 /* BLOQS */
 
 .bloq--statement-input__header:first-of-type {
-    position: absolute!important;
+    position: absolute !important;
     & + .bloq--extension {
         padding-top: 40px;
     }
@@ -469,7 +504,7 @@
             @include bloqStatementFocus;
         }
         &.bloq--statement-input {
-            border-left: 5px solid #cfcfcf!important;
+            border-left: 5px solid #cfcfcf !important;
         }
         & > .bloq--extension {
             &:before {
@@ -554,7 +589,7 @@
             padding-left: 1em;
             display: inline-flex;
             align-items: center;
-            border-left: 0!important;
+            border-left: 0 !important;
             span {
                 margin-left: 0;
             }
@@ -693,7 +728,7 @@
 .bloq--statement-input.disabled:focus {
     &:before {
         border: 0;
-        border-right: 2px solid #f1cb33!important;
+        border-right: 2px solid #f1cb33 !important;
     }
     &:after {
         content: '';
@@ -758,7 +793,6 @@
 .bloq-vars {
     margin-top: 0;
 }
-
 
 /* CONNECTORS */
 
@@ -857,16 +891,6 @@ tester + span + .bloqinput {
             left: 18px;
             height: 5px;
             width: 381px;
-        }
-    }
-}
-
-.bloq-loop {
-    //min-height: 375px;
-    .field--content {
-        p,
-        .bloq--extension--info {
-            margin-left: 1em;
         }
     }
 }

@@ -28,5 +28,5 @@ var generateBloqInputConnectors = function(bloq) {
     }
 };
 
-module.exports.generateBloqInputConnectors = generateBloqInputConnectors
+module.exports.generateBloqInputConnectors = generateBloqInputConnectors;
 module.exports.generateUUID = generateUUID;

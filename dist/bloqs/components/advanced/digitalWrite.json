@@ -14,13 +14,13 @@
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "bee0b1fc-29ef-4547-b332-67847212b533"
+      "name": "faee8676-750e-4976-afce-af10746327ac"
     },
     {
       "type": "connector--input",
       "accept": "connector--output",
       "acceptType": "all",
-      "name": "ee9e23a0-af18-4027-8e41-a7f0cc626ac3"
+      "name": "dc73b855-3680-4d97-8f03-49a8af8cd80e"
     }
   ],
   "bloqClass": "bloq-pin-writte-advanced",
@@ -34,7 +34,7 @@
         "bloqInputId": "PIN",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "bee0b1fc-29ef-4547-b332-67847212b533"
+        "name": "faee8676-750e-4976-afce-af10746327ac"
       },
       {
         "alias": "text",
@@ -44,7 +44,7 @@
         "bloqInputId": "DATA",
         "alias": "bloqInput",
         "acceptType": "all",
-        "name": "ee9e23a0-af18-4027-8e41-a7f0cc626ac3"
+        "name": "dc73b855-3680-4d97-8f03-49a8af8cd80e"
       }
     ]
   ],

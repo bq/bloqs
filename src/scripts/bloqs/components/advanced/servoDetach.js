@@ -28,7 +28,7 @@ var servoDetach = _.merge(_.clone(StatementBloq, true), {
         }, {
             id: 'SERVO',
             alias: 'dynamicDropdown',
-            options: 'servos'
+            options: 'allServos'
         }]
     ],
     code: '{SERVO}.detach();'
