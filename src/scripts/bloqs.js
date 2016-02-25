@@ -732,10 +732,12 @@
             //si es un bloq que genera dinmayc content
             if (bloq.bloqData.createDynamicContent) {
                 removeSoftVar(bloq);
+                updateDropdowns();
             } else {
                 for (key in softwareArrays) {
                     updateSoftVarTypes(softwareArrays, key, bloqs, IOConnectors);
                 }
+                updateDropdowns();
             }
 
             //remove the bloq
@@ -958,7 +960,7 @@
                 }
 
                 //content
-                utils.drawDropdownOptions($element, arrayOptions);
+                utils.drawDropdownOptions($element, arrayOptions, lang);
 
                 if (elementSchema.value) {
                     $element.val(elementSchema.value);
@@ -1143,6 +1145,7 @@
                         } else {
                             removeSoftVar(bloq, name);
                         }
+                        updateDropdowns();
                     }, 1000);
                 });
 
@@ -1284,7 +1287,7 @@
         $('select[data-dropdownContent="' + softwareArrayKey + '"]').each(function(index, element) {
             $element = $(element);
             tempValue = $element.attr('data-value');
-            bloqsUtils.drawDropdownOptions($element, softwareArrays[softwareArrayKey]);
+            bloqsUtils.drawDropdownOptions($element, softwareArrays[softwareArrayKey], lang);
             if (tempValue) {
                 $element.val(tempValue);
             }
