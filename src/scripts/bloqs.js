@@ -1136,13 +1136,18 @@
                 //Transform the name to create valid function / variables names
                 $element.keyup(function() {
                     bloqsUtils.delay(function() {
-                        var name = utils.validName($element.val(), softwareArrays);
+                      var inputText;
+                      var name = $element.val();
+                      while(inputText !== name) {
+                        var inputText = name;
                         $element.val(name);
                         if (name) {
                             updateSoftVar(bloq, name);
                         } else {
                             removeSoftVar(bloq, name);
                         }
+                        var name = utils.validName($element.val(), softwareArrays);
+                      }
                     }, 1000);
                 });
 
