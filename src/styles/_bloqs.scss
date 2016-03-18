@@ -614,7 +614,7 @@
                 border-top: 3px solid #f1cb33;
                 z-index: 1;
                 position: absolute;
-                max-width: 200px;
+                max-width: 100%;
                 bottom: -2px;
             }
         }
@@ -818,7 +818,7 @@
             z-index: 1;
             position: absolute;
             bottom: 0;
-            max-width: 200px;
+            max-width: 100%;
         }
     }
 }
@@ -832,7 +832,7 @@
             border-top: 3px solid #f1cb33;
             z-index: 1;
             position: absolute;
-            max-width: 200px;
+            max-width: 100%;
         }
     }
 }
