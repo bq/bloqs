@@ -1,0 +1,39 @@
+{
+  "type": "statement",
+  "name": "zumjuniorServoStop",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-servo-stop",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-servo-stop"
+      },
+      {
+        "id": "SERVO",
+        "alias": "dynamicDropdown",
+        "options": "zumjuniorServos"
+      }
+    ]
+  ],
+  "code": "{SERVO}.write(90);",
+  "arduino": {
+    "code": "{SERVO}.write(90);"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorServoStop\" no preparado para generar código python"
+      }
+    ]
+  }
+}

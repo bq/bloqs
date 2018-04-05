@@ -19,6 +19,7 @@
   /*---- CONVERSIONS ---------*/
   /*---- EVOLUTION ---------*/
   /*---- MBOT ---------*/
+  /*---- ZUMJUNIOR -------*/
   /*---- ZOWI ---------*/
   /*---- ZOWI COMPONENTS---------*/
   /*---- CLASSES ---------*/
@@ -435,6 +436,138 @@
     #bloqs--field.theme-basic .bloq.bloq-mbot-rgbLedsimple-off select,
     #bloqs--field.theme-basic .bloq.bloq-mbot-rgbLedsimple-off textarea {
       color: #0076b4; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-servo-start {
+    color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-servo-start input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-servo-start select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-servo-start textarea {
+      color: #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-servo-stop {
+    color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-servo-stop input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-servo-stop select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-servo-stop textarea {
+      color: #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-doubleled {
+    color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-doubleled input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-doubleled select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-doubleled textarea {
+      color: #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-miniservo {
+    color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-miniservo input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-miniservo select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-miniservo textarea {
+      color: #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-display-number {
+    color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-display-number input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-display-number select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-display-number textarea {
+      color: #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-display-numbers {
+    color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-display-numbers input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-display-numbers select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-display-numbers textarea {
+      color: #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-clear-display {
+    color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-clear-display input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-clear-display select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-clear-display textarea {
+      color: #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led {
+    color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led textarea {
+      color: #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnoff-led {
+    color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnoff-led input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnoff-led select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnoff-led textarea {
+      color: #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-play-buzz {
+    color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-play-buzz input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-play-buzz select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-play-buzz textarea {
+      color: #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-sensors-if {
+    color: #02ADCF;
+    border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-sensors-if input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-sensors-if select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-sensors-if textarea {
+      color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-sensors-if > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-sensors-while {
+    color: #02ADCF;
+    border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-sensors-while input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-sensors-while select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-sensors-while textarea {
+      color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-sensors-while > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-color-if {
+    color: #02ADCF;
+    border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-color-if input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-color-if select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-color-if textarea {
+      color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-color-if > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-color-while {
+    color: #02ADCF;
+    border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-color-while input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-color-while select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-color-while textarea {
+      color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-color-while > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-button-if {
+    color: #02ADCF;
+    border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-button-if input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-button-if select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-button-if textarea {
+      color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-button-if > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-button-while {
+    color: #02ADCF;
+    border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-button-while input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-button-while select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-button-while textarea {
+      color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-button-while > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-if {
+    color: #02ADCF;
+    border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-if input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-if select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-if textarea {
+      color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-if > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-while {
+    color: #02ADCF;
+    border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-while input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-while select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-while textarea {
+      color: #02ADCF; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-while > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
   #bloqs--field.theme-basic .bloq.bloq-zowi-gestures {
     color: #60BCC9; }
     #bloqs--field.theme-basic .bloq.bloq-zowi-gestures input,
@@ -1535,6 +1668,7 @@
   /*---- CONVERSIONS ---------*/
   /*---- EVOLUTION ---------*/
   /*---- MBOT ---------*/
+  /*---- ZUMJUNIOR -------*/
   /*---- ZOWI ---------*/
   /*---- ZOWI COMPONENTS---------*/
   /*---- CLASSES ---------*/
@@ -3742,6 +3876,720 @@
         background-color: #0076b4; }
       #bloqs--field.theme-colors .bloq.bloq-mbot-rgbLedsimple-off:not(.disabled).bloq--output:focus:not(.disabled):after {
         background-color: #0076b4; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-start:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-servo-stop:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-doubleled:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-miniservo:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-number:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-display-numbers:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-clear-display:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnoff-led:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-play-buzz:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) .bloqinput {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) .bloqinput:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled):before {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) > .bloq--statement-input__header {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-if:not(.disabled) > .bloq--extension > .bloq--extension--end {
+      background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) .bloqinput {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) .bloqinput:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled):before {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) > .bloq--statement-input__header {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-sensors-while:not(.disabled) > .bloq--extension > .bloq--extension--end {
+      background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) .bloqinput {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) .bloqinput:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled):before {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) > .bloq--statement-input__header {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-if:not(.disabled) > .bloq--extension > .bloq--extension--end {
+      background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) .bloqinput {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) .bloqinput:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled):before {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) > .bloq--statement-input__header {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-color-while:not(.disabled) > .bloq--extension > .bloq--extension--end {
+      background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) .bloqinput {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) .bloqinput:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled):before {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) > .bloq--statement-input__header {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-if:not(.disabled) > .bloq--extension > .bloq--extension--end {
+      background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) .bloqinput {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) .bloqinput:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled):before {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) > .bloq--statement-input__header {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-button-while:not(.disabled) > .bloq--extension > .bloq--extension--end {
+      background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) .bloqinput {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) .bloqinput:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled):before {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) > .bloq--statement-input__header {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-if:not(.disabled) > .bloq--extension > .bloq--extension--end {
+      background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) textarea {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) textarea:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled).bloq--statement {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled).bloq--output {
+      background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled).bloq--output:before {
+        background-color: #02ADCF; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) .bloqinput {
+      color: white;
+      background: #02ADCF;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) .bloqinput:before {
+        background: #02ADCF;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled):before {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) > .bloq--statement-input__header {
+      background-color: #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) > .bloq--extension:before {
+      border-left: 5px solid #02ADCF; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) > .bloq--extension > .bloq--extension--end {
+      background-color: #02ADCF; }
   #bloqs--field.theme-colors .bloq.bloq-zowi-gestures:not(.disabled) {
     color: white; }
     #bloqs--field.theme-colors .bloq.bloq-zowi-gestures:not(.disabled) .bloqinput,

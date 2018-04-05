@@ -1,0 +1,52 @@
+{
+  "type": "statement",
+  "name": "zumjuniorMiniservo",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-miniservo",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-miniservo-move"
+      },
+      {
+        "id": "SERVO",
+        "alias": "dynamicDropdown",
+        "options": "zumjuniorMiniservos"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-miniservo-to"
+      },
+      {
+        "id": "POSITION",
+        "alias": "numberInput",
+        "value": 90
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-miniservo-degrees"
+      }
+    ]
+  ],
+  "code": "{SERVO}.write({POSITION});",
+  "arduino": {
+    "code": "{SERVO}.write({POSITION});"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorMiniservo\" no preparado para generar código python"
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "type": "statement-input",
+  "name": "zumjuniorButtonWhile",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-button-while",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-button-while"
+      },
+      {
+        "id": "BUTTON",
+        "alias": "dynamicDropdown",
+        "options": "zumjuniorButtons"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-button-is"
+      },
+      {
+        "id": "IS_PRESSED",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zumjunior-button-pressed",
+            "value": "digitalRead"
+          },
+          {
+            "label": "bloq-zumjunior-button-notpressed",
+            "value": "!digitalRead"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-button-exec"
+      }
+    ]
+  ],
+  "code": "while({IS_PRESSED}({BUTTON}Pin)){{STATEMENTS}}",
+  "arduino": {
+    "code": "while({IS_PRESSED}({BUTTON}Pin)){{STATEMENTS}}"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorButtonWhile\" no preparado para generar código python"
+      }
+    ]
+  }
+}

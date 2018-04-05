@@ -1,0 +1,67 @@
+{
+  "type": "statement",
+  "name": "zumjuniorDoubleLed",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-doubleled",
+  "content": [
+    [
+      {
+        "id": "STATUS",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zumjunior-doubleled-turnoff",
+            "value": "HIGH"
+          },
+          {
+            "label": "bloq-zumjunior-doubleled-turnon",
+            "value": "LOW"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-doubleled-led"
+      },
+      {
+        "id": "LED",
+        "alias": "dynamicDropdown",
+        "options": "zumjuniorDoubleLeds"
+      },
+      {
+        "id": "COLOR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zumjunior-doubleled-white",
+            "value": "WhitePin"
+          },
+          {
+            "label": "bloq-zumjunior-doubleled-color",
+            "value": "ColorPin"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "digitalWrite({LED}{COLOR},{STATUS});",
+  "arduino": {
+    "code": "digitalWrite({LED}{COLOR},{STATUS});"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorDoubleLed\" no preparado para generar código python"
+      }
+    ]
+  }
+}

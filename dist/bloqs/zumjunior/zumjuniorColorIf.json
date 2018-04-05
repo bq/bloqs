@@ -1,0 +1,72 @@
+{
+  "type": "statement-input",
+  "name": "zumjuniorColorIf",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-color-if",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-color-if"
+      },
+      {
+        "id": "COLOR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zumjunior-color-red",
+            "value": "0"
+          },
+          {
+            "label": "bloq-zumjunior-color-green",
+            "value": "1"
+          },
+          {
+            "label": "bloq-zumjunior-color-blue",
+            "value": "2"
+          },
+          {
+            "label": "bloq-zumjunior-color-white",
+            "value": "3"
+          },
+          {
+            "label": "bloq-zumjunior-color-black",
+            "value": "4"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-sensors-exec"
+      }
+    ]
+  ],
+  "suggestedBloqs": [
+    "else",
+    "elseif"
+  ],
+  "code": "if(colorSensor.whichColor() == {COLOR}){{STATEMENTS}}",
+  "arduino": {
+    "code": "if(colorSensor.whichColor() == {COLOR}){{STATEMENTS}}"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorColorIf\" no preparado para generar código python"
+      }
+    ]
+  }
+}

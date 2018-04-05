@@ -1,0 +1,58 @@
+{
+  "type": "statement",
+  "name": "zumjuniorDisplayNumber",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "57e9d1e2-570e-4d05-a437-fcc891a2b97a"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-display-number",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-display-number"
+      },
+      {
+        "bloqInputId": "VALUE",
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "57e9d1e2-570e-4d05-a437-fcc891a2b97a"
+      }
+    ]
+  ],
+  "code": "segmentDisplay.displayInt({VALUE});",
+  "arduino": {
+    "code": "segmentDisplay.displayInt({VALUE});"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorDisplayNumber\" no preparado para generar código python"
+      }
+    ]
+  }
+}

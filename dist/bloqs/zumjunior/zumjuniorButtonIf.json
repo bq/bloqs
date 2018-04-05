@@ -1,0 +1,69 @@
+{
+  "type": "statement-input",
+  "name": "zumjuniorButtonIf",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-button-if",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-button-if"
+      },
+      {
+        "id": "BUTTON",
+        "alias": "dynamicDropdown",
+        "options": "zumjuniorButtons"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-button-is"
+      },
+      {
+        "id": "IS_PRESSED",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zumjunior-button-pressed",
+            "value": "digitalRead"
+          },
+          {
+            "label": "bloq-zumjunior-button-notpressed",
+            "value": "!digitalRead"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-button-exec"
+      }
+    ]
+  ],
+  "suggestedBloqs": [
+    "else",
+    "elseif"
+  ],
+  "code": "if({IS_PRESSED}({BUTTON}Pin)){{STATEMENTS}}",
+  "arduino": {
+    "code": "if({IS_PRESSED}({BUTTON}Pin)){{STATEMENTS}}"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorButtonIf\" no preparado para generar código python"
+      }
+    ]
+  }
+}
