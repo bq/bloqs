@@ -34,7 +34,7 @@ var zumjuniorSensorsIf = _.merge(_.clone(StatementInputBloq, true), {
                 value: 'ALPSSensor.getDistance()'
             }, {
                 label: 'bloq-zumjunior-sensors-brightness',
-                value: 'tempSensor.getTemp()'
+                value: 'ALPSSensor.getAL()'
             }]
         }, {
             alias: 'text',

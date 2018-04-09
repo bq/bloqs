@@ -568,6 +568,36 @@
       color: #02ADCF; }
     #bloqs--field.theme-basic .bloq.bloq-zumjunior-slider-while > .bloq--extension:before {
       border-left: 5px solid #02ADCF; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-slider {
+    color: #cf1c22; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-slider input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-slider select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-slider textarea {
+      color: #cf1c22; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-button {
+    color: #cf1c22; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-button input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-button select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-button textarea {
+      color: #cf1c22; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-sensors {
+    color: #cf1c22; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-sensors input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-sensors select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-sensors textarea {
+      color: #cf1c22; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-color {
+    color: #cf1c22; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-color input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-color select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-color textarea {
+      color: #cf1c22; }
+  #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led-rgb {
+    color: #cf1c22; }
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led-rgb input,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led-rgb select,
+    #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led-rgb textarea {
+      color: #cf1c22; }
   #bloqs--field.theme-basic .bloq.bloq-zowi-gestures {
     color: #60BCC9; }
     #bloqs--field.theme-basic .bloq.bloq-zowi-gestures input,
@@ -4590,6 +4620,171 @@
       border-left: 5px solid #02ADCF; }
     #bloqs--field.theme-colors .bloq.bloq-zumjunior-slider-while:not(.disabled) > .bloq--extension > .bloq--extension--end {
       background-color: #02ADCF; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) textarea {
+      color: white;
+      background: #ce1c23;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) textarea:before {
+        background: #ce1c23;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled).bloq--statement {
+      background-color: #ce1c23; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled).bloq--output {
+      background-color: #ce1c23; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled).bloq--output:before {
+        background-color: #ce1c23; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-slider:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #ce1c23; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) textarea {
+      color: white;
+      background: #ce1c23;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) textarea:before {
+        background: #ce1c23;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled).bloq--statement {
+      background-color: #ce1c23; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled).bloq--output {
+      background-color: #ce1c23; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled).bloq--output:before {
+        background-color: #ce1c23; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-button:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #ce1c23; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) textarea {
+      color: white;
+      background: #ce1c23;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) textarea:before {
+        background: #ce1c23;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled).bloq--statement {
+      background-color: #ce1c23; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled).bloq--output {
+      background-color: #ce1c23; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled).bloq--output:before {
+        background-color: #ce1c23; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-sensors:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #ce1c23; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) textarea {
+      color: white;
+      background: #ce1c23;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) textarea:before {
+        background: #ce1c23;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled).bloq--statement {
+      background-color: #ce1c23; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled).bloq--output {
+      background-color: #ce1c23; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled).bloq--output:before {
+        background-color: #ce1c23; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #ce1c23; }
+  #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) {
+    color: white; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) .bloqinput,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) input,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) select,
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) textarea {
+      color: white;
+      background: #ce1c23;
+      background-color: rgba(0, 0, 0, 0.2); }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) .bloqinput:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) input:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) select:before,
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) textarea:before {
+        background: #ce1c23;
+        background-color: rgba(0, 0, 0, 0.2); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) ::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) select {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="9" height="5" viewBox="0 0 9 5">  <defs>    <style>      .cls-2 {        fill: #ffffff;      }    </style>  </defs>  <path d="M8.085,-0.009 C9.214,-0.009 9.043,0.604 8.780,0.838 C8.780,0.838 4.964,4.828 4.964,4.828 C4.701,5.062 4.274,5.062 4.010,4.828 C4.010,4.828 0.195,0.838 0.195,0.838 C-0.069,0.604 -0.239,-0.009 0.895,-0.009 C0.895,-0.009 8.085,-0.009 8.085,-0.009 Z" id="path-1" class="cls-2" fill-rule="evenodd" fill="#8c919b"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 7px bottom 45%; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) select.bloq__inner--first {
+        margin-left: 10px; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) select option {
+        color: black; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled).bloq--statement {
+      background-color: #ce1c23; }
+    #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled).bloq--output {
+      background-color: #ce1c23; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled).bloq--output:before {
+        background-color: #ce1c23; }
+      #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled).bloq--output:focus:not(.disabled):after {
+        background-color: #ce1c23; }
   #bloqs--field.theme-colors .bloq.bloq-zowi-gestures:not(.disabled) {
     color: white; }
     #bloqs--field.theme-colors .bloq.bloq-zowi-gestures:not(.disabled) .bloqinput,

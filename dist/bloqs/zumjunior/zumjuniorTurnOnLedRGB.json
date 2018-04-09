@@ -1,0 +1,106 @@
+{
+  "type": "statement",
+  "name": "zumjuniorTurnOnLedRGB",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "1524cf20-e006-40ea-bb2b-6361d0f7b192"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "5a77e03c-d897-423c-b709-fd319b4300c6"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "efd3fd41-f7ae-439e-aabf-794d06c88512"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-turnon-led-rgb",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-turnon-led-rgb"
+      },
+      {
+        "bloqInputId": "RVALUE",
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "1524cf20-e006-40ea-bb2b-6361d0f7b192"
+      },
+      {
+        "bloqInputId": "GVALUE",
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "5a77e03c-d897-423c-b709-fd319b4300c6"
+      },
+      {
+        "bloqInputId": "BVALUE",
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "efd3fd41-f7ae-439e-aabf-794d06c88512"
+      }
+    ]
+  ],
+  "code": "zumJunior.setRGBLED({RVALUE},{GVALUE},{BVALUE});",
+  "arduino": {
+    "code": "zumJunior.setRGBLED({RVALUE},{GVALUE},{BVALUE});"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorTurnOnLedRGB\" no preparado para generar código python"
+      }
+    ]
+  }
+}

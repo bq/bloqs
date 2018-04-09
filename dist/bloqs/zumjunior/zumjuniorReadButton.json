@@ -1,0 +1,39 @@
+{
+  "type": "output",
+  "name": "zumjuniorReadButton",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-read-button",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-read-read"
+      },
+      {
+        "id": "BUTTON",
+        "alias": "dynamicDropdown",
+        "options": "zumjuniorButtons"
+      }
+    ]
+  ],
+  "code": "digitalRead({BUTTON}Pin)",
+  "returnType": {
+    "type": "simple",
+    "value": "bool"
+  },
+  "arduino": {
+    "code": "digitalRead({BUTTON}Pin)"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorReadButton\" no preparado para generar código python"
+      }
+    ]
+  }
+}

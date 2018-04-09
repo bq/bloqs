@@ -1,0 +1,57 @@
+{
+  "type": "output",
+  "name": "zumjuniorReadSlider",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-read-slider",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-read-read"
+      },
+      {
+        "id": "SWITCH",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zumjunior-slider-switch1",
+            "value": "_1Pin"
+          },
+          {
+            "label": "bloq-zumjunior-slider-switch2",
+            "value": "_2Pin"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-read-from"
+      },
+      {
+        "id": "SLIDER",
+        "alias": "dynamicDropdown",
+        "options": "zumjuniorSliders"
+      }
+    ]
+  ],
+  "code": "digitalRead({SLIDER}{SWITCH})",
+  "returnType": {
+    "type": "simple",
+    "value": "bool"
+  },
+  "arduino": {
+    "code": "digitalRead({SLIDER}{SWITCH})"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorReadSlider\" no preparado para generar código python"
+      }
+    ]
+  }
+}

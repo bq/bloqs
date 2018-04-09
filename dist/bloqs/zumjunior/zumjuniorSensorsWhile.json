@@ -24,7 +24,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "ab88a9a3-9851-4149-b6bd-5cbadb8fbd72"
+      "name": "2f6f73aa-8903-450c-aefb-88e1448942d4"
     }
   ],
   "bloqClass": "bloq-zumjunior-sensors-while",
@@ -48,7 +48,7 @@
           },
           {
             "label": "bloq-zumjunior-sensors-brightness",
-            "value": "tempSensor.getTemp()"
+            "value": "ALPSSensor.getAL()"
           }
         ]
       },
@@ -96,7 +96,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "ab88a9a3-9851-4149-b6bd-5cbadb8fbd72"
+        "name": "2f6f73aa-8903-450c-aefb-88e1448942d4"
       },
       {
         "alias": "text",
