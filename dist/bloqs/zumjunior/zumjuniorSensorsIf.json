@@ -1,0 +1,122 @@
+{
+  "type": "statement-input",
+  "name": "zumjuniorSensorsIf",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "add7205e-3ebe-417c-a713-90ed1490dd67"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-sensors-if",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-sensors-if"
+      },
+      {
+        "id": "SENSOR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zumjunior-sensors-temperature",
+            "value": "tempSensor.getTemp()"
+          },
+          {
+            "label": "bloq-zumjunior-sensors-distance",
+            "value": "ALPSSensor.getDistance()"
+          },
+          {
+            "label": "bloq-zumjunior-sensors-brightness",
+            "value": "ALPSSensor.getAL()"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-is"
+      },
+      {
+        "id": "OPERATOR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "=",
+            "value": "=="
+          },
+          {
+            "label": "!=",
+            "value": "!="
+          },
+          {
+            "label": ">",
+            "value": ">"
+          },
+          {
+            "label": ">=",
+            "value": ">="
+          },
+          {
+            "label": "<",
+            "value": "<"
+          },
+          {
+            "label": "<=",
+            "value": "<="
+          }
+        ]
+      },
+      {
+        "bloqInputId": "VALUE",
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "add7205e-3ebe-417c-a713-90ed1490dd67"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-sensors-exec"
+      }
+    ]
+  ],
+  "suggestedBloqs": [
+    "else",
+    "elseif"
+  ],
+  "code": "if({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}",
+  "arduino": {
+    "code": "if({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorSensorsIf\" no preparado para generar código python"
+      }
+    ]
+  }
+}

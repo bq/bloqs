@@ -550,6 +550,15 @@
                 }, {}, hardwareList);
                 setupCodeAtTheEndOfExtraCodeMap['echidna.setup();'] = true;
                 break;
+            case 'zumjunior':
+                includes['BQZUMJunior.h'] = true;
+                includes['BQZUMJuniorPorts.h'] = true;
+                addInstance({
+                    name: 'zumJunior',
+                    type: 'BQ::ZUMJunior'
+                }, {}, hardwareList);
+                setupCodeAtTheEndOfExtraCodeMap['zumJunior.setup();'] = true;
+                break;
         }
 
         if (hardwareList.components) {
@@ -972,6 +981,150 @@
                             setupCodeAtTheEndOfExtraCodeMap[hardwareList.components[i].name + '.setup();'] = true;
                             break;
 
+                        case 'zumjunior_servo':
+                            tempIncludes = ['Servo.h'];
+
+                            var componentName = hardwareList.components[i].name;
+                            var pinName = componentName + 'Pin';
+
+                            addInstance({
+                                name: componentName,
+                                type: 'Servo'
+                            }, {}, hardwareList);
+                            addInstance({
+                                name: pinName,
+                                type: 'const uint8_t',
+                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][0]'
+                            }, {}, hardwareList);
+
+                            setupCodeAtTheEndOfExtraCodeMap[componentName + '.attach(' + pinName + ');'] = true;
+                            break;
+
+                        case 'zumjunior_double_led':
+                            var componentName = hardwareList.components[i].name;
+                            var whitePinName = componentName + 'WhitePin';
+                            var colorPinName = componentName + 'ColorPin';
+
+                            addInstance({
+                                name: whitePinName,
+                                type: 'const uint8_t',
+                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][0]'
+                            }, {}, hardwareList);
+                            addInstance({
+                                name: colorPinName,
+                                type: 'const uint8_t',
+                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][1]'
+                            }, {}, hardwareList);
+
+                            setupCodeAtTheEndOfExtraCodeMap['pinMode(' + whitePinName + ',OUTPUT);'] = true;
+                            setupCodeAtTheEndOfExtraCodeMap['pinMode(' + colorPinName + ',OUTPUT);'] = true;
+                            setupCodeAtTheEndOfExtraCodeMap['digitalWrite(' + whitePinName + ',HIGH);'] = true;
+                            setupCodeAtTheEndOfExtraCodeMap['digitalWrite(' + colorPinName + ',HIGH);'] = true;
+                            break;
+
+                        case 'zumjunior_miniservo':
+                            tempIncludes = ['Servo.h'];
+
+                            var componentName = hardwareList.components[i].name;
+                            var pinName = componentName + 'Pin';
+
+                            addInstance({
+                                name: componentName,
+                                type: 'Servo'
+                            }, {}, hardwareList);
+                            addInstance({
+                                name: pinName,
+                                type: 'const uint8_t',
+                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][0]'
+                            }, {}, hardwareList);
+
+                            setupCodeAtTheEndOfExtraCodeMap[componentName + '.attach(' + pinName + ');'] = true;
+                            break;
+
+                        case 'zumjunior_button':
+                            var componentName = hardwareList.components[i].name;
+                            var pinName = componentName + 'Pin';
+
+                            addInstance({
+                                name: pinName,
+                                type: 'const uint8_t',
+                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][0]'
+                            }, {}, hardwareList);
+
+                            setupCodeAtTheEndOfExtraCodeMap['pinMode(' + pinName + ',INPUT);'] = true;
+                            break;
+
+                        case 'zumjunior_slider':
+                            var componentName = hardwareList.components[i].name;
+                            var int1PinName = componentName + '_1Pin';
+                            var int2PinName = componentName + '_2Pin';
+
+                            addInstance({
+                                name: int1PinName,
+                                type: 'const uint8_t',
+                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][0]'
+                            }, {}, hardwareList);
+                            addInstance({
+                                name: int2PinName,
+                                type: 'const uint8_t',
+                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][1]'
+                            }, {}, hardwareList);
+
+                            setupCodeAtTheEndOfExtraCodeMap['pinMode(' + int1PinName + ',INPUT);'] = true;
+                            setupCodeAtTheEndOfExtraCodeMap['pinMode(' + int2PinName + ',INPUT);'] = true;
+                            break;
+
+                        case 'zumjunior_7segment':
+                            tempIncludes = ['BQZUMI2C7SegmentDisplay.h'];
+
+                            var port = hardwareList.components[i].pin.s;
+
+                            addInstance({
+                                name: 'i2cport' + port,
+                                type: 'int',
+                                equals: 'BQ::ZUMJunior::i2cPorts[' + port + ']'
+                            }, {}, hardwareList);
+                            addInstance({
+                                name: 'segmentDisplay',
+                                type: 'BQ::ZUM::I2C7SegmentDisplay',
+                                arguments: ['i2cport' + port]
+                            }, {}, hardwareList);
+
+                            setupCodeAtTheEndOfExtraCodeMap['segmentDisplay.setup();'] = true;
+                            setupCodeAtTheEndOfExtraCodeMap['segmentDisplay.displayChar(\' \', \' \');'] = true;
+                            break;
+
+                        case 'zumjunior_sensors':
+                          tempIncludes = ['BQZUMI2CTempSensor.h'];
+                          tempIncludes = ['BQZUMI2CColorSensor.h'];
+
+                          var port = hardwareList.components[i].pin.s;
+                          addInstance({
+                            name: 'i2cport' + port,
+                            type: 'int',
+                            equals: 'BQ::ZUMJunior::i2cPorts[' + port + ']'
+                          }, {}, hardwareList);
+                          addInstance({
+                            name: 'ALPSSensor',
+                            type: 'BQ::ZUM::I2CALPSSensor',
+                            arguments: ['i2cport' + port]
+                          }, {}, hardwareList);
+                          addInstance({
+                            name: 'colorSensor',
+                            type: 'BQ::ZUM::I2CColorSensor',
+                            arguments: ['i2cport' + port]
+                          }, {}, hardwareList);
+                          addInstance({
+                            name: 'tempSensor',
+                            type: 'BQ::ZUM::I2CTempSensor',
+                            arguments: ['i2cport' + port]
+                          }, {}, hardwareList);
+
+                          setupCodeAtTheEndOfExtraCodeMap['ALPSSensor.setup();'] = true;
+                          setupCodeAtTheEndOfExtraCodeMap['colorSensor.setup();'] = true;
+                          setupCodeAtTheEndOfExtraCodeMap['tempSensor.setup();'] = true;
+
+                          break;
                     }
 
                     if (tempInstanceOf) {

@@ -1,0 +1,34 @@
+{
+  "type": "statement",
+  "name": "zumjuniorTurnOffLed",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-turnoff-led",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-turnoff-led"
+      }
+    ]
+  ],
+  "code": "zumJunior.setRGBLEDColor(BQ::ZUMJunior::BLACK);",
+  "arduino": {
+    "code": "zumJunior.setRGBLEDColor(BQ::ZUMJunior::BLACK);"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorTurnOffLed\" no preparado para generar código python"
+      }
+    ]
+  }
+}

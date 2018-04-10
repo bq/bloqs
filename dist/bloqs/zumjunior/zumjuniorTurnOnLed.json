@@ -1,0 +1,64 @@
+{
+  "type": "statement",
+  "name": "zumjuniorTurnOnLed",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-turnon-led",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-turnon-led"
+      },
+      {
+        "id": "COLOR",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zumjunior-color-red",
+            "value": "BQ::ZUMJunior::RED"
+          },
+          {
+            "label": "bloq-zumjunior-color-green",
+            "value": "BQ::ZUMJunior::GREEN"
+          },
+          {
+            "label": "bloq-zumjunior-color-blue",
+            "value": "BQ::ZUMJunior::BLUE"
+          },
+          {
+            "label": "bloq-zumjunior-color-yellow",
+            "value": "BQ::ZUMJunior::YELLOW"
+          },
+          {
+            "label": "bloq-zumjunior-color-pink",
+            "value": "BQ::ZUMJunior::PINK"
+          },
+          {
+            "label": "bloq-zumjunior-color-white",
+            "value": "BQ::ZUMJunior::WHITE"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "zumJunior.setRGBLEDColor({COLOR});",
+  "arduino": {
+    "code": "zumJunior.setRGBLEDColor({COLOR});"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorTurnOnLed\" no preparado para generar código python"
+      }
+    ]
+  }
+}

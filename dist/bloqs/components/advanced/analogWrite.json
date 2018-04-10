@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "c437e494-9365-4e9f-897c-f1382d164be8"
+      "name": "10516a52-176e-4033-84bd-afb2ee1f003b"
     },
     {
       "type": "connector--input",
@@ -33,7 +33,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "e9735e3a-6d5e-4e8b-86d3-ead237c694f0"
+      "name": "4d0b001c-24c4-426f-a8c1-b929b7622f59"
     }
   ],
   "bloqClass": "bloq-pin-writte-advanced",
@@ -53,7 +53,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "c437e494-9365-4e9f-897c-f1382d164be8"
+        "name": "10516a52-176e-4033-84bd-afb2ee1f003b"
       },
       {
         "alias": "text",
@@ -70,7 +70,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "e9735e3a-6d5e-4e8b-86d3-ead237c694f0"
+        "name": "4d0b001c-24c4-426f-a8c1-b929b7622f59"
       }
     ]
   ],

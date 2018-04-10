@@ -1,0 +1,83 @@
+{
+  "type": "statement-input",
+  "name": "zumjuniorSliderWhile",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    },
+    {
+      "type": "connector--root",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-slider-while",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-slider-while"
+      },
+      {
+        "id": "SWITCH",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zumjunior-slider-switch1",
+            "value": "_1Pin"
+          },
+          {
+            "label": "bloq-zumjunior-slider-switch2",
+            "value": "_2Pin"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-slider-of"
+      },
+      {
+        "id": "SLIDER",
+        "alias": "dynamicDropdown",
+        "options": "zumjuniorSliders"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-slider-isin"
+      },
+      {
+        "id": "POSITION",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "bloq-zumjunior-slider-position0",
+            "value": "!digitalRead"
+          },
+          {
+            "label": "bloq-zumjunior-slider-position1",
+            "value": "digitalRead"
+          }
+        ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-slider-exec"
+      }
+    ]
+  ],
+  "code": "while({POSITION}({SLIDER}{SWITCH})){{STATEMENTS}}",
+  "arduino": {
+    "code": "while({POSITION}({SLIDER}{SWITCH})){{STATEMENTS}}"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorSliderWhile\" no preparado para generar código python"
+      }
+    ]
+  }
+}
