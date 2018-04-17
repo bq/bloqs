@@ -35,10 +35,10 @@ var zumjuniorServoStart = _.merge(_.clone(StatementBloq, true), {
             alias: 'staticDropdown',
             options: [{
                 label: 'bloq-zumjunior-servo-start-clockwise',
-                value: '180 + '
+                value: '90 + '
             }, {
                 label: 'bloq-zumjunior-servo-start-counterclockwise',
-                value: '180 - '
+                value: '90 - '
             }]
         }, {
             alias: 'text',
