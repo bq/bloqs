@@ -54,4 +54,6 @@ var zumjuniorButtonIf = _.merge(_.clone(StatementInputBloq, true), {
 
 utils.preprocessBloq(zumjuniorButtonIf);
 
+zumjuniorButtonIf.connectors[1].acceptedAliases = ['all', 'ifDown'];
+
 module.exports = zumjuniorButtonIf;
