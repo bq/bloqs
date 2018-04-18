@@ -1095,8 +1095,7 @@
                             break;
 
                         case 'zumjunior_sensors':
-                          tempIncludes = ['BQZUMI2CTempSensor.h'];
-                          tempIncludes = ['BQZUMI2CColorSensor.h'];
+                          tempIncludes = ['BQZUMI2CTempSensor.h', 'BQZUMI2CColorSensor.h', 'BQZUMI2CALPSSensor.h'];
 
                           var port = hardwareList.components[i].pin.s;
                           addInstance({
