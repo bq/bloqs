@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "bf3c2b59-b9ba-49bd-a15b-4d720211af8c"
+      "name": "51b19263-b779-49ae-a708-5c571a5d9192"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "52cff901-a221-4962-a584-2d2c1bbf4d67"
+      "name": "68e59990-4474-48b9-b1b4-2b1aee1227aa"
     },
     {
       "type": "connector--input",
@@ -44,7 +44,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "55773b64-58c7-4e0d-8847-f46dc67f47e0"
+      "name": "cc191fc4-cd2b-44c9-b711-f557a4476d30"
     }
   ],
   "bloqClass": "bloq-zumjunior-turnon-led-rgb",
@@ -64,7 +64,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "bf3c2b59-b9ba-49bd-a15b-4d720211af8c"
+        "name": "51b19263-b779-49ae-a708-5c571a5d9192"
       },
       {
         "bloqInputId": "GVALUE",
@@ -76,7 +76,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "52cff901-a221-4962-a584-2d2c1bbf4d67"
+        "name": "68e59990-4474-48b9-b1b4-2b1aee1227aa"
       },
       {
         "bloqInputId": "BVALUE",
@@ -88,7 +88,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "55773b64-58c7-4e0d-8847-f46dc67f47e0"
+        "name": "cc191fc4-cd2b-44c9-b711-f557a4476d30"
       }
     ]
   ],

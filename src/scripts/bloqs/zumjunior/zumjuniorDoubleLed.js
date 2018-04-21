@@ -24,12 +24,12 @@ var zumjuniorDoubleLed = _.merge(_.clone(StatementBloq, true), {
             id: 'STATUS',
             alias: 'staticDropdown',
             options: [{
-                label: 'bloq-zumjunior-doubleled-turnoff',
-                value: 'HIGH'
-            }, {
                 label: 'bloq-zumjunior-doubleled-turnon',
                 value: 'LOW'
-            }]
+            },{
+                label: 'bloq-zumjunior-doubleled-turnoff',
+                value: 'HIGH'
+              }]
         }, {
             alias: 'text',
             value: 'bloq-zumjunior-doubleled-led'
