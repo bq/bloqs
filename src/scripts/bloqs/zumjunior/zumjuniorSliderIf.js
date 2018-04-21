@@ -67,4 +67,6 @@ var zumjuniorSliderIf = _.merge(_.clone(StatementInputBloq, true), {
 
 utils.preprocessBloq(zumjuniorSliderIf);
 
+zumjuniorSliderIf.connectors[1].acceptedAliases = ['all', 'ifDown'];
+
 module.exports = zumjuniorSliderIf;
