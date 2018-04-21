@@ -8,7 +8,11 @@
     },
     {
       "type": "connector--bottom",
-      "accept": "connector--top"
+      "accept": "connector--top",
+      "acceptedAliases": [
+        "all",
+        "ifDown"
+      ]
     },
     {
       "type": "connector--root",
@@ -24,7 +28,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "342abe7c-a598-4c39-b469-e42e3241f401"
+      "name": "a79d9056-1307-49fa-acf5-9404a311b4e4"
     }
   ],
   "bloqClass": "bloq-zumjunior-sensors-if",
@@ -96,7 +100,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "342abe7c-a598-4c39-b469-e42e3241f401"
+        "name": "a79d9056-1307-49fa-acf5-9404a311b4e4"
       },
       {
         "alias": "text",
