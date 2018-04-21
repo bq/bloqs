@@ -2694,12 +2694,12 @@
                             addInstance({
                                 name: int1PinName,
                                 type: 'const uint8_t',
-                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][0]'
+                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][1]'
                             }, {}, hardwareList);
                             addInstance({
                                 name: int2PinName,
                                 type: 'const uint8_t',
-                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][1]'
+                                equals: 'BQ::ZUMJunior::ports[' + hardwareList.components[i].pin.s + '][0]'
                             }, {}, hardwareList);
 
                             setupCodeAtTheEndOfExtraCodeMap['pinMode(' + int1PinName + ',INPUT);'] = true;
