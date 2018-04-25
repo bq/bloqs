@@ -120,24 +120,25 @@ $theme-color-zumjunior-color: #02ADCF;
     @include createBloqsCss($reverse, "bloq-mbot-rgbLedsimple-off", $mbot-color, $theme-color-mbot-color);
 
     /*---- ZUMJUNIOR -------*/
-    @include createBloqsCss($reverse, "bloq-zumjunior-servo-start", $zumjunior-color, $theme-color-zumjunior-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-servo-stop", $zumjunior-color, $theme-color-zumjunior-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-doubleled", $zumjunior-color, $theme-color-zumjunior-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-miniservo", $zumjunior-color, $theme-color-zumjunior-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-display-number", $zumjunior-color, $theme-color-zumjunior-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-display-numbers", $zumjunior-color, $theme-color-zumjunior-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-clear-display", $zumjunior-color, $theme-color-zumjunior-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-turnon-led", $zumjunior-color, $theme-color-zumjunior-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-turnoff-led", $zumjunior-color, $theme-color-zumjunior-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-play-buzz", $zumjunior-color, $theme-color-zumjunior-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-sensors-if", $zumjunior-color, $theme-color-zumjunior-color, true);
-    @include createBloqsCss($reverse, "bloq-zumjunior-sensors-while", $zumjunior-color, $theme-color-zumjunior-color, true);
-    @include createBloqsCss($reverse, "bloq-zumjunior-color-if", $zumjunior-color, $theme-color-zumjunior-color, true);
-    @include createBloqsCss($reverse, "bloq-zumjunior-color-while", $zumjunior-color, $theme-color-zumjunior-color, true);
-    @include createBloqsCss($reverse, "bloq-zumjunior-button-if", $zumjunior-color, $theme-color-zumjunior-color, true);
-    @include createBloqsCss($reverse, "bloq-zumjunior-button-while", $zumjunior-color, $theme-color-zumjunior-color, true);
-    @include createBloqsCss($reverse, "bloq-zumjunior-slider-if", $zumjunior-color, $theme-color-zumjunior-color, true);
-    @include createBloqsCss($reverse, "bloq-zumjunior-slider-while", $zumjunior-color, $theme-color-zumjunior-color, true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-servo-start", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-servo-stop", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-doubleled", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-miniservo", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-display-number", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-display-numbers", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-clear-display", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-turnon-led", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-turnoff-led", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-play-buzz", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-play-buzz-advanced", $zumjunior-color, $theme-color-components-color,false,true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-sensors-if", $zumjunior-color, $theme-color-control-color, true, true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-sensors-while", $zumjunior-color, $theme-color-control-color, true, true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-color-if", $zumjunior-color, $theme-color-control-color, true, true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-color-while", $zumjunior-color, $theme-color-control-color, true, true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-button-if", $zumjunior-color, $theme-color-control-color, true, true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-button-while", $zumjunior-color, $theme-color-control-color, true, true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-slider-if", $zumjunior-color, $theme-color-control-color, true, true);
+    @include createBloqsCss($reverse, "bloq-zumjunior-slider-while", $zumjunior-color, $theme-color-control-color, true, true);
     @include createBloqsCss($reverse, "bloq-zumjunior-read-slider", $components-color, $theme-color-components-color);
     @include createBloqsCss($reverse, "bloq-zumjunior-read-button", $components-color, $theme-color-components-color);
     @include createBloqsCss($reverse, "bloq-zumjunior-read-sensors", $components-color, $theme-color-components-color);
@@ -329,7 +330,7 @@ $theme-color-zumjunior-color: #02ADCF;
     @include createBloqsCss($reverse, "bloq-parenthesis", $maths-color, $theme-color-maths-color);
 }
 
-@mixin createBloqsCss($reverse, $className, $classColor, $themeColorClassColor, $statementInput:false) {
+@mixin createBloqsCss($reverse, $className, $classColor, $themeColorClassColor, $statementInput:false, $highlevel:false) {
     @if ($reverse) {
         &.#{$className} {
             color: $classColor;
@@ -362,6 +363,12 @@ $theme-color-zumjunior-color: #02ADCF;
                     background-color: rgba(0, 0, 0, 0.2);
                 }
             }
+
+            @if($highlevel){
+              border-left: 5px solid $classColor;
+            }
+
+
             ::-webkit-input-placeholder {
                 color: rgba(255, 255, 255, 0.5);
             }
