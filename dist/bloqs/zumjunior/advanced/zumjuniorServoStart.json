@@ -1,6 +1,6 @@
 {
   "type": "statement",
-  "name": "zumjuniorServoStart",
+  "name": "zumjuniorServoStartAdvanced",
   "connectors": [
     {
       "type": "connector--top",
@@ -9,6 +9,18 @@
     {
       "type": "connector--bottom",
       "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "1d3edf5c-2f04-45c8-b7c2-80bdb68d8a29"
     }
   ],
   "bloqClass": "bloq-zumjunior-servo-start",
@@ -47,21 +59,15 @@
       },
       {
         "id": "SPEED",
-        "alias": "staticDropdown",
-        "options": [
-          {
-            "label": "bloq-zumjunior-servo-start-high-speed",
-            "value": "30"
-          },
-          {
-            "label": "bloq-zumjunior-servo-start-medium-speed",
-            "value": "16"
-          },
-          {
-            "label": "bloq-zumjunior-servo-start-low-speed",
-            "value": "9"
-          }
-        ]
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "1d3edf5c-2f04-45c8-b7c2-80bdb68d8a29"
       }
     ]
   ],
@@ -72,7 +78,7 @@
   "python": {
     "codeLines": [
       {
-        "code": "Bloque \"zumjuniorServoStart\" no preparado para generar código python"
+        "code": "Bloque \"zumjuniorServoStartAdvanced\" no preparado para generar código python"
       }
     ]
   }

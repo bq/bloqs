@@ -52,10 +52,9 @@ var zumjuniorPlayBuzz = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: 'bloq-zumjunior-play-for'
         }, {
-            bloqInputId: 'TIME',
-            alias: 'bloqInput',
-            acceptType: ['all'],
-            suggestedBloqs: ['number', 'selectVariable']
+            id: 'TIME',
+            alias: 'numberInput',
+            value: 2000
         }, {
             alias: 'text',
             value: 'bloq-zumjunior-play-ms'

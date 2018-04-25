@@ -51,10 +51,10 @@ var zumjuniorServoStart = _.merge(_.clone(StatementBloq, true), {
                 value: '30'
             }, {
                 label: 'bloq-zumjunior-servo-start-medium-speed',
-                value: '20'
+                value: '16'
             }, {
                 label: 'bloq-zumjunior-servo-start-low-speed',
-                value: '10'
+                value: '9'
             }]
         }]
     ],

@@ -2,8 +2,8 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../build-utils'),
-    StatementBloq = require('./../statementBloq');
+    utils = require('./../../build-utils'),
+    StatementBloq = require('./../../statementBloq');
 
 /**
  * Bloq name: zumjuniorDisplayNumber
@@ -15,9 +15,9 @@ var _ = require('lodash'),
  * Return type: none
  */
 
-var zumjuniorDisplayNumber = _.merge(_.clone(StatementBloq, true), {
+var zumjuniorDisplayNumberAdvanced = _.merge(_.clone(StatementBloq, true), {
 
-    name: 'zumjuniorDisplayNumber',
+    name: 'zumjuniorDisplayNumberAdvanced',
     bloqClass: 'bloq-zumjunior-display-number',
     content: [
         [{
@@ -25,8 +25,9 @@ var zumjuniorDisplayNumber = _.merge(_.clone(StatementBloq, true), {
             value: 'bloq-zumjunior-display-number'
         }, {
             bloqInputId: 'VALUE',
-            alias: 'numberInput',
-            value: 99
+            alias: 'bloqInput',
+            acceptType: ['all'],
+            suggestedBloqs: ['number', 'selectVariable']
         }]
     ],
     code: 'segmentDisplay.displayInt({VALUE});',
@@ -35,6 +36,6 @@ var zumjuniorDisplayNumber = _.merge(_.clone(StatementBloq, true), {
     }
 });
 
-utils.preprocessBloq(zumjuniorDisplayNumber);
+utils.preprocessBloq(zumjuniorDisplayNumberAdvanced);
 
-module.exports = zumjuniorDisplayNumber;
+module.exports = zumjuniorDisplayNumberAdvanced;

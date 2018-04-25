@@ -1,6 +1,6 @@
 {
   "type": "statement",
-  "name": "zumjuniorPlayBuzz",
+  "name": "zumjuniorPlayBuzzAdvanced",
   "connectors": [
     {
       "type": "connector--top",
@@ -9,9 +9,21 @@
     {
       "type": "connector--bottom",
       "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "2771c5c7-b0f5-45a4-850f-524f58802385"
     }
   ],
-  "bloqClass": "bloq-zumjunior-play-buzz",
+  "bloqClass": "bloq-zumjunior-play-buzz-advanced",
   "content": [
     [
       {
@@ -57,9 +69,16 @@
         "value": "bloq-zumjunior-play-for"
       },
       {
-        "id": "TIME",
-        "alias": "numberInput",
-        "value": 2000
+        "bloqInputId": "TIME",
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "2771c5c7-b0f5-45a4-850f-524f58802385"
       },
       {
         "alias": "text",
@@ -74,7 +93,7 @@
   "python": {
     "codeLines": [
       {
-        "code": "Bloque \"zumjuniorPlayBuzz\" no preparado para generar código python"
+        "code": "Bloque \"zumjuniorPlayBuzzAdvanced\" no preparado para generar código python"
       }
     ]
   }
