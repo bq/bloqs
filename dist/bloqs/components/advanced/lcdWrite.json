@@ -20,7 +20,7 @@
         "string",
         "selectVariable"
       ],
-      "name": "60b40a6e-080a-4c62-a742-75320d039de0"
+      "name": "875678b4-c653-4058-8e42-45d959122939"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "hwVariable",
         "selectVariable"
       ],
-      "name": "8f364494-1436-4f60-a566-1c5abf65bf82"
+      "name": "7cfa5120-a8a0-405e-9c07-894496d5cd9b"
     }
   ],
   "bloqClass": "bloq-lcd-writte-advanced",
@@ -52,7 +52,7 @@
           "string",
           "selectVariable"
         ],
-        "name": "60b40a6e-080a-4c62-a742-75320d039de0"
+        "name": "875678b4-c653-4058-8e42-45d959122939"
       },
       {
         "alias": "text",
@@ -68,7 +68,7 @@
           "hwVariable",
           "selectVariable"
         ],
-        "name": "8f364494-1436-4f60-a566-1c5abf65bf82"
+        "name": "7cfa5120-a8a0-405e-9c07-894496d5cd9b"
       }
     ]
   ],

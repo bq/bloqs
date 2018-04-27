@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "bfed5932-767d-403b-ab9c-84ef06605e32"
+      "name": "c074500a-b7d8-4559-a118-bc698d13bb59"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "ecfc167f-dfc1-4caf-af0c-1a9431d4143d"
+      "name": "00c12a3a-3a3b-4445-84dc-a809505b9404"
     }
   ],
   "bloqClass": "bloq-buzzer-advance",
@@ -61,7 +61,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "bfed5932-767d-403b-ab9c-84ef06605e32"
+        "name": "c074500a-b7d8-4559-a118-bc698d13bb59"
       },
       {
         "alias": "text",
@@ -77,7 +77,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "ecfc167f-dfc1-4caf-af0c-1a9431d4143d"
+        "name": "00c12a3a-3a3b-4445-84dc-a809505b9404"
       },
       {
         "alias": "text",

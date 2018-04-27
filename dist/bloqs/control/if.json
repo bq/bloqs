@@ -26,13 +26,9 @@
       ],
       "suggestedBloqs": [
         "selectVariable",
-        "readSensor",
-        "zumjuniorReadSensors",
-        "zumjuniorReadButton",
-        "zumjuniorReadSlider",
-        "zumjuniorReadColor"
+        "readSensor"
       ],
-      "name": "76e18d40-57eb-4615-ae06-8e3d0f9ba283"
+      "name": "d5f3216f-f779-4a38-9c5b-b08a9a35f7b5"
     },
     {
       "type": "connector--input",
@@ -45,13 +41,9 @@
         "string",
         "boolean",
         "selectVariable",
-        "readSensor",
-        "zumjuniorReadSensors",
-        "zumjuniorReadButton",
-        "zumjuniorReadSlider",
-        "zumjuniorReadColor"
+        "readSensor"
       ],
-      "name": "d61c6f95-13b9-44d9-b0fd-0b5f40f82366"
+      "name": "8ad77151-5109-4a11-a177-7eb03e225ceb"
     }
   ],
   "bloqClass": "bloq-if",
@@ -69,13 +61,9 @@
         ],
         "suggestedBloqs": [
           "selectVariable",
-          "readSensor",
-          "zumjuniorReadSensors",
-          "zumjuniorReadButton",
-          "zumjuniorReadSlider",
-          "zumjuniorReadColor"
+          "readSensor"
         ],
-        "name": "76e18d40-57eb-4615-ae06-8e3d0f9ba283"
+        "name": "d5f3216f-f779-4a38-9c5b-b08a9a35f7b5"
       },
       {
         "id": "OPERATOR",
@@ -118,13 +106,9 @@
           "string",
           "boolean",
           "selectVariable",
-          "readSensor",
-          "zumjuniorReadSensors",
-          "zumjuniorReadButton",
-          "zumjuniorReadSlider",
-          "zumjuniorReadColor"
+          "readSensor"
         ],
-        "name": "d61c6f95-13b9-44d9-b0fd-0b5f40f82366"
+        "name": "8ad77151-5109-4a11-a177-7eb03e225ceb"
       },
       {
         "alias": "text",
