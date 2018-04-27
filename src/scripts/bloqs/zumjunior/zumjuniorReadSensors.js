@@ -41,7 +41,7 @@ var zumjuniorReadSensors = _.merge(_.clone(OutputBloq, true), {
     code: '{SENSOR}',
     returnType: {
         type: 'simple',
-        value: 'bool'
+        value: 'float'
     },
     arduino: {
         code: '{SENSOR}'

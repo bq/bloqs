@@ -37,7 +37,7 @@
   "code": "{SENSOR}",
   "returnType": {
     "type": "simple",
-    "value": "bool"
+    "value": "float"
   },
   "arduino": {
     "code": "{SENSOR}"
