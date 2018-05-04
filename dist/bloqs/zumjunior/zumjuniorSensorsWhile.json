@@ -13,18 +13,6 @@
     {
       "type": "connector--root",
       "accept": "connector--top"
-    },
-    {
-      "type": "connector--input",
-      "accept": "connector--output",
-      "acceptType": [
-        "all"
-      ],
-      "suggestedBloqs": [
-        "number",
-        "selectVariable"
-      ],
-      "name": "cd0797b7-bc0b-4e37-98e4-0d5b2171a92f"
     }
   ],
   "bloqClass": "bloq-zumjunior-sensors-while",
@@ -88,15 +76,8 @@
       },
       {
         "bloqInputId": "VALUE",
-        "alias": "bloqInput",
-        "acceptType": [
-          "all"
-        ],
-        "suggestedBloqs": [
-          "number",
-          "selectVariable"
-        ],
-        "name": "cd0797b7-bc0b-4e37-98e4-0d5b2171a92f"
+        "alias": "numberInput",
+        "value": 0
       },
       {
         "alias": "text",

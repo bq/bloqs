@@ -20,7 +20,19 @@
         "number",
         "selectVariable"
       ],
-      "name": "00ec4afd-1f9f-4888-9f1d-e91beef5f327"
+      "name": "2b541ee2-e5b1-48a6-ad95-496ae5bf7840"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "42b509c7-1674-4b29-a59b-403f484e47bf"
     }
   ],
   "bloqClass": "bloq-zumjunior-play-buzz-advanced",
@@ -31,38 +43,16 @@
         "value": "bloq-zumjunior-play-buzz"
       },
       {
-        "id": "NOTE",
-        "alias": "staticDropdown",
-        "options": [
-          {
-            "label": "bloq-zumjunior-note-do",
-            "value": "BQ::ZUMJunior::DO"
-          },
-          {
-            "label": "bloq-zumjunior-note-re",
-            "value": "BQ::ZUMJunior::RE"
-          },
-          {
-            "label": "bloq-zumjunior-note-mi",
-            "value": "BQ::ZUMJunior::MI"
-          },
-          {
-            "label": "bloq-zumjunior-note-fa",
-            "value": "BQ::ZUMJunior::FA"
-          },
-          {
-            "label": "bloq-zumjunior-note-sol",
-            "value": "BQ::ZUMJunior::SOL"
-          },
-          {
-            "label": "bloq-zumjunior-note-la",
-            "value": "BQ::ZUMJunior::LA"
-          },
-          {
-            "label": "bloq-zumjunior-note-si",
-            "value": "BQ::ZUMJunior::SI"
-          }
-        ]
+        "bloqInputId": "NOTE",
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "2b541ee2-e5b1-48a6-ad95-496ae5bf7840"
       },
       {
         "alias": "text",
@@ -78,7 +68,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "00ec4afd-1f9f-4888-9f1d-e91beef5f327"
+        "name": "42b509c7-1674-4b29-a59b-403f484e47bf"
       },
       {
         "alias": "text",

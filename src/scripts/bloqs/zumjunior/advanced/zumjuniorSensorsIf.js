@@ -2,27 +2,27 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../build-utils'),
-    StatementInputBloq = require('./../statementInputBloq');
+    utils = require('./../../build-utils'),
+    StatementInputBloq = require('./../../statementInputBloq');
 
 /**
- * Bloq name: zumjuniorSensorsWhile
+ * Bloq name: zumjuniorSensorsIf
  *
  * Bloq type: Statement-Input
  *
- * Description: It executes the following code while sensor value matches condition
+ * Description: It executes the following code if sensor value matches condition
  *
  * Return type: none
  */
 
-var zumjuniorSensorsWhile = _.merge(_.clone(StatementInputBloq, true), {
+var zumjuniorSensorsIfAdvanced = _.merge(_.clone(StatementInputBloq, true), {
 
-    name: 'zumjuniorSensorsWhile',
-    bloqClass: 'bloq-zumjunior-sensors-while',
+    name: 'zumjuniorSensorsIfAdvanced',
+    bloqClass: 'bloq-zumjunior-sensors-if',
     content: [
         [{
             alias: 'text',
-            value: 'bloq-zumjunior-sensors-while'
+            value: 'bloq-zumjunior-sensors-if'
         }, {
             id: 'SENSOR',
             alias: 'staticDropdown',
@@ -62,20 +62,25 @@ var zumjuniorSensorsWhile = _.merge(_.clone(StatementInputBloq, true), {
                 value: '<='
             }]
         }, {
-          bloqInputId: 'VALUE',
-          alias: 'numberInput',
-          value: 0
+            bloqInputId: 'VALUE',
+            alias: 'bloqInput',
+            acceptType: ['all'],
+            suggestedBloqs: ['number', 'selectVariable']
         }, {
             alias: 'text',
             value: 'bloq-zumjunior-sensors-exec'
         }]
     ],
-    code: 'while({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}',
+    suggestedBloqs: ['zumjuniorsensorselseif','else'],
+    code: 'if({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}',
     arduino: {
-        code: 'while({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}',
+        code: 'if({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}',
     }
 });
 
-utils.preprocessBloq(zumjuniorSensorsWhile);
+utils.preprocessBloq(zumjuniorSensorsIfAdvanced);
 
-module.exports = zumjuniorSensorsWhile;
+zumjuniorSensorsIfAdvanced.connectors[1].acceptedAliases = ['all', 'ifDown'];
+
+
+module.exports = zumjuniorSensorsIfAdvanced;

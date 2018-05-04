@@ -1,17 +1,22 @@
 {
   "type": "statement-input",
-  "name": "zumjuniorSensorsIf",
+  "name": "zumjuniorsensorselseif",
   "connectors": [
     {
       "type": "connector--top",
-      "accept": "connector--bottom"
+      "accept": "connector--bottom",
+      "acceptedAliases": [
+        "ifDown",
+        "elseifDown",
+        "zumjuniorsensorselseifDown"
+      ]
     },
     {
       "type": "connector--bottom",
       "accept": "connector--top",
       "acceptedAliases": [
         "all",
-        "ifDown"
+        "elseifDown"
       ]
     },
     {
@@ -24,7 +29,7 @@
     [
       {
         "alias": "text",
-        "value": "bloq-zumjunior-sensors-if"
+        "value": "bloq-else-if-if"
       },
       {
         "id": "SENSOR",
@@ -93,14 +98,14 @@
     "zumjuniorsensorselseif",
     "else"
   ],
-  "code": "if({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}",
+  "code": "else if ({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}",
   "arduino": {
-    "code": "if({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}"
+    "code": "else if ({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}"
   },
   "python": {
     "codeLines": [
       {
-        "code": "Bloque \"zumjuniorSensorsIf\" no preparado para generar código python"
+        "code": "Bloque \"zumjuniorsensorselseif\" no preparado para generar código python"
       }
     ]
   }

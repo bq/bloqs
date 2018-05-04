@@ -143,7 +143,7 @@ $theme-color-zumjunior-color: #02ADCF;
     @include createBloqsCss($reverse, "bloq-zumjunior-read-button", $components-color, $theme-color-components-color);
     @include createBloqsCss($reverse, "bloq-zumjunior-read-sensors", $components-color, $theme-color-components-color);
     @include createBloqsCss($reverse, "bloq-zumjunior-read-color", $components-color, $theme-color-components-color);
-    @include createBloqsCss($reverse, "bloq-zumjunior-turnon-led-rgb", $components-color, $theme-color-components-color);
+    @include createBloqsCss($reverse, "bloq-zumjunior-turnon-led-rgb", $zumjunior-color, $theme-color-components-color,false,true);
 
     /*---- ZOWI ---------*/
     @include createBloqsCss($reverse, "bloq-zowi-gestures", $zowi-color, $theme-color-zowi-color);

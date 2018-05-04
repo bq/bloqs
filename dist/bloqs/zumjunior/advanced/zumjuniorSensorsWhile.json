@@ -1,6 +1,6 @@
 {
   "type": "statement-input",
-  "name": "zumjuniorSensorsIf",
+  "name": "zumjuniorSensorsWhileAdvanced",
   "connectors": [
     {
       "type": "connector--top",
@@ -8,23 +8,31 @@
     },
     {
       "type": "connector--bottom",
-      "accept": "connector--top",
-      "acceptedAliases": [
-        "all",
-        "ifDown"
-      ]
+      "accept": "connector--top"
     },
     {
       "type": "connector--root",
       "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "b9b77e13-527a-4d8b-ab3f-39361aea9833"
     }
   ],
-  "bloqClass": "bloq-zumjunior-sensors-if",
+  "bloqClass": "bloq-zumjunior-sensors-while",
   "content": [
     [
       {
         "alias": "text",
-        "value": "bloq-zumjunior-sensors-if"
+        "value": "bloq-zumjunior-sensors-while"
       },
       {
         "id": "SENSOR",
@@ -80,8 +88,15 @@
       },
       {
         "bloqInputId": "VALUE",
-        "alias": "numberInput",
-        "value": 0
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "b9b77e13-527a-4d8b-ab3f-39361aea9833"
       },
       {
         "alias": "text",
@@ -89,18 +104,14 @@
       }
     ]
   ],
-  "suggestedBloqs": [
-    "zumjuniorsensorselseif",
-    "else"
-  ],
-  "code": "if({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}",
+  "code": "while({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}",
   "arduino": {
-    "code": "if({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}"
+    "code": "while({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}"
   },
   "python": {
     "codeLines": [
       {
-        "code": "Bloque \"zumjuniorSensorsIf\" no preparado para generar código python"
+        "code": "Bloque \"zumjuniorSensorsWhileAdvanced\" no preparado para generar código python"
       }
     ]
   }

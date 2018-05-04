@@ -6,23 +6,24 @@ var _ = require('lodash'),
     StatementInputBloq = require('./../statementInputBloq');
 
 /**
- * Bloq name: zumjuniorSensorsWhile
+ * Bloq name: elseif
  *
  * Bloq type: Statement-Input
  *
- * Description: It executes the following code while sensor value matches condition
+ * Description: It executes the following code only if the previous conditions
+ *              are not met and the new one does.
  *
  * Return type: none
  */
 
-var zumjuniorSensorsWhile = _.merge(_.clone(StatementInputBloq, true), {
+var zumjuniorsensorselseif = _.merge(_.clone(StatementInputBloq, true), {
 
-    name: 'zumjuniorSensorsWhile',
-    bloqClass: 'bloq-zumjunior-sensors-while',
+    name: 'zumjuniorsensorselseif',
+    bloqClass: 'bloq-zumjunior-sensors-if',
     content: [
         [{
             alias: 'text',
-            value: 'bloq-zumjunior-sensors-while'
+            value: 'bloq-else-if-if'
         }, {
             id: 'SENSOR',
             alias: 'staticDropdown',
@@ -36,7 +37,7 @@ var zumjuniorSensorsWhile = _.merge(_.clone(StatementInputBloq, true), {
                 label: 'bloq-zumjunior-sensors-brightness',
                 value: 'ALPSSensor.getAL()'
             }]
-        }, {
+        },{
             alias: 'text',
             value: 'bloq-zumjunior-is'
         }, {
@@ -62,20 +63,25 @@ var zumjuniorSensorsWhile = _.merge(_.clone(StatementInputBloq, true), {
                 value: '<='
             }]
         }, {
-          bloqInputId: 'VALUE',
-          alias: 'numberInput',
-          value: 0
+            bloqInputId: 'VALUE',
+            alias: 'numberInput',
+            value: 0
         }, {
             alias: 'text',
             value: 'bloq-zumjunior-sensors-exec'
         }]
     ],
-    code: 'while({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}',
+    suggestedBloqs: ['zumjuniorsensorselseif','else'],
+    code: 'else if ({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}',
     arduino: {
-        code: 'while({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}',
+        code: 'else if ({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}'
     }
 });
 
-utils.preprocessBloq(zumjuniorSensorsWhile);
+utils.preprocessBloq(zumjuniorsensorselseif);
 
-module.exports = zumjuniorSensorsWhile;
+zumjuniorsensorselseif.connectors[0].acceptedAliases = ['ifDown', 'elseifDown', 'zumjuniorsensorselseifDown'];
+zumjuniorsensorselseif.connectors[1].acceptedAliases = ['all', 'elseifDown'];
+
+
+module.exports = zumjuniorsensorselseif;

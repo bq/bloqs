@@ -599,11 +599,11 @@
     #bloqs--field.theme-basic .bloq.bloq-zumjunior-read-color textarea {
       color: #cf1c22; }
   #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led-rgb {
-    color: #cf1c22; }
+    color: #02ADCF; }
     #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led-rgb input,
     #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led-rgb select,
     #bloqs--field.theme-basic .bloq.bloq-zumjunior-turnon-led-rgb textarea {
-      color: #cf1c22; }
+      color: #02ADCF; }
   #bloqs--field.theme-basic .bloq.bloq-zowi-gestures {
     color: #60BCC9; }
     #bloqs--field.theme-basic .bloq.bloq-zowi-gestures input,
@@ -4811,7 +4811,8 @@
       #bloqs--field.theme-colors .bloq.bloq-zumjunior-read-color:not(.disabled).bloq--output:focus:not(.disabled):after {
         background-color: #ce1c23; }
   #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) {
-    color: white; }
+    color: white;
+    border-left: 5px solid #02ADCF; }
     #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) .bloqinput,
     #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) input,
     #bloqs--field.theme-colors .bloq.bloq-zumjunior-turnon-led-rgb:not(.disabled) select,

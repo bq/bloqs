@@ -1,6 +1,6 @@
 {
   "type": "statement-input",
-  "name": "zumjuniorSensorsIf",
+  "name": "zumjuniorSensorsIfAdvanced",
   "connectors": [
     {
       "type": "connector--top",
@@ -17,6 +17,18 @@
     {
       "type": "connector--root",
       "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "db713e61-3029-4c1a-a189-172e932dd7c6"
     }
   ],
   "bloqClass": "bloq-zumjunior-sensors-if",
@@ -80,8 +92,15 @@
       },
       {
         "bloqInputId": "VALUE",
-        "alias": "numberInput",
-        "value": 0
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "db713e61-3029-4c1a-a189-172e932dd7c6"
       },
       {
         "alias": "text",
@@ -100,7 +119,7 @@
   "python": {
     "codeLines": [
       {
-        "code": "Bloque \"zumjuniorSensorsIf\" no preparado para generar código python"
+        "code": "Bloque \"zumjuniorSensorsIfAdvanced\" no preparado para generar código python"
       }
     ]
   }

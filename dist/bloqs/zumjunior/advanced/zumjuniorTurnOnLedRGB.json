@@ -1,6 +1,6 @@
 {
   "type": "statement",
-  "name": "zumjuniorTurnOnLedRGB",
+  "name": "zumjuniorTurnOnLedRGBAdvanced",
   "connectors": [
     {
       "type": "connector--top",
@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "11004cfc-0518-4161-8dce-ffb20fcbd1f3"
+      "name": "580ff5f6-a6a5-4b7c-9219-ec344f0d6e19"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "874ef89b-0e5c-42da-944b-d03c780f8ca2"
+      "name": "ec4a947f-e98f-4ab0-ab0b-fa7f46e65a59"
     },
     {
       "type": "connector--input",
@@ -44,7 +44,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "968f2af7-073d-426c-9674-65fc7b406c1b"
+      "name": "02190616-8562-4140-9d89-6757e91d9f55"
     }
   ],
   "bloqClass": "bloq-zumjunior-turnon-led-rgb",
@@ -64,7 +64,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "11004cfc-0518-4161-8dce-ffb20fcbd1f3"
+        "name": "580ff5f6-a6a5-4b7c-9219-ec344f0d6e19"
       },
       {
         "bloqInputId": "GVALUE",
@@ -76,7 +76,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "874ef89b-0e5c-42da-944b-d03c780f8ca2"
+        "name": "ec4a947f-e98f-4ab0-ab0b-fa7f46e65a59"
       },
       {
         "bloqInputId": "BVALUE",
@@ -88,7 +88,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "968f2af7-073d-426c-9674-65fc7b406c1b"
+        "name": "02190616-8562-4140-9d89-6757e91d9f55"
       }
     ]
   ],
@@ -99,7 +99,7 @@
   "python": {
     "codeLines": [
       {
-        "code": "Bloque \"zumjuniorTurnOnLedRGB\" no preparado para generar código python"
+        "code": "Bloque \"zumjuniorTurnOnLedRGBAdvanced\" no preparado para generar código python"
       }
     ]
   }

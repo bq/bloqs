@@ -31,9 +31,10 @@ var zumjuniorMiniservoAdvanced = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: 'bloq-zumjunior-miniservo-to'
         }, {
-            id: 'POSITION',
-            alias: 'numberInput',
-            value: 90
+            bloqInputId: 'POSITION',
+            alias: 'bloqInput',
+            acceptType: ['all'],
+            suggestedBloqs: ['number', 'selectVariable']
         }, {
             alias: 'text',
             value: 'bloq-zumjunior-miniservo-degrees'

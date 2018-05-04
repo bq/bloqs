@@ -63,15 +63,14 @@ var zumjuniorSensorsIf = _.merge(_.clone(StatementInputBloq, true), {
             }]
         }, {
             bloqInputId: 'VALUE',
-            alias: 'bloqInput',
-            acceptType: ['all'],
-            suggestedBloqs: ['number', 'selectVariable']
+            alias: 'numberInput',
+            value: 0
         }, {
             alias: 'text',
             value: 'bloq-zumjunior-sensors-exec'
         }]
     ],
-    suggestedBloqs: ['else', 'elseif'],
+    suggestedBloqs: ['zumjuniorsensorselseif','else'],
     code: 'if({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}',
     arduino: {
         code: 'if({SENSOR} {OPERATOR} {VALUE}){{STATEMENTS}}',

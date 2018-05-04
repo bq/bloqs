@@ -38,7 +38,7 @@ var zumjuniorReadSensors = _.merge(_.clone(OutputBloq, true), {
             }]
         }]
     ],
-    code: '{SENSOR}',
+    code: '{SENSOR}', 
     returnType: {
         type: 'simple',
         value: 'float'

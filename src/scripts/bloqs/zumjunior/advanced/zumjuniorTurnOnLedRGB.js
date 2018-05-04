@@ -2,11 +2,11 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../build-utils'),
-    StatementBloq = require('./../statementBloq');
+    utils = require('./../../build-utils'),
+    StatementBloq = require('./../../statementBloq');
 
 /**
- * Bloq name: zumjuniorTurnOnLedRGB
+ * Bloq name: zumjuniorTurnOnLedRGBAdvanced
  *
  * Bloq type: Statement
  *
@@ -15,9 +15,9 @@ var _ = require('lodash'),
  * Return type: none
  */
 
-var zumjuniorTurnOnLedRGB = _.merge(_.clone(StatementBloq, true), {
+var zumjuniorTurnOnLedRGBAdvanced = _.merge(_.clone(StatementBloq, true), {
 
-    name: 'zumjuniorTurnOnLedRGB',
+    name: 'zumjuniorTurnOnLedRGBAdvanced',
     bloqClass: 'bloq-zumjunior-turnon-led-rgb',
     content: [
         [{
@@ -46,6 +46,6 @@ var zumjuniorTurnOnLedRGB = _.merge(_.clone(StatementBloq, true), {
     }
 });
 
-utils.preprocessBloq(zumjuniorTurnOnLedRGB);
+utils.preprocessBloq(zumjuniorTurnOnLedRGBAdvanced);
 
-module.exports = zumjuniorTurnOnLedRGB;
+module.exports = zumjuniorTurnOnLedRGBAdvanced;

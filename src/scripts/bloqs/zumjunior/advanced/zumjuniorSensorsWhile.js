@@ -2,8 +2,8 @@
 'use strict';
 
 var _ = require('lodash'),
-    utils = require('./../build-utils'),
-    StatementInputBloq = require('./../statementInputBloq');
+    utils = require('./../../build-utils'),
+    StatementInputBloq = require('./../../statementInputBloq');
 
 /**
  * Bloq name: zumjuniorSensorsWhile
@@ -15,9 +15,9 @@ var _ = require('lodash'),
  * Return type: none
  */
 
-var zumjuniorSensorsWhile = _.merge(_.clone(StatementInputBloq, true), {
+var zumjuniorSensorsWhileAdvanced = _.merge(_.clone(StatementInputBloq, true), {
 
-    name: 'zumjuniorSensorsWhile',
+    name: 'zumjuniorSensorsWhileAdvanced',
     bloqClass: 'bloq-zumjunior-sensors-while',
     content: [
         [{
@@ -62,9 +62,10 @@ var zumjuniorSensorsWhile = _.merge(_.clone(StatementInputBloq, true), {
                 value: '<='
             }]
         }, {
-          bloqInputId: 'VALUE',
-          alias: 'numberInput',
-          value: 0
+            bloqInputId: 'VALUE',
+            alias: 'bloqInput',
+            acceptType: ['all'],
+            suggestedBloqs: ['number', 'selectVariable']
         }, {
             alias: 'text',
             value: 'bloq-zumjunior-sensors-exec'
@@ -76,6 +77,6 @@ var zumjuniorSensorsWhile = _.merge(_.clone(StatementInputBloq, true), {
     }
 });
 
-utils.preprocessBloq(zumjuniorSensorsWhile);
+utils.preprocessBloq(zumjuniorSensorsWhileAdvanced);
 
-module.exports = zumjuniorSensorsWhile;
+module.exports = zumjuniorSensorsWhileAdvanced;

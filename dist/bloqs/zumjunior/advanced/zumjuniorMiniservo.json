@@ -9,6 +9,18 @@
     {
       "type": "connector--bottom",
       "accept": "connector--top"
+    },
+    {
+      "type": "connector--input",
+      "accept": "connector--output",
+      "acceptType": [
+        "all"
+      ],
+      "suggestedBloqs": [
+        "number",
+        "selectVariable"
+      ],
+      "name": "01b3ffa1-a7c0-433d-94e6-3177d3ee9126"
     }
   ],
   "bloqClass": "bloq-zumjunior-miniservo",
@@ -28,9 +40,16 @@
         "value": "bloq-zumjunior-miniservo-to"
       },
       {
-        "id": "POSITION",
-        "alias": "numberInput",
-        "value": 90
+        "bloqInputId": "POSITION",
+        "alias": "bloqInput",
+        "acceptType": [
+          "all"
+        ],
+        "suggestedBloqs": [
+          "number",
+          "selectVariable"
+        ],
+        "name": "01b3ffa1-a7c0-433d-94e6-3177d3ee9126"
       },
       {
         "alias": "text",
