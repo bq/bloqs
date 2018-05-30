@@ -56,8 +56,7 @@
     ]
   ],
   "suggestedBloqs": [
-    "else",
-    "elseif"
+    "else"
   ],
   "code": "if({IS_PRESSED}({BUTTON}Pin)){{STATEMENTS}}",
   "arduino": {

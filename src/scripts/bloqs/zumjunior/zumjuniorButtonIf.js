@@ -45,7 +45,7 @@ var zumjuniorButtonIf = _.merge(_.clone(StatementInputBloq, true), {
             value: 'bloq-zumjunior-button-exec'
         }]
     ],
-    suggestedBloqs: ['else', 'elseif'],
+    suggestedBloqs: ['else'],
     code: 'if({IS_PRESSED}({BUTTON}Pin)){{STATEMENTS}}',
     arduino: {
         code: 'if({IS_PRESSED}({BUTTON}Pin)){{STATEMENTS}}',
