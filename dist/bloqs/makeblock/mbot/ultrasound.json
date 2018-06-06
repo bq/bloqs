@@ -1,0 +1,63 @@
+{
+  "type": "output",
+  "name": "mBotGetUS",
+  "connectors": [
+    {
+      "type": "connector--output",
+      "accept": "connector--input"
+    }
+  ],
+  "bloqClass": "bloq-mbot-getdistance-v2",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-mbot-getdistance"
+      },
+      {
+        "id": "ULTRASOUND",
+        "alias": "dynamicDropdown",
+        "options": "mkb_ultrasound"
+      },
+      {
+        "alias": "text",
+        "value": "in"
+      },
+      {
+        "id": "MAGNITUDE",
+        "alias": "staticDropdown",
+        "options": [
+          {
+            "label": "cm",
+            "value": "cm"
+          },
+          {
+            "label": "inches",
+            "value": "inches"
+          }
+        ]
+      }
+    ]
+  ],
+  "code": "",
+  "returnType": {
+    "type": "simple",
+    "value": "float"
+  },
+  "arduino": {
+    "conditional": {
+      "aliasId": "MAGNITUDE",
+      "code": {
+        "cm": "{ULTRASOUND}.readDistanceInCM()",
+        "inches": "{ULTRASOUND}.readDistanceInInches()"
+      }
+    }
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"mBotGetUS\" no preparado para generar código python"
+      }
+    ]
+  }
+}
