@@ -6,7 +6,7 @@ let _ = require('lodash'),
   OutputBloq = require('./../../outputBloq');
 
 /**
- * Bloq name: mBotGetDistance
+ * Bloq name: mBotGetUS
  *
  * Bloq type: Output
  *
@@ -15,9 +15,9 @@ let _ = require('lodash'),
  * Return type: float
  */
 
-const mBotGetDistance = _.merge(_.clone(OutputBloq, true), {
+const mBotGetUS = _.merge(_.clone(OutputBloq, true), {
 
-  name: 'mBotGetDistance-v2',
+  name: 'mBotGetUS',
   bloqClass: 'bloq-mbot-getdistance-v2',
   content: [
     [{
@@ -57,6 +57,6 @@ const mBotGetDistance = _.merge(_.clone(OutputBloq, true), {
     },
   },
 });
-utils.preprocessBloq(mBotGetDistance);
+utils.preprocessBloq(mBotGetUS);
 
-module.exports = mBotGetDistance;
+module.exports = mBotGetUS;

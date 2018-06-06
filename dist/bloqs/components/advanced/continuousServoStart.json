@@ -20,7 +20,7 @@
         "hwVariable",
         "selectVariable"
       ],
-      "name": "38c8f5b0-e830-437c-8874-02acf25a2923"
+      "name": "2841ea24-34c6-4b0b-97f6-040195a242ae"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "0c708f65-5452-4335-bbfd-a5d40bd504a4"
+      "name": "252c5c9e-b7ba-44b8-a57d-08bc3ed5bb3b"
     }
   ],
   "bloqClass": "bloq-continuous-servo-start-advanced",
@@ -52,7 +52,7 @@
           "hwVariable",
           "selectVariable"
         ],
-        "name": "38c8f5b0-e830-437c-8874-02acf25a2923"
+        "name": "2841ea24-34c6-4b0b-97f6-040195a242ae"
       },
       {
         "alias": "text",
@@ -68,7 +68,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "0c708f65-5452-4335-bbfd-a5d40bd504a4"
+        "name": "252c5c9e-b7ba-44b8-a57d-08bc3ed5bb3b"
       }
     ]
   ],
