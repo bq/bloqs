@@ -24,7 +24,7 @@ var zumjuniorDisplayNumber = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: 'bloq-zumjunior-display-number'
         }, {
-            bloqInputId: 'VALUE',
+            id: 'VALUE',
             alias: 'numberInput',
             value: 99
         }]

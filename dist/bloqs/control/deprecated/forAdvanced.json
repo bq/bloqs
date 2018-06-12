@@ -20,7 +20,7 @@
       "acceptType": [
         "all"
       ],
-      "name": "cae744f1-9666-4ab6-acac-72093a0c4a8b"
+      "name": "b960cb8c-47ba-41e3-b8e7-25c0ee369ea5"
     },
     {
       "type": "connector--input",
@@ -28,7 +28,7 @@
       "acceptType": [
         "all"
       ],
-      "name": "e0de54db-21ec-4499-97e1-0ec548b43814"
+      "name": "f57caa3d-2e25-4cf0-bbbb-9d89dae4e52f"
     },
     {
       "type": "connector--input",
@@ -36,7 +36,7 @@
       "acceptType": [
         "all"
       ],
-      "name": "d834c655-2011-472b-ae9d-b327badcfcc6"
+      "name": "d1def131-11b3-468d-bc57-345adbe93443"
     }
   ],
   "bloqClass": "bloq-for deprecated",
@@ -52,7 +52,7 @@
         "acceptType": [
           "all"
         ],
-        "name": "cae744f1-9666-4ab6-acac-72093a0c4a8b"
+        "name": "b960cb8c-47ba-41e3-b8e7-25c0ee369ea5"
       },
       {
         "alias": "text",
@@ -64,7 +64,7 @@
         "acceptType": [
           "all"
         ],
-        "name": "e0de54db-21ec-4499-97e1-0ec548b43814"
+        "name": "f57caa3d-2e25-4cf0-bbbb-9d89dae4e52f"
       },
       {
         "alias": "text",
@@ -76,7 +76,7 @@
         "acceptType": [
           "all"
         ],
-        "name": "d834c655-2011-472b-ae9d-b327badcfcc6"
+        "name": "d1def131-11b3-468d-bc57-345adbe93443"
       },
       {
         "id": "MODE",
