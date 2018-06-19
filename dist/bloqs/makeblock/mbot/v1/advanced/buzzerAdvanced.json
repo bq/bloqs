@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "9e16c633-5a15-4ccb-b416-4e3d771d73cc"
+      "name": "a57985b5-5e40-4258-8bf7-8f05068c1991"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "0007bd08-a6c1-46b5-89cd-f4f1727428be"
+      "name": "f1f82b4c-f9dc-40d8-b1a9-e980d0500a82"
     }
   ],
   "bloqClass": "bloq-mbot-buzzer",
@@ -52,7 +52,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "9e16c633-5a15-4ccb-b416-4e3d771d73cc"
+        "name": "a57985b5-5e40-4258-8bf7-8f05068c1991"
       },
       {
         "alias": "text",
@@ -68,7 +68,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "0007bd08-a6c1-46b5-89cd-f4f1727428be"
+        "name": "f1f82b4c-f9dc-40d8-b1a9-e980d0500a82"
       },
       {
         "alias": "text",

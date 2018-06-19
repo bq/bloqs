@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "cf740c7f-c339-4dbc-a6a3-4ecace0c8e4f"
+      "name": "52501561-55d4-4c9f-9109-975ba57db3b2"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "db24508a-1d91-413b-80a4-b707d5037c42"
+      "name": "e19dd650-3d97-4187-b74b-5220da39da37"
     },
     {
       "type": "connector--input",
@@ -44,7 +44,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "4d9138a9-9ae0-4247-b084-5d90c15019b3"
+      "name": "e005d229-ecaa-4487-bf69-5fab299c4d04"
     }
   ],
   "bloqClass": "bloq-rgbLed-advanced",
@@ -73,7 +73,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "cf740c7f-c339-4dbc-a6a3-4ecace0c8e4f"
+        "name": "52501561-55d4-4c9f-9109-975ba57db3b2"
       },
       {
         "alias": "text",
@@ -89,7 +89,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "db24508a-1d91-413b-80a4-b707d5037c42"
+        "name": "e19dd650-3d97-4187-b74b-5220da39da37"
       },
       {
         "alias": "text",
@@ -105,7 +105,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "4d9138a9-9ae0-4247-b084-5d90c15019b3"
+        "name": "e005d229-ecaa-4487-bf69-5fab299c4d04"
       }
     ]
   ],

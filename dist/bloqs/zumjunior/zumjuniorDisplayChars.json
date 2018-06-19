@@ -1,0 +1,44 @@
+{
+  "type": "statement",
+  "name": "zumjuniorDisplayChars",
+  "connectors": [
+    {
+      "type": "connector--top",
+      "accept": "connector--bottom"
+    },
+    {
+      "type": "connector--bottom",
+      "accept": "connector--top"
+    }
+  ],
+  "bloqClass": "bloq-zumjunior-display-number",
+  "content": [
+    [
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-display-chars"
+      },
+      {
+        "id": "CHAR1",
+        "alias": "charInput",
+        "value": "A"
+      },
+      {
+        "id": "CHAR2",
+        "alias": "charInput",
+        "value": "0"
+      }
+    ]
+  ],
+  "code": "segmentDisplay.displayChar('{CHAR1}','{CHAR2}');",
+  "arduino": {
+    "code": "segmentDisplay.displayChar('{CHAR1}','{CHAR2}');"
+  },
+  "python": {
+    "codeLines": [
+      {
+        "code": "Bloque \"zumjuniorDisplayChars\" no preparado para generar código python"
+      }
+    ]
+  }
+}
