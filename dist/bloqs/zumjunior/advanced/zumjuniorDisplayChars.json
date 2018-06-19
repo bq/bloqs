@@ -1,6 +1,6 @@
 {
   "type": "statement",
-  "name": "return",
+  "name": "zumjuniorDisplayCharsAdvanced",
   "connectors": [
     {
       "type": "connector--top",
@@ -17,43 +17,41 @@
         "all"
       ],
       "suggestedBloqs": [
-        "selectVariable",
-        "logicOperations",
-        "equalityOperations"
+        "string",
+        "selectVariable"
       ],
-      "name": "02a1bd96-55e1-4673-bd00-8e8e66df2051"
+      "name": "caa7df17-ffbd-435f-b622-0dd2a0fff403"
     }
   ],
-  "bloqClass": "bloq-return",
+  "bloqClass": "bloq-zumjunior-display-number",
   "content": [
     [
       {
         "alias": "text",
-        "value": "bloq-return-return"
+        "value": "bloq-zumjunior-display-chars"
       },
       {
-        "bloqInputId": "RETURN",
+        "bloqInputId": "VALUE",
         "alias": "bloqInput",
         "acceptType": [
           "all"
         ],
         "suggestedBloqs": [
-          "selectVariable",
-          "logicOperations",
-          "equalityOperations"
+          "string",
+          "selectVariable"
         ],
-        "name": "02a1bd96-55e1-4673-bd00-8e8e66df2051"
+        "name": "caa7df17-ffbd-435f-b622-0dd2a0fff403"
       }
     ]
   ],
-  "code": "return {RETURN};",
+  "code": "segmentDisplay.displayString({VALUE});",
   "arduino": {
-    "code": "return {RETURN};"
+    "code": "segmentDisplay.displayString({VALUE});"
   },
   "python": {
     "codeLines": [
       {
-        "code": "Bloque \"return\" no preparado para generar código python"
+        "code": "Bloque \"zumjuniorDisplayCharsAdvanced\" no preparado para generar código python"
       }
     ]
   }

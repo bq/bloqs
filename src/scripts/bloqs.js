@@ -1204,8 +1204,8 @@
                 }).val(elementSchema.value);
                 $element.on('keyup', function (evt) {
                     $(evt.currentTarget).autoGrowInput({
-                        minWidth: 100,
-                        comfortZone: 30
+                        minWidth: 10,
+                        comfortZone: 0
                     });
                 });
                 $element.change(function () {
