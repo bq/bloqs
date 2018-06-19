@@ -1,10 +1,15 @@
 {
   "type": "statement-input",
-  "name": "zumjuniorColorIf",
+  "name": "zumjuniorcolorelseif",
   "connectors": [
     {
       "type": "connector--top",
-      "accept": "connector--bottom"
+      "accept": "connector--bottom",
+      "acceptedAliases": [
+        "ifDown",
+        "elseifDown",
+        "zumjuniorcolorelseifDown"
+      ]
     },
     {
       "type": "connector--bottom",
@@ -24,7 +29,7 @@
     [
       {
         "alias": "text",
-        "value": "bloq-zumjunior-color-if"
+        "value": "bloq-else-if-color"
       },
       {
         "id": "COLOR",
@@ -62,14 +67,14 @@
     "zumjuniorcolorelseif",
     "else"
   ],
-  "code": "if(colorSensor.whichColor() == {COLOR}){{STATEMENTS}}",
+  "code": "else if (colorSensor.whichColor() == {COLOR}){{STATEMENTS}}",
   "arduino": {
-    "code": "if(colorSensor.whichColor() == {COLOR}){{STATEMENTS}}"
+    "code": "else if (colorSensor.whichColor() == {COLOR}){{STATEMENTS}}"
   },
   "python": {
     "codeLines": [
       {
-        "code": "Bloque \"zumjuniorColorIf\" no preparado para generar código python"
+        "code": "Bloque \"zumjuniorcolorelseif\" no preparado para generar código python"
       }
     ]
   }

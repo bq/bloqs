@@ -1,6 +1,6 @@
 {
   "type": "statement",
-  "name": "motorSetSpeedAdvanced",
+  "name": "zumjuniorDisplayCharsAdvanced",
   "connectors": [
     {
       "type": "connector--top",
@@ -17,54 +17,41 @@
         "all"
       ],
       "suggestedBloqs": [
-        "number",
+        "string",
         "selectVariable"
       ],
-      "name": "cd17bfd9-866e-4c2b-9bfd-8acd8b2182e1"
+      "name": "03c0ad82-912a-4f34-bffb-4b09de0f89e5"
     }
   ],
-  "bloqClass": "bloq-components-color",
+  "bloqClass": "bloq-zumjunior-display-number",
   "content": [
     [
       {
         "alias": "text",
-        "value": "bloq-shield-DCmotor-spin"
+        "value": "bloq-zumjunior-display-chars"
       },
       {
-        "id": "MOTOR",
-        "alias": "dynamicDropdown",
-        "options": "drivegearmotor"
-      },
-      {
-        "alias": "text",
-        "value": "bloq-mbot-move-speed"
-      },
-      {
-        "bloqInputId": "SPEED",
+        "bloqInputId": "VALUE",
         "alias": "bloqInput",
         "acceptType": [
           "all"
         ],
         "suggestedBloqs": [
-          "number",
+          "string",
           "selectVariable"
         ],
-        "name": "cd17bfd9-866e-4c2b-9bfd-8acd8b2182e1"
-      },
-      {
-        "alias": "text",
-        "value": "(-255,255)"
+        "name": "03c0ad82-912a-4f34-bffb-4b09de0f89e5"
       }
     ]
   ],
-  "code": "",
+  "code": "segmentDisplay.displayString({VALUE});",
   "arduino": {
-    "code": "{MOTOR}.setSpeed({SPEED});"
+    "code": "segmentDisplay.displayString({VALUE});"
   },
   "python": {
     "codeLines": [
       {
-        "code": "Bloque \"motorSetSpeedAdvanced\" no preparado para generar código python"
+        "code": "Bloque \"zumjuniorDisplayCharsAdvanced\" no preparado para generar código python"
       }
     ]
   }
