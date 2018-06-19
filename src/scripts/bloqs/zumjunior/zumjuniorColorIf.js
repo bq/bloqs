@@ -47,12 +47,14 @@ var zumjuniorColorIf = _.merge(_.clone(StatementInputBloq, true), {
             value: 'bloq-zumjunior-sensors-exec'
         }]
     ],
-    suggestedBloqs: ['else', 'elseif'],
+    suggestedBloqs: ['zumjuniorcolorelseif','else'],
     code: 'if(colorSensor.whichColor() == {COLOR}){{STATEMENTS}}',
     arduino: {
         code: 'if(colorSensor.whichColor() == {COLOR}){{STATEMENTS}}'
     }
 });
+
+zumjuniorColorIf.connectors[1].acceptedAliases = ['all', 'ifDown'];
 
 utils.preprocessBloq(zumjuniorColorIf);
 

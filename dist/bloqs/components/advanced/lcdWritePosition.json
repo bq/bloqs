@@ -20,7 +20,7 @@
         "string",
         "selectVariable"
       ],
-      "name": "8380bd29-cd0b-49c1-b03f-c4dca9c30780"
+      "name": "2e0a229f-989e-44a1-8176-1f60a0e0970f"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "hwVariable",
         "selectVariable"
       ],
-      "name": "3b227214-0b1d-4330-99ed-6d6ce99d71a6"
+      "name": "f6270382-b1e6-4d00-8279-681311323b01"
     },
     {
       "type": "connector--input",
@@ -44,7 +44,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "e4775cca-a82d-4759-b7bb-9efe027cbdf3"
+      "name": "58d83136-0d05-4ebf-9b41-d7f32c4bcd3c"
     },
     {
       "type": "connector--input",
@@ -56,7 +56,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "8c1c5a48-d6cf-4625-919e-d92bc810082e"
+      "name": "0efde202-af5c-4b9c-88b2-6edd41f757da"
     }
   ],
   "bloqClass": "bloq-lcd-writte",
@@ -76,7 +76,7 @@
           "string",
           "selectVariable"
         ],
-        "name": "8380bd29-cd0b-49c1-b03f-c4dca9c30780"
+        "name": "2e0a229f-989e-44a1-8176-1f60a0e0970f"
       },
       {
         "alias": "text",
@@ -92,7 +92,7 @@
           "hwVariable",
           "selectVariable"
         ],
-        "name": "3b227214-0b1d-4330-99ed-6d6ce99d71a6"
+        "name": "f6270382-b1e6-4d00-8279-681311323b01"
       },
       {
         "alias": "text",
@@ -108,7 +108,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "e4775cca-a82d-4759-b7bb-9efe027cbdf3"
+        "name": "58d83136-0d05-4ebf-9b41-d7f32c4bcd3c"
       },
       {
         "bloqInputId": "ROW",
@@ -120,7 +120,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "8c1c5a48-d6cf-4625-919e-d92bc810082e"
+        "name": "0efde202-af5c-4b9c-88b2-6edd41f757da"
       }
     ]
   ],
