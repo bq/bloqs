@@ -8,6 +8,7 @@
       "acceptedAliases": [
         "ifDown",
         "elseifDown",
+        "zumjuniorColorIfDown",
         "zumjuniorcolorelseifDown"
       ]
     },
@@ -16,7 +17,8 @@
       "accept": "connector--top",
       "acceptedAliases": [
         "all",
-        "ifDown"
+        "zumjuniorcolorelseifDown",
+        "elseifDown"
       ]
     },
     {
