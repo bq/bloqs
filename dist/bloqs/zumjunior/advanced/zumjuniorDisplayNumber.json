@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "5e711989-1113-4ef0-8795-9d28562bbb1a"
+      "name": "dd4b32b3-fcf8-446a-a276-65c36ec56089"
     }
   ],
   "bloqClass": "bloq-zumjunior-display-number",
@@ -40,7 +40,16 @@
           "number",
           "selectVariable"
         ],
-        "name": "5e711989-1113-4ef0-8795-9d28562bbb1a"
+        "name": "dd4b32b3-fcf8-446a-a276-65c36ec56089"
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-in-display-name"
+      },
+      {
+        "id": "DISPLAY",
+        "alias": "dynamicDropdown",
+        "options": "zumjunior7segments"
       }
     ]
   ],

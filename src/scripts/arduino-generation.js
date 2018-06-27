@@ -1077,6 +1077,7 @@
                         case 'zumjunior_7segment':
                             tempIncludes = ['BQZUMI2C7SegmentDisplay.h'];
 
+                            var componentName = hardwareList.components[i].name;
                             var port = hardwareList.components[i].pin.s;
 
                             addInstance({
@@ -1085,13 +1086,13 @@
                                 equals: 'BQ::ZUMJunior::i2cPorts[' + port + ']'
                             }, {}, hardwareList);
                             addInstance({
-                                name: 'segmentDisplay',
+                                name: componentName,
                                 type: 'BQ::ZUM::I2C7SegmentDisplay',
                                 arguments: ['i2cport' + port]
                             }, {}, hardwareList);
 
-                            setupCodeAtTheEndOfExtraCodeMap['segmentDisplay.setup();'] = true;
-                            setupCodeAtTheEndOfExtraCodeMap['segmentDisplay.displayChar(\' \', \' \');'] = true;
+                            setupCodeAtTheEndOfExtraCodeMap[componentName + '.setup();'] = true;
+                            setupCodeAtTheEndOfExtraCodeMap[componentName + '.displayChar(\' \', \' \');'] = true;
                             break;
 
                         case 'zumjunior_sensors':
