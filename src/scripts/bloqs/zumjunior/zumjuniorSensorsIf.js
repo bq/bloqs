@@ -79,7 +79,7 @@ var zumjuniorSensorsIf = _.merge(_.clone(StatementInputBloq, true), {
 
 utils.preprocessBloq(zumjuniorSensorsIf);
 
-zumjuniorSensorsIf.connectors[1].acceptedAliases = ['all', 'ifDown'];
+zumjuniorSensorsIf.connectors[1].acceptedAliases = ['all', 'ifDown', 'zumjuniorSensorsIfDown'];
 
 
 module.exports = zumjuniorSensorsIf;

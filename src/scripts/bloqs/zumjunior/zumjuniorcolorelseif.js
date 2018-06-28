@@ -57,8 +57,8 @@ var zumjuniorcolorelseif = _.merge(_.clone(StatementInputBloq, true), {
 
 utils.preprocessBloq(zumjuniorcolorelseif);
 
-zumjuniorcolorelseif.connectors[0].acceptedAliases = ['ifDown', 'elseifDown', 'zumjuniorcolorelseifDown'];
-zumjuniorcolorelseif.connectors[1].acceptedAliases = ['all', 'ifDown'];
+zumjuniorcolorelseif.connectors[0].acceptedAliases = ['ifDown', 'elseifDown','zumjuniorColorIfDown','zumjuniorcolorelseifDown'];
+zumjuniorcolorelseif.connectors[1].acceptedAliases = ['all', 'zumjuniorcolorelseifDown', 'elseifDown'];
 
 
 module.exports = zumjuniorcolorelseif;

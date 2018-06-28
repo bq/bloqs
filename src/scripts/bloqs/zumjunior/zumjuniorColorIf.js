@@ -54,7 +54,7 @@ var zumjuniorColorIf = _.merge(_.clone(StatementInputBloq, true), {
     }
 });
 
-zumjuniorColorIf.connectors[1].acceptedAliases = ['all', 'ifDown'];
+zumjuniorColorIf.connectors[1].acceptedAliases = ['all', 'ifDown', 'zumjuniorColorIfDown'];
 
 utils.preprocessBloq(zumjuniorColorIf);
 
