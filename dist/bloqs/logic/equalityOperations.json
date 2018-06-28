@@ -18,7 +18,7 @@
         "selectVariable",
         "readSensor"
       ],
-      "name": "d6f468d5-7bb8-4b72-be4c-6e1050d32ccc"
+      "name": "536304d1-1074-484c-baa3-b87132f9043a"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "selectVariable",
         "readSensor"
       ],
-      "name": "c93f8374-2887-44bb-8862-ff7f8288d68b"
+      "name": "0c697df7-7226-4d80-b45d-f9e7491ba3e2"
     }
   ],
   "bloqClass": "bloq-equality-operations",
@@ -50,7 +50,7 @@
           "selectVariable",
           "readSensor"
         ],
-        "name": "d6f468d5-7bb8-4b72-be4c-6e1050d32ccc"
+        "name": "536304d1-1074-484c-baa3-b87132f9043a"
       },
       {
         "id": "OPERATOR",
@@ -94,7 +94,7 @@
           "selectVariable",
           "readSensor"
         ],
-        "name": "c93f8374-2887-44bb-8862-ff7f8288d68b"
+        "name": "0c697df7-7226-4d80-b45d-f9e7491ba3e2"
       }
     ]
   ],

@@ -30,11 +30,18 @@ var zumjuniorDisplayChars = _.merge(_.clone(StatementBloq, true), {
             id: 'CHAR2',
             alias: 'charInput',
             value: '0'
-        }]
+        }, {
+            alias: 'text',
+            value: 'bloq-zumjunior-in-display-name'
+        },{
+            id: 'DISPLAY',
+            alias: 'dynamicDropdown',
+            options: 'zumjunior7segments',
+          }]
     ],
-    code: 'segmentDisplay.displayChar(\'{CHAR1}\',\'{CHAR2}\');',
+    code: '{DISPLAY}.displayChar(\'{CHAR1}\',\'{CHAR2}\');',
     arduino: {
-        code: 'segmentDisplay.displayChar(\'{CHAR1}\',\'{CHAR2}\');'
+        code: '{DISPLAY}.displayChar(\'{CHAR1}\',\'{CHAR2}\');'
     }
 });
 

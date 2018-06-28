@@ -28,7 +28,14 @@ var zumjuniorDisplayNumberAdvanced = _.merge(_.clone(StatementBloq, true), {
             alias: 'bloqInput',
             acceptType: ['all'],
             suggestedBloqs: ['number', 'selectVariable']
-        }]
+        },{
+            alias: 'text',
+            value: 'bloq-zumjunior-in-display-name'
+        },{
+            id: 'DISPLAY',
+            alias: 'dynamicDropdown',
+            options: 'zumjunior7segments',
+          }]
     ],
     code: 'segmentDisplay.displayInt({VALUE});',
     arduino: {
