@@ -1097,32 +1097,34 @@
 
                         case 'zumjunior_sensors':
                           tempIncludes = ['BQZUMI2CTempSensor.h', 'BQZUMI2CColorSensor.h', 'BQZUMI2CALPSSensor.h'];
-
+                          
+                          var componentName = hardwareList.components[i].name;
                           var port = hardwareList.components[i].pin.s;
+
                           addInstance({
                             name: 'i2cport' + port,
                             type: 'int',
                             equals: 'BQ::ZUMJunior::i2cPorts[' + port + ']'
                           }, {}, hardwareList);
                           addInstance({
-                            name: 'ALPSSensor',
+                            name: 'ALPS' + componentName,
                             type: 'BQ::ZUM::I2CALPSSensor',
                             arguments: ['i2cport' + port]
                           }, {}, hardwareList);
                           addInstance({
-                            name: 'colorSensor',
+                            name: 'color' + componentName,
                             type: 'BQ::ZUM::I2CColorSensor',
                             arguments: ['i2cport' + port]
                           }, {}, hardwareList);
                           addInstance({
-                            name: 'tempSensor',
+                            name: 'temp' + componentName,
                             type: 'BQ::ZUM::I2CTempSensor',
                             arguments: ['i2cport' + port]
                           }, {}, hardwareList);
 
-                          setupCodeAtTheEndOfExtraCodeMap['ALPSSensor.setup();'] = true;
-                          setupCodeAtTheEndOfExtraCodeMap['colorSensor.setup();'] = true;
-                          setupCodeAtTheEndOfExtraCodeMap['tempSensor.setup();'] = true;
+                          setupCodeAtTheEndOfExtraCodeMap['ALPS'+componentName+'.setup();'] = true;
+                          setupCodeAtTheEndOfExtraCodeMap['color'+componentName+'.setup();'] = true;
+                          setupCodeAtTheEndOfExtraCodeMap['temp'+componentName+'.setup();'] = true;
 
                           break;
                     }
