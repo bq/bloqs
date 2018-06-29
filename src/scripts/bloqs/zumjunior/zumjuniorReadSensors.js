@@ -28,15 +28,22 @@ var zumjuniorReadSensors = _.merge(_.clone(OutputBloq, true), {
             alias: 'staticDropdown',
             options: [{
                 label: 'bloq-zumjunior-sensors-temperature',
-                value: 'tempSensor.getTemp()'
+                value: 'temp{MULTI}.getTemp()'
             }, {
                 label: 'bloq-zumjunior-sensors-distance',
-                value: 'ALPSSensor.getDistance()'
+                value: 'ALPS{MULTI}.getDistance()'
             }, {
                 label: 'bloq-zumjunior-sensors-brightness',
-                value: 'ALPSSensor.getAL()'
+                value: 'ALPS{MULTI}.getAL()'
             }]
-        }]
+        }, {
+            alias: 'text',
+            value: 'bloq-zumjunior-multi-measured-by'
+        },{
+            id: 'MULTI',
+            alias: 'dynamicDropdown',
+            options: 'zumjuniorSensors',
+          }]
     ],
     code: '{SENSOR}', 
     returnType: {

@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "0ae2aa94-fc29-4e70-ade8-10cdad7ec556"
+      "name": "518b6093-7ec5-4366-a10c-37cb6e0732ab"
     }
   ],
   "bloqClass": "bloq-zumjunior-display-number",
@@ -40,7 +40,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "0ae2aa94-fc29-4e70-ade8-10cdad7ec556"
+        "name": "518b6093-7ec5-4366-a10c-37cb6e0732ab"
       },
       {
         "alias": "text",
@@ -53,9 +53,9 @@
       }
     ]
   ],
-  "code": "segmentDisplay.displayInt({VALUE});",
+  "code": "{DISPLAY}.displayInt({VALUE});",
   "arduino": {
-    "code": "segmentDisplay.displayInt({VALUE});"
+    "code": "{DISPLAY}.displayInt({VALUE});"
   },
   "python": {
     "codeLines": [

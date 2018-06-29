@@ -23,6 +23,13 @@ var zumjuniorColorIf = _.merge(_.clone(StatementInputBloq, true), {
         [{
             alias: 'text',
             value: 'bloq-zumjunior-color-if'
+        },{
+            id: 'MULTI',
+            alias: 'dynamicDropdown',
+            options: 'zumjuniorSensors',
+        },{
+            alias: 'text',
+            value: 'bloq-zumjunior-color-detects'
         }, {
             id: 'COLOR',
             alias: 'staticDropdown',
@@ -48,9 +55,9 @@ var zumjuniorColorIf = _.merge(_.clone(StatementInputBloq, true), {
         }]
     ],
     suggestedBloqs: ['zumjuniorcolorelseif','else'],
-    code: 'if(colorSensor.whichColor() == {COLOR}){{STATEMENTS}}',
+    code: 'if(color{MULTI}.whichColor() == {COLOR}){{STATEMENTS}}',
     arduino: {
-        code: 'if(colorSensor.whichColor() == {COLOR}){{STATEMENTS}}'
+        code: 'if(color{MULTI}.whichColor() == {COLOR}){{STATEMENTS}}'
     }
 });
 

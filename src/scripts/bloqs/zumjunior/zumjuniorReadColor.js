@@ -39,15 +39,19 @@ var zumjuniorReadColor = _.merge(_.clone(OutputBloq, true), {
         }, {
             alias: 'text',
             value: 'bloq-zumjunior-of-color-sensor'
+        },{
+            id: 'MULTI',
+            alias: 'dynamicDropdown',
+            options: 'zumjuniorSensors',
         }]
     ],
-    code: 'colorSensor.getComponent({COMPONENT})',
+    code: 'color{MULTI}.getComponent({COMPONENT})',
     returnType: {
         type: 'simple',
         value: 'float'
     },
     arduino: {
-        code: 'colorSensor.getComponent({COMPONENT})'
+        code: 'color{MULTI}.getComponent({COMPONENT})'
     }
 });
 

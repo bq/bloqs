@@ -24,6 +24,13 @@ var zumjuniorColorWhile = _.merge(_.clone(StatementInputBloq, true), {
             alias: 'text',
             value: 'bloq-zumjunior-color-while'
         }, {
+            id: 'MULTI',
+            alias: 'dynamicDropdown',
+            options: 'zumjuniorSensors',
+        },{
+            alias: 'text',
+            value: 'bloq-zumjunior-color-detects'
+        },{
             id: 'COLOR',
             alias: 'staticDropdown',
             options: [{
@@ -47,9 +54,9 @@ var zumjuniorColorWhile = _.merge(_.clone(StatementInputBloq, true), {
             value: 'bloq-zumjunior-sensors-exec'
         }]
     ],
-    code: 'while(colorSensor.whichColor() == {COLOR}){{STATEMENTS}}',
+    code: 'while(color{MULTI}.whichColor() == {COLOR}){{STATEMENTS}}',
     arduino: {
-        code: 'while(colorSensor.whichColor() == {COLOR}){{STATEMENTS}}'
+        code: 'while(color{MULTI}.whichColor() == {COLOR}){{STATEMENTS}}'
     }
 });
 
