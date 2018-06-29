@@ -27,7 +27,7 @@ var zumjuniorColorIf = _.merge(_.clone(StatementInputBloq, true), {
             id: 'MULTI',
             alias: 'dynamicDropdown',
             options: 'zumjuniorSensors',
-          },{
+        },{
             alias: 'text',
             value: 'bloq-zumjunior-color-detects'
         }, {
