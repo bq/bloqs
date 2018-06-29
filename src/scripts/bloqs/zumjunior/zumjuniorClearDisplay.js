@@ -23,11 +23,15 @@ var zumjuniorClearDisplay = _.merge(_.clone(StatementBloq, true), {
         [{
             alias: 'text',
             value: 'bloq-zumjunior-clear-display'
-        }]
+        },{
+            id: 'DISPLAY',
+            alias: 'dynamicDropdown',
+            options: 'zumjunior7segments',
+          }]
     ],
-    code: 'segmentDisplay.displayChar(\' \', \' \');',
+    code: '{DISPLAY}.displayChar(\' \', \' \');',
     arduino: {
-        code: 'segmentDisplay.displayChar(\' \', \' \');',
+        code: '{DISPLAY}.displayChar(\' \', \' \');',
     }
 });
 
