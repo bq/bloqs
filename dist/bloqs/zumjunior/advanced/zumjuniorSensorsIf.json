@@ -11,7 +11,9 @@
       "accept": "connector--top",
       "acceptedAliases": [
         "all",
-        "ifDown"
+        "ifDown",
+        "zumjuniorSensorsIfDown",
+        "zumjuniorSensorsIfAdvancedDown"
       ]
     },
     {
@@ -28,7 +30,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "c7f76ae0-9529-48da-a44e-fbd07356b22e"
+      "name": "25d14abe-dc25-4bf4-bc57-9240283816c4"
     }
   ],
   "bloqClass": "bloq-zumjunior-sensors-if",
@@ -44,17 +46,26 @@
         "options": [
           {
             "label": "bloq-zumjunior-sensors-temperature",
-            "value": "tempSensor.getTemp()"
+            "value": "temp{MULTI}.getTemp()"
           },
           {
             "label": "bloq-zumjunior-sensors-distance",
-            "value": "ALPSSensor.getDistance()"
+            "value": "ALPS{MULTI}.getDistance()"
           },
           {
             "label": "bloq-zumjunior-sensors-brightness",
-            "value": "ALPSSensor.getAL()"
+            "value": "ALPS{MULTI}.getAL()"
           }
         ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-zumjunior-multi-measured-by"
+      },
+      {
+        "id": "MULTI",
+        "alias": "dynamicDropdown",
+        "options": "zumjuniorSensors"
       },
       {
         "alias": "text",
@@ -100,7 +111,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "c7f76ae0-9529-48da-a44e-fbd07356b22e"
+        "name": "25d14abe-dc25-4bf4-bc57-9240283816c4"
       },
       {
         "alias": "text",

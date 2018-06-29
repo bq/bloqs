@@ -59,14 +59,8 @@ var zumjuniorSensorsIf = _.merge(_.clone(StatementInputBloq, true), {
                 label: '>',
                 value: '>'
             }, {
-                label: '>=',
-                value: '>='
-            }, {
                 label: '<',
                 value: '<'
-            }, {
-                label: '<=',
-                value: '<='
             }]
         }, {
             id: 'VALUE',

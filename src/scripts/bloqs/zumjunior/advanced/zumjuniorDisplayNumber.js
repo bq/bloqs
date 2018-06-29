@@ -37,9 +37,9 @@ var zumjuniorDisplayNumberAdvanced = _.merge(_.clone(StatementBloq, true), {
             options: 'zumjunior7segments',
           }]
     ],
-    code: 'segmentDisplay.displayInt({VALUE});',
+    code: '{DISPLAY}.displayInt({VALUE});',
     arduino: {
-        code: 'segmentDisplay.displayInt({VALUE});'
+        code: '{DISPLAY}.displayInt({VALUE});'
     }
 });
 
