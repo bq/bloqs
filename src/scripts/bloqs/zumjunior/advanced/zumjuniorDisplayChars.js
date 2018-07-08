@@ -22,7 +22,7 @@ var zumjuniorDisplayCharsAdvanced = _.merge(_.clone(StatementBloq, true), {
     content: [
         [{
             alias: 'text',
-            value: 'bloq-zumjunior-display-chars'
+            value: 'bloq-zumjunior-display-chars-advanced'
         }, {
             bloqInputId: 'VALUE',
             alias: 'bloqInput',
