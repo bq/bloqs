@@ -20,7 +20,7 @@
         "string",
         "selectVariable"
       ],
-      "name": "f0c07246-7b94-424c-b971-e1eac7db6710"
+      "name": "255d47f8-4038-4885-b184-43d60146a9c3"
     }
   ],
   "bloqClass": "bloq-zumjunior-display-number",
@@ -28,7 +28,7 @@
     [
       {
         "alias": "text",
-        "value": "bloq-zumjunior-display-chars"
+        "value": "bloq-zumjunior-display-chars-advanced"
       },
       {
         "bloqInputId": "VALUE",
@@ -40,7 +40,7 @@
           "string",
           "selectVariable"
         ],
-        "name": "f0c07246-7b94-424c-b971-e1eac7db6710"
+        "name": "255d47f8-4038-4885-b184-43d60146a9c3"
       },
       {
         "alias": "text",

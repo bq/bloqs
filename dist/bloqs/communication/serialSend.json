@@ -21,17 +21,12 @@
         "number",
         "selectVariable"
       ],
-      "name": "35a4fed6-22d0-4fee-8fd1-c26a2523e1aa"
+      "name": "9fdd70a0-9b66-4761-9c06-98be19396d8e"
     }
   ],
   "bloqClass": "bloq-serial-send",
   "content": [
     [
-      {
-        "id": "SERIAL",
-        "alias": "dynamicDropdown",
-        "options": "serialElements"
-      },
       {
         "alias": "text",
         "value": "bloq-serial-send-send"
@@ -47,7 +42,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "35a4fed6-22d0-4fee-8fd1-c26a2523e1aa"
+        "name": "9fdd70a0-9b66-4761-9c06-98be19396d8e"
       },
       {
         "id": "LN",
@@ -62,6 +57,15 @@
             "value": "print"
           }
         ]
+      },
+      {
+        "alias": "text",
+        "value": "bloq-serial-through"
+      },
+      {
+        "id": "SERIAL",
+        "alias": "dynamicDropdown",
+        "options": "serialElements"
       }
     ]
   ],
