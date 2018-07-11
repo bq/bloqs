@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "ba497e16-4a93-46ad-a965-05f4299d38b5"
+      "name": "b6c84330-86db-4b9a-8ae9-9badc302beac"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "357cf795-2197-4607-84d9-c9efa38644e3"
+      "name": "4dfa6c18-ca0e-4a43-9b48-1159d7b709aa"
     },
     {
       "type": "connector--input",
@@ -44,7 +44,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "2111dc67-1a2e-4ace-a613-d6ac917bae21"
+      "name": "a02aa73a-ea77-428e-91c1-9ec7f5e94a90"
     }
   ],
   "bloqClass": "bloq-botbloq-manipulator-moveonspace",
@@ -68,7 +68,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "ba497e16-4a93-46ad-a965-05f4299d38b5"
+        "name": "b6c84330-86db-4b9a-8ae9-9badc302beac"
       },
       {
         "alias": "text",
@@ -84,7 +84,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "357cf795-2197-4607-84d9-c9efa38644e3"
+        "name": "4dfa6c18-ca0e-4a43-9b48-1159d7b709aa"
       },
       {
         "alias": "text",
@@ -100,7 +100,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "2111dc67-1a2e-4ace-a613-d6ac917bae21"
+        "name": "a02aa73a-ea77-428e-91c1-9ec7f5e94a90"
       }
     ]
   ],

@@ -22,6 +22,10 @@ var serialSendV1 = _.merge(_.clone(StatementBloq, true), {
     bloqClass: 'bloq-serial-send',
     content: [
         [{
+            id: 'SERIAL',
+            alias: 'dynamicDropdown',
+            options: 'serialElements'
+        },{
             alias: 'text',
             value: 'bloq-serial-send-send'
         }, {
@@ -39,16 +43,9 @@ var serialSendV1 = _.merge(_.clone(StatementBloq, true), {
                 label: 'bloq-serial-send-print',
                 value: 'print'
             }]
-        },{
-            alias: 'text',
-            value: 'bloq-serial-through'
-        },{
-            id: 'SERIAL',
-            alias: 'dynamicDropdown',
-            options: 'serialElements'
         }]
     ],
-    code: '{SERIAL}.{LN}({DATA});',
+    code: '{SERIAL}.{LN}({DATA});delay(10);',
     arduino: {
         includes: ['BitbloqSoftwareSerial.h'],
         setupExtraCode: '{SERIAL}.begin(º[{SERIAL}.baudRate]);',
@@ -61,7 +58,7 @@ var serialSendV1 = _.merge(_.clone(StatementBloq, true), {
                 'º[{SERIAL}.baudRate]'
             ]
         }],
-        code: '{SERIAL}.{LN}({DATA});'
+        code: '{SERIAL}.{LN}({DATA});delay(10);'
     }
 });
 utils.preprocessBloq(serialSendV1);
