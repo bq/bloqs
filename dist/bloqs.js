@@ -2365,6 +2365,17 @@
                                 ]
                             };
                             break;
+                        case 'us3':
+                            tempIncludes = ['BitbloqUS.h'];
+                            tempInstanceOf = {
+                                name: hardwareList.components[i].name,
+                                type: 'US',
+                                arguments: [
+                                    hardwareList.components[i].pin.s,
+                                    hardwareList.components[i].pin.s
+                                ]
+                            };
+                            break;
                         case 'servo':
                         case 'servocont':
                             if (hardwareList.components[i].oscillator && (hardwareList.components[i].oscillator !== 'false')) {
