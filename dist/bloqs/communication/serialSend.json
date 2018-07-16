@@ -21,7 +21,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "195e9d14-ce89-4b26-b5ed-1a09ee00ac63"
+      "name": "37664844-48e2-48f7-9bb1-65f114b3e55c"
     }
   ],
   "bloqClass": "bloq-serial-send",
@@ -47,7 +47,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "195e9d14-ce89-4b26-b5ed-1a09ee00ac63"
+        "name": "37664844-48e2-48f7-9bb1-65f114b3e55c"
       },
       {
         "id": "LN",
@@ -65,7 +65,7 @@
       }
     ]
   ],
-  "code": "{SERIAL}.{LN}({DATA});delay(10);",
+  "code": "{SERIAL}.{LN}({DATA});",
   "arduino": {
     "includes": [
       "BitbloqSoftwareSerial.h"
@@ -82,7 +82,7 @@
         ]
       }
     ],
-    "code": "{SERIAL}.{LN}({DATA});delay(10);"
+    "code": "{SERIAL}.{LN}({DATA});"
   },
   "python": {
     "codeLines": [
