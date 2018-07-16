@@ -45,7 +45,7 @@ var serialSendV1 = _.merge(_.clone(StatementBloq, true), {
             }]
         }]
     ],
-    code: '{SERIAL}.{LN}({DATA});delay(10);',
+    code: '{SERIAL}.{LN}({DATA});',
     arduino: {
         includes: ['BitbloqSoftwareSerial.h'],
         setupExtraCode: '{SERIAL}.begin(º[{SERIAL}.baudRate]);',
@@ -58,7 +58,7 @@ var serialSendV1 = _.merge(_.clone(StatementBloq, true), {
                 'º[{SERIAL}.baudRate]'
             ]
         }],
-        code: '{SERIAL}.{LN}({DATA});delay(10);'
+        code: '{SERIAL}.{LN}({DATA});'
     }
 });
 utils.preprocessBloq(serialSendV1);
