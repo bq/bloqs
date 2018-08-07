@@ -48,10 +48,10 @@ var zumjuniorSliderIf = _.merge(_.clone(StatementInputBloq, true), {
             alias: 'staticDropdown',
             options: [{
                 label: 'bloq-zumjunior-slider-position0',
-                value: '!digitalRead'
+                value: 'digitalRead'
             }, {
                 label: 'bloq-zumjunior-slider-position1',
-                value: 'digitalRead'
+                value: '!digitalRead'
             }]
         }, {
             alias: 'text',
