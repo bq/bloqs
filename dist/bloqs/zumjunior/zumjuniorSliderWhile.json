@@ -55,11 +55,11 @@
         "options": [
           {
             "label": "bloq-zumjunior-slider-position0",
-            "value": "!digitalRead"
+            "value": "digitalRead"
           },
           {
             "label": "bloq-zumjunior-slider-position1",
-            "value": "digitalRead"
+            "value": "!digitalRead"
           }
         ]
       },
