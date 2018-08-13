@@ -1,7 +1,7 @@
 {
     "name": "bloqs",
     "description": "Library to create bloqs in bitbloq",
-    "version": "0.30.9",
+    "version": "0.30.10",
     "main": [
         "dist/bloqs.min.js",
         "dist/bloqs.css"

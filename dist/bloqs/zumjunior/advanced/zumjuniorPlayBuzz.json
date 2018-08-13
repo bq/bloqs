@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "a63db82a-c731-40a4-8d8f-ac2265052c83"
+      "name": "579182c5-1d9d-4ab4-8095-77759fb09f29"
     },
     {
       "type": "connector--input",
@@ -32,7 +32,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "d7185cb1-fd07-4e7e-ac83-39d1dba32f17"
+      "name": "2b77050f-e8f5-46f2-b619-1450995963ec"
     }
   ],
   "bloqClass": "bloq-zumjunior-play-buzz-advanced",
@@ -52,7 +52,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "a63db82a-c731-40a4-8d8f-ac2265052c83"
+        "name": "579182c5-1d9d-4ab4-8095-77759fb09f29"
       },
       {
         "alias": "text",
@@ -68,7 +68,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "d7185cb1-fd07-4e7e-ac83-39d1dba32f17"
+        "name": "2b77050f-e8f5-46f2-b619-1450995963ec"
       },
       {
         "alias": "text",
@@ -76,9 +76,9 @@
       }
     ]
   ],
-  "code": "zumJunior.play({NOTE},{TIME});delay({TIME});",
+  "code": "zumJunior.playTone({NOTE},{TIME});delay({TIME});",
   "arduino": {
-    "code": "zumJunior.play({NOTE},{TIME});delay({TIME});"
+    "code": "zumJunior.playTone({NOTE},{TIME});delay({TIME});"
   },
   "python": {
     "codeLines": [
