@@ -41,9 +41,9 @@ var zumjuniorPlayBuzzAdvanced = _.merge(_.clone(StatementBloq, true), {
             value: 'bloq-zumjunior-play-ms'
         }]
     ],
-    code: 'zumJunior.play({NOTE},{TIME});delay({TIME});',
+    code: 'zumJunior.playTone({NOTE},{TIME});delay({TIME});',
     arduino: {
-        code: 'zumJunior.play({NOTE},{TIME});delay({TIME});'
+        code: 'zumJunior.playTone({NOTE},{TIME});delay({TIME});'
     }
 });
 
