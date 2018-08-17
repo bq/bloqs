@@ -2314,6 +2314,22 @@
 
 
                             break;
+                            case 'lcdebotics':
+
+                            tempIncludes = ['BitbloqLiquidCrystal.h'];
+
+                                tempInstanceOf = {
+                                    name: hardwareList.components[i].name,
+                                    type: 'Bitbloq::LiquidCrystal_I2C',
+                                    arguments: [
+                                        0x27,
+                                        16,
+                                        2
+                                    ]
+                                };
+                                tempSetupExtraCode = hardwareList.components[i].name + '.begin();' + hardwareList.components[i].name + '.clear();';
+                            break;
+
                         case 'neoRGBled':
                             tempIncludes = ['Adafruit_NeoPixel.h'];
                             ifdefs.push({
