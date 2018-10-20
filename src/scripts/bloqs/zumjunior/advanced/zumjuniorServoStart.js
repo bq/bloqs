@@ -44,7 +44,7 @@ var zumjuniorServoStartAdvanced = _.merge(_.clone(StatementBloq, true), {
             alias: 'text',
             value: 'bloq-zumjunior-servo-speed'
         }, {
-            id: 'SPEED',
+            bloqInputId: 'SPEED',
             alias: 'bloqInput',
             acceptType: ['all'],
             suggestedBloqs: ['number', 'selectVariable']
