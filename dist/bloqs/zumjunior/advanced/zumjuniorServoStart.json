@@ -20,7 +20,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "fdf14c0c-6fe8-45f4-8410-2cd8515f84d7"
+      "name": "3bdad71b-f9a3-4c90-931a-c2d9dcc08150"
     }
   ],
   "bloqClass": "bloq-zumjunior-servo-start",
@@ -58,7 +58,7 @@
         "value": "bloq-zumjunior-servo-speed"
       },
       {
-        "id": "SPEED",
+        "bloqInputId": "SPEED",
         "alias": "bloqInput",
         "acceptType": [
           "all"
@@ -67,7 +67,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "fdf14c0c-6fe8-45f4-8410-2cd8515f84d7"
+        "name": "3bdad71b-f9a3-4c90-931a-c2d9dcc08150"
       }
     ]
   ],

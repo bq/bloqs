@@ -16,7 +16,7 @@
         "readSensor",
         "selectVariable"
       ],
-      "name": "ec02d193-d6a4-469e-a107-63ec9a0bb04c"
+      "name": "4f0410c8-7b4c-404f-8ac1-a31790d1cb61"
     },
     {
       "type": "connector--input",
@@ -28,7 +28,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "6efc1037-a5a2-499a-a465-af76403d0883"
+      "name": "a2503533-6141-4a82-af0d-e8142c00c100"
     }
   ],
   "bloqClass": "bloq-map",
@@ -48,7 +48,7 @@
           "readSensor",
           "selectVariable"
         ],
-        "name": "ec02d193-d6a4-469e-a107-63ec9a0bb04c"
+        "name": "4f0410c8-7b4c-404f-8ac1-a31790d1cb61"
       },
       {
         "alias": "text",
@@ -64,7 +64,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "6efc1037-a5a2-499a-a465-af76403d0883"
+        "name": "a2503533-6141-4a82-af0d-e8142c00c100"
       },
       {
         "alias": "text",
