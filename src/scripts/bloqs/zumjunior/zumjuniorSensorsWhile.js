@@ -39,11 +39,11 @@ var zumjuniorSensorsWhile = _.merge(_.clone(StatementInputBloq, true), {
         }, {
             alias: 'text',
             value: 'bloq-zumjunior-multi-measured-by'
-        },{
+        }, {
             id: 'MULTI',
             alias: 'dynamicDropdown',
             options: 'zumjuniorSensors',
-          },{
+        }, {
             alias: 'text',
             value: 'bloq-zumjunior-is'
         }, {
@@ -63,9 +63,9 @@ var zumjuniorSensorsWhile = _.merge(_.clone(StatementInputBloq, true), {
                 value: '<'
             }]
         }, {
-          bloqInputId: 'VALUE',
-          alias: 'numberInput',
-          value: 0
+            id: 'VALUE',
+            alias: 'numberInput',
+            value: 0
         }, {
             alias: 'text',
             value: 'bloq-zumjunior-sensors-exec'
