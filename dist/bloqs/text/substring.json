@@ -12,7 +12,7 @@
     [
       {
         "alias": "text",
-        "value": "Extraer texto de"
+        "value": "bloq-extract-text-from"
       },
       {
         "id": "STRING",
@@ -21,7 +21,7 @@
       },
       {
         "alias": "text",
-        "value": "empezando en la posición"
+        "value": "starting-at-position"
       },
       {
         "id": "FROM",
@@ -30,7 +30,7 @@
       },
       {
         "alias": "text",
-        "value": "y acabando en la posición"
+        "value": "and-ending-at-position"
       },
       {
         "id": "TO",

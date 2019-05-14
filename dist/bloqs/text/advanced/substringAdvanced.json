@@ -15,7 +15,7 @@
       "suggestedBloqs": [
         "selectVariable"
       ],
-      "name": "1d108514-4502-4d25-b626-6987a858b56b"
+      "name": "49577da9-ca39-4d6b-9456-1beb6601faef"
     },
     {
       "type": "connector--input",
@@ -27,7 +27,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "205b033d-b699-43f0-b330-282d2acc82fd"
+      "name": "d7d1649d-fdda-4bf2-bff0-b9c7182ec1b0"
     },
     {
       "type": "connector--input",
@@ -39,7 +39,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "19578fe8-9f9e-4794-a2a6-d801bb082515"
+      "name": "d49162b6-fc59-4698-9be0-cdb97b5a605a"
     }
   ],
   "bloqClass": "bloq-string",
@@ -47,7 +47,7 @@
     [
       {
         "alias": "text",
-        "value": "Extraer texto de"
+        "value": "bloq-zumjunior-button-if"
       },
       {
         "bloqInputId": "STRING",
@@ -58,7 +58,7 @@
         "suggestedBloqs": [
           "selectVariable"
         ],
-        "name": "1d108514-4502-4d25-b626-6987a858b56b"
+        "name": "49577da9-ca39-4d6b-9456-1beb6601faef"
       },
       {
         "alias": "text",
@@ -74,7 +74,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "205b033d-b699-43f0-b330-282d2acc82fd"
+        "name": "d7d1649d-fdda-4bf2-bff0-b9c7182ec1b0"
       },
       {
         "alias": "text",
@@ -90,7 +90,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "19578fe8-9f9e-4794-a2a6-d801bb082515"
+        "name": "d49162b6-fc59-4698-9be0-cdb97b5a605a"
       }
     ]
   ],
