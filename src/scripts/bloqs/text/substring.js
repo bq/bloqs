@@ -10,49 +10,52 @@ var _ = require('lodash'),
  *
  * Bloq type: Output
  *
- * Description: 
+ * Description:
  *
- * Return type: 
+ * Return type:
  */
 
 var substring = _.merge(_.clone(OutputBloq, true), {
-
     name: 'substring',
     bloqClass: 'bloq-string',
     content: [
-        [{
-            alias: 'text',
-            value: 'Extraer texto de'
-        }, {
-            id: 'STRING',
-            alias: 'dynamicDropdown',
-            options: 'softwareVars'
-        }, {
-            alias: 'text',
-            value: 'empezando en la posición'
-        },
-        {
-            id: 'FROM',
-            alias: 'numberInput',
-            value: 0
-        },
-        {
-            alias: 'text',
-            value: 'y acabando en la posición'
-        },
-        {
-            id: 'TO',
-            alias: 'numberInput',
-            value: 3
-        }]
+        [
+            {
+                alias: 'text',
+                value: 'bloq-extract-text-from',
+            },
+            {
+                id: 'STRING',
+                alias: 'dynamicDropdown',
+                options: 'softwareVars',
+            },
+            {
+                alias: 'text',
+                value: 'starting-at-position',
+            },
+            {
+                id: 'FROM',
+                alias: 'numberInput',
+                value: 0,
+            },
+            {
+                alias: 'text',
+                value: 'and-ending-at-position',
+            },
+            {
+                id: 'TO',
+                alias: 'numberInput',
+                value: 3,
+            },
+        ],
     ],
     returnType: {
         type: 'simple',
-        value: 'String'
+        value: 'String',
     },
     arduino: {
-        code: '{STRING}.substring({FROM}, {TO})'
-    }
+        code: '{STRING}.substring({FROM}, {TO})',
+    },
 });
 
 utils.preprocessBloq(substring);
