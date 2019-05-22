@@ -16,7 +16,7 @@
         "readSensor",
         "selectVariable"
       ],
-      "name": "6658925a-0c8f-4ef8-8b5e-0e7b957e41b4"
+      "name": "2a00cffb-b8c0-4900-becd-cd1abac15291"
     },
     {
       "type": "connector--input",
@@ -28,7 +28,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "97686e38-0e39-4b3a-b3c6-d151bb43f9a4"
+      "name": "ff6ff4b4-e7d0-4c64-a832-2153313942bf"
     },
     {
       "type": "connector--input",
@@ -40,7 +40,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "1e0d1b65-1cf4-489b-a890-7e9e6af5be7c"
+      "name": "d9d7326b-2628-434c-b371-0d347b56248a"
     },
     {
       "type": "connector--input",
@@ -52,7 +52,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "5ac23016-7dfb-4fc9-b54a-a6677ebb2498"
+      "name": "9d318da9-f385-415e-b4f7-550e088beb1f"
     },
     {
       "type": "connector--input",
@@ -64,7 +64,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "71f73be5-7678-4110-b12f-79569fcbec32"
+      "name": "16700592-cabc-4d23-a653-cb70c4a079cb"
     }
   ],
   "bloqClass": "bloq-map-advanced",
@@ -84,7 +84,7 @@
           "readSensor",
           "selectVariable"
         ],
-        "name": "6658925a-0c8f-4ef8-8b5e-0e7b957e41b4"
+        "name": "2a00cffb-b8c0-4900-becd-cd1abac15291"
       },
       {
         "alias": "text",
@@ -100,7 +100,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "97686e38-0e39-4b3a-b3c6-d151bb43f9a4"
+        "name": "ff6ff4b4-e7d0-4c64-a832-2153313942bf"
       },
       {
         "alias": "text",
@@ -116,7 +116,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "1e0d1b65-1cf4-489b-a890-7e9e6af5be7c"
+        "name": "d9d7326b-2628-434c-b371-0d347b56248a"
       },
       {
         "alias": "text",
@@ -132,7 +132,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "5ac23016-7dfb-4fc9-b54a-a6677ebb2498"
+        "name": "9d318da9-f385-415e-b4f7-550e088beb1f"
       },
       {
         "alias": "text",
@@ -148,7 +148,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "71f73be5-7678-4110-b12f-79569fcbec32"
+        "name": "16700592-cabc-4d23-a653-cb70c4a079cb"
       },
       {
         "alias": "text",

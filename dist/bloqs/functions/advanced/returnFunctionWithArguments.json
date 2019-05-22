@@ -27,7 +27,7 @@
         "string",
         "selectVariable"
       ],
-      "name": "1aef8f3c-41b7-4f24-936e-08e69130d7f4"
+      "name": "b4ff9b9a-12c4-4d11-ae76-161fe8423715"
     },
     {
       "type": "connector--input",
@@ -40,7 +40,7 @@
         "logicOperations",
         "equalityOperations"
       ],
-      "name": "c0368458-3657-48e4-b01e-e32b74fff8e5"
+      "name": "2e822314-afa5-410a-b6c1-73bf92eb86a2"
     }
   ],
   "bloqClass": "bloq-return-function-with-arguments",
@@ -72,7 +72,7 @@
           "string",
           "selectVariable"
         ],
-        "name": "1aef8f3c-41b7-4f24-936e-08e69130d7f4"
+        "name": "b4ff9b9a-12c4-4d11-ae76-161fe8423715"
       },
       {
         "position": "DOWN",
@@ -91,7 +91,7 @@
           "logicOperations",
           "equalityOperations"
         ],
-        "name": "c0368458-3657-48e4-b01e-e32b74fff8e5"
+        "name": "2e822314-afa5-410a-b6c1-73bf92eb86a2"
       }
     ]
   ],

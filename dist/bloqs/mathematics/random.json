@@ -16,7 +16,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "7d8a7673-04b6-4145-ac0b-073bf5fed3ce"
+      "name": "a0fb0726-7d09-45ea-b039-a4df063ed75b"
     },
     {
       "type": "connector--input",
@@ -28,7 +28,7 @@
         "number",
         "selectVariable"
       ],
-      "name": "7f607a48-5786-4db2-ab8a-dd3b62bd57ee"
+      "name": "a8d839e8-0c30-469b-be58-07b0595b314f"
     }
   ],
   "bloqClass": "bloq-random",
@@ -48,7 +48,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "7d8a7673-04b6-4145-ac0b-073bf5fed3ce"
+        "name": "a0fb0726-7d09-45ea-b039-a4df063ed75b"
       },
       {
         "alias": "text",
@@ -64,7 +64,7 @@
           "number",
           "selectVariable"
         ],
-        "name": "7f607a48-5786-4db2-ab8a-dd3b62bd57ee"
+        "name": "a8d839e8-0c30-469b-be58-07b0595b314f"
       }
     ]
   ],
